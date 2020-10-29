@@ -1,0 +1,1441 @@
+
+4. Collecting Text Data with Web Scraping and APIs {#_idParaDest-136}
+==================================================
+
+::: {#_idContainer122 .Content}
+:::
+
+::: {#_idContainer138 .Content}
+Overview
+
+This chapter introduces you to the concept of web scraping. You will
+first learn how to extract data (such as text, images, lists, and
+tables) from pages that are written using HTML. You will then learn
+about the various types of semi-structured data used to create web pages
+(such as JSON and XML) and extract data from them. Finally, you will use
+APIs for data extraction from Twitter, using the `tweepy`{.literal}
+package.
+
+
+Introduction {#_idParaDest-137}
+============
+
+::: {#_idContainer138 .Content}
+In the last chapter, we developed a simple classifier using feature
+extraction methods. We also covered different algorithms that fall under
+supervised and unsupervised learning. In this chapter, you will learn
+how to collect text data by scraping web pages, and then you will learn
+how to process that data. Web scraping helps you extract useful data
+from online content, such as product prices and customer reviews, which
+can then be used for market research, price comparison for products, or
+data analysis. You will also learn how to handle various kinds of
+semi-structured data, such as JSON and XML. We will cover different
+methods for extracting data using **Application Programming Interfaces**
+(**APIs**). Finally, we will explore different ways to extract data from
+different types of files.
+
+
+Collecting Data by Scraping Web Pages {#_idParaDest-138}
+=====================================
+
+::: {#_idContainer138 .Content}
+The basic building block of any web page is HTML (Hypertext Markup
+Language*)*---a markup language that specifies the structure of your
+content. HTML is written using a series of tags, combined with optional
+content. The content encompassed within HTML tags defines the appearance
+of the web page. It can be used to make words bold or italicize them, to
+add hyperlinks to the text, and even to add images. Additional
+information can be added to the element using attributes within tags.
+So, a web page can be considered to be a document written using HTML.
+Thus, we need to know the basics of HTML to scrape web pages
+effectively.
+
+The following figure depicts the contents that are included within an
+HTML tag:
+
+<div>
+
+::: {#_idContainer123 .IMG---Figure}
+![Figure 4.1: Tags and attributes of HTML ](3_files/B16062_04_01.jpg)
+:::
+
+</div>
+
+Figure 4.1: Tags and attributes of HTML
+
+As you can see in the preceding figure, we can easily identify different
+elements within an HTML tag. The basic HTML structure and commonly used
+tags are shown and explained as follows:
+
+<div>
+
+::: {#_idContainer124 .IMG---Figure}
+![Figure 4.2: Basic HTML structure ](3_files/B16062_04_02.jpg)
+:::
+
+</div>
+
+Figure 4.2: Basic HTML structure
+
+-   `DOCTYPE`{.literal}: This is a must-have preamble for every HTML
+    page. It informs the browser that the document is written in HTML.
+-   `<html>`{.literal} tag: This is considered the root of the page,
+    encompassing all of the page content. It is mainly divided into two
+    tags---`<head>`{.literal} and `<body>`{.literal}.
+-   `<head>`{.literal} tag: This tag provides meta-information about the
+    web page.
+-   `<body>`{.literal} tag: This tag comprises content such as text,
+    image, tables, and lists.
+-   `<title>`{.literal} tag: This sets the title of your page, which is
+    what you\'ll see in the browser\'s tab.
+-   `<headline>`{.literal} tag: As the name suggests, this represents
+    six levels of section headings, from `<h1>`{.literal} to
+    `<h6>`{.literal}.
+-   `<p>`{.literal} tag: This is used to define the paragraph text
+    content.
+-   `<i>`{.literal} tag: We can use this tag to italicize the text.
+-   `<strong>`{.literal} tag: This makes the text bold.
+-   `<li>`{.literal} tag: We can use this tag to list the content in
+    ordered (the `<ol>`{.literal} tag) or unordered (the
+    `<ul>`{.literal} tag) list format.
+-   `<img>`{.literal} tag: This tag is used to add an image in the HTML
+    document.
+-   `<h1>`{.literal} to `<h6>`{.literal} tags: These represent the
+    various levels of headings, with `<h1>`{.literal} having the biggest
+    size and `<h6>`{.literal} having the smallest size.
+-   `<span>`{.literal} tag: Although this tag provides no visual change
+    by itself, it is useful for grouping inline-elements in a document
+    and adding a hook to a part of a text or a part of a document.
+-   `<q>`{.literal} tag: Quotes are written within the `<q>`{.literal}
+    tag in HTML.
+-   `table`{.literal} tag: Tabular content is represented as a
+    `table`{.literal} tag, which contains `<th>`{.literal} (table
+    header), `<tr>`{.literal} (table row), and `<td>`{.literal} (table
+    data).
+-   `<address>`{.literal} tag: In HTML documents, addresses are enclosed
+    within `<address>`{.literal} tags.
+
+In the next section, we will walk through an exercise in which we\'ll
+extract tag-based information from HTML files.
+
+[]{#_idTextAnchor140}
+
+Exercise 4.01: Extraction of Tag-Based Information from HTML Files {#_idParaDest-139}
+------------------------------------------------------------------
+
+In this exercise, we will extract addresses, quotes, text written in
+bold, and a table present in an HTML file.
+
+Note
+
+The data for this sample HTML file can be accessed from
+<https://packt.live/338opvv>.
+
+Follow these steps to implement this exercise:
+
+1.  Open a Jupyter Notebook.
+
+2.  Insert a new cell and add the following code to import the
+    `BeautifulSoup`{.literal} library:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    from bs4 import BeautifulSoup
+    ```
+    :::
+
+    `BeautifulSoup`{.literal} is a Python library for pulling data out
+    of HTML and XML files. It provides a parser for HTML/XML formats,
+    allowing us to navigate, search, and modify the parsed tree.
+
+3.  Create an object of the `BeautifulSoup`{.literal} class and pass the
+    location of the HTML file to it:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    soup = BeautifulSoup(open('../data/sample_doc.html'), \
+                         'html.parser')
+    ```
+    :::
+
+    In the preceding line, `html.parser`{.literal} is Python\'s built-in
+    standard library parser. `BeautifulSoup`{.literal} also supports
+    third-party parsers such as `html5lib`{.literal}, `lxml`{.literal},
+    and others.
+
+4.  Add the following code to check the text contents of the
+    `sample_doc.html`{.literal} file:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    soup.text
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {#_idContainer125 .IMG---Figure}
+    ![Figure 4.3: Text content of an HTML file
+    ](3_files/B16062_04_03.jpg)
+    :::
+
+    Figure 4.3: Text content of an HTML file
+
+5.  Similarly, to see the contents, you can simply write the following
+    code:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    soup.contents
+    ```
+    :::
+
+    ::: {#_idContainer126 .IMG---Figure}
+    ![Figure 4.4: Text content ](3_files/B16062_04_04.jpg)
+    :::
+
+    Figure 4.4: Text content
+
+6.  To find the addresses from the document, insert a new cell and add
+    the following code:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    soup.find('address')
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    <address> Mess on No. 72, Banamali Naskar Lane, Kolkata.</address>
+    ```
+    :::
+
+7.  To locate all the `address`{.literal} tags within the given content,
+    write the following code:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    soup.find_all('address')
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    [<address> Mess on No. 72, Banamali Naskar Lane, Kolkata.</address>,
+     <address>221B, Baker Street, London, UK.</address>]
+    ```
+    :::
+
+8.  To find the quotes in the document, add the following code:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    soup.find_all('q')
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    [<q> There are more things in heaven and earth, Horatio, <br/> 
+     Than are dreamt of in your philosophy. </q>]
+    ```
+    :::
+
+9.  To check all the bold items, write the following command:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    soup.find_all('b')
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    [<b>Sherlock </b>, <b>Hamlet</b>, <b>Horatio</b>]
+    ```
+    :::
+
+10. Write the following command to extract the tables in the document:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    table = soup.find('table')
+    table
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {#_idContainer127 .IMG---Figure}
+    ![Figure 4.5: Contents of the table tag ](3_files/B16062_04_05.jpg)
+    :::
+
+    Figure 4.5: Contents of the table tag
+
+11. You can also view the contents of `table`{.literal} by looping
+    through it. Insert a new cell and add the following code to
+    implement this:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    for row in table.find_all('tr'):
+        columns = row.find_all('td')
+        print(columns)
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    [ ]
+    [<td>Gangaram</td>, <td>B.Tech</td>, <td>NA</td>, <td>NA</td>]
+    [<td>Ganga</td>, <td>B.A.</td>, <td>NA</td>, <td>NA</td>]
+    [<td>Ram</td>, <td>B.Tech</td>, <td>M.Tech</td>, <td>NA</td>]
+    [<td>Ramlal</td>, <td>B.Music</td>, <td>NA </td>, <td>Diploma in Music</td>]
+    ```
+    :::
+
+12. You can also locate specific content in the table. To locate the
+    value at the intersection of the third row and the second column,
+    write the following command:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    table.find_all('tr')[3].find_all('td')[2]
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    <td>M.Tech</td>
+    ```
+    :::
+
+We have learned how to extract tag-based information from an HTML file.
+
+Note
+
+To access the source code for this specific section, please refer to
+<https://packt.live/3gekCAA>.
+
+You can also run this example online at <https://packt.live/2EyJp4q>.
+
+In the next section, we will focus on fetching content from web pages.
+
+[]{#_idTextAnchor141}
+
+Requesting Content from Web Pages {#_idParaDest-140}
+---------------------------------
+
+Whenever you visit a web page from your web browser, you are actually
+sending a request to fetch its content. This can be done using Python
+scripts. The Python `requests`{.literal} package is widely used to
+handle all forms of HTTP requests. Let\'s walk through an exercise to
+get a better understanding of this concept.
+
+To fetch content, you can use the `get()`{.literal} method, which, as
+the name suggests, sends a `GET`{.literal} request to the web page from
+which you want to fetch data. Let\'s perform a simple exercise now to
+get a better idea of how we can implement this in Python.
+
+[]{#_idTextAnchor142}
+
+Exercise 4.02: Collecting Online Text Data {#_idParaDest-141}
+------------------------------------------
+
+In this exercise, we will be fetching the web content with the help of
+`requests`{.literal}. We will be pulling a text file from *Project
+Gutenberg*, the free e-book website, specifically, from the text file
+for Charles Dickens\' famous book, *David Copperfield*. Follow these
+steps to complete this exercise:
+
+1.  Use the `requests`{.literal} library to request the content of a
+    book available online with the following set of commands:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    import requests
+    """"
+    Let's read the text version of david copper field 
+    available online
+    """
+    r = requests.get('https://www.gutenberg.org/files/766/766-0.txt')
+    r.status_code
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    200
+    ```
+    :::
+
+    When the browser visits the website, it fetches the content of the
+    specified URL. Similarly, using `requests`{.literal}, we get the
+    content from the specified URL and all the information gets stored
+    in the `r`{.literal} object. `200`{.literal} indicates that we
+    received the right response from the URL.
+
+2.  Locate the text content of the fetched file by using the
+    `requests`{.literal} object `r`{.literal} and referring to the
+    `text`{.literal} attribute. Write the following code for this:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    r.text[:1000]
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {#_idContainer128 .IMG---Figure}
+    ![Figure 4.6: Text contents of the file ](3_files/B16062_04_06.jpg)
+    :::
+
+    Figure 4.6: Text contents of the file
+
+3.  Now, write the fetched content into a text file. To do this, add the
+    following code:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    from pathlib import Path
+    open(Path("../data/David_Copperfield.txt"),'w',\
+         encoding='utf-8').write(r.text)
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    2033139
+    ```
+    :::
+
+4.  Similarly, we can do the same using Urllib3.First add the following
+    code:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    import urllib3
+    http = urllib3.PoolManager()
+    rr = http.request('GET', \
+                      'http://www.gutenberg.org/files/766/766-0.txt')
+    rr.status
+    ```
+    :::
+
+    Again, we will get the output as `200`{.literal}, similar to the
+    previous method.
+
+5.  Add the following code to locate the text content:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    rr.data[:1000]
+    ```
+    :::
+
+    You will see that you get the same output as shown in *Figure 4.6*.
+
+6.  Again, add the following code to write the fetched content into a
+    text file:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    open(Path("../data/David_Copperfield_new.txt"), \
+         'wb').write(rr.data)
+    ```
+    :::
+
+    The preceding code will generate the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    2033139
+    ```
+    :::
+
+We have just learned how to collect data from online sources with the
+help of the `requests`{.literal} library.
+
+Note
+
+To access the source code for this specific section, please refer to
+<https://packt.live/3fhu1pv>.
+
+You can also run this example online at <https://packt.live/2Dmov7L>.
+
+Now, let\'s look at analyzing HTML content from Jupyter Notebooks.
+
+[]{#_idTextAnchor143}
+
+Exercise 4.03: Analyzing the Content of Jupyter Notebooks (in HTML Format) {#_idParaDest-142}
+--------------------------------------------------------------------------
+
+In this exercise, we will analyze the content of a Jupyter Notebook. We
+will count the number of images, list the packages that have been
+imported, and check the models and their performance.
+
+Note
+
+The HTML file used for this exercise, can be accessed at
+<https://packt.live/3fcYIfJ>.
+
+Follow these steps to complete this exercise:
+
+1.  Import `BeautifulSoup`{.literal} and pass the location of the given
+    HTML file using the following commands:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(open('../data/text_classifier.html'), \
+                         'html.parser')
+    soup.text[:100]
+    ```
+    :::
+
+    Here, we are loading HTML using `BeautifulSoup`{.literal} and
+    printing parsed content. The preceding code generates the following
+    output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    '\n\n\nCh3_Activity7_Developing_end_to_end_Text_Classifiers\n\n\n\n    /*!\n*\n* Twitter Bootstrap\n*\n*/\n/*!\n*'
+    ```
+    :::
+
+2.  Use the `img`{.literal} tag to count the number of images:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    len(soup.find_all('img'))
+    ```
+    :::
+
+    The output shows that there are three `img`{.literal} tags:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    3
+    ```
+    :::
+
+3.  If you open the HTML file in the text editor or your web browser\'s
+    console, you will see all `import`{.literal} statements have the
+    `class`{.literal} attribute set to `nn`{.literal}. So, to list all
+    the packages that are imported, add the following code, referring to
+    finding the `span`{.literal} element with an `nn`{.literal} class
+    attribute:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    [i.get_text() for i in soup.find_all\
+    ('span',attrs={"class":"nn"})]
+    ```
+    :::
+
+    The pr[]{#_idTextAnchor144}eceding code generates the following
+    output:
+
+    ::: {#_idContainer129 .IMG---Figure}
+    ![Figure 4.7: List of libraries imported ](3_files/B16062_04_07.jpg)
+    :::
+
+    Figure 4.7: List of libraries imported
+
+4.  To extract the models and their performance, look at the HTML
+    document and see which `class`{.literal} attribute the models and
+    their performance belong to. You will see the `h2`{.literal} and
+    `div`{.literal} tags with the `class`{.literal} attribute
+    `output_subarea output_stream output_stdout output_text`{.literal}.
+    Add the following code to extract the models:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    for md,i in zip(soup.find_all('h2'), \
+    soup.find_all('div',\
+    attrs={"class":"output_subarea output_stream "\
+           "output_stdout output_text"})):
+        print("Model: ",md.get_text())
+        print(i.get_text())
+        print("---------------------------------------------------------\n\n\n")
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {#_idContainer130 .IMG---Figure}
+    ![Figure 4.8: Models and their performance
+    ](3_files/B16062_04_08.jpg)
+    :::
+
+Figure 4.8: Models and their performance
+
+So, in the preceding output, we have extracted a classification report
+from the HTML file using `BeautifulSoup`{.literal} by referring to the
+`<h2>`{.literal} and `<div>`{.literal} tags.
+
+Note
+
+To access the source code for this specific section, please refer to
+<https://packt.live/2PaM1Yk>.
+
+You can also run this example online at <https://packt.live/315liSk>.
+
+So far, we have seen how to get content from the web using the
+`requests`{.literal} package, and in this exercise, we saw how to parse
+and extract the desired information. Next time you come across an
+article and want to extract certain information from it, you will be
+able to put these skills to use, instead of manually going over all of
+the content.
+
+[]{#_idTextAnchor145}
+
+Activity 4.01: Extracting Information from an Online HTML Page {#_idParaDest-143}
+--------------------------------------------------------------
+
+In this activity, we will extract data about Rabindranath Tagore from
+the Wikipedia page about him.
+
+Note
+
+Rabindranath Tagore was a poet and musician from South Asia whose art
+has had a profound influence on shaping the cultural landscape of the
+region. He was also the first Indian to win the Nobel Prize for
+Literature, in 1913.
+
+After extracting the data, we will analyze information from the page.
+This should include the list of headings in the *Works* section, the
+list of his works, and the list of universities named after him. Follow
+these steps to implement this activity:
+
+1.  Open a Jupyter Notebook.
+
+2.  Import the requests and `BeautifulSoup`{.literal} libraries.
+
+3.  Fetch the Wikipedia page from
+    <https://en.wikipedia.org/wiki/Rabindranath_Tagore> using the
+    `get`{.literal} method of the `requests`{.literal} library.
+
+4.  Convert the fetched content into HTML format using an HTML parser.
+
+5.  Print the list of headings in the *Works* section.
+
+6.  Print the list of original works written by Tagore in Bengali.
+
+7.  Print the list of universities named after Tagore.
+
+    Note
+
+    The solution to this activity can be found on page 386.
+
+We are now well-versed in extracting generic data from HTML pages.
+Let\'s perform another activity now, where we\'ll be using regular
+expressions.
+
+[]{#_idTextAnchor146}
+
+Activity 4.02: Extracting and Analyzing Data Using Regular Expressions {#_idParaDest-144}
+----------------------------------------------------------------------
+
+To perform this activity, you will extract data from Packt\'s website.
+The data to be extracted includes frequently asked questions (FAQs) and
+their answers, phone numbers for customer care services, and the email
+addresses for customer care services. Follow these steps to complete
+this activity:
+
+1.  Import the necessary libraries and extract data from
+    <https://www.packtpub.com/support/faq> using the
+    `requests`{.literal} library.
+
+2.  Fetch questions and answers from the data.
+
+3.  Create a DataFrame consisting of questions and answers.
+
+4.  Fetch email addresses with the help of regular expressions.
+
+5.  Fetch the phone numbers, with the help of regular expressions.
+
+    Note
+
+    The solution to this activity can be found on page 388.
+
+In this activity, we were able to fetch data from online sources and
+analyze it in various ways. Now that we are well-versed in scraping web
+pages with the help of HTML, in the next section, we will discuss how to
+scrape web pages with semi-structured data.
+
+
+Dealing with Semi-Structured Data {#_idParaDest-145}
+=================================
+
+::: {#_idContainer138 .Content}
+We learned about various types of data in *Chapter 2*, *Feature
+Extraction Methods*. Let\'s quickly recapitulate what semi-structured
+data refers to. A dataset is said to be semi-structured if it is not in
+a row-column format but, if required, can be converted into a structured
+format that has a definite number of rows and columns. Often, we come
+across data that is stored as key-value pairs or embedded between tags,
+as is the case with **JSON** (**JavaScript Object Notation**) and
+**XML** (**Extensible Markup Language**) files. These are the most
+popularly used instances of semi-structured data.
+
+[]{#_idTextAnchor148}
+
+JSON {#_idParaDest-146}
+----
+
+JSON files are used for storing and exchanging data. JSON is
+human-readable and easy to interpret. Just like text files and CSV
+files, JSON files are language-independent. This means that different
+programming languages, such as Python, Java, and so on, can work with
+JSON files effectively. In Python, a built-in data structure called a
+**dictionary** is capable of storing JSON objects as is. Generally, data
+in JSON objects is present in the form of key-value pairs. The datatype
+of values of JSON objects must be any of the following:
+
+-   A string
+-   A number
+-   Another JSON object
+-   An array
+-   A boolean
+-   Null
+
+NoSQL databases (such as MongoDB) store data in the form of JSON
+objects. Most APIs return JSON objects. The following figure depicts
+what a JSON file looks like:
+
+<div>
+
+::: {#_idContainer131 .IMG---Figure}
+![Figure 4.9: A sample JSON file ](4_files/B16062_04_09.jpg)
+:::
+
+</div>
+
+Figure 4.9: A sample JSON file
+
+Often, the response we get when requesting a URL is in the form of JSON
+objects. To deal with a JSON file effectively, we need to know how to
+parse it. The following exercise throws light on this.
+
+[]{#_idTextAnchor149}
+
+Exercise 4.04: Working with JSON Files {#_idParaDest-147}
+--------------------------------------
+
+In this exercise, we will extract details such as the names of students,
+their qualifications, and additional qualifications from a JSON file.
+
+Note
+
+The sample JSON file can be accessed at <https://packt.live/2P6ZwrI>.
+
+Follow these steps to complete this exercise:
+
+1.  Open a Jupyter Notebook.
+
+2.  Insert a new cell and import `json`{.literal}. Pass the location of
+    the file mentioned using the following commands:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    import json
+    from pprint import pprint
+    data = json.load(open('../data/sample_json.json'))
+    pprint(data)
+    ```
+    :::
+
+    In the preceding code, we are importing Python\'s built-in
+    `json`{.literal} module and loading the local JSON file using the
+    standard I/O operation of Python. This turns JSON into the Python
+    `dict`{.literal} object. The preceding code generates the following
+    output:
+
+    ::: {#_idContainer132 .IMG---Figure}
+    ![Figure 4.10: Dictionary form of the fetched data
+    ](4_files/B16062_04_10.jpg)
+    :::
+
+    Figure 4.10: Dictionary form of the fetched data
+
+3.  To extract the names of the students, add the following code:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    [dt['name'] for dt in data['students']]
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    ['Gangaram', 'Ganga', 'Ram', 'Ramlal']
+    ```
+    :::
+
+4.  To extract their respective qualifications, enter the following
+    code:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    [dt['qualification'] for dt in data['students']]
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    ['B.Tech', 'B.A.', 'B.Tech', 'B.Music']
+    ```
+    :::
+
+5.  To extract their additional qualifications, enter the following
+    code. Remember, not every student will have additional
+    qualifications. Thus, we need to check this separately. Add the
+    following code to implement this:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    [dt['additional qualification'] if 'additional qualification' \
+    in dt.keys() else None for dt in data['students']]
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    [None, None, 'M.Tech', None]
+    ```
+    :::
+
+As JSON objects are similar to the dictionary data structure of Python,
+they are widely used on the web to send and receive data across web
+applications.
+
+Note
+
+To access the source code for this specific section, please refer to
+<https://packt.live/33aSGKi>.
+
+You can also run this example online at <https://packt.live/315MekS>.
+
+Now that we have learned how to load JSON data, let\'s extract data
+using another format, called **Extensible Markup Language** (**XML**),
+which is also used by web apps and Word documents to store information.
+
+[]{#_idTextAnchor150}
+
+XML {#_idParaDest-148}
+---
+
+Just like HTML, XML is another kind of markup language that stores data
+in between tags. It is human-readable and extensible; that is, we have
+the liberty to define our own tags. Attributes, elements, and tags in
+the case of XML are similar to those of HTML. An XML file may or may not
+have a declaration. But, if it has a declaration, then that must be the
+first line of the XML file.
+
+This declaration statement has three parts: `Version`{.literal},
+`Encoding`{.literal}, and `Standalone`{.literal}. `Version`{.literal}
+states which version of the XML standard is being used;
+`Encoding`{.literal} states the type of character encoding being used in
+this file; `Standalone`{.literal} tells the parser whether external
+information is needed for interpreting the content of the XML file. The
+following figure depicts what an XML file looks like:
+
+<div>
+
+::: {#_idContainer133 .IMG---Figure}
+![Figure 4.11: A sample XML file ](4_files/B16062_04_11.jpg)
+:::
+
+</div>
+
+Figure 4.11: A sample XML file
+
+An XML file can be represented as a tree called an XML tree. This XML
+tree begins with the root element (the parent). This root element
+further branches into child elements. Each element of the XML file is a
+node in the XML tree. Those elements that don\'t have any children are
+leaf nodes. The following figure clearly differentiates between an
+original XML file and a tree representation of an XML file:
+
+<div>
+
+::: {#_idContainer134 .IMG---Figure}
+![Figure 4.12: Comparison of an XML structure
+](4_files/B16062_04_12.jpg)
+:::
+
+</div>
+
+Figure 4.12: Comparison of an XML structure
+
+XML files are somewhat similar in structure to HTML, with the main
+difference being that, in XML, we have custom tags rather than the fixed
+tags vocabulary like HTML. As we learned how to parse HTML using
+`BeautifulSoup`{.literal} before, let\'s learn how to parse XML files in
+the following exercise.
+
+[]{#_idTextAnchor151}
+
+Exercise 4.05: Working with an XML File {#_idParaDest-149}
+---------------------------------------
+
+In this exercise, we will parse an XML file and print the details from
+it, such as the names of employees, the organizations they work for, and
+the total salaries of all employees.
+
+Note
+
+The sample XML data file can be accessed here:
+<https://packt.live/3hPCaDl>.
+
+Follow these steps to complete this exercise:
+
+1.  Open a Jupyter Notebook.
+
+2.  Insert a new cell, import `xml.etree.ElementTree`{.literal}, and
+    pass the location of the XML file using the following code:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    import xml.etree.ElementTree as ET
+    tree = ET.parse('../data/sample_xml_data.xml')
+    root = tree.getroot()
+    root
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    <Element 'records' at 0.112291710>
+    ```
+    :::
+
+3.  To check the tag of the fetched element, type the following code:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    root.tag
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    'records'
+    ```
+    :::
+
+4.  Look for the `name`{.literal} and `company`{.literal} tags in the
+    XML and print the data enclosed within them:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    for record in root.findall('record')[:20]:
+        print(record.find('name').text, "---",\
+              record.find('company').text)
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {#_idContainer135 .IMG---Figure}
+    ![Figure 4.13: Data of the name and company tags printed
+    ](4_files/B16062_04_13.jpg)
+    :::
+
+    Figure 4.13: Data of the name and company tags printed
+
+5.  To find the sum of the salaries, create a list consisting of the
+    salaries of all employees by iterating over each record and finding
+    the `salary`{.literal} tag in it. Next, remove the `$`{.literal} and
+    `,`{.literal} from the string of salary content, and finally, type
+    cast into the integer to get the sum at the end. Add the following
+    code to do so:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    sum([int(record.find('salary').text.replace('$','').\
+    replace(',','')) for record in root.findall('record')])
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    745609
+    ```
+    :::
+
+Thus, we can see that the sum of all the salaries is \$745,609. We just
+learned how to extract data from a local XML file. When we request data,
+many URLs return an XML file.
+
+Note
+
+To access the source code for this specific section, please refer to
+<https://packt.live/3hQzuFM>.
+
+You can also run this example online at <https://packt.live/3jU8VRP>.
+
+In the next section, we will look at how APIs can be used to retrieve
+real-time data.
+
+[]{#_idTextAnchor152}
+
+Using APIs to Retrieve Real-Time Data {#_idParaDest-150}
+-------------------------------------
+
+**API** stands for **Application Programming Interface**. To understand
+what an API is, let\'s consider a real-life example. Suppose you have a
+socket plug in the wall, and you need to charge your cellphone using it.
+How will you do it? You will have to use a charger/adapter, which will
+enable you to connect the cellphone to the socket. Here, this adapter is
+acting as a mediator that connects the cellphone and the socket, thus
+enabling the smooth transfer of electricity between them.
+
+Similarly, some websites do not provide their data directly. Instead,
+they provide APIs, which we can use to extract data from the websites.
+Just like the cellphone charger, an API acts as a mediator, enabling the
+smooth transfer of data between those websites and us. Let\'s perform a
+simple exercise to get hands-on experience of collecting data using
+APIs.
+
+[]{#_idTextAnchor153}
+
+Exercise 4.06: Collecting Data Using APIs {#_idParaDest-151}
+-----------------------------------------
+
+In this exercise, we will use the Currency Exchange Rates API to convert
+USD to another currency rate. Follow these steps to implement this
+exercise:
+
+1.  Open a Jupyter Notebook.
+
+2.  Import the necessary packages. Add the following code to do so:
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    import json 
+    import pprint 
+    import requests 
+    import pandas as pd
+    ```
+    :::
+
+3.  Load the `json`{.literal} data. Add the following code to do this:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    r = requests.get("https://api.exchangerate-api.com/"\
+                     "v4/latest/USD")
+    data = r.json()
+    pprint.pprint(data)
+    ```
+    :::
+
+    Note
+
+    Watch out for the slashes in the string below. Remember that the
+    backslashes ( `\`{.literal} ) are used to split the code across
+    multiple lines, while the forward slashes ( `/`{.literal} ) are part
+    of the URL.
+
+    The preceding code generates the following output:
+
+    ::: {#_idContainer136 .IMG---Figure}
+    ![Figure 4.14: Fetched data in the Python dict format
+    ](4_files/B16062_04_14.jpg)
+    :::
+
+    Figure 4.14: Fetched data in the Python dict format
+
+4.  To create the DataFrame of the fetched data and print it, add the
+    following code:
+
+    ::: {.informalexample}
+    ::: {.toolbar .clearfix}
+    Copy
+    :::
+
+    ``` {.language-markup}
+    df = pd.DataFrame(data)
+    df.head()
+    ```
+    :::
+
+    The preceding code generates the following output:
+
+    ::: {#_idContainer137 .IMG---Figure}
+    ![Figure 4.15: DataFrame showing details of currency exchange rates
+    ](4_files/B16062_04_15.jpg)
+    :::
+
+Figure 4.15: DataFrame showing details of currency exchange rates
+
+Note that you will get a different output depending on the present
+currency exchange rates. We just learned how to collect data using APIs.
+
+Note
+
+To access the source code for this specific section, please refer to
+<https://packt.live/3jQAcEG>.
+
+You can also run this example online at <https://packt.live/3jVIBa0>.
+
+In the next section, we will see how to create an API.
+
+[]{#_idTextAnchor154}
+
+Extracting data from Twitter Using the OAuth API {#_idParaDest-152}
+------------------------------------------------
+
+Many popular websites, such as Twitter, provide an API that allows
+access to parts of their services so that people can build software that
+integrates with the website. We\'ll be focusing mainly on Twitter in
+this section. Twitter\'s data and services (such as tweets,
+advertisements, direct messages, and much more) can be accessed via the
+Twitter API. The Twitter API requires authentication and authorization
+to interact with its services using the `OAuth`{.literal} method.
+Authentication is required to prove identity, while authorization proves
+the right to access its services and data. To access Twitter data and
+services using an API, you would need to register using a Twitter
+developer account.
+
+You can collect data from Twitter using their Python module, named
+`Tweepy`{.literal}. `Tweepy`{.literal} is a Python library for accessing
+the Twitter API. It is great for simple automation and creating Twitter
+bots. It provides abstraction to communicate with Twitter and use its
+API to ease interactions, which makes this approach more efficient than
+using the `requests`{.literal} library and Twitter API endpoints.
+
+To use the `Tweepy`{.literal} library, simply go to
+<https://dev.twitter.com/apps/new> and fill in the form; you\'ll need to
+complete the necessary fields, such as `App Name`{.literal},
+`Website URL`{.literal}, `Callback URL`{.literal}, and
+`App Usage`{.literal}. Once you\'ve done this, submit and receive the
+keys and tokens, which you can use for extracting tweets and more.
+However, before you do any of this, you\'ll first need to import the
+`tweepy`{.literal} library.
+
+Your Python code should look like this:
+
+::: {.informalexample}
+::: {.toolbar .clearfix}
+Copy
+:::
+
+``` {.language-markup}
+import tweepy
+consumer_key = 'your consumer key here'
+consumer_secret = 'your consumer secret key here'
+access_token = 'your access token here'
+access_token_secret = 'your access token secret here'
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth)
+```
+:::
+
+The preceding code uses `auth`{.literal} instantiation from
+`OAuthHandler`{.literal}, which takes in our consumer token and secret
+keys that were obtained during app registration.
+`OAuthHandler`{.literal} handles interaction with Twitter\'s
+`OAuth`{.literal} system.
+
+To search for a query named `randomquery`{.literal} using
+`tweepy`{.literal}, you can use the `Cursor`{.literal} object as
+follows:
+
+::: {.informalexample}
+::: {.toolbar .clearfix}
+Copy
+:::
+
+``` {.language-markup}
+tweepy.Cursor(api.search, q='randomquery', lang="en")
+```
+:::
+
+`Cursor`{.literal} handles all the iterating-over-pages work for us
+behind the scenes, whereas the `api.search`{.literal} method provides
+tweets that match a specified query given with the `q`{.literal}
+parameter.
+
+Let\'s do an activity now, to put our knowledge into practice.
+
+[]{#_idTextAnchor155}
+
+Activity 4.03: Extracting Data from Twitter {#_idParaDest-153}
+-------------------------------------------
+
+In this activity, you will extract 100 tweets containing the hashtag
+*\#climatechange* from Twitter, using the Twitter API via the tweepy
+library, and load them into a pandas DataFrame. The following steps will
+help you implement this activity:
+
+1.  Log in to your Twitter account with your credentials.
+
+2.  Visit <https://dev.twitter.com/apps/new> and fill in the form by
+    completing the necessary fields, such as `App Name`{.literal},
+    providing `Website URL`{.literal}, `Callback URL`{.literal}, and
+    `App Usage`{.literal}.
+
+3.  Submit the form and receive the keys and tokens.
+
+4.  Use these keys and tokens in your application when making an API
+    call for *\#climatechange*.
+
+5.  Import the necessary libraries.
+
+6.  Fetch the data using the keys and tokens.
+
+7.  Create a DataFrame consisting of tweets.
+
+    Note
+
+    The full solution to this activity can be found on page 391.
+
+In this activity, we extracted data from Twitter and loaded it into a
+pandas DataFrame. This data can also be used to analyze tweets and
+create a word cloud out of them, something that we will explore in
+detail in *Chapter 8*, *Sentiment Analysis*.
+
+Publisher\'s Note
+
+The preceding messages were extracted without bias from a given dataset
+and written by private individuals not affiliated with this company. The
+views expressed in these tweets do not necessarily reflect our
+company\'s official policies.
+
+
+Summary {#_idParaDest-154}
+=======
+
+::: {#_idContainer138 .Content}
+In this chapter, we have learned various ways to collect data by
+scraping web pages. We also successfully scraped data from
+semi-structured formats such as JSON and XML and explored different
+methods of retrieving data in real time from a website without
+authentication. In the next chapter, you will learn about topic
+modeling---an unsupervised natural language processing technique that
+helps group documents according to the topics that it detects in them.
