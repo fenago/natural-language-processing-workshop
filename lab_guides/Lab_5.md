@@ -147,7 +147,7 @@ the document. Like all models, it is, at best, an approximation of
 reality. All the topic-modeling algorithms that we will discuss consider
 the text as a bag of words.
 
-Note
+**Note**
 
 We will look at approaches that explicitly model sequences in later
 chapters. The sequential structure of languages is different from the
@@ -174,7 +174,7 @@ the term *latent* (the *L* in these acronyms) refers to the fact that
 the probability distribution of the topics is not directly observable.
 We can observe the documents and the words but not the topics.
 
-Note
+**Note**
 
 The LDA algorithm builds on the LSA algorithm. In this case, similar
 acronyms are indicative of this association.
@@ -316,7 +316,7 @@ the Wikipedia library to fetch articles, the spaCy engine for the
 tokenization of the text, and the newline character to separate
 documents within an article.
 
-Note
+**Note**
 
 The dataset used for this exercise can be found at
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -474,7 +474,7 @@ Follow these steps to complete this exercise:
     many topics we wanted. This would not necessarily match the number
     of topics that are actually in the corpus.
 
-    Note that, in the output, you can see that negative weights are
+    **Note** that, in the output, you can see that negative weights are
     associated with some words in a few topics. Also, the sum of the
     weights does not add up to one. The weights are not to be
     interpreted as probabilities. This makes it difficult to even
@@ -513,7 +513,7 @@ Figure 5.8: Graph representing weight of topics for the documents
 We can see that topic `1` and topic `0` have the
 highest weight in almost all the documents.
 
-Note
+**Note**
 
 In general, the topics found are extremely sensitive to randomization in
 both gensim and tomotopy. While setting a `random_state` in
@@ -678,7 +678,7 @@ In this exercise, we will use the tomotopy LDA model to analyze the
 Canadian Open Data Inventory. For simplicity, we will consider that the
 corpus has twenty topics.
 
-Note
+**Note**
 
 The dataset used for this exercise can be found at
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -904,7 +904,7 @@ Topic 11, topic 17, and topic 5 seem to be interpretable. One could say
 that topic 11, topic 17, and topic 5 seem to be broadly about
 geographical data, internet data, and marine life data respectively.
 
-Note
+**Note**
 
 In general, the topics found are extremely sensitive to randomization in
 both gensim and tomotopy. While setting a `random_state` in
@@ -932,7 +932,7 @@ The purpose of this activity is to give a real-world feel to some of the
 complexity associated with topic modeling. In this activity, you will do
 topic modeling on a dataset of Jeopardy questions.
 
-Note
+**Note**
 
 The dataset to be used for this activity can be found at
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -962,7 +962,7 @@ Follow these steps to complete this activity:
 
 10. Sample a few topics and check for interpretability.
 
-    Note
+    **Note**
 
     The full solution to this activity can be found below.
 
@@ -1017,7 +1017,7 @@ hyperparameter that is used to ignore words that occur fewer times than
 the specified frequency and discuss its impact on the interpretability
 of topics.
 
-Note
+**Note**
 
 The dataset used for this exercise can be found at
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1245,7 +1245,7 @@ have 378 topics in all, many of which are not likely to be
 interpretable. So, what does this mean? Let\'s analyze a corpus from
 another classic and then return to these questions.
 
-Note
+**Note**
 
 In general, the topics found are extremely sensitive to randomization in
 both gensim and tomotopy. While setting a `random_state` in
@@ -1273,7 +1273,7 @@ website. Here, we will take the value of `α` as 0.8 and
 experiment with selecting tokens based on different combinations of
 parts of speech, before training the model.
 
-Note
+**Note**
 
 The dataset used for this exercise can be found at
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1507,7 +1507,7 @@ The dataset used for this exercise can be found at
     the topic model has a much smaller role to play in the discovery of
     the thematic structure.
 
-    Note
+    **Note**
 
     In general, the topics found are extremely sensitive to
     randomization in both gensim and tomotopy. While setting a
@@ -1593,7 +1593,7 @@ In this activity, you will qualitatively compare how HDP and LDA models
 perform on the interpretability of topics by analyzing student loan
 complaints.
 
-Note
+**Note**
 
 The dataset to be used for this activity can be found at
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1641,7 +1641,7 @@ Follow these steps to complete this activity:
     trained in this activity. Also, compare these two models
     quantitatively.
 
-    Note
+    **Note**
 
     The full solution to this activity can be found below.
 

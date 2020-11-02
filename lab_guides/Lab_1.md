@@ -269,7 +269,7 @@ steps to implement this exercise using the following sentence:
     ```
 
 
-    Note
+    **Note**
 
     The triple-quotes ( `"""` ) shown in the code snippet
     above are used to denote the start and end points of a multi-line
@@ -356,7 +356,7 @@ steps to implement this exercise using the following sentence:
 
 We are now well acquainted with basic text analytics techniques.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -478,7 +478,7 @@ exercise using the sentence, \"I am reading NLP Fundamentals.\"
 We can see the list of tokens generated with the help of the
 `word_tokenize()` method.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -623,7 +623,7 @@ allotted. Here, **PRP** stands for **personal pronoun**, **VBP** stands
 for **verb present**, **VGB** stands for **verb gerund**, **NNP** stands
 for **proper noun singular**, and **NNS** stands for **noun plural**.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -720,7 +720,7 @@ stop words included in our text:
     ```
 
 
-    Note
+    **Note**
 
     The code snippet shown here uses a backslash ( `\` ) to
     split the logic across multiple lines. When the code is executed,
@@ -806,7 +806,7 @@ As we can see from the output, now words such as \"I,\" \"It,\" and\*
 \"One\" are removed as we have added them to our custom stop word list.
 We have learned how to remove stop words from given text.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -919,7 +919,7 @@ Follow these steps to complete this exercise:
 
 In the preceding code, we can see that our text has been normalized.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1086,7 +1086,7 @@ spelled words have been corrected. But the word
 rectify this, we need to use other kinds of spelling correctors that are
 aware of context.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1259,7 +1259,7 @@ different languages such as Spanish, French, and many more. From the
 preceding code snippets, we can see that the entered words are converted
 into their base forms.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1392,7 +1392,7 @@ exercise:
     Hence, we have learned how to use the lemmatization process to
     transform a given word into its base form.
 
-    Note
+    **Note**
 
     To access the source code for this specific section, please refer to
     <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1499,7 +1499,7 @@ Birmingham.\"
     entities \"`Packt`\" and \"`Birmingham`\" and
     maps them to an already-defined category, \"`NNP`.\"
 
-    Note
+    **Note**
 
     To access the source code for this specific section, please refer to
     <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1653,7 +1653,7 @@ different sentences. Follow these steps to implement this exercise:
     Thus, with the help of the Lesk algorithm, we were able to identify
     the sense of a word in whatever context.
 
-    Note
+    **Note**
 
     To access the source code for this specific section, please refer to
     <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1754,7 +1754,7 @@ to differentiate between the period (.) after \"Mr\" and the one used to
 end the sentence. We have covered all the preprocessing steps that are
 involved in NLP.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1772,7 +1772,7 @@ We have a text corpus that is in an improper format. In this activity,
 we will perform all the preprocessing steps that were discussed earlier
 to get some meaning out of the text.
 
-Note
+**Note**
 
 The text corpus, `file.txt`, can be found at this location:
 <https://github.com/fenago/natural-language-processing-workshop/blob/master/Lab01/data/file.txt>[](https://github.com/fenago/natural-language-processing-workshop/blob/master/Lab01/data/file.txt)
@@ -1803,7 +1803,7 @@ Follow these steps to implement this activity:
 8.  Detect the sentence boundaries in the given text corpus and print
     the total number of sentences.
 
-    Note
+    **Note**
 
     The solution to this activity can be found below.
 

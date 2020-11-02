@@ -86,7 +86,7 @@ follows:
 
 In the preceding representation, the first
 dimension represents temperature, the second dimension represents
-humidity, and so on. Note that the order of these dimensions should be
+humidity, and so on. **Note** that the order of these dimensions should be
 consistent among all the vectors.
 
 Similarly, we can also represent text as a vector in which each
@@ -132,7 +132,7 @@ corpus. The techniques that come under this category are the following:
 4.  His bike was red in color.
 
     Now let\'s build term frequency vectors of all these sentences. We
-    will first create a **dictionary** of unique words as follows. Note
+    will first create a **dictionary** of unique words as follows. **Note**
     that we are considering every word in lowercase only:
 
     *{1: the*
@@ -180,10 +180,10 @@ corpus. The techniques that come under this category are the following:
     in that document. So, for sentence 1, the vector will be \[2, 1, 1,
     1, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\]. Similarly, for
     sentence 2, the vector representation will be \[0, 0, 0, 0, 0, 0, 0,
-    1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0\], and so on. Note that the
+    1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0\], and so on. **Note** that the
     order needs to be consistent here, too.
 
-    Note
+    **Note**
 
     It is recommended that you use preprocessing techniques such as
     stemming, stop word removal, and conversion to lowercase before
@@ -274,7 +274,7 @@ In this exercise, we will one-hot encode words with the help of the
 For this, we shall make use of a file containing lines from Jane
 Austen\'s *Pride and Prejudice*.
 
-Note
+**Note**
 
 The text file used for this exercise can be found at
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -401,7 +401,7 @@ Follow these steps to implement this exercise:
     `459` rows and `1` column. Each row is a word in
     the original `novel_lines` file.
 
-    Note
+    **Note**
 
     NumPy arrays are more specific to NLP algorithms than Python lists.
     It is the format that is required for the scikit-learn library,
@@ -497,7 +497,7 @@ Follow these steps to implement this exercise:
 
 Figure 6.5: Dense array
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -595,7 +595,7 @@ complete this exercise:
     use the `lookup` table to find the position of the
     character and set that character\'s value to `1`.
 
-    Note
+    **Note**
 
     Execute the code for *step 1* and *step 2* together.
 
@@ -650,12 +650,12 @@ complete this exercise:
     Based on each character\'s index position, the elements in each
     one-hot vector will be marked as `1`, leaving other
     elements marked `0`. In this way, we can manually one-hot
-    encode any given text. Note that, in most practical applications,
+    encode any given text. **Note** that, in most practical applications,
     the size of one-hot encoded vector is equal to the size of all the
     characters, and sometimes, non-alphabetical characters are also
     considered.
 
-    Note
+    **Note**
 
     To access the source code for this specific section, please refer to
     <https://github.com/fenago/natural-language-processing-workshop>.
@@ -729,7 +729,7 @@ the Keras library. Follow these steps to implement this exercise:
     Since you are encoding at the character level, in the constructor,
     `char_level` is set to `True`.
 
-    Note
+    **Note**
 
     By default, `char_level` is set to `False` if we
     are encoding words.
@@ -979,7 +979,7 @@ the Keras library. Follow these steps to implement this exercise:
     through the dictionary and find that, for key `4`, the
     value is `t`, and finally, it will print `t`.
 
-    Note
+    **Note**
 
     To access the source code for this specific section, please refer to
     <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1102,7 +1102,7 @@ In this exercise, we will train word vectors. We will be using books
 freely available on Project Gutenberg for this. We will also see the
 vector representation using Matplotlib\'s pyplot framework.
 
-Note
+**Note**
 
 The file we are using for this exercise can be found at
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1319,7 +1319,7 @@ Follow these steps to implement this exercise:
 
     Figure 6.13: Most similar words
 
-    Note
+    **Note**
 
     You may get a slightly different output as the output depends on the
     model training process, so you may have a different model than the
@@ -1360,7 +1360,7 @@ Follow these steps to implement this exercise:
 
 Figure 6.14: Graph of the vector when the input is \"sad\"
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1402,7 +1402,7 @@ is, we can train a pre-trained model on more data. This process is
 called transfer learning. Transfer learning is based on the concept of
 transferring knowledge from one domain into another.
 
-Note
+**Note**
 
 Pre-trained word vectors can get pretty large. For example, vectors
 trained on Google News contain 3 million words, and on disk, its
@@ -1421,7 +1421,7 @@ will also show the image representation of a few word vectors using the
 pyplot framework of the Matplotlib library. We will be using
 `glove6B50d.txt`, which is a pre-trained model.
 
-Note
+**Note**
 
 The pre-trained model being used for this file can be found at
 <https://www.kaggle.com/watts2/glove6b50dtxt/download>. Download this
@@ -1704,7 +1704,7 @@ Follow these steps to complete this exercise:
 
 Figure 6.23: Graph generated with (king-man+woman) as input
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1723,7 +1723,7 @@ Document Vectors
 ----------------
 
 Word vectors and word embeddings represent words. But if we wanted to
-represent a whole document, we\'d need to use document vectors. Note
+represent a whole document, we\'d need to use document vectors. **Note**
 that when we refer to a document, we are referring to a collection of
 words that have some meaning to a user. A document can be a single
 sentence or a group of sentences. A document can consist of product
@@ -1788,7 +1788,7 @@ vectors. Also, we will look at the image representation of the vector.
 Again, for image representation, we will be using the pyplot framework
 of the Matplotlib library. Follow these steps to complete this exercise:
 
-Note
+**Note**
 
 The file which we are going to use in this exercise is in zipped format
 and can be found at <https://github.com/fenago/natural-language-processing-workshop>. It should be unzipped
@@ -2028,7 +2028,7 @@ once downloaded.
 
 Figure 6.26: Image representation of a given vector
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2067,7 +2067,7 @@ activity:
 
 6.  Test both the functions.
 
-    Note
+    **Note**
 
     The full solution to this activity can be found below.
 

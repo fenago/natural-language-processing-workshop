@@ -124,7 +124,7 @@ Exercise 4.01: Extraction of Tag-Based Information from HTML Files
 In this exercise, we will extract addresses, quotes, text written in
 bold, and a table present in an HTML file.
 
-Note
+**Note**
 
 The data for this sample HTML file can be accessed from
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -340,7 +340,7 @@ Follow these steps to implement this exercise:
 
 We have learned how to extract tag-based information from an HTML file.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -498,7 +498,7 @@ steps to complete this exercise:
 We have just learned how to collect data from online sources with the
 help of the `requests` library.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -516,7 +516,7 @@ In this exercise, we will analyze the content of a Jupyter Notebook. We
 will count the number of images, list the packages that have been
 imported, and check the models and their performance.
 
-Note
+**Note**
 
 The HTML file used for this exercise, can be accessed at
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -622,7 +622,7 @@ So, in the preceding output, we have extracted a classification report
 from the HTML file using `BeautifulSoup` by referring to the
 `<h2>` and `<div>` tags.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -644,7 +644,7 @@ Activity 4.01: Extracting Information from an Online HTML Page
 In this activity, we will extract data about Rabindranath Tagore from
 the Wikipedia page about him.
 
-Note
+**Note**
 
 Rabindranath Tagore was a poet and musician from South Asia whose art
 has had a profound influence on shaping the cultural landscape of the
@@ -672,7 +672,7 @@ these steps to implement this activity:
 
 7.  Print the list of universities named after Tagore.
 
-    Note
+    **Note**
 
     The solution to this activity can be found below.
 
@@ -703,7 +703,7 @@ this activity:
 
 5.  Fetch the phone numbers, with the help of regular expressions.
 
-    Note
+    **Note**
 
     The solution to this activity can be found below.
 
@@ -774,7 +774,7 @@ Exercise 4.04: Working with JSON Files
 In this exercise, we will extract details such as the names of students,
 their qualifications, and additional qualifications from a JSON file.
 
-Note
+**Note**
 
 The sample JSON file can be accessed at <https://github.com/fenago/natural-language-processing-workshop>.
 
@@ -871,7 +871,7 @@ As JSON objects are similar to the dictionary data structure of Python,
 they are widely used on the web to send and receive data across web
 applications.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -945,7 +945,7 @@ In this exercise, we will parse an XML file and print the details from
 it, such as the names of employees, the organizations they work for, and
 the total salaries of all employees.
 
-Note
+**Note**
 
 The sample XML data file can be accessed here:
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1043,7 +1043,7 @@ Thus, we can see that the sum of all the salaries is \$745,609. We just
 learned how to extract data from a local XML file. When we request data,
 many URLs return an XML file.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1107,7 +1107,7 @@ exercise:
     ```
 
 
-    Note
+    **Note**
 
     Watch out for the slashes in the string below. Remember that the
     backslashes ( `\` ) are used to split the code across
@@ -1143,10 +1143,10 @@ exercise:
 
 Figure 4.15: DataFrame showing details of currency exchange rates
 
-Note that you will get a different output depending on the present
+**Note** that you will get a different output depending on the present
 currency exchange rates. We just learned how to collect data using APIs.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1256,7 +1256,7 @@ help you implement this activity:
 
 7.  Create a DataFrame consisting of tweets.
 
-    Note
+    **Note**
 
     The full solution to this activity can be found below.
 
@@ -1265,7 +1265,7 @@ pandas DataFrame. This data can also be used to analyze tweets and
 create a word cloud out of them, something that we will explore in
 detail in *Chapter 8*, *Sentiment Analysis*.
 
-Publisher\'s Note
+Publisher\'s **Note**
 
 The preceding messages were extracted without bias from a given dataset
 and written by private individuals not affiliated with this company. The

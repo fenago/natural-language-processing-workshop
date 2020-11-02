@@ -283,7 +283,7 @@ present becomes essential. Thus, we consider `n` consecutive
 tokens at a time. **n-grams** refers to the grouping of `n`
 consecutive tokens together.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -487,7 +487,7 @@ to complete this exercise:
 In this exercise, we learned how to generate n-grams using various
 methods.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -565,7 +565,7 @@ Figure 2.8: Tokenization using textblob
 With that, we have learned how to tokenize texts using the
 `keras` and `textblob` libraries.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -653,7 +653,7 @@ Perform the following steps to implement this exercise:
     ```
 
 
-    Note
+    **Note**
 
     The `#` symbol in the code snippet above denotes a code
     comment. Comments are added into code to help explain specific bits
@@ -792,7 +792,7 @@ Figure 2.14: Tokenization using the Word Punct tokenizer
 In this section, we have learned about different tokenization techniques
 and their `nltk` implementation.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -892,7 +892,7 @@ As we can see, the word `playing` has been changed into its
 base form, `play`. In this exercise, we learned how we can
 perform stemming using `nltk`\'s `RegexpStemmer`.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -955,7 +955,7 @@ these steps to complete this exercise:
     ```
 
 
-    Note
+    **Note**
 
     To access the source code for this specific section, please refer to
     <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1040,7 +1040,7 @@ With that, we learned how to generate the lemma of a word. The lemma is
 the correct grammatical base form. They use the vocabulary to match the
 word to its correct nearest grammatical form.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1133,7 +1133,7 @@ to complete this exercise:
     ```
 
 
-    Note
+    **Note**
 
     To access the source code for this specific section, please refer to
     <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1203,7 +1203,7 @@ implement this exercise:
 With that, we have seen how we can use `TextBlob` to translate
 from one language to another.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1273,7 +1273,7 @@ Follow these steps to complete this exercise:
 
 Thus, we\'ve seen how stop words can be removed from a sentence.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1291,7 +1291,7 @@ Activity 2.01: Extracting Top Keywords from the News Article
 In this activity, you will extract the most frequently occurring
 keywords from a sample news article.
 
-Note
+**Note**
 
 The new article that\'s being used for this activity can be found at
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1320,7 +1320,7 @@ The following steps will help you implement this activity:
 
 9.  Calculate the frequency of all the words after stemming.
 
-    Note
+    **Note**
 
     The solution to this activity can be found below.
 
@@ -1517,7 +1517,7 @@ steps to implement this exercise:
 With that, we have learned how to extract general features from text
 data.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1537,7 +1537,7 @@ statements. Our objective is to find the frequency of various general
 features such as punctuation, uppercase and lowercase words, letters,
 digits, words, and whitespaces.
 
-Note
+**Note**
 
 The dataset that is being used in this exercise can be found at this
 link: <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1926,7 +1926,7 @@ Figure 2.18: DataFrame consisting of the features we have created
 With that, we have learned how to extract general features from the
 given text.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2075,7 +2075,7 @@ Follow these steps to implement this exercise:
 Figure 2.20: DataFrame of the output of the BoW model for the 10 most
 frequent terms
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2270,7 +2270,7 @@ So, as we can see from the preceding output, both lines have almost the
 same slope. In other words, we can say that the lines (or graphs) depict
 the proportionality of two lists.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2373,7 +2373,7 @@ length is equal to the unique words in the corpus and in each list
 (vector). The vector contains the TFIDF values of the words at their
 corresponding index.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2651,7 +2651,7 @@ texts. As you can see, the texts `"He is desperate"` and
 `"Who is your queen?"` returned zero as their similarity
 measure.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2800,7 +2800,7 @@ found the correct definition of the word here. In this exercise, we have
 learned how to use text vectorization and text similarity to find the
 right definition of ambiguous words.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2936,7 +2936,7 @@ So, in this exercise, we learned what word clouds are and how to
 generate word clouds with Python\'s `wordcloud` library and
 visualize this with matplotlib.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -3035,7 +3035,7 @@ named entities. Follow these steps to complete this exercise:
 
 Figure 2.30: Named entities
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -3055,7 +3055,7 @@ words in a dataset. The dataset we will use consists of random sentences
 that are not clean. First, we need to clean them and create a unique set
 of frequently occurring words.
 
-Note
+**Note**
 
 The text\_corpus.txt file that\'s being used in this activity can be
 found at <https://github.com/fenago/natural-language-processing-workshop>.
@@ -3077,7 +3077,7 @@ Follow these steps to implement this activity:
 6.  Justify the word cloud by comparing it with the word frequency that
     you calculated.
 
-    Note
+    **Note**
 
     The solution to this activity can be found below.
 

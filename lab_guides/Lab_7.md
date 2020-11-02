@@ -107,12 +107,12 @@ Then, we will generate 10 phrases with three words in addition to an
 initial word, and then generate another 10 phrases with four words in
 addition to an initial word. The initial state or initial word will be
 randomly selected from among these words: \"the,\" \"a,\" \"I,\" \"he,\"
-\"she,\" \"if,\" \"this,\" \"why,\" and \"where.\" Note that since we
+\"she,\" \"if,\" \"this,\" \"why,\" and \"where.\" **Note** that since we
 are generating text using a random walk over a Markov chain, in general,
 the output you get will be different from the output shown in this
 exercise. Each different output corresponds to new text generation.
 
-Note
+**Note**
 
 You can find the text file that\'s been used for this exercise at
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -194,7 +194,7 @@ Follow these steps to complete this exercise:
     ```
 
 
-    The preceding code generates an output as follows. Note that we\'re
+    The preceding code generates an output as follows. **Note** that we\'re
     only displaying a part of the output here.
 
 
@@ -255,7 +255,7 @@ Follow these steps to complete this exercise:
 
 Figure 7.3: Phrases generated, consisting of four and five words
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -448,7 +448,7 @@ summarize(text,ratio=0.20)
 In the preceding code snippet, `ratio=0.20` means that 20% of
 the sentences from the original text will be used to create the summary.
 
-Note
+**Note**
 
 The text corpus for O. Henry\'s short story, After Twenty Years, being
 used in this exercise can be found at <https://github.com/fenago/natural-language-processing-workshop>.
@@ -604,7 +604,7 @@ Complete the following steps to implement this exercise:
 
 Figure 7.11: Summarized text when the ratio is 0.25
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -631,7 +631,7 @@ Charles Perrault*, both of which are available on Project Gutenberg\'s
 website. The aim of this exercise is to explore how TextRank (gensim)
 performs on this summarization.
 
-Note
+**Note**
 
 You can find the text from the Watty Piper variation at
 <https://github.com/fenago/natural-language-processing-workshop>. The text from the Charles Perrault version
@@ -816,7 +816,7 @@ Complete the following steps to implement this exercise:
 
 Figure 7.17: Output after implementing TextRank on the Perrault version
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -852,7 +852,7 @@ dataset is available at
 To complete this activity, you will summarize a few complaints using
 TextRank.
 
-Note
+**Note**
 
 You can find the dataset to be used for this activity at
 <https://www.dropbox.com/sh/qmq3x3ah1cf3ecz/AAAg_E6f0I5vdaB4WVmR6TCga?dl=0&preview=Consumer_Complaints.csv>.
@@ -873,7 +873,7 @@ Follow these steps to implement this activity:
     `975181`, `483530`, `950006`,
     `865088`, `681842`, `536367`,
     `132345`, and `285894` from the 300,000 odd
-    complaints with a narrative. Note that since the dataset is an
+    complaints with a narrative. **Note** that since the dataset is an
     evolving dataset, the use of a version that\'s different from the
     one in the `data` folder could give different results
     because the input texts could be different.
@@ -892,7 +892,7 @@ Follow these steps to implement this activity:
 
 Figure 7.18: DataFrame showing the summarized complaints
 
-Note
+**Note**
 
 The full solution to this activity can be found below.
 

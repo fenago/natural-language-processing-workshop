@@ -521,7 +521,7 @@ exercise:
     ```
 
 
-    Note
+    **Note**
 
     To access the source code for this specific section, please refer to
     <https://github.com/fenago/natural-language-processing-workshop>.
@@ -548,7 +548,7 @@ to airlines. You will also be providing condition for determining
 positive, negative, and neutral tweets, using the `textblob`
 library.
 
-Note
+**Note**
 
 You can find the data to be used for this activity here:
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -616,7 +616,7 @@ The preceding output has a `Polarity` column and a
 implies the tweet has neither positive nor negative sentiment, but
 neutral; moreover, no subjectivity is detected for these tweets.
 
-Note
+**Note**
 
 The solution to this activity can be found below.
 
@@ -643,7 +643,7 @@ In this exercise, we will load data that could be used to train a
 sentiment analysis model. For this exercise, we will be using three
 datasets---namely Amazon, Yelp, and IMDb.
 
-Note
+**Note**
 
 You can find the data being used in this exercise here:
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -814,7 +814,7 @@ Follow these steps to implement this exercise:
 
 Figure 8.7: Reviews from the Yelp dataset
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -907,7 +907,7 @@ help you complete this activity:
 11. Test the model on these sentences: *\"I loved this place\"* and *\"I
     hated this place\"*.
 
-    Note
+    **Note**
 
     The full solution to this activity can be found below.
 

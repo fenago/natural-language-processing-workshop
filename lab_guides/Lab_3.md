@@ -476,7 +476,7 @@ this could be that the model figured out that words related to
 were classified into those respective clusters, while the articles on
 \"electronics\" consist of mostly generic words.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -750,7 +750,7 @@ method
 From the preceding graph, we can conclude that the optimal number of
 clusters is 2.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -866,7 +866,7 @@ In this exercise, we will classify reviews of musical instruments on
 Amazon with the help of the logistic regression classification
 algorithm.
 
-Note
+**Note**
 
 To download the dataset, visit <https://github.com/fenago/natural-language-processing-workshop>.
 
@@ -1065,7 +1065,7 @@ wrongly classified. Furthermore, `6312` instances with the
 target label 1 are correctly classified, whereas `626` such
 instances are wrongly classified.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1143,7 +1143,7 @@ In this exercise, we will classify reviews of musical instruments on
 Amazon with the help of the Naïve Bayes classification algorithm. Follow
 these steps to implement this exercise:
 
-Note
+**Note**
 
 To download the dataset for this exercise, visit
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1343,7 +1343,7 @@ been wrongly classified. Furthermore, `4558` instances with
 the target label 1 have been correctly classified, whereas
 `2380` such instances have been wrongly classified.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1407,7 +1407,7 @@ In this exercise, we will classify reviews of musical instruments on
 Amazon with the help of the k-nearest neighbors classification
 algorithm. Follow these steps to implement this exercise:
 
-Note
+**Note**
 
 To download the dataset for this exercise, visit
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1587,7 +1587,7 @@ To download the dataset for this exercise, visit
     perform text classification with the help of various classification
     algorithms.
 
-    Note
+    **Note**
 
     To access the source code for this specific section, please refer to
     <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1694,7 +1694,7 @@ To download the dataset for this exercise, visit
     the overall ratings from the reviews of musical instruments on
     Amazon. Follow these steps to implement this exercise:
 
-    Note
+    **Note**
 
     The dataset for this exercise can be downloaded from
     <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1899,7 +1899,7 @@ From the preceding table, we can see how the actual and predicted score
 varies for different instances. We will use this table later to evaluate
 the performance of the model.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -1979,7 +1979,7 @@ trees to predict the overall scores and labels of reviews of patio,
 lawn, and garden products on Amazon. Follow these steps to implement
 this exercise:
 
-Note
+**Note**
 
 To download the dataset for this exercise, visit
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2187,7 +2187,7 @@ From the preceding table, we can see how the actual and predicted scores
 vary for different instances. We will use this table later to evaluate
 the performance of the model.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2332,7 +2332,7 @@ predict the overall scores and labels of reviews of patio, lawn, and
 garden products on Amazon. Follow these steps to implement this
 exercise:
 
-Note
+**Note**
 
 To download the dataset for this exercise, visit
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2556,7 +2556,7 @@ From the preceding table, we can see how the actual and predicted scores
 vary for different instances. We will use this table later to evaluate
 the performance of the model.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2574,7 +2574,7 @@ In this exercise, we will use the tree-based method XGBoost to predict
 the overall scores and labels of reviews of patio, lawn, and garden
 products on Amazon.
 
-Note
+**Note**
 
 To download the dataset for this exercise, visit
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2806,7 +2806,7 @@ vary for different instances. We will use this table later to evaluate
 the performance of the model. With that, you have learned how to use
 tree-based methods to predict scores in data.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -2878,7 +2878,7 @@ that contains details about the transactions of an e-commerce website
 with the help of simple random sampling, stratified sampling, and
 multi-stage sampling.
 
-Note
+**Note**
 
 To download the dataset for this exercise, visit
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -3038,7 +3038,7 @@ sampling techniques that will help you create a good training dataset
 for the text classifier that you will learn how to build in the next
 section.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -3345,7 +3345,7 @@ appears like this. We have cleaned the dataset to remove highly
 correlated features and are now one step closer to building our text
 classifier.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -3575,7 +3575,7 @@ we had two principal components. With the earlier TFIDF matrix, we had
 learned how to perform dimensionality reduction to save memory space and
 visualize datasets.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -3861,7 +3861,7 @@ exercise:
 You have now learned how to evaluate the machine learning models that we
 train and are equipped to create your very own text classifier.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -3879,7 +3879,7 @@ Activity 3.01: Developing End-to-End Text Classifiers
 For this activity, you will build an end-to-end classifier that figures
 out whether a news article is political or not.
 
-Note
+**Note**
 
 The dataset for this activity can be found at
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -3900,7 +3900,7 @@ Follow these steps to implement this activity:
     confusion matrix, accuracy, precision, recall, F1 plot curve, and
     ROC curve.
 
-    Note
+    **Note**
 
     The solution to this activity can be found below.
 
@@ -4014,7 +4014,7 @@ Here, we created a pipeline consisting of the count vectorizer and TFIDF
 transformer. The outcome of this pipeline is the TFIDF representation of
 the text data that has been passed to it as an argument.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
@@ -4171,7 +4171,7 @@ model that was loaded from the disk are identical. You have now learned
 how to save and load models. This section marks the end of this chapter,
 where you learned how to build a text classifier from scratch.
 
-Note
+**Note**
 
 To access the source code for this specific section, please refer to
 <https://github.com/fenago/natural-language-processing-workshop>.
