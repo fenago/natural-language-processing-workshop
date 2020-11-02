@@ -1,11 +1,9 @@
 
-8. Sentiment Analysis {#_idParaDest-211}
+8. Sentiment Analysis
 =====================
 
-::: {#_idContainer217 .Content}
-:::
 
-::: {#_idContainer225 .Content}
+
 Overview
 
 This chapter introduces you to one of the most exciting applications of
@@ -13,16 +11,16 @@ natural language processing---that is, sentiment analysis. You will
 explore the various tools used to perform sentiment analysis, such as
 popular NLP libraries and deep learning frameworks. You will then
 perform sentiment analysis on given text data using the powerful
-`textblob`{.literal} library. You will load textual data and perform
+`textblob` library. You will load textual data and perform
 preprocessing on it to fine-tune the results of your sentiment analysis
 program. By the end of the chapter, you will be able to train a
 sentiment analysis model.
 
 
-Introduction {#_idParaDest-212}
+Introduction
 ============
 
-::: {#_idContainer225 .Content}
+
 In the previous chapter, we looked at text generation, paraphrasing, and
 summarization, all of which can be immensely useful in helping us focus
 on only the essential and meaningful parts of the text corpus. This, in
@@ -45,9 +43,9 @@ emotions present in a sentence, such as joy or anger. For example, \"I
 love oranges\" implies an emotionally positive statement, whereas \"I
 hate politics\" is a strong negative emotion.
 
-[]{#_idTextAnchor220}
 
-Why Is Sentiment Analysis Required? {#_idParaDest-213}
+
+Why Is Sentiment Analysis Required?
 -----------------------------------
 
 In machine learning projects, we try to build applications that work
@@ -65,9 +63,9 @@ picture. Artificial intelligence is useful when it is impractical for
 people to perform the task. In this case, the task is reading thousands
 of reviews.
 
-[]{#_idTextAnchor221}
 
-The Growth of Sentiment Analysis {#_idParaDest-214}
+
+The Growth of Sentiment Analysis
 --------------------------------
 
 The field of sentiment analysis is driven by a few main factors.
@@ -79,9 +77,9 @@ purchasing decisions. Finally, NLP technology has improved
 significantly, allowing the much wider application of sentiment
 analysis.
 
-[]{#_idTextAnchor222}
 
-The Monetization of Emotion {#_idParaDest-215}
+
+The Monetization of Emotion
 ---------------------------
 
 The growth of the internet and internet services has enabled new
@@ -99,17 +97,17 @@ people like or dislike. This data is of significant value not only in
 business but also in political campaigns. This means that sentiment has
 significant business value and can be monetized.
 
-[]{#_idTextAnchor223}
 
-Types of Sentiments {#_idParaDest-216}
+
+Types of Sentiments
 -------------------
 
 There are various sentiments that we can try to detect in language
 sources. Let\'s discuss a few of them in detail.
 
-[]{#_idTextAnchor224}
 
-### Emotion {#_idParaDest-217}
+
+### Emotion
 
 Sentiment analysis is often used to detect the emotional state of a
 person. It checks whether the person is happy or sad, or content or
@@ -163,9 +161,9 @@ subjective opinion and statement 2 as an objective fact. Determining the
 objectivity of a statement helps us decide on the appropriate response
 to the statement.
 
-[]{#_idTextAnchor225}
 
-Key Ideas and Terms {#_idParaDest-218}
+
+Key Ideas and Terms
 -------------------
 
 Let\'s look at some of the key ideas and terms that are used in
@@ -218,9 +216,9 @@ high. Most often, the level of intensity is included in the sentiment
 score. It is measured by looking at the closeness of the score to 0 or
 1.
 
-[]{#_idTextAnchor226}
 
-Applications of Sentiment Analysis {#_idParaDest-219}
+
+Applications of Sentiment Analysis
 ----------------------------------
 
 There are various applications of sentiment analysis.
@@ -282,17 +280,17 @@ potential revenue to be had if companies can gain insights into customer
 satisfaction.
 
 
-Tools Used for Sentiment Analysis {#_idParaDest-220}
+Tools Used for Sentiment Analysis
 =================================
 
-::: {#_idContainer225 .Content}
+
 There are a lot of tools capable of analyzing sentiment. Each tool has
 its advantages and disadvantages. We will look at each of them in
 detail.
 
-[]{#_idTextAnchor228}
 
-NLP Services from Major Cloud Providers {#_idParaDest-221}
+
+NLP Services from Major Cloud Providers
 ---------------------------------------
 
 Online sentiment analysis is carried out by all major cloud services
@@ -332,9 +330,9 @@ major cloud providers:
     one-solution-fits-all and is considered very generic, so it won\'t
     necessarily apply to niche use cases.
 
-[]{#_idTextAnchor229}
 
-Online Marketplaces {#_idParaDest-222}
+
+Online Marketplaces
 -------------------
 
 Recently, AI marketplaces have emerged that offer different algorithms
@@ -361,9 +359,9 @@ Here are the advantages and disadvantages of online marketplaces:
     big risk since their solution has a direct dependency on a third
     party that is outside their control.
 
-[]{#_idTextAnchor230}
 
-Python NLP Libraries {#_idParaDest-223}
+
+Python NLP Libraries
 --------------------
 
 There are a few NLP libraries that need to be integrated into your
@@ -390,9 +388,9 @@ Here are the advantages and disadvantages of Python NLP libraries:
     meant to be general-purpose, but for complex use cases, developers
     would have to write their own implementations as required.
 
-[]{#_idTextAnchor231}
 
-Deep Learning Frameworks {#_idParaDest-224}
+
+Deep Learning Frameworks
 ------------------------
 
 Deep learning libraries such as PyTorch and TensorFlow are meant to be
@@ -429,120 +427,99 @@ Now that we\'ve learned about the various tools available for sentiment
 analysis, let\'s explore the most popular Python libraries.
 
 
-The textblob library {#_idParaDest-225}
+The textblob library
 ====================
 
-::: {#_idContainer225 .Content}
-`textblob`{.literal} is a Python library used for NLP, as we\'ve seen in
+
+`textblob` is a Python library used for NLP, as we\'ve seen in
 the previous chapters. It has a simple API and is probably the easiest
-way to begin with sentiment analysis. `textblob`{.literal} is built on
+way to begin with sentiment analysis. `textblob` is built on
 top of the NLTK library but is much easier to use. In the following
 sections, we will do an exercise and an activity to get a better
-understanding of how we can use `textblob`{.literal} for sentiment
+understanding of how we can use `textblob` for sentiment
 analysis.
 
-[]{#_idTextAnchor233}
 
-Exercise 8.01: Basic Sentiment Analysis Using the textblob Library {#_idParaDest-226}
+
+Exercise 8.01: Basic Sentiment Analysis Using the textblob Library
 ------------------------------------------------------------------
 
 In this exercise, we will perform sentiment analysis on a given text.
-For this, we will be using the `TextBlob`{.literal} class of the
-`textblob`{.literal} library. Follow these steps to complete this
+For this, we will be using the `TextBlob` class of the
+`textblob` library. Follow these steps to complete this
 exercise:
 
 1.  Open a Jupyter notebook.
 
 2.  Insert a new cell and add the following code to implement to import
-    the `TextBlob`{.literal} class from the `textblob`{.literal}
+    the `TextBlob` class from the `textblob`
     library:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from textblob import TextBlob
     ```
-    :::
 
-3.  Create a variable named `sentence`{.literal} and assign it a string.
+
+3.  Create a variable named `sentence` and assign it a string.
     Insert a new cell and add the following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     sentence = "but you are Late Flight again!! "\
                "Again and again! Where are the  crew?" 
     ```
-    :::
 
-4.  Create an object of the `TextBlob`{.literal} class. Add
-    `sentence`{.literal} as a parameter to the `TextBlob`{.literal}
+
+4.  Create an object of the `TextBlob` class. Add
+    `sentence` as a parameter to the `TextBlob`
     container. Insert a new cell and add the following code to implement
     this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     blob = TextBlob(sentence)
     ```
-    :::
 
-5.  In order to view the details of the `blob`{.literal} object, insert
+
+5.  In order to view the details of the `blob` object, insert
     a new cell and add the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(blob)
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     but you are Late Flight again!! Again and again! Where are the crew?
     ```
-    :::
 
-6.  To use the `sentiment`{.literal} property of the
-    `TextBlob`{.literal} class (which returns a tuple), insert a new
+
+6.  To use the `sentiment` property of the
+    `TextBlob` class (which returns a tuple), insert a new
     cell and add the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     blob.sentiment
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     Sentiment(polarity=—0.5859375, subjectivity=0.6
     ```
-    :::
+
 
     Note
 
@@ -552,23 +529,23 @@ exercise:
     You can also run this example online at
     <https://packt.live/3jXvAN1>.
 
-In the code, we can see the `polarity`{.literal} and
-`subjectivity`{.literal} scores for a given text. The output indicates a
+In the code, we can see the `polarity` and
+`subjectivity` scores for a given text. The output indicates a
 polarity score of -0.5859375, which means that negative sentiment has
 been detected in the text. The subjectivity score means that the text is
 somewhat on the subjective side, though not entirely subjective. We have
 performed sentiment analysis on a given text using the
-`textblob`{.literal} library. In the next section, we will perform
+`textblob` library. In the next section, we will perform
 sentiment analysis on tweets about airlines.
 
-[]{#_idTextAnchor234}
 
-Activity 8.01: Tweet Sentiment Analysis Using the textblob library {#_idParaDest-227}
+
+Activity 8.01: Tweet Sentiment Analysis Using the textblob library
 ------------------------------------------------------------------
 
 In this activity, you will perform sentiment analysis on tweets related
 to airlines. You will also be providing condition for determining
-positive, negative, and neutral tweets, using the `textblob`{.literal}
+positive, negative, and neutral tweets, using the `textblob`
 library.
 
 Note
@@ -580,7 +557,7 @@ Follow these steps to implement this activity:
 
 1.  Import the necessary libraries.
 2.  Load the CSV file.
-3.  Fetch the `text`{.literal} column from the DataFrame.
+3.  Fetch the `text` column from the DataFrame.
 4.  Extract and remove the handles from the fetched data.
 5.  Perform sentiment analysis and get the new DataFrame.
 6.  Join both the DataFrames.
@@ -592,50 +569,50 @@ follows:
 
 <div>
 
-::: {#_idContainer218 .IMG---Figure}
-![Figure 8.1: Positive tweets ](4_files/B16062_08_01.jpg)
-:::
+
+![Figure 8.1: Positive tweets ](./images/B16062_08_01.jpg)
+
 
 </div>
 
 Figure 8.1: Positive tweets
 
-As you can see from the preceding output, the `Polarity`{.literal}
+As you can see from the preceding output, the `Polarity`
 column shows a positive integer. This implies that the tweet displays
-positive sentiment. The `Subjectivity`{.literal} column indicates that
+positive sentiment. The `Subjectivity` column indicates that
 most tweets are found to be of a subjective nature.
 
 The output for negative tweets is as follows:
 
 <div>
 
-::: {#_idContainer219 .IMG---Figure}
-![Figure 8.2: Negative tweets ](4_files/B16062_08_02.jpg)
-:::
+
+![Figure 8.2: Negative tweets ](./images/B16062_08_02.jpg)
+
 
 </div>
 
 Figure 8.2: Negative tweets
 
-The preceding output shows a `Polarity`{.literal} column with a negative
+The preceding output shows a `Polarity` column with a negative
 integer, implying that the tweet displays negative sentiment, while the
-`Subjectivity`{.literal} column shows a positive integer, which implies
+`Subjectivity` column shows a positive integer, which implies
 the same as before---personal opinion or feeling.
 
 The output for neutral tweets should be as follows:
 
 <div>
 
-::: {#_idContainer220 .IMG---Figure}
-![Figure 8.3: Neutral tweets ](4_files/B16062_08_03.jpg)
-:::
+
+![Figure 8.3: Neutral tweets ](./images/B16062_08_03.jpg)
+
 
 </div>
 
 Figure 8.3: Neutral tweets
 
-The preceding output has a `Polarity`{.literal} column and a
-`Subjectivity`{.literal} column with a zero or almost zero value. This
+The preceding output has a `Polarity` column and a
+`Subjectivity` column with a zero or almost zero value. This
 implies the tweet has neither positive nor negative sentiment, but
 neutral; moreover, no subjectivity is detected for these tweets.
 
@@ -647,19 +624,19 @@ In the next section, we will explore more about performing sentiment
 analysis using online web services.
 
 
-Understanding Data for Sentiment Analysis {#_idParaDest-228}
+Understanding Data for Sentiment Analysis
 =========================================
 
-::: {#_idContainer225 .Content}
+
 Sentiment analysis is a type of **text classification**. Sentiment
 analysis models are usually trained using **supervised datasets**.
 Supervised datasets are a kind of dataset that is labeled with the
 target variable, usually a column that specifies the sentiment value in
 the text. This is the value we want to predict in the unseen text.
 
-[]{#_idTextAnchor236}
 
-Exercise 8.02: Loading Data for Sentiment Analysis {#_idParaDest-229}
+
+Exercise 8.02: Loading Data for Sentiment Analysis
 --------------------------------------------------
 
 In this exercise, we will load data that could be used to train a
@@ -678,29 +655,23 @@ Follow these steps to implement this exercise:
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pandas as pd
     pd.set_option('display.max_colwidth', 200)
     ```
-    :::
 
-    This imports the `pandas`{.literal} library. It also sets the
-    display width to `200`{.literal} characters so that more of the
+
+    This imports the `pandas` library. It also sets the
+    display width to `200` characters so that more of the
     review text is displayed on the screen.
 
 3.  To specify where the sentiment data is located, first load three
     different datasets from Yelp, IMDb, and Amazon. Insert a new cell
     and add the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     DATA_DIR = 'data/sentiment_labelled_sentences/'
@@ -709,7 +680,7 @@ Follow these steps to implement this exercise:
     AMAZON_DATA_FILE = DATA_DIR + 'amazon_cells_labelled.txt'
     COLUMN_NAMES = ['Review', 'Sentiment']
     ```
-    :::
+
 
     Each of the data files has two columns: one for the review text and
     a numeric column for the sentiment.
@@ -717,150 +688,129 @@ Follow these steps to implement this exercise:
 4.  To load the IMDb reviews, insert a new cell and add the following
     code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     imdb_reviews = pd.read_table(IMDB_DATA_FILE, names=COLUMN_NAMES)
     ```
-    :::
 
-    In this code, the `read_table()`{.literal} method loads the file
+
+    In this code, the `read_table()` method loads the file
     into a DataFrame.
 
-5.  Display the top `10`{.literal} records in the DataFrame. Add the
+5.  Display the top `10` records in the DataFrame. Add the
     following code in the new cell:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     imdb_reviews.head(10)
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer221 .IMG---Figure}
+
     ![Figure 8.4: The first few records in the IMDb movie review file
-    ](5_files/B16062_08_04.jpg)
-    :::
+    ](./images/B16062_08_04.jpg)
+
 
     Figure 8.4: The first few records in the IMDb movie review file
 
     In the preceding figure, you can see that the negative reviews have
-    sentiment scores of `0`{.literal} and positive reviews have
-    sentiment scores of `1`{.literal}.
+    sentiment scores of `0` and positive reviews have
+    sentiment scores of `1`.
 
 6.  To check the total number of records of the IMDb review file, use
-    the `value_counts()`{.literal} function. Add the following code in a
+    the `value_counts()` function. Add the following code in a
     new cell to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     imdb_reviews.Sentiment.value_counts()
     ```
-    :::
+
 
     The expected output with total reviews should be as follows:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     1          386
     0          362
     Name:    Sentiment, dtype: int64
     ```
-    :::
+
 
     In the preceding figure, you can see that the data file contains a
-    total of `748`{.literal} reviews, out of which `362`{.literal} are
-    negative and `386`{.literal} are positive.
+    total of `748` reviews, out of which `362` are
+    negative and `386` are positive.
 
 7.  Format the data by adding the following code in a new cell:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     imdb_counts = imdb_reviews.Sentiment.value_counts().to_frame()
     imdb_counts.index = pd.Series(['Positive', 'Negative'])
     imdb_counts
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer222 .IMG---Figure}
+
     ![Figure 8.5: Counts of positive and negative sentiments in the IMDb
-    review file ](5_files/B16062_08_05.jpg)
-    :::
+    review file ](./images/B16062_08_05.jpg)
+
 
     Figure 8.5: Counts of positive and negative sentiments in the IMDb
     review file
 
-    We called `value_counts()`{.literal}, created a DataFrame, and
-    assigned `Positive`{.literal} and `Negative`{.literal} as index
+    We called `value_counts()`, created a DataFrame, and
+    assigned `Positive` and `Negative` as index
     labels.
 
 8.  To load the Amazon reviews, insert a new cell and add the following
     code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     amazon_reviews = pd.read_table(AMAZON_DATA_FILE, \
                                    names=COLUMN_NAMES)
     amazon_reviews.head(10)
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer223 .IMG---Figure}
+
     ![Figure 8.6: Reviews from the Amazon dataset
-    ](5_files/B16062_08_06.jpg)
-    :::
+    ](./images/B16062_08_06.jpg)
+
 
     Figure 8.6: Reviews from the Amazon dataset
 
 9.  To load the Yelp reviews, insert a new cell and add the following
     code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     yelp_reviews = pd.read_table(YELP_DATA_FILE, \
                                  names=COLUMN_NAMES)
     yelp_reviews.head(10)
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer224 .IMG---Figure}
+
     ![Figure 8.7: Reviews from the Yelp dataset
-    ](5_files/B16062_08_07.jpg)
-    :::
+    ](./images/B16062_08_07.jpg)
+
 
 Figure 8.7: Reviews from the Yelp dataset
 
@@ -884,10 +834,10 @@ Now that we have learned about loading the data, in the next section, we
 will focus on training sentiment models.
 
 
-Training Sentiment Models {#_idParaDest-230}
+Training Sentiment Models
 =========================
 
-::: {#_idContainer225 .Content}
+
 The end product of any sentiment analysis project is a **sentiment
 model**. This is an object containing a stored representation of the
 data on which it was trained. Such a model has the ability to predict
@@ -914,12 +864,12 @@ sentiment analysis model, the following steps should be taken:
     production.
 
 In the next section, we will train a sentiment model. We\'ll make use of
-the `TfidfVectorizer`{.literal} and `LogisticRegression`{.literal}
+the `TfidfVectorizer` and `LogisticRegression`
 classes, which we explored in one of the previous chapters.
 
-[]{#_idTextAnchor238}
 
-Activity 8.02: Training a Sentiment Model Using TFIDF and Logistic Regression {#_idParaDest-231}
+
+Activity 8.02: Training a Sentiment Model Using TFIDF and Logistic Regression
 -----------------------------------------------------------------------------
 
 To complete this activity, you will build a sentiment analysis model
@@ -941,15 +891,15 @@ help you complete this activity:
 
 6.  Apply the function created in the previous step on the dataset.
 
-7.  Use `TfidfVectorizer`{.literal} to convert the review text into
-    TFIDF vectors and use the `LogisticRegression`{.literal} class to
+7.  Use `TfidfVectorizer` to convert the review text into
+    TFIDF vectors and use the `LogisticRegression` class to
     create a model that uses logistic regression for the model. These
-    should be combined into a `Pipeline`{.literal} object.
+    should be combined into a `Pipeline` object.
 
 8.  Now split the data into train and test sets, using 70% to train the
     data and 30% to test the data.
 
-9.  Use the `fit()`{.literal} function to fit the training data on the
+9.  Use the `fit()` function to fit the training data on the
     pipeline.
 
 10. Print the accuracy score.
@@ -962,10 +912,10 @@ help you complete this activity:
     The full solution to this activity can be found on page 418.
 
 
-Summary {#_idParaDest-232}
+Summary
 =======
 
-::: {#_idContainer225 .Content}
+
 We started our journey into NLP with basic text analytics and text
 preprocessing techniques, such as tokenization, stemming, lemmatization,
 and lowercase conversion, to name a few. We then explored ways in which

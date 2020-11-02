@@ -1,12 +1,10 @@
 
 
-5. Topic Modeling {#_idParaDest-155}
+5. Topic Modeling
 =================
 
-::: {#_idContainer140 .Content}
-:::
 
-::: {#_idContainer162 .Content}
+
 Overview
 
 This chapter introduces topic modeling, which means using unsupervised
@@ -20,10 +18,10 @@ topic modeling. By the end of this chapter, you will be able to create
 topic models from any given dataset.
 
 
-Introduction {#_idParaDest-156}
+Introduction
 ============
 
-::: {#_idContainer162 .Content}
+
 In the previous chapter, we learned about different ways to collect data
 from local files and online resources. In this chapter, we will focus on
 **topic modeling**, which is an important area within natural language
@@ -59,10 +57,10 @@ when abstracts/summaries are unavailable, and when the text is too large
 to be manually analyzed in the available timeframe.
 
 
-Topic Discovery {#_idParaDest-157}
+Topic Discovery
 ===============
 
-::: {#_idContainer162 .Content}
+
 The main goal of topic modeling is to find a set of topics that can be
 used to classify a set of documents. These topics are implicit because
 we do not know what they are beforehand, and they are unnamed.
@@ -91,9 +89,9 @@ assumptions about the documents. If you think that the document set
 might inherently contain a large number of topics, you should configure
 the algorithm to look for a similar number of topics.
 
-[]{#_idTextAnchor160}
 
-Exploratory Data Analysis {#_idParaDest-158}
+
+Exploratory Data Analysis
 -------------------------
 
 It is recommended to do exploratory data analysis prior to performing
@@ -109,9 +107,9 @@ to any particular set of topics, or whether the sources are uniform or
 disparate. This data further allows us to choose the appropriate
 algorithms for the actual project.
 
-[]{#_idTextAnchor161}
 
-Transforming Unstructured Data to Structured Data {#_idParaDest-159}
+
+Transforming Unstructured Data to Structured Data
 -------------------------------------------------
 
 Topic modeling clusters documents based on their topics. Specifically,
@@ -130,9 +128,9 @@ unstructured text can have many more dimensions (each dimension
 corresponds to a unique word) than the number of dimensions in
 structured data (each dimension corresponds to a topic).
 
-[]{#_idTextAnchor162}
 
-Bag of Words {#_idParaDest-160}
+
+Bag of Words
 ------------
 
 Before we explore modeling algorithms in depth, let\'s make a few
@@ -159,10 +157,10 @@ considered. This will be discussed in more detail in *Chapter 6*,
 *Vector Representation*.
 
 
-Topic-Modeling Algorithms {#_idParaDest-161}
+Topic-Modeling Algorithms
 =========================
 
-::: {#_idContainer162 .Content}
+
 Topic-modeling algorithms operate on the following assumptions:
 
 -   Topics contain a set of words.
@@ -181,9 +179,9 @@ Note
 The LDA algorithm builds on the LSA algorithm. In this case, similar
 acronyms are indicative of this association.
 
-[]{#_idTextAnchor164}
 
-Latent Semantic Analysis (LSA) {#_idParaDest-162}
+
+Latent Semantic Analysis (LSA)
 ------------------------------
 
 We will start by looking at LSA. LSA actually predates the **World Wide
@@ -192,9 +190,9 @@ alternative name, **Latent Semantic Indexing** (**LSI**), particularly
 when it is used for semantic searches of document indices. The goal of
 LSA is to uncover the latent topics that underlie documents and words.
 
-[]{#_idTextAnchor165}
 
-LSA -- How It Works {#_idParaDest-163}
+
+LSA -- How It Works
 -------------------
 
 Consider that we have a collection of documents, and these documents are
@@ -206,10 +204,10 @@ gives a simplified illustration of a term-to-document matrix:
 
 <div>
 
-::: {#_idContainer141 .IMG---Figure}
+
 ![Figure 5.1: A simplified view of a term-to-document matrix
-](4_files/B16062_05_01.jpg)
-:::
+](./images/B16062_05_01.jpg)
+
 
 </div>
 
@@ -223,10 +221,10 @@ side:
 
 <div>
 
-::: {#_idContainer142 .IMG---Figure}
+
 ![Figure 5.2: Document matrix and its broken matrices
-](4_files/B16062_05_02.jpg)
-:::
+](./images/B16062_05_02.jpg)
+
 
 </div>
 
@@ -238,9 +236,9 @@ splits it, as shown in the following formula:
 
 <div>
 
-::: {#_idContainer143 .IMG---Figure}
-![Figure 5.3: Splitting the matrix M ](4_files/B16062_05_03.jpg)
-:::
+
+![Figure 5.3: Splitting the matrix M ](./images/B16062_05_03.jpg)
+
 
 </div>
 
@@ -278,15 +276,15 @@ Other Python topic-modeling libraries include scikit-learn and lda (for
 LDA).
 
 
-Key Input Parameters for LSA Topic Modeling {#_idParaDest-164}
+Key Input Parameters for LSA Topic Modeling
 ===========================================
 
-::: {#_idContainer162 .Content}
+
 We will be using the gensim library to perform LSA topic modeling. The
-key input parameters for gensim are `corpus`{.literal}, the number of
-topics, and `id2word`{.literal}. Here, the `corpus`{.literal} is
+key input parameters for gensim are `corpus`, the number of
+topics, and `id2word`. Here, the `corpus` is
 specified in the form of a list of documents in which each document is a
-list of tokens. The `id2word`{.literal} parameter refers to a dictionary
+list of tokens. The `id2word` parameter refers to a dictionary
 that is used to convert the corpus from a textual representation to a
 numeric representation such that each word corresponds to a unique
 number. Let\'s do an exercise to understand this concept better.
@@ -299,24 +297,21 @@ download the English language model using the following code, so that we
 can load this model (since there are models for many different
 languages).
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 python -m spacy download en_core_web_sm
 ```
-:::
 
-[]{#_idTextAnchor167}
 
-Exercise 5.01: Analyzing Wikipedia World Cup Articles with Latent Semantic Analysis {#_idParaDest-165}
+
+
+Exercise 5.01: Analyzing Wikipedia World Cup Articles with Latent Semantic Analysis
 -----------------------------------------------------------------------------------
 
 In this exercise, you will perform topic modeling using LSA on a
 Wikipedia World Cup dataset. For this, you will make use of the
-`LsiModel`{.literal} class provided by the gensim library. You will use
+`LsiModel` class provided by the gensim library. You will use
 the Wikipedia library to fetch articles, the spaCy engine for the
 tokenization of the text, and the newline character to separate
 documents within an article.
@@ -332,10 +327,7 @@ Follow these steps to complete this exercise:
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import numpy as np
@@ -346,18 +338,15 @@ Follow these steps to complete this exercise:
     from gensim.models import LsiModel
     from gensim.parsing.preprocessing import preprocess_string
     ```
-    :::
+
 
 3.  To clean the text, define a function to remove the non-alphanumeric
-    characters and replace numbers with the `#`{.literal} character.
+    characters and replace numbers with the `#` character.
     Replace instances of multiple newline characters with a single
     newline character. Use the newline character to separate out the
     documents in the corpus. Insert a new cell and add the following
     code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import re
@@ -371,29 +360,26 @@ Follow these steps to complete this exercise:
         text = re.sub(PARA, '\n', text)
         return text
     ```
-    :::
+
 
 4.  Insert a new cell and add the following code to find Wikipedia
     articles related to the World Cup:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import wikipedia
     wikipedia.search('Cricket World Cup'),\
     wikipedia.search('FIFA World Cup')
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer144 .IMG---Figure}
+
     ![Figure 5.4: Wikipedia articles related to the World Cup
-    ](5_files/B16062_05_04.jpg)
-    :::
+    ](./images/B16062_05_04.jpg)
+
 
     Figure 5.4: Wikipedia articles related to the World Cup
 
@@ -401,10 +387,7 @@ Follow these steps to complete this exercise:
     articles about the 2018 FIFA World Cup and the 2019 Cricket World
     Cup, concatenate them, and show the result:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     latest_soccer_cricket=['2018 FIFA World Cup',\
@@ -414,14 +397,14 @@ Follow these steps to complete this exercise:
         corpus=corpus+wikipedia.page(cup).content
     corpus
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer145 .IMG---Figure}
+
     ![Figure 5.5: Result after concatenating articles from 2018 and 2019
-    ](5_files/B16062_05_05.jpg)
-    :::
+    ](./images/B16062_05_05.jpg)
+
 
     Figure 5.5: Result after concatenating articles from 2018 and 2019
 
@@ -429,10 +412,7 @@ Follow these steps to complete this exercise:
     using the spaCy English language model to tokenize the corpus and
     exclude all tokens that are not detected as nouns:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     text=clean(corpus)
@@ -454,14 +434,14 @@ Follow these steps to complete this exercise:
     preproc_text.append(preproc_sent) 
     print(preproc_text)
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer146 .IMG---Figure}
+
     ![Figure 5.6: Output after tokenizing the corpus
-    ](5_files/B16062_05_06.jpg)
-    :::
+    ](./images/B16062_05_06.jpg)
+
 
     Figure 5.6: Output after tokenizing the corpus
 
@@ -470,10 +450,7 @@ Follow these steps to complete this exercise:
     efficient representation, as gensim requires it in this form. Then,
     find the topics in the corpus:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     dictionary = corpora.Dictionary(preproc_text)
@@ -483,17 +460,17 @@ Follow these steps to complete this exercise:
                       id2word = dictionary)
     lsamodel.print_topics()
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer147 .IMG---Figure}
-    ![Figure 5.7: Topics in the corpus ](5_files/B16062_05_07.jpg)
-    :::
+
+    ![Figure 5.7: Topics in the corpus ](./images/B16062_05_07.jpg)
+
 
     Figure 5.7: Topics in the corpus
 
-    To create our `LsiModel`{.literal}, we had to decide up front how
+    To create our `LsiModel`, we had to decide up front how
     many topics we wanted. This would not necessarily match the number
     of topics that are actually in the corpus.
 
@@ -502,19 +479,16 @@ Follow these steps to complete this exercise:
     weights does not add up to one. The weights are not to be
     interpreted as probabilities. This makes it difficult to even
     mechanically view the topic as a probability distribution over
-    words. Additionally, it may be observed that topic `0`{.literal} is
+    words. Additionally, it may be observed that topic `0` is
     essentially about cricket even though the corpus includes both
-    soccer and cricket. Topic `1`{.literal} seems to be related to a
-    sports broadcast. Topic `2`{.literal} does not seem to be
+    soccer and cricket. Topic `1` seems to be related to a
+    sports broadcast. Topic `2` does not seem to be
     interpretable.
 
 8.  To determine which topics have the highest weight for a document,
     insert a new cell and add the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     model_arr = np.argmax(lsamodel.get_topics(),axis=0)
@@ -525,24 +499,24 @@ Follow these steps to complete this exercise:
     ax.plot(x[:-1], y)
     fig.show()
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer148 .IMG---Figure}
+
     ![Figure 5.8: Graph representing weight of topics for the documents
-    ](5_files/B16062_05_08.jpg)
-    :::
+    ](./images/B16062_05_08.jpg)
+
 
 Figure 5.8: Graph representing weight of topics for the documents
 
-We can see that topic `1`{.literal} and topic `0`{.literal} have the
+We can see that topic `1` and topic `0` have the
 highest weight in almost all the documents.
 
 Note
 
 In general, the topics found are extremely sensitive to randomization in
-both gensim and tomotopy. While setting a `random_state`{.literal} in
+both gensim and tomotopy. While setting a `random_state` in
 gensim could help in reproducibility, in general, the topics found using
 tomotopy are superior from the perspective of interpretability.
 Generally, your output is expected to be different. In order to have
@@ -561,9 +535,9 @@ Before we move onto its implementation, let\'s quickly try and build a
 basic intuition about a couple of concepts that will help us in the
 subsequent sections.
 
-[]{#_idTextAnchor169}
 
-Dirichlet Process and Dirichlet Distribution {#_idParaDest-166}
+
+Dirichlet Process and Dirichlet Distribution
 --------------------------------------------
 
 A Dirichlet process is a distribution over a distribution. It can be
@@ -577,9 +551,9 @@ The Dirichlet distribution is a special case of the Dirichlet process,
 in which the number of topics needs to be specified explicitly. It is
 used for the LDA topic-modeling algorithm.
 
-[]{#_idTextAnchor170}
 
-Latent Dirichlet Allocation (LDA) {#_idParaDest-167}
+
+Latent Dirichlet Allocation (LDA)
 ---------------------------------
 
 Instead of using matrix factorization, like we did for LSA, it is
@@ -592,9 +566,9 @@ words---all in a probabilistic way. In this case, we have two
 concentration parameters corresponding to the document level and the
 topic level.
 
-[]{#_idTextAnchor171}
 
-LDA -- How It Works {#_idParaDest-168}
+
+LDA -- How It Works
 -------------------
 
 To understand how LDA works, let\'s look at a simple example. We have
@@ -604,10 +578,10 @@ of times each word is found in each document:
 
 <div>
 
-::: {#_idContainer149 .IMG---Figure}
+
 ![Figure 5.9: Occurrence of words in different documents
-](5_files/B16062_05_09.jpg)
-:::
+](./images/B16062_05_09.jpg)
+
 
 </div>
 
@@ -623,9 +597,9 @@ selecting a specific topic when sampling a particular document:
 
 <div>
 
-::: {#_idContainer150 .IMG---Figure}
-![Figure 5.10: Probability tables ](5_files/B16062_05_10.jpg)
-:::
+
+![Figure 5.10: Probability tables ](./images/B16062_05_10.jpg)
+
 
 </div>
 
@@ -639,7 +613,7 @@ since it contains all three t in equal proportions. In this example, a
 word is exclusive to a topic. In general, though, this is not the case.
 
 The gensim and the scikit-learn libraries use one way of implementing
-LDA (called variational inference). The tomotopy and `lda`{.literal}
+LDA (called variational inference). The tomotopy and `lda`
 libraries use another way (called collapsed Gibbs sampling). It is
 essentially because of these differing implementations: when tomotopy is
 able to generate the topics in the available time, we usually prefer
@@ -647,18 +621,18 @@ using tomotopy; otherwise we use gensim.
 
 The parameters that we use for tomotopy are as follows:
 
--   `corpus`{.literal}: This refers to text that we want to analyze.
+-   `corpus`: This refers to text that we want to analyze.
 -   Number of topics: This is the number of topics that the corpus
     contains.
--   `iter`{.literal}: This refers to the number of iterations that the
+-   `iter`: This refers to the number of iterations that the
     model considers the corpus.
--   `α`{.literal}: This is associated with document generation.
--   `η`{.literal}: This is associated with topic generation.
--   `seed`{.literal}: This helps with fixing the initial randomization.
+-   `α`: This is associated with document generation.
+-   `η`: This is associated with topic generation.
+-   `seed`: This helps with fixing the initial randomization.
 
-[]{#_idTextAnchor172}
 
-Measuring the Predictive Power of a Generative Topic Model {#_idParaDest-169}
+
+Measuring the Predictive Power of a Generative Topic Model
 ----------------------------------------------------------
 
 The predictive power of a generative topic model can be measured by
@@ -669,9 +643,9 @@ this closeness. The formula for log perplexity is as follows:
 
 <div>
 
-::: {#_idContainer151 .IMG---Figure}
-![Figure 5.11: Formula for log perplexity ](5_files/B16062_05_11.jpg)
-:::
+
+![Figure 5.11: Formula for log perplexity ](./images/B16062_05_11.jpg)
+
 
 </div>
 
@@ -695,9 +669,9 @@ to learn or it is indicative of the dataset not being generalizable. The
 negative log likelihood is approximately estimated in topic modeling
 libraries as it is intractable to calculate.
 
-[]{#_idTextAnchor173}
 
-Exercise 5.02: Finding Topics in Canadian Open Data Inventory Using the LDA Model {#_idParaDest-170}
+
+Exercise 5.02: Finding Topics in Canadian Open Data Inventory Using the LDA Model
 ---------------------------------------------------------------------------------
 
 In this exercise, we will use the tomotopy LDA model to analyze the
@@ -715,10 +689,7 @@ The following steps will help you complete this exercise:
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pandas as pd
@@ -727,14 +698,11 @@ The following steps will help you complete this exercise:
     import matplotlib.pyplot as plt
     %matplotlib inline
     ```
-    :::
+
 
 3.  Insert a new cell and add the following code to read from a download
     of the Canadian Open Data Inventory, and clean the text:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     OPEN_DATA_URL = '../data/canada-open-data/inventory.csv'
@@ -758,16 +726,13 @@ The following steps will help you complete this exercise:
     f.close()
     text = clean(text)
     ```
-    :::
+
 
 4.  Insert a new cell and add the following code to clean the text,
     using the spaCy English language model to tokenize the corpus and to
     exclude all tokens that are not detected as nouns:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import spacy
@@ -788,14 +753,14 @@ The following steps will help you complete this exercise:
     preproc_text.append(preproc_sent) 
     print(preproc_text)
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer152 .IMG---Figure}
+
     ![Figure 5.12: Tokenized corpus after text preprocessing
-    ](5_files/B16062_05_12.jpg)
-    :::
+    ](./images/B16062_05_12.jpg)
+
 
     Figure 5.12: Tokenized corpus after text preprocessing
 
@@ -806,10 +771,7 @@ The following steps will help you complete this exercise:
 5.  Insert a new cell and add the following code to see how the negative
     log likelihood varies by the number of iterations:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import tomotopy as tp
@@ -822,14 +784,14 @@ The following steps will help you complete this exercise:
         print('Iteration: {}\tLog-likelihood: {}'.\
               format(i, mdl.ll_per_word))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer153 .IMG---Figure}
+
     ![Figure 5.13: Variation of negative log likelihood with different
-    iterations ](5_files/B16062_05_13.jpg)
-    :::
+    iterations ](./images/B16062_05_13.jpg)
+
 
     Figure 5.13: Variation of negative log likelihood with different
     iterations
@@ -837,10 +799,7 @@ The following steps will help you complete this exercise:
 6.  Insert a new cell and add the following code to train a topic model
     with ten iterations and to show the inferred topics:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     mdl.train(10)
@@ -848,29 +807,23 @@ The following steps will help you complete this exercise:
         print('Top 10 words of topic #{}'.format(k))
         print(mdl.get_topic_words(k, top_n=7))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     Top 10 words of topic #0
     [('polygon', 0.36050185561180115), ('dataset', 0.0334757782722234726), ('information', 0.03004324994981289), ('soil', 0,029185116291046143), ('area', 0,026610717177391052), ('surface', 0.025752583518624306), ('map', 0.024036318063735962)]
     ```
-    :::
 
-7.  Insert a new []{#_idTextAnchor174}cell and add the following code to
+
+7.  Insert a new cell and add the following code to
     see the probability distribution of topics if you consider the
     entire dataset as a single document:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     bag_of_words=[word for sent in preproc_text for word in sent]
@@ -878,95 +831,74 @@ The following steps will help you complete this exercise:
     mdl.infer(doc_inst)[0]
     np.argsort(np.array(mdl.infer(doc_inst)[0]))[::-1]
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     array([11,17,14,19,12,  7,  4, 13, 10,  2,  3, 15,  1, 18, 16,  9,  0,
             6,  8,  5], dtype=int64)
     ```
-    :::
+
 
 8.  Insert a new cell and add the following code to see the probability
     distribution of topic 11:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(mdl.get_topic_words(11, top_n=7))
     ```
-    :::
+
 
     The code generates the following output
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [('table', 0.24849626421928406), ('census', 0.1265643984079361), ('level', 0.06526772677898407), ('series', 0.06306280940771103), ('topic', 0.062401335686445236), ('geography', 0.062401335686445236), ('country', 0.06218084320425987)]
     ```
-    :::
+
 
 9.  Insert a new cell and add the following code to see the probability
     distribution of topic 17:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(mdl.get_topic_words(17, top_n=7))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [('datum', 0.0603327676653862), ('information', 0.057247743010520935), ('year', 0.03462424501776695), ('dataset', 0.03291034325957298), ('project', 0.017828006289734993), ('website', 0.014057422056794167), ('activity', 0.012000739574432373)]
     ```
-    :::
+
 
 10. Insert a new cell and add the following code to see the probability
     distribution of topic 5:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(mdl.get_topic_words(5, top_n=7))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [('survey', 0.04966237023472786), ('catch', 0.03862873837351799), ('sponge', 0.0364220105111599), ('sea', 0.0342152863740921), ('datum', 0.028698472306132317), ('fishing', 0.02759511023759842), ('matter', 0.026491746306419373)]
     ```
-    :::
+
 
 Topic 11, topic 17, and topic 5 seem to be interpretable. One could say
 that topic 11, topic 17, and topic 5 seem to be broadly about
@@ -975,7 +907,7 @@ geographical data, internet data, and marine life data respectively.
 Note
 
 In general, the topics found are extremely sensitive to randomization in
-both gensim and tomotopy. While setting a `random_state`{.literal} in
+both gensim and tomotopy. While setting a `random_state` in
 gensim could help in reproducibility, in general, the topics found using
 tomotopy are superior from the perspective of interpretability.
 Generally, your output is expected to be different. In order to have
@@ -989,9 +921,9 @@ To access the source code for this specific section, please refer to
 This section does not currently have an online interactive example and
 will need to be run locally.
 
-[]{#_idTextAnchor175}
 
-Activity 5.01: Topic-Modeling Jeopardy Questions {#_idParaDest-171}
+
+Activity 5.01: Topic-Modeling Jeopardy Questions
 ------------------------------------------------
 
 Jeopardy is a popular TV show that covers a variety of topics. In this
@@ -1014,10 +946,10 @@ Follow these steps to complete this activity:
 3.  Load the dataset into a pandas DataFrame.
 
 4.  Clean the data by dropping the DataFrame rows where the
-    `Question`{.literal} column has empty cells.
+    `Question` column has empty cells.
 
 5.  Find the unique number of categories based on the
-    `Category`{.literal} column.
+    `Category` column.
 
 6.  Randomly select 4% of the questions. Tokenize the text using spaCy.
     Select tokens that are nouns/verbs/adjectives or a combination.
@@ -1035,10 +967,10 @@ Follow these steps to complete this activity:
     The full solution to this activity can be found on page 395.
 
 
-Hierarchical Dirichlet Process (HDP) {#_idParaDest-172}
+Hierarchical Dirichlet Process (HDP)
 ====================================
 
-::: {#_idContainer162 .Content}
+
 HDP is a non-parametric variant of LDA. It is called \"non-parametric\"
 since the number of topics is inferred from the data, and this parameter
 isn\'t provided by us. This means that this parameter is learned and can
@@ -1056,31 +988,31 @@ preferable to use collapsed Gibbs sampling over variational inference.
 In other cases, we may prefer to use variational inference. For the
 tomotopy library, the following parameters are used:
 
-`iter`{.literal}: This refers to the number of iterations that the model
+`iter`: This refers to the number of iterations that the model
 considers the corpus.
 
-`α`{.literal}: This concentration parameter is associated with document
+`α`: This concentration parameter is associated with document
 generation.
 
-`η`{.literal}: This concentration parameter is associated with topic
+`η`: This concentration parameter is associated with topic
 generation.
 
-`seed`{.literal}: This fixes the initial randomization.
+`seed`: This fixes the initial randomization.
 
-`min_cf`{.literal}: This helps eliminate those words that occur fewer
+`min_cf`: This helps eliminate those words that occur fewer
 times than the frequency specified by us.
 
 To get a better understanding of this, let\'s perform some simple
 exercises.
 
-[]{#_idTextAnchor177}
 
-Exercise 5.03: Topics in Around the World in Eighty Days {#_idParaDest-173}
+
+Exercise 5.03: Topics in Around the World in Eighty Days
 --------------------------------------------------------
 
 In this exercise, we will make use of the tomotopy HDP model to analyze
 the text file for Jules Verne\'s *Around the World in Eighty Days*,
-available from the Gutenberg Project. We will use the `min_cf`{.literal}
+available from the Gutenberg Project. We will use the `min_cf`
 hyperparameter that is used to ignore words that occur fewer times than
 the specified frequency and discuss its impact on the interpretability
 of topics.
@@ -1094,10 +1026,7 @@ The dataset used for this exercise can be found at
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pandas as pd
@@ -1106,16 +1035,13 @@ The dataset used for this exercise can be found at
     import matplotlib.pyplot as plt
     %matplotlib inline
     ```
-    :::
+
 
 3.  Insert a new cell and add the following code to read from a download
     of the Gutenberg Project\'s *Around the World in Eighty Days* by
     Jules Verne, and clean the text:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     OPEN_DATA_URL = '../data/aroundtheworld/pg103.txt'
@@ -1135,14 +1061,14 @@ The dataset used for this exercise can be found at
     text = clean(text)
     text
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer154 .IMG---Figure}
+
     ![Figure 5.14: Text from \"Around the World in Eighty Days\"
-    ](6_files/B16062_05_14.jpg)
-    :::
+    ](./images/B16062_05_14.jpg)
+
 
     Figure 5.14: Text from \"Around the World in Eighty Days\"
 
@@ -1151,10 +1077,7 @@ The dataset used for this exercise can be found at
     tokenize the corpus), and exclude all tokens that are not detected
     as nouns:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import spacy
@@ -1174,14 +1097,14 @@ The dataset used for this exercise can be found at
     preproc_text.append(preproc_sent) #last sentence
     print(preproc_text)
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer155 .IMG---Figure}
+
     ![Figure 5.15: Tokenized corpus after the text is cleaned
-    ](6_files/B16062_05_15.jpg)
-    :::
+    ](./images/B16062_05_15.jpg)
+
 
     Figure 5.15: Tokenized corpus after the text is cleaned
 
@@ -1190,10 +1113,7 @@ The dataset used for this exercise can be found at
     show how the negative log likelihood varies according to the number
     of iterations:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import tomotopy as tp
@@ -1208,14 +1128,14 @@ The dataset used for this exercise can be found at
         print('Top 10 words of topic #{}'.format(k))
         print(mdl.get_topic_words(k, top_n=7))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer156 .IMG---Figure}
+
     ![Figure 5.16: Variation of negative log likelihood with number of
-    iterations ](6_files/B16062_05_16.jpg)
-    :::
+    iterations ](./images/B16062_05_16.jpg)
+
 
     Figure 5.16: Variation of negative log likelihood with number of
     iterations
@@ -1224,24 +1144,21 @@ The dataset used for this exercise can be found at
     distribution of topics if you consider the entire dataset as a
     single document:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     bag_of_words=[word for sent in preproc_text for word in sent]
     doc_inst = mdl.make_doc(bag_of_words)
     np.argsort(np.array(mdl.infer(doc_inst)[0]))[::-1]
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer157 .IMG---Figure}
+
     ![Figure 5.17: Probability distribution of topics if the entire
-    dataset is considered ](6_files/B16062_05_17.jpg)
-    :::
+    dataset is considered ](./images/B16062_05_17.jpg)
+
 
     Figure 5.17: Probability distribution of topics if the entire
     dataset is considered
@@ -1249,102 +1166,78 @@ The dataset used for this exercise can be found at
 7.  Insert a new cell and add the following code to see the probability
     distribution of topic 33:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(mdl.get_topic_words(33, top_n=7))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [('danger', 0.1534954458475113), ('hour', 0.0015197568573057652), ('time', 0.0015197568573057652), ('train', 0.0015197568573057652), ('master', 0.0015197568573057652), ('man', 0.0015197568573057652), ('steamer', 0.0015197568573057652)]
     ```
-    :::
+
 
 8.  Insert a new cell and add the following code to see the probability
     distribution of topic 21:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(mdl.get_topic_words(21, top_n=7))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [('hour', 0.1344495415687561), ('minute', 0.1232500821352005), ('day', 0.08405196666717529), ('quarter', 0.07285250723361969), ('moment', 0.07285250723361969), ('clock', 0.005605331063270569), ('card', 0.039254117757081985)]
     ```
-    :::
+
 
 9.  Insert a new cell and add the following code to see the probability
     distribution of topic 70:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(mdl.get_topic_words(70, top_n=7))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [('event', 0.12901155650615692), ('midnight', 0.12901155650615692), ('detective', 0.06482669711112976), ('bed', 0.06482669711112976), ('traveller', 0.06482669711112976), ('watch', 0.06482669711112976), ('clown', 0.06482669711112976)]
     ```
-    :::
+
 
 10. Insert a new cell and add the following code to see the probability
     distribution of topic 4:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(mdl.get_topic_words(4, top_n=7))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [('house', 0.20237493515014648), ('opium', 0.10131379961967468), ('town', 0.07604850828647614), ('brick', 0.07604850828647614), ('mansion', 0.07604850828647614), ('glimpse', 0.50783220678567886), ('ball', 0.050783220678567886)]
     ```
-    :::
+
 
 We can see that ignoring tokens that occur fewer than five times
 significantly improves the interpretability of the topic model. Also, we
@@ -1355,7 +1248,7 @@ another classic and then return to these questions.
 Note
 
 In general, the topics found are extremely sensitive to randomization in
-both gensim and tomotopy. While setting a `random_state`{.literal} in
+both gensim and tomotopy. While setting a `random_state` in
 gensim could help reproducibility, the topics found using tomotopy are
 superior from the perspective of interpretability. Your output is
 expected to be different. In order to have exactly the same topic model,
@@ -1368,15 +1261,15 @@ To access the source code for this specific section, please refer to
 
 You can also run this example online at <https://packt.live/2X8lG1p>.
 
-[]{#_idTextAnchor178}
 
-Exercise 5.04: Topics in The Life and Adventures of Robinson Crusoe by Daniel Defoe {#_idParaDest-174}
+
+Exercise 5.04: Topics in The Life and Adventures of Robinson Crusoe by Daniel Defoe
 -----------------------------------------------------------------------------------
 
 In this exercise, we will make use of the tomotopy HDP model to analyze
 a text corpus taken from the text file for Daniel Defoe\'s *The Life and
 Adventures of Robinson Crusoe*, available on the Gutenberg Project
-website. Here, we will take the value of `α`{.literal} as 0.8 and
+website. Here, we will take the value of `α` as 0.8 and
 experiment with selecting tokens based on different combinations of
 parts of speech, before training the model.
 
@@ -1389,10 +1282,7 @@ The dataset used for this exercise can be found at
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pandas as pd
@@ -1401,16 +1291,13 @@ The dataset used for this exercise can be found at
     import matplotlib.pyplot as plt
     %matplotlib inline
     ```
-    :::
+
 
 3.  Insert a new cell and add the following code to read from a download
     of the Gutenberg Project\'s *The Life and Adventures of Robinson
     Crusoe* by Daniel Defoe, and clean the text:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     OPEN_DATA_URL = '../data/robinsoncrusoe/521-0.txt'
@@ -1430,14 +1317,14 @@ The dataset used for this exercise can be found at
     text = clean(text)
     text
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer158 .IMG---Figure}
+
     ![Figure 5.18: Text from The Life and Adventures of Robinson Crusoe
-    ](6_files/B16062_05_18.jpg)
-    :::
+    ](./images/B16062_05_18.jpg)
+
 
     Figure 5.18: Text from The Life and Adventures of Robinson Crusoe
 
@@ -1446,10 +1333,7 @@ The dataset used for this exercise can be found at
     tokenize the corpus and to exclude all tokens that are not detected
     as nouns:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import spacy
@@ -1472,26 +1356,23 @@ The dataset used for this exercise can be found at
     preproc_text.append(preproc_sent) #last sentence
     print(preproc_text)
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer159 .IMG---Figure}
+
     ![Figure 5.19: Tokenized corpus after preprocessing is done
-    ](6_files/B16062_05_19.jpg)
-    :::
+    ](./images/B16062_05_19.jpg)
+
 
     Figure 5.19: Tokenized corpus after preprocessing is done
 
 5.  Insert a new cell and add the following code to import the necessary
-    libraries. Create an HDP model with the `α`{.literal} concentration
-    parameter as `0.8`{.literal} and see how the negative log likelihood
+    libraries. Create an HDP model with the `α` concentration
+    parameter as `0.8` and see how the negative log likelihood
     varies with the number of iterations:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import tomotopy as tp 
@@ -1506,51 +1387,42 @@ The dataset used for this exercise can be found at
         print('Top 10 words of topic #{}'.format(k))
         print(mdl.get_topic_words(k, top_n=7))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer160 .IMG---Figure}
+
     ![Figure 5.20: Variation of negative log likelihood with the number
-    of iterations ](6_files/B16062_05_20.jpg)
-    :::
+    of iterations ](./images/B16062_05_20.jpg)
+
 
     Figure 5.20: Variation of negative log likelihood with the number of
     iterations
 
 6.  Insert a new cell and add the following code to save the topic
     model:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     mdl.save('../data/robinsoncrusoe/hdp_model.bin')
     ```
-    :::
+
 
 7.  Insert a new cell and add the following code to load the topic
     model:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     mdl = tp.HDPModel.load('../data/robinsoncrusoe/'\
                            'hdp_model.bin')
     ```
-    :::
+
 
 8.  Insert a new cell and add the following code to see the probability
     distribution of topics if you consider the entire dataset as a
     single document:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     bag_of_words=[word for sent in preproc_text for word in sent]
@@ -1558,14 +1430,14 @@ The dataset used for this exercise can be found at
     mdl.infer(doc_inst)[0]
     np.argsort(np.array(mdl.infer(doc_inst)[0]))[::-1]
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {#_idContainer161 .IMG---Figure}
+
     ![Figure 5.21: Probability distribution if the entire corpus is
-    considered ](6_files/B16062_05_21.jpg)
-    :::
+    considered ](./images/B16062_05_21.jpg)
+
 
     Figure 5.21: Probability distribution if the entire corpus is
     considered
@@ -1573,77 +1445,59 @@ The dataset used for this exercise can be found at
 9.  Insert a new cell and add the following code to see the probability
     distribution of topic 163:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(mdl.get_topic_words(163, top_n=7))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [('horse', 0.13098040223121643), ('way', 0.026405228301882744), ('mankind', 0.26405228301882744), ('fire', 0.026405228301882744), ('object', 0.026405228301882744), ('bridle', 0.026405228301882744), ('distress', 0.026405228301882744)]
     ```
-    :::
+
 
 10. Insert a new cell and add the following code to see the probability
     distribution of topic 103:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(mdl.get_topic_words(103, top_n=7))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [('manor', 0.03706422075629234), ('inheritance', 0.03706422075629234), ('lord', 0.03706422075629234), ('man', 0.0003669724682377309), ('shore', 0.0003669724682377309), ('ship',0.0003669724682377309)]
     ```
-    :::
+
 
 11. Insert a new cell and add the following code to see the probability
     distribution of topic 28:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(mdl.get_topic_words(28, top_n=7))
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [('thought', 0.07716038823127747), ('mind', 0.045609116554260254), ('word', 0.038597721606492996), ('face', 0.03509202599525452), ('terror', 0.03509202599525452), ('tear', 0.3158633038401604), ('apprehension', 0.3158633038401604)]
     ```
-    :::
+
 
     We see that we have 195 topics in all, many of which are likely not
     interpretable. In general, finding interpretable topics is difficult
@@ -1657,7 +1511,7 @@ The dataset used for this exercise can be found at
 
     In general, the topics found are extremely sensitive to
     randomization in both gensim and tomotopy. While setting a
-    `random_state`{.literal} in gensim could help reproducibility, in
+    `random_state` in gensim could help reproducibility, in
     general, the topics found using tomotopy are superior from the
     perspective of interpretability. Generally, your output is expected
     to be different. In order to have exactly the same topic model, we
@@ -1673,9 +1527,9 @@ We have explored three of the most popular approaches to topic modeling.
 Let\'s now discuss the practical challenges in using topic modeling and
 the state-of-the-art topic modeling technologies.
 
-[]{#_idTextAnchor179}
 
-Practical Challenges {#_idParaDest-175}
+
+Practical Challenges
 --------------------
 
 The selection of the number of topics and topic-modeling algorithms, the
@@ -1705,9 +1559,9 @@ render the topic model useless. When we have a downstream application,
 even non-interpretable topics are useful as they offer a convenient
 means to carry out dimensionality reduction on the dataset.
 
-[]{#_idTextAnchor180}
 
-State-of-the-Art Topic Modeling {#_idParaDest-176}
+
+State-of-the-Art Topic Modeling
 -------------------------------
 
 There is no known benchmark for quantitively identifying the
@@ -1726,9 +1580,9 @@ most active areas of research. This suggests that complete automation is
 hard and human participation is here to stay as the state-of-the-art
 technique in the near future.
 
-[]{#_idTextAnchor181}
 
-Activity 5.02: Comparing Different Topic Models {#_idParaDest-177}
+
+Activity 5.02: Comparing Different Topic Models
 -----------------------------------------------
 
 The **Consumer Financial Protection Bureau** (**CFPB**) publishes
@@ -1748,7 +1602,7 @@ Follow these steps to complete this activity:
 
 1.  Open a Jupyter Notebook.
 
-2.  Import the `pandas`{.literal} library and load the dataset from a
+2.  Import the `pandas` library and load the dataset from a
     text file produced by partially processing the dataset from the CFPB
     website mentioned at the beginning of this section.
 
@@ -1760,27 +1614,21 @@ Follow these steps to complete this activity:
 5.  Save and load the HDP model. To save a topic model, use the
     following line of code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     mdl.save('../data/consumercomplaints/hdp_model.bin')
     ```
-    :::
+
 
     To load a topic model, use the following:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     mdl = tp.HDPModel.load('../data/consumercomplaints/hdp_model.bin')
     ```
-    :::
+
 
 6.  Determine the topics in the entire set of complaints. Sample a few
     topics and check for interpretability.
@@ -1801,10 +1649,10 @@ In this activity, we successfully compared two different models both
 qualitatively and quantitatively.
 
 
-Summary {#_idParaDest-178}
+Summary
 =======
 
-::: {#_idContainer162 .Content}
+
 In this chapter, we discussed topic modeling in detail. Without delving
 into advanced statistics, we reviewed various topic-modeling algorithms
 (such as LSA, LDA, and HDP) and how they can be used for topic modeling

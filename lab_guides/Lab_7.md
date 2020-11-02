@@ -1,11 +1,9 @@
 
-7. Text Generation and Summarization {#_idParaDest-197}
+7. Text Generation and Summarization
 ====================================
 
-::: {#_idContainer195 .Content}
-:::
 
-::: {#_idContainer214 .Content}
+
 Overview
 
 This chapter begins with the concept of text generation using Markov
@@ -18,10 +16,10 @@ text generation and summarization using **Natural Language Processing**
 
 
 
-Introduction {#_idParaDest-198}
+Introduction
 ============
 
-::: {#_idContainer214 .Content}
+
 The ability to express thoughts in words (sentence generation), the
 ability to replace a piece of text with different but equivalent text
 (paraphrasing), and the ability to find the most important parts of a
@@ -32,10 +30,10 @@ have made them considerably more accessible. In this chapter, we explore
 them in detail and see how we can implement them in Python.
 
 
-Generating Text with Markov Chains {#_idParaDest-199}
+Generating Text with Markov Chains
 ==================================
 
-::: {#_idContainer214 .Content}
+
 An idea is expressed using the words of a language. As ideas are not
 tangible, it is useful to look at text generation in order to gauge
 whether a machine can think on its own. The utility of text generation
@@ -45,9 +43,9 @@ be generated in many different ways, which we will explore using Markov
 chains. Whether this generated text can correspond to a coherent line of
 thought is something that we will address later in this section.
 
-[]{#_idTextAnchor206}
 
-Markov Chains {#_idParaDest-200}
+
+Markov Chains
 -------------
 
 A state space defines all possible states that can exist. A Markov chain
@@ -60,9 +58,9 @@ this, consider the following diagram:
 
 <div>
 
-::: {#_idContainer196 .IMG---Figure}
-![Figure 7.1: Markov chain for weather ](3_files/B16062_07_01.jpg)
-:::
+
+![Figure 7.1: Markov chain for weather ](./images/B16062_07_01.jpg)
+
 
 </div>
 
@@ -92,9 +90,9 @@ continue in the same manner until we have generated a sequence of words
 of the required length. In the next section, we will do an exercise
 related to Markov chains to get a better understanding of them.
 
-[]{#_idTextAnchor207}
 
-Exercise 7.01: Text Generation Using a Random Walk over a Markov Chain {#_idParaDest-201}
+
+Exercise 7.01: Text Generation Using a Random Walk over a Markov Chain
 ----------------------------------------------------------------------
 
 In this exercise, we will generate text with the help of Markov chains.
@@ -125,10 +123,7 @@ Follow these steps to complete this exercise:
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries and read the dataset:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import re
@@ -138,14 +133,11 @@ Follow these steps to complete this exercise:
     text=f.read()
     f.close()
     ```
-    :::
+
 
 3.  Insert a new cell and add the following code to preprocess the text
     using regular expressions:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     HANDLE = '@\w+\n'
@@ -160,42 +152,33 @@ Follow these steps to complete this exercise:
         return text
     text = clean(text)
     ```
-    :::
+
 
 4.  Split the corpus into a list of words. Show the number of words in
     the corpus:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     corpus=text.split()
     corpus_length=len(corpus)
     corpus_length
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     19985
     ```
-    :::
+
 
 5.  Insert a new cell and add the following code to define the successor
     states for each state. Use a dictionary for this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     succ_func={}
@@ -209,15 +192,15 @@ Follow these steps to complete this exercise:
                 succ_func[token].append(corpus[corpus_counter])
     succ_func
     ```
-    :::
+
 
     The preceding code generates an output as follows. Note that we\'re
     only displaying a part of the output here.
 
-    ::: {#_idContainer197 .IMG---Figure}
+
     ![Figure 7.2: Dictionary of successor states
-    ](3_files/B16062_07_02.jpg)
-    :::
+    ](./images/B16062_07_02.jpg)
+
 
     Figure 7.2: Dictionary of successor states
 
@@ -233,10 +216,7 @@ Follow these steps to complete this exercise:
     states. These successor states are randomly selected from the list
     containing successor states for a specific current state. Add the
     following code to do this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     initial_states=['The','A','I','He','She','If',\
@@ -251,30 +231,27 @@ Follow these steps to complete this exercise:
             current_state=succ_state
         print(text.split('.')[0])
     ```
-    :::
+
 
 7.  Insert a new cell and add the following code to generate text
     containing 10 phrases of four words (including the initial word) and
     10 phrases of five words (including the initial word):
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     for k in range(3,5):
         for j in range(10):
             generate_words(k)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer198 .IMG---Figure}
+
     ![Figure 7.3: Phrases generated, consisting of four and five words
-    ](3_files/B16062_07_03.jpg)
-    :::
+    ](./images/B16062_07_03.jpg)
+
 
 Figure 7.3: Phrases generated, consisting of four and five words
 
@@ -326,10 +303,10 @@ challenging and is currently of limited practical utility to the
 practitioner. In the next section, we will learn about summarization.
 
 
-Text Summarization {#_idParaDest-202}
+Text Summarization
 ==================
 
-::: {#_idContainer214 .Content}
+
 Automated text summarization is the process of using NLP tools to
 produce concise versions of text that preserve the key information
 present in the original content. Good summaries can communicate the
@@ -356,9 +333,9 @@ algorithm, which is an unsupervised machine learning method. For
 simplicity, we will focus on single-document summarization in this
 chapter. To implement this, we will be using the gensim library.
 
-[]{#_idTextAnchor209}
 
-TextRank {#_idParaDest-203}
+
+TextRank
 --------
 
 TextRank is a graph-based algorithm (developed by Rada Mihalcea and Paul
@@ -374,16 +351,16 @@ The TextRank algorithm works as follows:
 2.  Each node is given an arbitrary importance score.
 
 3.  Each edge has a weight that corresponds to the similarity between
-    two nodes (for instance, the sentences `Sx`{.literal} and
-    `Sy`{.literal}). The weight could be the number of common words
+    two nodes (for instance, the sentences `Sx` and
+    `Sy`). The weight could be the number of common words
     (say, *w*[k]{.subscript}) in the two sentences divided by the sum of
     the number of words in the two sentences. This can be represented as
     follows:
 
-    ::: {#_idContainer199 .IMG---Figure}
+
     ![Figure 7.4: Formula for similarity between two sentences
-    ](4_files/B16062_07_04.jpg)
-    :::
+    ](./images/B16062_07_04.jpg)
+
 
     Figure 7.4: Formula for similarity between two sentences
 
@@ -395,10 +372,10 @@ The TextRank algorithm works as follows:
     adjusted by all the outward edge weights (*w*[jk]{.subscript}) and
     the damping factor (*d*). This can be represented as follows:
 
-    ::: {#_idContainer200 .IMG---Figure}
+
     ![Figure 7.5: Formula for importance score
-    ](4_files/B16062_07_05.jpg)
-    :::
+    ](./images/B16062_07_05.jpg)
+
 
     Figure 7.5: Formula for importance score
 
@@ -427,15 +404,15 @@ underpinning the TextRank algorithm is that key parts of a document are
 connected to form a coherent summary.
 
 
-Key Input Parameters for TextRank {#_idParaDest-204}
+Key Input Parameters for TextRank
 =================================
 
-::: {#_idContainer214 .Content}
+
 We\'ll be using the gensim library to implement TextRank. The following
 are the parameters required for this:
 
--   `text`{.literal}: This is the input text.
--   `ratio`{.literal}: This is the required ratio of the number of
+-   `text`: This is the input text.
+-   `ratio`: This is the required ratio of the number of
     sentences in the summary to the number of sentences in the input
     text.
 
@@ -445,9 +422,9 @@ of the similarity measure described in *step 3* of the algorithm. This
 will be clearer in the following exercise, in which you will summarize
 text using TextRank.
 
-[]{#_idTextAnchor211}
 
-Exercise 7.02: Performing Summarization Using TextRank {#_idParaDest-205}
+
+Exercise 7.02: Performing Summarization Using TextRank
 ------------------------------------------------------
 
 In this exercise, we will use the classic short story, *After Twenty
@@ -460,18 +437,15 @@ shall extract and print four summaries.
 
 In addition to these libraries, you will need to import the following:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 from gensim.summarization import summarize
 summarize(text,ratio=0.20)
 ```
-:::
 
-In the preceding code snippet, `ratio=0.20`{.literal} means that 20% of
+
+In the preceding code snippet, `ratio=0.20` means that 20% of
 the sentences from the original text will be used to create the summary.
 
 Note
@@ -489,10 +463,7 @@ Complete the following steps to implement this exercise:
 2.  Insert a new cell and add the following code to import the necessary
     libraries and extract the required text from *After Twenty Years*:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from gensim.summarization import summarize
@@ -509,74 +480,65 @@ Complete the following steps to implement this exercise:
     text_after_twenty=re.sub(r"\s+"," ",text_after_twenty)
     text_after_twenty
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer201 .IMG---Figure}
+
     ![Figure 7.6: Text from After Twenty Years
-    ](5_files/B16062_07_06.jpg)
-    :::
+    ](./images/B16062_07_06.jpg)
+
 
     Figure 7.6: Text from After Twenty Years
 
 3.  Add the following code to extract the required text and print the
-    summarized text, with the `ratio`{.literal} parameter set to
-    `0.2`{.literal}:
+    summarized text, with the `ratio` parameter set to
+    `0.2`:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     summary_text_after_twenty=summarize(text_after_twenty, \
                                         ratio=0.2)
     print(summary_text_after_twenty)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer202 .IMG---Figure}
+
     ![Figure 7.7: Summarized text when the ratio parameter is 0.2
-    ](5_files/B16062_07_07.jpg)
-    :::
+    ](./images/B16062_07_07.jpg)
+
 
     Figure 7.7: Summarized text when the ratio parameter is 0.2
 
 4.  Insert a new cell and add the following code to summarize the text
-    and print the summarized text, with the `ratio`{.literal} parameter
-    set to `0.25`{.literal}:
+    and print the summarized text, with the `ratio` parameter
+    set to `0.25`:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     summary_text_after_twenty=summarize(text_after_twenty, \
                                         ratio=0.25)
     print(summary_text_after_twenty)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer203 .IMG---Figure}
+
     ![Figure 7.8: Summarized text when the ratio parameter is 0.25
-    ](5_files/B16062_07_08.jpg)
-    :::
+    ](./images/B16062_07_08.jpg)
+
 
     Figure 7.8: Summarized text when the ratio parameter is 0.25
 
 5.  Insert a new cell and add the following code to extract the required
     text from the Wikipedia page for Oscar Wilde:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     #text_wiki_oscarwilde=wikipedia.summary("Oscar Wilde")
@@ -589,62 +551,56 @@ Complete the following steps to implement this exercise:
     text_wiki_oscarwilde=re.sub(r"\s+"," ",text_wiki_oscarwilde)
     text_wiki_oscarwilde
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer204 .IMG---Figure}
+
     ![Figure 7.9: Text from the Wikipedia page for Oscar Wilde
-    ](5_files/B16062_07_09.jpg)
-    :::
+    ](./images/B16062_07_09.jpg)
+
 
     Figure 7.9: Text from the Wikipedia page for Oscar Wilde
 
 6.  Insert a new cell and add the following code to summarize the text
-    and print the summarized text using `ratio=0.2`{.literal}:
+    and print the summarized text using `ratio=0.2`:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     summary_wiki_oscarwilde=summarize(text_wiki_oscarwilde, \
                                       ratio=0.2)
     print(summary_wiki_oscarwilde)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer205 .IMG---Figure}
+
     ![Figure 7.10: Summarized text when the ratio parameter is 0.2
-    ](5_files/B16062_07_10.jpg)
-    :::
+    ](./images/B16062_07_10.jpg)
+
 
     Figure 7.10: Summarized text when the ratio parameter is 0.2
 
 7.  Add the following code to summarize the text and print the
-    summarized text using `ratio=0.25`{.literal}:
+    summarized text using `ratio=0.25`:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     summary_wiki_oscarwilde=summarize(text_wiki_oscarwilde, \
                                       ratio=0.25)
     print(summary_wiki_oscarwilde)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer206 .IMG---Figure}
+
     ![Figure 7.11: Summarized text when the ratio is 0.25
-    ](5_files/B16062_07_11.jpg)
-    :::
+    ](./images/B16062_07_11.jpg)
+
 
 Figure 7.11: Summarized text when the ratio is 0.25
 
@@ -657,14 +613,14 @@ You can also run this example online at <https://packt.live/39G0Knx>.
 
 We find that the summary for the Wikipedia article is much more coherent
 than the short story. We can also see that the summary with a
-`ratio`{.literal} of `0.20`{.literal} is a subset of a summary with a
-`ratio`{.literal} of `0.25`{.literal}. Would extractive summarization
+`ratio` of `0.20` is a subset of a summary with a
+`ratio` of `0.25`. Would extractive summarization
 work better for a children\'s fairytale than it does for an O. Henry
 short story? Let\'s explore this in the next exercise.
 
-[]{#_idTextAnchor212}
 
-Exercise 7.03: Summarizing a Children\'s Fairy Tale Using TextRank {#_idParaDest-206}
+
+Exercise 7.03: Summarizing a Children\'s Fairy Tale Using TextRank
 ------------------------------------------------------------------
 
 In this exercise, we consider the fairy tale *Little Red Riding Hood* in
@@ -687,24 +643,18 @@ Complete the following steps to implement this exercise:
 
 2.  Insert a new cell and add the following code to import the required
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from gensim.summarization import summarize
     import re
     ```
-    :::
+
 
 3.  Insert a new cell and add the following code to fetch Watty Piper\'s
     version of *Little Red Riding Hood*:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     file_url_grimms=r'../data/littleredrh/pg11592.txt'
@@ -720,14 +670,14 @@ Complete the following steps to implement this exercise:
     text_grimms=re.sub(r"\s+"," ",text_grimms)
     text_grimms
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer207 .IMG---Figure}
+
     ![Figure 7.12: Text from the Watty Piper variation of Little Red
-    Riding Hood ](5_files/B16062_07_12.jpg)
-    :::
+    Riding Hood ](./images/B16062_07_12.jpg)
+
 
     Figure 7.12: Text from the Watty Piper variation of Little Red
     Riding Hood
@@ -735,10 +685,7 @@ Complete the following steps to implement this exercise:
 4.  Insert a new cell, add the following code, and fetch the Perrault
     fairy tale version of *Little Red Riding Hood*:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     file_url_perrault=r'../data/littleredrh/pg29021.txt'
@@ -754,136 +701,118 @@ Complete the following steps to implement this exercise:
     text_perrault=re.sub(r"\s+"," ",text_perrault)
     text_perrault
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer208 .IMG---Figure}
+
     ![Figure 7.13: Tales from the Perrault version of Little Red Riding
-    Hood ](5_files/B16062_07_13.jpg)
-    :::
+    Hood ](./images/B16062_07_13.jpg)
+
 
     Figure 7.13: Tales from the Perrault version of Little Red Riding
     Hood
 
 5.  Insert a new cell and add the following code to generate the two
-    summaries with a `ratio`{.literal} of `0.20`{.literal}:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+    summaries with a `ratio` of `0.20`:
+
 
     ``` {.language-markup}
     llrh_grimms_textrank=summarize(text_grimms,ratio=0.20)
     llrh_perrault_textrank=summarize(text_perrault,ratio=0.20)
     ```
-    :::
+
 
 6.  Insert a new cell and add the following code to print the TextRank
-    summary (`ratio`{.literal} of `0.20`{.literal}) of Grimm\'s version
+    summary (`ratio` of `0.20`) of Grimm\'s version
     of *Little Red Riding Hood*:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(llrh_grimms_textrank)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer209 .IMG---Figure}
+
     ![Figure 7.14: Output after implementing TextRank on the Watty Piper
-    variation ](5_files/B16062_07_14.jpg)
-    :::
+    variation ](./images/B16062_07_14.jpg)
+
 
     Figure 7.14: Output after implementing TextRank on the Watty Piper
     variation
 
 7.  Insert a new cell and add the following code to print the TextRank
-    summary (`ratio`{.literal} of `0.20`{.literal}) of Perrault\'s
+    summary (`ratio` of `0.20`) of Perrault\'s
     version of *Little Red Riding Hood*:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(llrh_perrault_textrank)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer210 .IMG---Figure}
+
     ![Figure 7.15: Output after implementing TextRank on the Perrault
-    version ](5_files/B16062_07_15.jpg)
-    :::
+    version ](./images/B16062_07_15.jpg)
+
 
     Figure 7.15: Output after implementing TextRank on the Perrault
     version
 
 8.  Add the following code to generate two summaries with a
-    `ratio`{.literal} of `0.5`{.literal}:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+    `ratio` of `0.5`:
+
 
     ``` {.language-markup}
     llrh_grimms_textrank=summarize(text_grimms,ratio=0.5)
     llrh_perrault_textrank=summarize(text_perrault,ratio=0.5)
     ```
-    :::
+
 
 9.  Add the following code to print a TextRank summary
-    (`ratio`{.literal} of `0.5`{.literal}) of Piper\'s version of
+    (`ratio` of `0.5`) of Piper\'s version of
     *Little Red Riding Hood*:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(llrh_grimms_textrank)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer211 .IMG---Figure}
+
     ![Figure 7.16: Output after implementing TextRank on the Watty Piper
-    variation ](5_files/B16062_07_16.jpg)
-    :::
+    variation ](./images/B16062_07_16.jpg)
+
 
     Figure 7.16: Output after implementing TextRank on the Watty Piper
     variation
 
 10. Add the following code to print a TextRank summary
-    (`ratio`{.literal} of `0.5`{.literal}) of Perrault\'s version of
+    (`ratio` of `0.5`) of Perrault\'s version of
     *Little Red Riding Hood*:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(llrh_perrault_textrank)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer212 .IMG---Figure}
+
     ![Figure 7.17: Output after implementing TextRank on the Perrault
-    version ](5_files/B16062_07_17.jpg)
-    :::
+    version ](./images/B16062_07_17.jpg)
+
 
 Figure 7.17: Output after implementing TextRank on the Perrault version
 
@@ -896,7 +825,7 @@ You can also run this example online at <https://packt.live/2XfObu1>.
 
 With this, we\'ve found that the four summaries lack coherency and are
 also incomplete. This is also true of the two summaries with a
-`ratio`{.literal} of `0.5`{.literal}---that is, even when half of the
+`ratio` of `0.5`---that is, even when half of the
 sentences are extracted for the summary. This might be because the
 conversations in the fairytale are contextual in nature, as a sentence
 often refers to the preceding sentence(s). This contextual aspect of
@@ -911,9 +840,9 @@ a fairytale is unsuitable for extractive summarization. Lets now do an
 activity in which we\'ll use the TextRank algorithm to summarize
 complaints that customers have written against some organizations.
 
-[]{#_idTextAnchor214}
 
-Activity 7.01: Summarizing Complaints in the Consumer Financial Protection Bureau Dataset {#_idParaDest-207}
+
+Activity 7.01: Summarizing Complaints in the Consumer Financial Protection Bureau Dataset
 -----------------------------------------------------------------------------------------
 
 The Consumer Financial Protection Bureau publishes consumer complaints
@@ -927,39 +856,39 @@ Note
 
 You can find the dataset to be used for this activity at
 <https://www.dropbox.com/sh/qmq3x3ah1cf3ecz/AAAg_E6f0I5vdaB4WVmR6TCga?dl=0&preview=Consumer_Complaints.csv>.
-To complete the activity, you will need to place the `.csv`{.literal}
-file into the `data`{.literal} folder for this chapter in your local
+To complete the activity, you will need to place the `.csv`
+file into the `data` folder for this chapter in your local
 directory.
 
 Follow these steps to implement this activity:
 
 1.  Import the summarization libraries and instantiate the summarization
     model.
-2.  Load the dataset from a `.csv`{.literal} file into a pandas
-    DataFrame. Drop all columns other than `Product`{.literal},
-    `Sub-product`{.literal}, `Issue`{.literal}, `Sub-issue`{.literal},
-    and `Consumer complaint narrative`{.literal}.
-3.  Select 12 complaints corresponding to the rows `242830`{.literal},
-    `1086741`{.literal}, `536367`{.literal}, `957355`{.literal},
-    `975181`{.literal}, `483530`{.literal}, `950006`{.literal},
-    `865088`{.literal}, `681842`{.literal}, `536367`{.literal},
-    `132345`{.literal}, and `285894`{.literal} from the 300,000 odd
+2.  Load the dataset from a `.csv` file into a pandas
+    DataFrame. Drop all columns other than `Product`,
+    `Sub-product`, `Issue`, `Sub-issue`,
+    and `Consumer complaint narrative`.
+3.  Select 12 complaints corresponding to the rows `242830`,
+    `1086741`, `536367`, `957355`,
+    `975181`, `483530`, `950006`,
+    `865088`, `681842`, `536367`,
+    `132345`, and `285894` from the 300,000 odd
     complaints with a narrative. Note that since the dataset is an
     evolving dataset, the use of a version that\'s different from the
-    one in the `data`{.literal} folder could give different results
+    one in the `data` folder could give different results
     because the input texts could be different.
 4.  Add a column with the TextRank summary. Each element of this column
     corresponds to a summary, using TextRank, of the complaint narrative
-    in the corresponding column. Use a `ratio`{.literal} of
-    `0.20`{.literal}. Also, use a `try-except`{.literal} clause since
+    in the corresponding column. Use a `ratio` of
+    `0.20`. Also, use a `try-except` clause since
     the gensim implementation of the TextRank algorithm throws
     exceptions with summaries that have very few sentences.
 5.  Show the DataFrame. You should get an output similar to the
     following figure:
-    ::: {#_idContainer213 .IMG---Figure}
+
     ![Figure 7.18: DataFrame showing the summarized complaints
-    ](5_files/B16062_07_18.jpg)
-    :::
+    ](./images/B16062_07_18.jpg)
+
 
 Figure 7.18: DataFrame showing the summarized complaints
 
@@ -968,10 +897,10 @@ Note
 The full solution to this activity can be found on page 409.
 
 
-Recent Developments in Text Generation and Summarization {#_idParaDest-208}
+Recent Developments in Text Generation and Summarization
 ========================================================
 
-::: {#_idContainer214 .Content}
+
 Alan Turing (for whom the equivalent of the Nobel Prize in Computer
 Science is named) proposed a test for artificial intelligence in 1950.
 This test, known as the Turing Test, says that if humans ask questions
@@ -1040,10 +969,10 @@ to this, in the next section, we\'ll largely focus on practical
 challenges in extractive summarization.
 
 
-Practical Challenges in Extractive Summarization {#_idParaDest-209}
+Practical Challenges in Extractive Summarization
 ================================================
 
-::: {#_idContainer214 .Content}
+
 Given the rapid pace of development in NLP, it is even more important to
 use compatible versions of the libraries that we use. Evaluation of a
 document\'s suitability for extractive summarization can be undertaken
@@ -1058,10 +987,10 @@ test. We can only use a model if it works and if the limitations related
 to scope and any biases are considered.
 
 
-Summary {#_idParaDest-210}
+Summary
 =======
 
-::: {#_idContainer214 .Content}
+
 In this chapter, we learned about text generation using Markov chains
 and extractive summarization using the TextRank algorithm. We also
 explored both the power and limitations of various advanced approaches.

@@ -1,11 +1,9 @@
 
-1. Introduction to Natural Language Processing {#_idParaDest-13}
+1. Introduction to Natural Language Processing
 ==============================================
 
-::: {#_idContainer009 .Content}
-:::
 
-::: {#_idContainer014 .Content}
+
 Overview
 
 In this chapter, you will learn the difference between **Natural
@@ -16,10 +14,10 @@ chapter, you will have a deep understanding of the various phases of an
 NLP project, from data collection to model deployment.
 
 
-Introduction {#_idParaDest-14}
+Introduction
 ============
 
-::: {#_idContainer014 .Content}
+
 Before we can get into NLP in any depth, we first need to understand
 what natural language is. To put it in simple terms, it is a means for
 us to express our thoughts and ideas. To define it more specifically,
@@ -62,10 +60,10 @@ follows:
     knowledge to understand the sentence.
 
 
-History of NLP {#_idParaDest-15}
+History of NLP
 ==============
 
-::: {#_idContainer014 .Content}
+
 NLP is a field that has emerged from various other fields such as
 artificial intelligence, linguistics, and data science. With the
 advancement of computing technologies and the increased availability of
@@ -92,10 +90,10 @@ using the text corpus (training data) rather than us explicitly
 programming it to do so.
 
 
-Text Analytics and NLP {#_idParaDest-16}
+Text Analytics and NLP
 ======================
 
-::: {#_idContainer014 .Content}
+
 **Text analytics** is the method of extracting meaningful insights and
 answering questions from text data, such as those to do with the length
 of sentences, length of words, word count, and finding words from the
@@ -162,9 +160,9 @@ need to run your Jupyter Notebook in a virtual environment. You will
 also need to ensure that you have installed the requirements as stated
 in the *requirements.txt* file on <https://packt.live/3fJ4qap>.
 
-[]{#_idTextAnchor016}
 
-Exercise 1.01: Basic Text Analytics {#_idParaDest-17}
+
+Exercise 1.01: Basic Text Analytics
 -----------------------------------
 
 In this exercise, we will perform some basic text analytics on some
@@ -176,107 +174,86 @@ steps to implement this exercise using the following sentence:
 
 1.  Open a Jupyter Notebook.
 
-2.  Assign a `sentence`{.literal} variable the value
-    `'The quick brown fox jumps over the lazy dog'`{.literal}. Insert a
+2.  Assign a `sentence` variable the value
+    `'The quick brown fox jumps over the lazy dog'`. Insert a
     new cell and add the following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     sentence = 'The quick brown fox jumps over the lazy dog'
     sentence
     ```
-    :::
 
-3.  Check whether the word `'quick'`{.literal} belongs to that text
+
+3.  Check whether the word `'quick'` belongs to that text
     using the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def find_word(word, sentence):
         return word in sentence
     find_word('quick', sentence)
     ```
-    :::
 
-    The preceding code will return the output `'True'`{.literal}.
 
-4.  Find out the `index`{.literal} value of the word `'fox'`{.literal}
+    The preceding code will return the output `'True'`.
+
+4.  Find out the `index` value of the word `'fox'`
     using the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_index(word, text):
         return text.index(word)
     get_index('fox', sentence)
     ```
-    :::
 
-    The code will return the output `16`{.literal}.
 
-5.  To find out the rank of the word `'lazy'`{.literal}, use the
+    The code will return the output `16`.
+
+5.  To find out the rank of the word `'lazy'`, use the
     following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     get_index('lazy', sentence.split())
     ```
-    :::
 
-    This code generates the output `7`{.literal}.
+
+    This code generates the output `7`.
 
 6.  To print the third word of the given text, use the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_word(text,rank):
         return text.split()[rank]
     get_word(sentence,2)
     ```
-    :::
 
-    This will return the output `brown`{.literal}.
+
+    This will return the output `brown`.
 
 7.  To print the third word of the given sentence in reverse order, use
     the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     get_word(sentence,2)[::-1]
     ```
-    :::
 
-    This will return the output `nworb`{.literal}.
+
+    This will return the output `nworb`.
 
 8.  To concatenate the first and last words of the given sentence, use
     the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def concat_words(text):
@@ -290,23 +267,20 @@ steps to implement this exercise using the following sentence:
         return first_word + last_word
     concat_words(sentence)
     ```
-    :::
+
 
     Note
 
-    The triple-quotes ( `"""`{.literal} ) shown in the code snippet
+    The triple-quotes ( `"""` ) shown in the code snippet
     above are used to denote the start and end points of a multi-line
     code comment. Comments are added into code to help explain specific
     bits of logic.
 
-    The code will generate the output `Thedog`{.literal}.
+    The code will generate the output `Thedog`.
 
 9.  To print words at even positions, use the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_even_position_words(text):
@@ -314,69 +288,54 @@ steps to implement this exercise using the following sentence:
         return [words[i] for i in range(len(words)) if i%2 == 0]
     get_even_position_words(sentence)
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     ['The', 'brown', 'jumps', 'the', 'dog']
     ```
-    :::
+
 
 10. To print the last three letters of the text, use the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_last_n_letters(text, n):
         return text[-n:]
     get_last_n_letters(sentence,3)
     ```
-    :::
 
-    This will generate the output `dog`{.literal}.
+
+    This will generate the output `dog`.
 
 11. To print the text in reverse order, use the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_reverse(text):
         return text[::-1]
     get_reverse(sentence)
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     'god yzal eht revo spmuj xof nworb kciuq ehT'
     ```
-    :::
+
 
 12. To print each word of the given text in reverse order, maintaining
     their sequence, use the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_word_reverse(text):
@@ -384,19 +343,16 @@ steps to implement this exercise using the following sentence:
         return ' '.join([word[::-1] for word in words])
     get_word_reverse(sentence)
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     ehT kciuq nworb xof spmuj revo eht yzal god
     ```
-    :::
+
 
 We are now well acquainted with basic text analytics techniques.
 
@@ -411,10 +367,10 @@ In the next section, let\'s dive deeper into the various steps and
 subtasks in NLP.
 
 
-Various Steps in NLP {#_idParaDest-18}
+Various Steps in NLP
 ====================
 
-::: {#_idContainer014 .Content}
+
 We\'ve talked about the types of computations that are done with natural
 language. Apart from these basic tasks, you can also design your own
 tasks as per your requirements. In the coming sections, we will discuss
@@ -427,9 +383,9 @@ tool that provides a set of methods and algorithms to perform a wide
 range of NLP tasks, including tokenizing, parts-of-speech tagging,
 stemming, lemmatization, and more.
 
-[]{#_idTextAnchor018}
 
-Tokenization {#_idParaDest-19}
+
+Tokenization
 ------------
 
 **Tokenization** refers to the procedure of splitting a sentence into
@@ -444,16 +400,16 @@ words/tokens would be \"I,\" \"am,\" \"reading,\" \"a,\" \"book,\" and
 \".\" -- this example extracts one token at a time. Such tokens are
 called **unigrams**.
 
-NLTK provides a method called `word_tokenize()`{.literal}, which
+NLTK provides a method called `word_tokenize()`, which
 tokenizes given text into words. It actually separates the text into
 different words based on punctuation and spaces between words.
 
 To get a better understanding of tokenization, let\'s solve an exercise
 based on it in the next section.
 
-[]{#_idTextAnchor019}
 
-Exercise 1.02: Tokenization of a Simple Sentence {#_idParaDest-20}
+
+Exercise 1.02: Tokenization of a Simple Sentence
 ------------------------------------------------
 
 In this exercise, we will tokenize the words in a given sentence with
@@ -466,73 +422,61 @@ exercise using the sentence, \"I am reading NLP Fundamentals.\"
     libraries and download the different types of NLTK data that we are
     going to use for different tasks in the following exercises:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from nltk import word_tokenize, download
     download(['punkt','averaged_perceptron_tagger','stopwords'])
     ```
-    :::
 
-    In the preceding code, we are using NLTK\'s `download()`{.literal}
+
+    In the preceding code, we are using NLTK\'s `download()`
     method, which downloads the given data from NLTK. NLTK data contains
     different corpora and trained models. In the preceding example, we
-    will be downloading the stop word list, `'punkt'`{.literal}, and a
+    will be downloading the stop word list, `'punkt'`, and a
     perceptron tagger, which is used to implement parts of speech
     tagging using a structured algorithm. The data will be downloaded at
-    `nltk_data/corpora/`{.literal} in the home directory of your
+    `nltk_data/corpora/` in the home directory of your
     computer. Then, it will be loaded from the same path in further
     steps.
 
-3.  The `word_tokenize()`{.literal} method is used to split the sentence
+3.  The `word_tokenize()` method is used to split the sentence
     into words/tokens. We need to add a sentence as input to the
-    `word_tokenize()`{.literal} method so that it performs its job. The
+    `word_tokenize()` method so that it performs its job. The
     result obtained will be a list, which we will store in a
-    `word`{.literal} variable. To implement this, insert a new cell and
+    `word` variable. To implement this, insert a new cell and
     add the following code:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_tokens(sentence):
         words = word_tokenize(sentence)
         return words
     ```
-    :::
+
 
 4.  In order to view the list of tokens generated, we need to view it
-    using the `print()`{.literal} function. Insert a new cell and add
+    using the `print()` function. Insert a new cell and add
     the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(get_tokens("I am reading NLP Fundamentals."))
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     ['I', 'am', 'reading', 'NLP', 'Fundamentals', '.']
     ```
-    :::
+
 
 We can see the list of tokens generated with the help of the
-`word_tokenize()`{.literal} method.
+`word_tokenize()` method.
 
 Note
 
@@ -544,9 +488,9 @@ You can also run this example online at <https://packt.live/30dK1mZ>.
 In the next section, we will see another pre-processing step:
 **Parts-of-Speech (PoS) tagging**.
 
-[]{#_idTextAnchor020}
 
-PoS Tagging {#_idParaDest-21}
+
+PoS Tagging
 -----------
 
 In NLP, the term PoS refers to parts of speech. PoS tagging refers to
@@ -558,27 +502,24 @@ namely \"The,\" \"sky,\" \"is,\" and \"blue\", with the help of
 tokenization. Now, using a **PoS tagger**, we tag the PoS for each
 word/token. This will look as follows:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 [('The', 'DT'), ('sky', 'NN'), ('is', 'VBZ'), ('blue', 'JJ')]
 ```
-:::
+
 
 The preceding format is an output of the NLTK
-`pos_tag()`{.literal}method. It is a list of tuples in which every tuple
+`pos_tag()`method. It is a list of tuples in which every tuple
 consists of the word followed by the PoS tag:
 
-`DT`{.literal} = Determiner
+`DT` = Determiner
 
-`NN`{.literal} = Noun, common, singular or mass
+`NN` = Noun, common, singular or mass
 
-`VBZ`{.literal} = Verb, present tense, third-person singular
+`VBZ` = Verb, present tense, third-person singular
 
-`JJ`{.literal} = Adjective
+`JJ` = Adjective
 
 For the complete list of PoS tags in NLTK, you can refer to
 <https://pythonprogramming.net/natural-language-toolkit-nltk-part-speech-tagging/>.
@@ -598,93 +539,75 @@ between the different meanings of the sentences.
 Let\'s perform a simple exercise to understand how PoS tagging is done
 in Python.
 
-[]{#_idTextAnchor021}
 
-Exercise 1.03: PoS Tagging {#_idParaDest-22}
+
+Exercise 1.03: PoS Tagging
 --------------------------
 
 In this exercise, we will find out the PoS for each word in the
-sentence, `I am reading NLP Fundamentals`{.literal}. We first make use
+sentence, `I am reading NLP Fundamentals`. We first make use
 of tokenization in order to get the tokens. Later, we will use the
-`pos_tag()`{.literal} method, which will help us find the PoS for each
+`pos_tag()` method, which will help us find the PoS for each
 word/token. Follow these steps to implement this exercise:
 
 1.  Open a Jupyter Notebook.
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from nltk import word_tokenize, pos_tag
     ```
-    :::
+
 
 3.  To find the tokens in the sentence, we make use of the
-    `word_tokenize()`{.literal} method. Insert a new cell and add the
+    `word_tokenize()` method. Insert a new cell and add the
     following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_tokens(sentence):
         words = word_tokenize(sentence)
         return words
     ```
-    :::
 
-4.  Print the tokens with the help of the `print()`{.literal} function.
+
+4.  Print the tokens with the help of the `print()` function.
     To implement this, add a new cell and write the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     words  = get_tokens("I am reading NLP Fundamentals")
     print(words)
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     ['I', 'am', 'reading', 'NLP', 'Fundamentals']
     ```
-    :::
 
-5.  We\'ll now use the `pos_tag()`{.literal} method. Insert a new cell
+
+5.  We\'ll now use the `pos_tag()` method. Insert a new cell
     and add the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_pos(words):
         return pos_tag(words)
     get_pos(words)
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [('I', 'PRP'),
@@ -693,7 +616,7 @@ word/token. Follow these steps to implement this exercise:
      ('NLP', 'NNP'),
      ('Fundamentals', 'NNS')]
     ```
-    :::
+
 
 In the preceding output, we can see that for each token, a PoS has been
 allotted. Here, **PRP** stands for **personal pronoun**, **VBP** stands
@@ -711,9 +634,9 @@ We have learned about assigning appropriate PoS labels to tokens in a
 sentence. In the next section, we will learn about **stop words** in
 sentences and ways to deal with them.
 
-[]{#_idTextAnchor022}
 
-Stop Word Removal {#_idParaDest-23}
+
+Stop Word Removal
 -----------------
 
 Stop words are the most frequently occurring words in any language and
@@ -728,23 +651,20 @@ analysis much more efficient. Examples of stop words include \"a,\"
 In the next exercise, we will look at the practical implementation of
 removing stop words from a given sentence.
 
-[]{#_idTextAnchor023}
 
-Exercise 1.04: Stop Word Removal {#_idParaDest-24}
+
+Exercise 1.04: Stop Word Removal
 --------------------------------
 
 In this exercise, we will check the list of stop words provided by the
-`nltk`{.literal} library. Based on this list, we will filter out the
+`nltk` library. Based on this list, we will filter out the
 stop words included in our text:
 
 1.  Open a Jupyter Notebook.
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from nltk import download
@@ -752,66 +672,57 @@ stop words included in our text:
     from nltk import word_tokenize
     from nltk.corpus import stopwords
     ```
-    :::
+
 
 3.  In order to check the list of stop words provided for
-    `English`{.literal}, we pass it as a parameter to the
-    `words()`{.literal} function. Insert a new cell and add the
+    `English`, we pass it as a parameter to the
+    `words()` function. Insert a new cell and add the
     following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     stop_words = stopwords.words('english')
     ```
-    :::
 
-4.  In the code, the list of stop words provided by `English`{.literal}
-    is stored in the `stop_words`{.literal} variable. In order to view
-    the list, we make use of the `print()`{.literal} function. Insert a
+
+4.  In the code, the list of stop words provided by `English`
+    is stored in the `stop_words` variable. In order to view
+    the list, we make use of the `print()` function. Insert a
     new cell and add the following code to view the list:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(stop_words)
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {#_idContainer010 .IMG---Figure}
+
     ![Figure 1.1: List of stop words provided by English
-    ](5_files/B16062_01_01.jpg)
-    :::
+    ](./images/B16062_01_01.jpg)
+
 
     Figure 1.1: List of stop words provided by English
 
 5.  To remove the stop words from a sentence, we first assign a string
-    to the `sentence`{.literal} variable and tokenize it into words
-    using the `word_tokenize()`{.literal} method. Insert a new cell and
+    to the `sentence` variable and tokenize it into words
+    using the `word_tokenize()` method. Insert a new cell and
     add the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     sentence = "I am learning Python. It is one of the "\
                "most popular programming languages"
     sentence_words = word_tokenize(sentence)
     ```
-    :::
+
 
     Note
 
-    The code snippet shown here uses a backslash ( `\`{.literal} ) to
+    The code snippet shown here uses a backslash ( `\` ) to
     split the logic across multiple lines. When the code is executed,
     Python will ignore the backslash, and treat the code on the next
     line as a direct continuation of the current line.
@@ -819,69 +730,54 @@ stop words included in our text:
 6.  To print the list of tokens, insert a new cell and add the following
     code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(sentence_words)
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     ['I', 'am', 'learning', 'Python', '.', 'It', 'is', 'one', 'of', 'the', 'most', 'popular', 'programming', 'languages']
     ```
-    :::
+
 
 7.  To remove the stop words, we need to loop through each word in the
     sentence, check whether there are any stop words, and then finally
     combine them to form a complete sentence. To implement this, insert
     a new cell and add the following code:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def remove_stop_words(sentence_words, stop_words):
         return ' '.join([word for word in sentence_words if \
                          word not in stop_words])
     ```
-    :::
+
 
 8.  To check whether the stop words are filtered out from our sentence,
-    print the `sentence_no_stops`{.literal} variable. Insert a new cell
+    print the `sentence_no_stops` variable. Insert a new cell
     and add the following code to print:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(remove_stop_words(sentence_words,stop_words))
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     I learning Python. It one popular programming languages
     ```
-    :::
+
 
     As you can see in the preceding code snippet, stop words such as
     \"am,\" \"is,\" \"of,\" \"the,\" and \"most\" are being filtered out
@@ -889,28 +785,22 @@ stop words included in our text:
 
 9.  Add your own stop words to the stop word list:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     stop_words.extend(['I','It', 'one'])
     print(remove_stop_words(sentence_words,stop_words))
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     learning Python . popular programming languages
     ```
-    :::
+
 
 As we can see from the output, now words such as \"I,\" \"It,\" and\*
 \"One\" are removed as we have added them to our custom stop word list.
@@ -925,9 +815,9 @@ You can also run this example online at <https://packt.live/3fyYSir>.
 
 In the next section, we will focus on normalizing text.
 
-[]{#_idTextAnchor024}
 
-Text Normalization {#_idParaDest-25}
+
+Text Normalization
 ------------------
 
 There are some words that are spelled, pronounced, and represented
@@ -945,15 +835,15 @@ stemming, and lemmatization, which will be covered later.
 For a better understanding of this topic, we will look into a practical
 implementation of text normalization in the next section.
 
-[]{#_idTextAnchor025}
 
-Exercise 1.05: Text Normalization {#_idParaDest-26}
+
+Exercise 1.05: Text Normalization
 ---------------------------------
 
 In this exercise, we will normalize some given text. Basically, we will
 be trying to replace select words with new words, using the
-`replace()`{.literal} function, and finally produce the normalized text.
-`replace()`{.literal} is a built-in Python function that works on
+`replace()` function, and finally produce the normalized text.
+`replace()` is a built-in Python function that works on
 strings and takes two arguments. It will return a copy of a string in
 which the occurrence of the first argument will be replaced by the
 second argument.
@@ -963,28 +853,22 @@ Follow these steps to complete this exercise:
 1.  Open a Jupyter Notebook.
 
 2.  Insert a new cell and add the following code to assign a string to
-    the `sentence`{.literal} variable:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+    the `sentence` variable:
+
 
     ``` {.language-markup}
     sentence = "I visited the US from the UK on 22-10-18"
     ```
-    :::
 
-3.  We want to replace `"US"`{.literal} with
-    `"United States"`{.literal}, `"UK"`{.literal} with
-    `"United Kingdom"`{.literal}, and `"18"`{.literal} with
-    `"2018"`{.literal}. To do so, use the `replace()`{.literal} function
+
+3.  We want to replace `"US"` with
+    `"United States"`, `"UK"` with
+    `"United Kingdom"`, and `"18"` with
+    `"2018"`. To do so, use the `replace()` function
     and store the updated output in the
-    `"normalized_sentence"`{.literal} variable. Insert a new cell and
+    `"normalized_sentence"` variable. Insert a new cell and
     add the following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def normalize(text):
@@ -992,58 +876,46 @@ Follow these steps to complete this exercise:
                    .replace("UK", "United Kingdom")\
                    .replace("-18", "-2018")
     ```
-    :::
+
 
 4.  To check whether the text has been normalized, insert a new cell and
     add the following code to print it:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     normalized_sentence = normalize(sentence)
     print(normalized_sentence)
     ```
-    :::
+
 
     The code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     I visited the United States from the United Kingdom on 22-10-2018
     ```
-    :::
+
 
 5.  Add the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     normalized_sentence = normalize('US and UK are two superpowers')
     print(normalized_sentence)
     ```
-    :::
+
 
     The code generates following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     United States and United Kingdom are two superpowers
     ```
-    :::
+
 
 In the preceding code, we can see that our text has been normalized.
 
@@ -1057,9 +929,9 @@ You can also run this example online at <https://packt.live/2Wm4d5k>.
 Over the next sections, we will explore various other ways in which text
 can be normalized.
 
-[]{#_idTextAnchor026}
 
-Spelling Correction {#_idParaDest-27}
+
+Spelling Correction
 -------------------
 
 Spelling correction is one of the most important tasks in any NLP
@@ -1082,120 +954,99 @@ Spelling correction is executed in two steps:
     which means that \"autocorrect\" is the correct spelling because it
     requires the fewest edits.
 
-We make use of the `autocorrect`{.literal} Python library to correct
+We make use of the `autocorrect` Python library to correct
 spellings.
 
-`autocorrect`{.literal} is a Python library used to correct the spelling
+`autocorrect` is a Python library used to correct the spelling
 of misspelled words for different languages. It provides a method called
-`spell()`{.literal}, which takes a word as input and returns the correct
+`spell()`, which takes a word as input and returns the correct
 spelling of the word.
 
 Let\'s look at the following exercise to get a better understanding of
 this.
 
-[]{#_idTextAnchor027}
 
-Exercise 1.06: Spelling Correction of a Word and a Sentence {#_idParaDest-28}
+
+Exercise 1.06: Spelling Correction of a Word and a Sentence
 -----------------------------------------------------------
 
 In this exercise, we will perform spelling correction on a word and a
-sentence, with the help of Python\'s `autocorrect`{.literal} library.
+sentence, with the help of Python\'s `autocorrect` library.
 Follow these steps in order to complete this exercise:
 
 1.  Open a Jupyter Notebook.
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from nltk import word_tokenize
     from autocorrect import Speller
     ```
-    :::
+
 
 3.  In order to correct the spelling of a word, pass a wrongly spelled
-    word as a parameter to the `spell()`{.literal} function. Before
-    that, you have to create a `spell`{.literal} object of the
-    `Speller`{.literal} class using `lang='en'`{.literal} to signify the
+    word as a parameter to the `spell()` function. Before
+    that, you have to create a `spell` object of the
+    `Speller` class using `lang='en'` to signify the
     English language. Insert a new cell and add the following code to
     implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     spell = Speller(lang='en')
     spell('Natureal')
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     'Natural'
     ```
-    :::
+
 
 4.  To correct the spelling of a sentence, first tokenize it into
-    tokens. After that, loop through each token in `sentence`{.literal},
+    tokens. After that, loop through each token in `sentence`,
     autocorrect the words, and finally combine the words. Insert a new
     cell and add the following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     sentence = word_tokenize("Ntural Luanguage Processin deals with "\
                              "the art of extracting insightes from "\
                              "Natural Languaes")
     ```
-    :::
 
-5.  Use the `print()`{.literal} function to print all tokens. Insert a
+
+5.  Use the `print()` function to print all tokens. Insert a
     new cell and add the following code to print the tokens:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(sentence)
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     ['Ntural', 'Luanguage', 'Processin', 'deals', 'with', 'the', 'art', 'of', 'extracting', 'insightes', 'from', 'Natural', 'Languaes']
     ```
-    :::
+
 
 6.  Now that we have got the tokens, loop through each token in
-    `sentence`{.literal}, correct the tokens, and assign them to a new
+    `sentence`, correct the tokens, and assign them to a new
     variable. Insert a new cell and add the following code to implement
     this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def correct_spelling(tokens):
@@ -1203,41 +1054,35 @@ Follow these steps in order to complete this exercise:
                                        for word in tokens])
         return sentence_corrected
     ```
-    :::
+
 
 7.  To print the correct sentence, insert a new cell and add the
     following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(correct_spelling(sentence))
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     ['Natural', 'Language', 'Procession', 'deals', 'with', 'the', 'art', 
      'of', 'extracting', 'insights', 'from', 'Natural', 'Languages']
     ```
-    :::
+
 
 In the preceding code snippet, we can see that most of the wrongly
 spelled words have been corrected. But the word
-\"`Processin`{.literal}\" was wrongly converted into
-\"`Procession`{.literal}.\" It should have been
-\"`Processing`{.literal}.\" This happened because to change
-\"`Processin`{.literal}\" to \"`Procession`{.literal}\" or
-\"`Processing`{.literal},\" an equal number of edits is required. To
+\"`Processin`\" was wrongly converted into
+\"`Procession`.\" It should have been
+\"`Processing`.\" This happened because to change
+\"`Processin`\" to \"`Procession`\" or
+\"`Processing`,\" an equal number of edits is required. To
 rectify this, we need to use other kinds of spelling correctors that are
 aware of context.
 
@@ -1251,9 +1096,9 @@ You can also run this example online at <https://packt.live/3gVpbj4>.
 In the next section, we will look at stemming, which is another form of
 text normalization.
 
-[]{#_idTextAnchor028}
 
-Stemming {#_idParaDest-29}
+
+Stemming
 --------
 
 In most languages, words get transformed into various forms when being
@@ -1267,10 +1112,10 @@ words get transformed into their base forms:
 
 <div>
 
-::: {#_idContainer011 .IMG---Figure}
+
 ![Figure 1.2: Stemming of the word \"product\"
-](5_files/B16062_01_02.jpg)
-:::
+](./images/B16062_01_02.jpg)
+
 
 </div>
 
@@ -1284,12 +1129,12 @@ stemmer and the snowball stemmer, provided by the NLTK library. The
 porter stemmer is a rule-based algorithm that transforms words to their
 base form by removing suffixes from words. The snowball stemmer is an
 improvement over the porter stemmer and is a little bit faster and uses
-less memory. In NLTK, this is done by the `stem()`{.literal} method
-provided by the `PorterStemmer`{.literal} class.
+less memory. In NLTK, this is done by the `stem()` method
+provided by the `PorterStemmer` class.
 
-[]{#_idTextAnchor029}
 
-Exercise 1.07: Using Stemming {#_idParaDest-30}
+
+Exercise 1.07: Using Stemming
 -----------------------------
 
 In this exercise, we will pass a few words through the stemming process
@@ -1300,23 +1145,17 @@ implement this exercise:
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from nltk import stem
     ```
-    :::
 
-3.  Now pass the following words as parameters to the `stem()`{.literal}
+
+3.  Now pass the following words as parameters to the `stem()`
     method. To implement this, insert a new cell and add the following
     code:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_stems(word,stemmer):
@@ -1324,125 +1163,98 @@ implement this exercise:
     porterStem = stem.PorterStemmer()
     get_stems("production",porterStem)
     ```
-    :::
 
-4.  When the input is `"production"`{.literal}, the following output is
+
+4.  When the input is `"production"`, the following output is
     generated:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     'product'
     ```
-    :::
+
 
 5.  Similarly, the following code would be used for the input
-    `"coming"`{.literal}.
+    `"coming"`.
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     get_stems("coming",porterStem)
     ```
-    :::
+
 
     We get the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     'come'
     ```
-    :::
+
 
 6.  Similarly, the following code would be used for the input
-    `"firing"`{.literal}.
+    `"firing"`.
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
       get_stems("firing",porterStem)
     ```
-    :::
 
-    When the input is `"firing"`{.literal}, the following output is
+
+    When the input is `"firing"`, the following output is
     generated:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     'fire'
     ```
-    :::
+
 
 7.  The following code would be used for the input
-    `"battling"`{.literal}.
+    `"battling"`.
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
       get_stems("battling",porterStem)
     ```
-    :::
 
-    If we give the input `"battling"`{.literal}, the following output is
+
+    If we give the input `"battling"`, the following output is
     generated:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     'battl'
     ```
-    :::
+
 
 8.  The following code will also generate the same output as above, for
-    the input `"battling".`{.literal}
+    the input `"battling".`
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     stemmer = stem.SnowballStemmer("english")
     get_stems("battling",stemmer)
     ```
-    :::
+
 
     The output will be as follows:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     'battl'
     ```
-    :::
+
 
 As you have seen while using the snowball stemmer, we have to provide
-the language as `"english"`{.literal}. We can also use the stemmer for
+the language as `"english"`. We can also use the stemmer for
 different languages such as Spanish, French, and many more. From the
 preceding code snippets, we can see that the entered words are converted
 into their base forms.
@@ -1457,14 +1269,14 @@ You can also run this example online at <https://packt.live/30h147K>.
 In the next section, we will focus on **lemmatization**, which is
 another form of text normalization.
 
-[]{#_idTextAnchor030}
 
-Lemmatization {#_idParaDest-31}
+
+Lemmatization
 -------------
 
 Sometimes, the stemming process leads to incorrect results. For example,
-in the last exercise, the word `battling`{.literal} was transformed to
-`"battl"`{.literal}, which is not a word. To overcome such problems with
+in the last exercise, the word `battling` was transformed to
+`"battl"`, which is not a word. To overcome such problems with
 stemming, we make use of lemmatization. Lemmatization is the process of
 converting words to their base grammatical form, as in \"battling\" to
 \"battle,\" rather than just randomly axing words. In this process, an
@@ -1474,19 +1286,19 @@ additional information; for example, PoS tags along with words will help
 in getting better results.
 
 In the following exercise, we will be using
-`WordNetLemmatizer`{.literal}, which is an NLTK interface of WordNet.
+`WordNetLemmatizer`, which is an NLTK interface of WordNet.
 WordNet is a freely available lexical English database that can be used
 to generate semantic relationships between words. NLTK\'s
-`WordNetLemmatizer`{.literal} provides a method called
-`lemmatize()`{.literal}, which returns the lemma (grammatical base form)
+`WordNetLemmatizer` provides a method called
+`lemmatize()`, which returns the lemma (grammatical base form)
 of a given word using WordNet.
 
 To put lemmatization into practice, let\'s perform an exercise where
-we\'ll use the `lemmatize()`{.literal} function.
+we\'ll use the `lemmatize()` function.
 
-[]{#_idTextAnchor031}
 
-Exercise 1.08: Extracting the Base Word Using Lemmatization {#_idParaDest-32}
+
+Exercise 1.08: Extracting the Base Word Using Lemmatization
 -----------------------------------------------------------
 
 In this exercise, we will use the lemmatization process to produce the
@@ -1497,109 +1309,85 @@ exercise:
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from nltk import download
     download('wordnet')
     from nltk.stem.wordnet import WordNetLemmatizer
     ```
-    :::
 
-3.  Create an object of the `WordNetLemmatizer`{.literal} class. Insert
+
+3.  Create an object of the `WordNetLemmatizer` class. Insert
     a new cell and add the following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     lemmatizer = WordNetLemmatizer()
     ```
-    :::
+
 
 4.  Bring the word to its proper form by using the
-    `lemmatize()`{.literal} method of the `WordNetLemmatizer`{.literal}
+    `lemmatize()` method of the `WordNetLemmatizer`
     class. Insert a new cell and add the following code to implement
     this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_lemma(word):
         return lemmatizer.lemmatize(word)
     get_lemma('products')
     ```
-    :::
 
-    With the input `products`{.literal}, the following output is
+
+    With the input `products`, the following output is
     generated:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     'product'
     ```
-    :::
 
-5.  Similarly, use the input as `production`{.literal} now:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+5.  Similarly, use the input as `production` now:
+
+
 
     ``` {.language-markup}
     get_lemma('production')
     ```
-    :::
 
-    With the input `production`{.literal}, the following output is
+
+    With the input `production`, the following output is
     generated:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     'production'
     ```
-    :::
 
-6.  Similarly, use the input as `coming`{.literal} now:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+6.  Similarly, use the input as `coming` now:
+
+
 
     ``` {.language-markup}
     get_lemma('coming')
     ```
-    :::
 
-    With the input `coming`{.literal}, the following output is
+
+    With the input `coming`, the following output is
     generated:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     'coming'
     ```
-    :::
+
 
     Hence, we have learned how to use the lemmatization process to
     transform a given word into its base form.
@@ -1615,9 +1403,9 @@ exercise:
 In the next section, we will look at another preprocessing step in NLP:
 **named entity recognition** (**NER**).
 
-[]{#_idTextAnchor032}
 
-Named Entity Recognition (NER) {#_idParaDest-33}
+
+Named Entity Recognition (NER)
 ------------------------------
 
 NER is the process of extracting important entities, such as person
@@ -1647,9 +1435,9 @@ is the process of grouping words together into chunks, which can be
 further used to find noun groups and verb groups, or can also be used
 for sentence partitioning.
 
-[]{#_idTextAnchor033}
 
-Exercise 1.09: Treating Named Entities {#_idParaDest-34}
+
+Exercise 1.09: Treating Named Entities
 --------------------------------------
 
 In this exercise, we will find the named entities in a given sentence.
@@ -1663,10 +1451,7 @@ Birmingham.\"
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from nltk import download
@@ -1676,28 +1461,22 @@ Birmingham.\"
     download('maxent_ne_chunker')
     download('words')
     ```
-    :::
 
-3.  Declare the `sentence`{.literal} variable and assign it a string.
+
+3.  Declare the `sentence` variable and assign it a string.
     Insert a new cell and add the following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     sentence = "We are reading a book published by Packt "\
                "which is based out of Birmingham."
     ```
-    :::
+
 
 4.  To find the named entities from the preceding text, insert a new
     cell and add the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_ner(text):
@@ -1705,23 +1484,20 @@ Birmingham.\"
         return [a for a in i if len(a)==1]
     get_ner(sentence)
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [Tree('NE', [('Packt', 'NNP')]), Tree('NE', [('Birmingham', 'NNP')])]
     ```
-    :::
+
 
     In the preceding code, we can see that the code identifies the named
-    entities \"`Packt`{.literal}\" and \"`Birmingham`{.literal}\" and
-    maps them to an already-defined category, \"`NNP`{.literal}.\"
+    entities \"`Packt`\" and \"`Birmingham`\" and
+    maps them to an already-defined category, \"`NNP`.\"
 
     Note
 
@@ -1735,10 +1511,10 @@ In the next section, we will focus on word sense disambiguation, which
 helps us to identify the right sense of any word.
 
 
-Word Sense Disambiguation {#_idParaDest-35}
+Word Sense Disambiguation
 =========================
 
-::: {#_idContainer014 .Content}
+
 There\'s a popular saying: \"A man is known by the company he keeps.\'\'
 Similarly, a word\'s meaning depends on its association with other words
 in a sentence. This means two or more words with the same spelling may
@@ -1752,9 +1528,9 @@ sentences:
 
 <div>
 
-::: {#_idContainer012 .IMG---Figure}
-![Figure 1.3: Word sense disambiguation ](6_files/B16062_01_03.jpg)
-:::
+
+![Figure 1.3: Word sense disambiguation ](./images/B16062_01_03.jpg)
+
 
 </div>
 
@@ -1762,7 +1538,7 @@ Figure 1.3: Word sense disambiguation
 
 One of the algorithms to solve word sense disambiguation is the Lesk
 algorithm. It has a huge corpus in the background (generally
-`WordNet`{.literal} is used) that contains definitions of all the
+`WordNet` is used) that contains definitions of all the
 possible synonyms of all the possible words in a language. Then it takes
 a word and the context as input and finds a match between the context
 and all the definitions of the word. The meaning with the highest number
@@ -1789,16 +1565,16 @@ preceding sentences.
 In the next exercise, we will be using the Lesk module from NLTK. It
 takes a sentence and the word as input, and returns the meaning or
 definition of the word. The output of the Lesk method is
-`synset`{.literal}, which contains the ID of the matched definition.
+`synset`, which contains the ID of the matched definition.
 These IDs can be matched with their definitions using the
-`definition()`{.literal} method of `wsd.synset('word')`{.literal}.
+`definition()` method of `wsd.synset('word')`.
 
 To get a better understanding of this process, let\'s look at an
 exercise.
 
-[]{#_idTextAnchor035}
 
-Exercise 1.10: Word Sense Disambiguation {#_idParaDest-36}
+
+Exercise 1.10: Word Sense Disambiguation
 ----------------------------------------
 
 In this exercise, we will find the sense of the word \"bank\" in two
@@ -1808,10 +1584,7 @@ different sentences. Follow these steps to implement this exercise:
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import nltk
@@ -1819,78 +1592,63 @@ different sentences. Follow these steps to implement this exercise:
     from nltk.wsd import lesk
     from nltk import word_tokenize
     ```
-    :::
 
-3.  Declare two variables, `sentence1`{.literal} and
-    `sentence2`{.literal}, and assign them with appropriate strings.
+
+3.  Declare two variables, `sentence1` and
+    `sentence2`, and assign them with appropriate strings.
     Insert a new cell and the following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     sentence1 = "Keep your savings in the bank"
     sentence2 = "It's so risky to drive over the banks of the road"
     ```
-    :::
+
 
 4.  To find the sense of the word \"bank\" in the preceding two
     sentences, use the Lesk algorithm provided by the
-    `nltk.wsd`{.literal} library. Insert a new cell and add the
+    `nltk.wsd` library. Insert a new cell and add the
     following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_synset(sentence, word):
         return lesk(word_tokenize(sentence), word)
     get_synset(sentence1,'bank')
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     Synset('savings_bank.n.02')
     ```
-    :::
 
-5.  Here, `savings_bank.n.02`{.literal} refers to a container for
+
+5.  Here, `savings_bank.n.02` refers to a container for
     keeping money safely at home. To check the other sense of the word
     \"bank,\" write the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     get_synset(sentence2,'bank')
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     Synset('bank.v.07')
     ```
-    :::
 
-    Here, `bank.v.07`{.literal} refers to a slope in the turn of a road.
+
+    Here, `bank.v.07` refers to a slope in the turn of a road.
 
     Thus, with the help of the Lesk algorithm, we were able to identify
     the sense of a word in whatever context.
@@ -1907,10 +1665,10 @@ In the next section, we will focus on **sentence boundary detection**,
 which helps detect the start and end points of sentences.
 
 
-Sentence Boundary Detection {#_idParaDest-37}
+Sentence Boundary Detection
 ===========================
 
-::: {#_idContainer014 .Content}
+
 Sentence boundary detection is the method of detecting where one
 sentence ends and another begins. If you are thinking that this sounds
 pretty easy, as a period (.) or a question mark (?) denotes the end of a
@@ -1921,38 +1679,32 @@ sentence level; detecting the boundaries of sentences is essential.
 
 An exercise will provide us with a better understanding of this process.
 
-[]{#_idTextAnchor037}
 
-Exercise 1.11: Sentence Boundary Detection {#_idParaDest-38}
+
+Exercise 1.11: Sentence Boundary Detection
 ------------------------------------------
 
 In this exercise, we will extract sentences from a paragraph. To do so,
-we\'ll be using the `sent_tokenize()`{.literal} method, which is used to
+we\'ll be using the `sent_tokenize()` method, which is used to
 detect sentence boundaries. The following steps need to be performed:
 
 1.  Open a Jupyter Notebook.
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import nltk
     from nltk.tokenize import sent_tokenize
     ```
-    :::
 
-3.  Use the `sent_tokenize()`{.literal} method to detect sentences in
+
+3.  Use the `sent_tokenize()` method to detect sentences in
     some given text. Insert a new cell and add the following code to
     implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def get_sentences(text):
@@ -1961,14 +1713,11 @@ detect sentence boundaries. The following steps need to be performed:
                   "the publisher? It is Packt. Packt is based "\
                   "out of Birmingham.")
     ```
-    :::
+
 
     This code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     ['We are reading a book.'
@@ -1976,37 +1725,31 @@ detect sentence boundaries. The following steps need to be performed:
      'It is Packt.',
      'Packt is based out of Birmingham.']
     ```
-    :::
 
-4.  Use the `sent_tokenize()`{.literal} method for text that contains
+
+4.  Use the `sent_tokenize()` method for text that contains
     periods (.) other than those found at the ends of sentences:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     get_sentences("Mr. Donald John Trump is the current "\
                   "president of the USA. Before joining "\
                   "politics, he was a businessman.")
     ```
-    :::
+
 
     The code will generate the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     ['Mr. Donald John Trump is the current president of the USA.',
      'Before joining politics, he was a businessman.']
     ```
-    :::
 
-As you can see in the code, the `sent_tokenize`{.literal} method is able
+
+As you can see in the code, the `sent_tokenize` method is able
 to differentiate between the period (.) after \"Mr\" and the one used to
 end the sentence. We have covered all the preprocessing steps that are
 involved in NLP.
@@ -2020,9 +1763,9 @@ You can also run this example online at <https://packt.live/2CC8Ukp>.
 
 Now, using the knowledge we\'ve gained, let\'s perform an activity.
 
-[]{#_idTextAnchor038}
 
-Activity 1.01: Preprocessing of Raw Text {#_idParaDest-39}
+
+Activity 1.01: Preprocessing of Raw Text
 ----------------------------------------
 
 We have a text corpus that is in an improper format. In this activity,
@@ -2031,7 +1774,7 @@ to get some meaning out of the text.
 
 Note
 
-The text corpus, `file.txt`{.literal}, can be found at this location:
+The text corpus, `file.txt`, can be found at this location:
 <https://packt.live/30cu54z>[](https://packt.live/30cu54z)
 
 After downloading the file, place it in the same directory as the
@@ -2070,10 +1813,10 @@ preprocessing steps are needed to carry out any NLP project. In the next
 section, we will focus on the different phases of an NLP project.
 
 
-Kick Starting an NLP Project {#_idParaDest-40}
+Kick Starting an NLP Project
 ============================
 
-::: {#_idContainer014 .Content}
+
 We can divide an NLP project into several sub-projects or phases. These
 phases are completed in a particular sequence. This tends to increase
 the overall efficiency of the process, as memory usage changes from one
@@ -2082,9 +1825,9 @@ which are outlined in the following figure:
 
 <div>
 
-::: {#_idContainer013 .IMG---Figure}
-![Figure 1.4: Phases of an NLP project ](8_files/B16062_01_04.jpg)
-:::
+
+![Figure 1.4: Phases of an NLP project ](./images/B16062_01_04.jpg)
+
 
 </div>
 
@@ -2094,9 +1837,9 @@ Suppose you are working on a project in which you need to classify
 emails as important and unimportant. We will explain how this is carried
 out by discussing each phase in detail.
 
-[]{#_idTextAnchor040}
 
-Data Collection {#_idParaDest-41}
+
+Data Collection
 ---------------
 
 This is the initial phase of any NLP project. Our sole purpose is to
@@ -2106,9 +1849,9 @@ our own dataset by crawling the web. In our case, we will collect
 different email data. We can even get this data from our personal emails
 as well, to start with.
 
-[]{#_idTextAnchor041}
 
-Data Preprocessing {#_idParaDest-42}
+
+Data Preprocessing
 ------------------
 
 Once the data is collected, we need to clean it. For the process of
@@ -2123,9 +1866,9 @@ will follow these preprocessing steps:
     some common term and replacing punctuation with empty strings
 4.  Stemming and lemmatization
 
-[]{#_idTextAnchor042}
 
-Feature Extraction {#_idParaDest-43}
+
+Feature Extraction
 ------------------
 
 Computers understand only binary digits: 0 and 1. As such, every
@@ -2142,9 +1885,9 @@ The list will have 1 at the indices of words that are present in the
 email and 0 at the other indices. This is called one-hot encoding. We
 will learn more about this in coming chapters.
 
-[]{#_idTextAnchor043}
 
-Model Development {#_idParaDest-44}
+
+Model Development
 -----------------
 
 Once the feature set is ready, we need to develop a suitable model that
@@ -2153,9 +1896,9 @@ generally statistical, machine learning-based, deep learning-based, or
 reinforcement learning-based. In our case, we will build a model that is
 capable of differentiating between important and unimportant emails.
 
-[]{#_idTextAnchor044}
 
-Model Assessment {#_idParaDest-45}
+
+Model Assessment
 ----------------
 
 After developing a model, it is essential to benchmark it. This process
@@ -2166,9 +1909,9 @@ include precision, recall, and accuracy. In our case, we will evaluate
 the newly created model by seeing how well it performs at classifying
 emails as important and unimportant.
 
-[]{#_idTextAnchor045}
 
-Model Deployment {#_idParaDest-46}
+
+Model Deployment
 ----------------
 
 This is the final stage for most industrial NLP projects. In this stage,
@@ -2178,10 +1921,10 @@ base. In our case, we will deploy our model to production, so that it
 can classify emails as important and unimportant in real time.
 
 
-Summary {#_idParaDest-47}
+Summary
 =======
 
-::: {#_idContainer014 .Content}
+
 In this chapter, we learned about the basics of NLP and how it differs
 from text analytics. We covered the various preprocessing steps that are
 included in NLP, such as tokenization, PoS tagging, stemming,

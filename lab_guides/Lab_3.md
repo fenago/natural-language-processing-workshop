@@ -1,11 +1,9 @@
 
-3. Developing a Text Classifier {#_idParaDest-93}
+3. Developing a Text Classifier
 ===============================
 
-::: {#_idContainer051 .Content}
-:::
 
-::: {#_idContainer119 .Content}
+
 Overview
 
 This chapter starts with an introduction to the various types of machine
@@ -17,10 +15,10 @@ an end-to-end text classifier in order to categorize text on the basis
 of its content.
 
 
-Introduction {#_idParaDest-94}
+Introduction
 ============
 
-::: {#_idContainer119 .Content}
+
 In the previous chapters, you learned about various extraction methods,
 such as tokenization, stemming, lemmatization, and stop-word removal,
 which are used to extract features from unstructured text. We also
@@ -38,10 +36,10 @@ depth. This chapter also discusses how to load and save these models for
 future use.
 
 
-Machine Learning {#_idParaDest-95}
+Machine Learning
 ================
 
-::: {#_idContainer119 .Content}
+
 Machine learning is the scientific study of algorithms and statistical
 models that computer systems use to perform a specific task without
 using explicit instructions, relying on patterns and inference instead.
@@ -53,13 +51,13 @@ the future. For example, a beverage production company can make use of
 multiple datasets to better understand the trends of their product\'s
 consumption over the course of a year. This would help them reduce
 wastage and better predict the requirements of their consumers. Machine
-learning is further categorized into `unsupervised`{.literal} and
-`supervised`{.literal} learning. Let\'s explore these two terms in
+learning is further categorized into `unsupervised` and
+`supervised` learning. Let\'s explore these two terms in
 detail.
 
-[]{#_idTextAnchor096}
 
-Unsupervised Learning {#_idParaDest-96}
+
+Unsupervised Learning
 ---------------------
 
 Unsupervised learning is the method by which algorithms learn patterns
@@ -107,22 +105,22 @@ calculated as follows:
 
 <div>
 
-::: {#_idContainer052 .IMG---Figure}
-![Figure 3.1: Formula for Euclidean distance ](3_files/B16062_03_01.jpg)
-:::
+
+![Figure 3.1: Formula for Euclidean distance ](./images/B16062_03_01.jpg)
+
 
 </div>
 
 Figure 3.1: Formula for Euclidean distance
 
 In the case of machine learning, *p* and *q* are different data points
-in the dataset and `p`{.literal}[i]{.subscript},
-`q`{.literal}[i]{.subscript} are the different features of those data
+in the dataset and `p`[i]{.subscript},
+`q`[i]{.subscript} are the different features of those data
 points.
 
-[]{#_idTextAnchor097}
 
-Hierarchical Clustering {#_idParaDest-97}
+
+Hierarchical Clustering
 -----------------------
 
 Hierarchical clustering algorithms group similar objects together to
@@ -130,7 +128,7 @@ create a cluster with the help of a **dendrogram**. In this algorithm,
 we can vary the number of clusters as per our requirements. First, we
 construct a matrix consisting of distances between each pair of
 instances (data points). After that, we construct a
-`dendrogram`{.literal} (a representation of clusters in the form of a
+`dendrogram` (a representation of clusters in the form of a
 tree) based on the distances between them. We truncate the tree at a
 location corresponding to the number of clusters we need.
 
@@ -146,10 +144,10 @@ a suitable position to get a suitable number of clusters:
 
 <div>
 
-::: {#_idContainer053 .IMG---Figure}
+
 ![Figure 3.2: Output dendrogram after performing hierarchical clustering
-](3_files/B16062_03_02.jpg)
-:::
+](./images/B16062_03_02.jpg)
+
 
 </div>
 
@@ -160,10 +158,7 @@ get two clusters or at 2.5 to get three clusters, depending on the
 requirements. To create a dendrogram using scikit-learn, we can use the
 following code:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 import scipy.cluster.hierarchy as sch
@@ -171,19 +166,19 @@ dendrogram = sch.dendrogram(sch.linkage(X, method='ward'))
 plt.title('Dendrogram')
 plt.show()
 ```
-:::
 
-Here, `X`{.literal} is the dataset that we want to perform hierarchical
+
+Here, `X` is the dataset that we want to perform hierarchical
 clustering with. Let\'s perform an exercise to understand how we can
 implement this.
 
-[]{#_idTextAnchor098}
 
-Exercise 3.01: Performing Hierarchical Clustering {#_idParaDest-98}
+
+Exercise 3.01: Performing Hierarchical Clustering
 -------------------------------------------------
 
 In this exercise, we will analyze the text documents in sklearn\'s
-`fetch_20newsgroups`{.literal} dataset. The 20 newsgroups dataset
+`fetch_20newsgroups` dataset. The 20 newsgroups dataset
 contains news articles on 20 different topics. We will make use of
 hierarchical clustering to classify the documents into different groups.
 Once the clusters have been created, we will compare them with their
@@ -193,10 +188,7 @@ actual categories. Follow these steps to implement this exercise:
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.datasets import fetch_20newsgroups
@@ -220,15 +212,12 @@ actual categories. Follow these steps to implement this exercise:
     import warnings
     warnings.filterwarnings('ignore')
     ```
-    :::
 
-3.  Download a list of stop words and the `Wordnet`{.literal} corpus
-    from `nltk`{.literal}. Insert a new cell and add the following code
+
+3.  Download a list of stop words and the `Wordnet` corpus
+    from `nltk`. Insert a new cell and add the following code
     to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     nltk.download('stopwords')
@@ -237,28 +226,22 @@ actual categories. Follow these steps to implement this exercise:
     nltk.download('wordnet')
     lemmatizer=WordNetLemmatizer()
     ```
-    :::
+
 
 4.  Specify the categories of news articles we want to fetch to perform
     our clustering task. We will use three categories: \"For sale\",
     \"Electronics\", and \"Religion\". Add the following code to do
     this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     categories= ['misc.forsale', 'sci.electronics', \
                  'talk.religion.misc']
     ```
-    :::
+
 
 5.  To fetch the dataset, add the following lines of code:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     news_data = fetch_20newsgroups(subset='train', \
@@ -266,81 +249,69 @@ actual categories. Follow these steps to implement this exercise:
                                    shuffle=True, random_state=42, \
                                    download_if_missing=True)
     ```
-    :::
+
 
 6.  To view the data of the fetched content, add the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     news_data['data'][:5]
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer054 .IMG---Figure}
+
     ![Figure 3.3: The first five news articles
-    ](3_files/B16062_03_03.jpg)
-    :::
+    ](./images/B16062_03_03.jpg)
+
 
     Figure 3.3: The first five news articles
 
 7.  To check the categories of news articles, insert a new cell and add
     the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     print(news_data.target)
     ```
-    :::
+
 
     The target is the variable that we predict by making use of the rest
     of the variables in a dataset. The preceding code generates the
     following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     [0 0 1 … 0 1 0]
     ```
-    :::
 
-    Here, `0`{.literal} refers to `misc.forsale`{.literal},
-    `1`{.literal} refers to `sci.electronics`{.literal}, and
-    `2`{.literal} refers to `talk.religion.misc`{.literal}.
 
-8.  To store `news_data`{.literal} and the corresponding categories in a
-    pandas `DataFrame`{.literal} and view it, write the following code:
+    Here, `0` refers to `misc.forsale`,
+    `1` refers to `sci.electronics`, and
+    `2` refers to `talk.religion.misc`.
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+8.  To store `news_data` and the corresponding categories in a
+    pandas `DataFrame` and view it, write the following code:
+
+
 
     ``` {.language-markup}
     news_data_df = pd.DataFrame({'text' : news_data['data'], \
                                  'category': news_data.target})
     news_data_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer055 .IMG---Figure}
+
     ![Figure 3.4: Text corpus of news data corresponding to the
-    categories in a DataFrame ](3_files/B16062_03_04.jpg)
-    :::
+    categories in a DataFrame ](./images/B16062_03_04.jpg)
+
 
     Figure 3.4: Text corpus of news data corresponding to the categories
     in a DataFrame
@@ -348,22 +319,16 @@ actual categories. Follow these steps to implement this exercise:
 9.  To count the number of occurrences of each category appearing in
     this dataset, write the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     news_data_df['category'].value_counts()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     1        591
@@ -371,20 +336,17 @@ actual categories. Follow these steps to implement this exercise:
     2        377
     Name:  category, dtype: int64
     ```
-    :::
+
 
 10. Use a lambda function to extract tokens from each \"text\" of the
-    `news_data_df`{.literal} DataFrame. Check whether any of these
+    `news_data_df` DataFrame. Check whether any of these
     tokens is a stop word, lemmatize the ones that are not stop words,
     and then concatenate them to recreate the sentence. Make use of the
-    `join`{.literal} function to concatenate a list of words into a
+    `join` function to concatenate a list of words into a
     single sentence. To replace anything other than letters, digits, and
     whitespaces with blank space, use a regular expression
-    (`re`{.literal}). Add the following code to do this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+    (`re`). Add the following code to do this:
+
 
     ``` {.language-markup}
     news_data_df['cleaned_text'] = news_data_df['text']\
@@ -396,15 +358,12 @@ actual categories. Follow these steps to implement this exercise:
                                     str(x))) if word.lower() \
                                     not in stop_words]))
     ```
-    :::
+
 
 11. Create a TFIDF matrix and transform it into a DataFrame. Add the
     following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model = TfidfVectorizer(max_features=200)
@@ -413,36 +372,30 @@ actual categories. Follow these steps to implement this exercise:
     tfidf_df.columns = sorted(tfidf_model.vocabulary_)
     tfidf_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer056 .IMG---Figure}
+
     ![Figure 3.5: TFIDF representation as a DataFrame
-    ](3_files/B16062_03_05.jpg)
-    :::
+    ](./images/B16062_03_05.jpg)
+
 
     Figure 3.5: TFIDF representation as a DataFrame
 
 12. Calculate the distance using the sklearn library:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.metrics.pairwise import \
     euclidean_distances as euclidean
     dist = 1 - euclidean(tfidf_df)
     ```
-    :::
+
 
 13. Now, create a dendrogram for the TFIDF representation of documents:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import scipy.cluster.hierarchy as sch
@@ -452,25 +405,22 @@ actual categories. Follow these steps to implement this exercise:
     plt.title('Dendrogram')
     plt.show()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer057 .IMG---Figure}
-    ![Figure 3.6: Truncated dendrogram ](3_files/B16062_03_06.jpg)
-    :::
+
+    ![Figure 3.6: Truncated dendrogram ](./images/B16062_03_06.jpg)
+
 
     Figure 3.6: Truncated dendrogram
 
     Here, you can see that a cluster count of four seems optimal.
 
-14. Use the `fcluster()`{.literal} function to obtain the cluster labels
+14. Use the `fcluster()` function to obtain the cluster labels
     of the clusters that were obtained by hierarchical clustering:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     k=4
@@ -478,28 +428,22 @@ actual categories. Follow these steps to implement this exercise:
                         criterion='maxclust')
     clusters
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     array([3, 3, 3, …, 4, 4, 1], dtype=int32)
     ```
-    :::
 
-15. Make use of the `crosstab`{.literal} function of pandas to compare
+
+15. Make use of the `crosstab` function of pandas to compare
     the clusters we have obtained with the actual categories of news
     articles. Add the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     news_data_df['obtained_clusters'] = clusters
@@ -511,14 +455,14 @@ actual categories. Follow these steps to implement this exercise:
                 .replace({1 : 'cluster_1', 2 : 'cluster_2', \
                           3 : 'cluster_3', 4: 'cluster_4'}))
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer058 .IMG---Figure}
+
     ![Figure 3.7: Crosstab between actual categories and obtained
-    clusters ](3_files/B16062_03_07.jpg)
-    :::
+    clusters ](./images/B16062_03_07.jpg)
+
 
 Figure 3.7: Crosstab between actual categories and obtained clusters
 
@@ -543,9 +487,9 @@ One major disadvantage of hierarchical clustering is scalability. Using
 hierarchical clustering for large datasets is very difficult; for such
 cases, we can use k-means clustering. Let us explore how this works.
 
-[]{#_idTextAnchor099}
 
-k-means Clustering {#_idParaDest-99}
+
+k-means Clustering
 ------------------
 
 In this algorithm, we segregate the given instances (data points) into
@@ -572,15 +516,12 @@ calculated. To decide the optimal number of clusters (that is, k), we
 execute k-means clustering for various values of k and note down their
 performances (sum of squared errors). We try to select a small value for
 k that has the lowest sum of squared errors. This method is called the
-`elbow method`{.literal}.
+`elbow method`.
 
 The scikit-learn library can be used to perform k-means in Python using
 the following code:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 from sklearn.cluster import KMeans
@@ -588,22 +529,22 @@ kmeans = KMeans(n_clusters=4)
 kmeans.fit(X)
 clusters = kmeans.predict(X)
 ```
-:::
 
-Here, we create the base model using the `kmeans`{.literal} class of
-scikit-learn. Then, we train the model using the `fit`{.literal}
+
+Here, we create the base model using the `kmeans` class of
+scikit-learn. Then, we train the model using the `fit`
 function. The trained model can then be used to get clusters using the
-predict function, where `X`{.literal} represents a DataFrame of
+predict function, where `X` represents a DataFrame of
 independent variables. Let\'s perform an exercise to get a better
 understanding of k-means clustering.
 
-[]{#_idTextAnchor100}
 
-Exercise 3.02: Implementing k-means Clustering {#_idParaDest-100}
+
+Exercise 3.02: Implementing k-means Clustering
 ----------------------------------------------
 
 In this exercise, we will create four clusters from text documents in
-sklearn\'s `fetch_20newsgroups`{.literal} text dataset using k-means
+sklearn\'s `fetch_20newsgroups` text dataset using k-means
 clustering. We will compare these clusters with the actual categories
 and use the elbow method to obtain the optimal number of clusters.
 Follow these steps to implement this exercise:
@@ -612,10 +553,7 @@ Follow these steps to implement this exercise:
 
 2.  Insert a new cell and add the following code to import the necessary
     packages:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pandas as pd
@@ -642,41 +580,32 @@ Follow these steps to implement this exercise:
     from scipy.spatial.distance import cdist
     from sklearn.cluster import KMeans
     ```
-    :::
+
 
 3.  To use stop words for the English language and the
-    `WordNet`{.literal} corpus for lemmatization, add the following
+    `WordNet` corpus for lemmatization, add the following
     code:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     stop_words = stopwords.words('english')
     stop_words = stop_words + list(string.printable)
     lemmatizer = WordNetLemmatizer()
     ```
-    :::
+
 
 4.  To specify the categories of news articles, add the following code:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     categories= ['misc.forsale', 'sci.electronics', \
                  'talk.religion.misc']
     ```
-    :::
+
 
 5.  Use the following lines of code to fetch the dataset and store it in
     a pandas DataFrame:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     news_data = fetch_20newsgroups(subset='train', \
@@ -687,20 +616,17 @@ Follow these steps to implement this exercise:
     news_data_df = pd.DataFrame({'text' : news_data['data'], \
                                  'category': news_data.target})
     ```
-    :::
+
 
 6.  Use the lambda function to extract tokens from each
-    \"`text`{.literal}\" of the `news_data_df`{.literal} DataFrame.
+    \"`text`\" of the `news_data_df` DataFrame.
     Discard the tokens if they\'re stop words, lemmatize them if
     they\'re not, and then concatenate them to recreate the sentence.
     Use the join function to concatenate a list of words into a single
-    sentence and use the regular expression method (`re`{.literal}) to
+    sentence and use the regular expression method (`re`) to
     replace anything other than alphabets, digits, and whitespaces with
     a blank space. Add the following code to do this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     news_data_df['cleaned_text'] = news_data_df['text']\
@@ -711,15 +637,12 @@ Follow these steps to implement this exercise:
                                            str(x))) \
                                     if word.lower() not in stop_words]))
     ```
-    :::
+
 
 7.  Use the following lines of code to create a TFIDF matrix and
     transform it into a DataFrame:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model = TfidfVectorizer(max_features=200)
@@ -729,24 +652,21 @@ Follow these steps to implement this exercise:
     tfidf_df.columns = sorted(tfidf_model.vocabulary_)
     tfidf_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer059 .IMG---Figure}
+
     ![Figure 3.8: TFIDF representation as a DataFrame
-    ](3_files/B16062_03_08.jpg)
-    :::
+    ](./images/B16062_03_08.jpg)
+
 
     Figure 3.8: TFIDF representation as a DataFrame
 
-8.  Use the `KMeans`{.literal} function of sklearn to create four
+8.  Use the `KMeans` function of sklearn to create four
     clusters from a TFIDF representation of news articles. Add the
     following code to do this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     kmeans = KMeans(n_clusters=4)
@@ -754,16 +674,13 @@ Follow these steps to implement this exercise:
     y_kmeans = kmeans.predict(tfidf_df)
     news_data_df['obtained_clusters'] = y_kmeans
     ```
-    :::
 
-9.  Use pandas\' `crosstab`{.literal} function to compare the clusters
+
+9.  Use pandas\' `crosstab` function to compare the clusters
     we have obtained with the actual categories of the news articles.
     Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     pd.crosstab(news_data_df['category']\
@@ -775,14 +692,14 @@ Follow these steps to implement this exercise:
                           1 : 'cluster_2', 2 : 'cluster_3', \
                           3: 'cluster_4'}))
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer060 .IMG---Figure}
+
     ![Figure 3.9: Crosstab between the actual categories and obtained
-    clusters xxx ](3_files/B16062_03_09.jpg)
-    :::
+    clusters xxx ](./images/B16062_03_09.jpg)
+
 
     Figure 3.9: Crosstab between the actual categories and obtained
     clusters xxx
@@ -794,16 +711,13 @@ Follow these steps to implement this exercise:
 
 10. Finally, to obtain the optimal value of k (that is, the number of
     clusters), execute the k-means algorithm for values of k ranging
-    from `1`{.literal} to `6`{.literal}. For each value of
-    `k`{.literal}, store the distortion---that is, the mean of the
+    from `1` to `6`. For each value of
+    `k`, store the distortion---that is, the mean of the
     distances of the documents from their nearest cluster center. Look
     for the value of k where the slope of the plot changes rapidly. Add
     the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     distortions = []
@@ -821,14 +735,14 @@ Follow these steps to implement this exercise:
               'of clusters')
     plt.show()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer061 .IMG---Figure}
+
     ![Figure 3.10: Optimal clusters represented in a graph using the
-    elbow method ](3_files/B16062_03_10.jpg)
-    :::
+    elbow method ](./images/B16062_03_10.jpg)
+
 
 Figure 3.10: Optimal clusters represented in a graph using the elbow
 method
@@ -847,10 +761,10 @@ We have seen how unsupervised learning can be implemented in Python.
 Now, let us talk about supervised learning.
 
 
-Supervised Learning {#_idParaDest-101}
+Supervised Learning
 ===================
 
-::: {#_idContainer119 .Content}
+
 Unlike unsupervised learning, supervised learning algorithms need
 labeled data. They learn how to automatically generate labels or predict
 values by analyzing various features of the data provided. For example,
@@ -867,9 +781,9 @@ two types of models that are capable of the following:
 The first type is called classification, while the second type is called
 regression. Let\'s learn about classification first.
 
-[]{#_idTextAnchor102}
 
-Classification {#_idParaDest-102}
+
+Classification
 --------------
 
 Say you have two types of food, of which type 1 tastes sweet and type 2
@@ -889,9 +803,9 @@ widely used classification algorithms are logistic regression, Naive
 Bayes, k-nearest neighbor, and tree methods. Let\'s learn about each of
 them.
 
-[]{#_idTextAnchor103}
 
-Logistic Regression {#_idParaDest-103}
+
+Logistic Regression
 -------------------
 
 Despite having the term \"regression\" in it, logistic regression is
@@ -909,10 +823,10 @@ spam (1) or not (0), as shown in the following graph:
 
 <div>
 
-::: {#_idContainer062 .IMG---Figure}
+
 ![Figure 3.11: Example of logistic regression
-](4_files/B16062_03_11.jpg)
-:::
+](./images/B16062_03_11.jpg)
+
 
 </div>
 
@@ -924,10 +838,7 @@ model that helps us classify spam emails.
 The scikit-learn library can be used to perform logistic regression in
 Python using the following code:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 from sklearn.linear_model import LogisticRegression
@@ -936,19 +847,19 @@ log_reg.fit(X,y)
 predicted_labels = log_reg.predict(X)
 predicted_probability = log_reg.predict_proba(X)[:,1]
 ```
-:::
 
-Here, we create the base model using the `LogisticRegression`{.literal}
+
+Here, we create the base model using the `LogisticRegression`
 class of scikit-learn. Then, we train the model using the
-`fit`{.literal} function. The trained model can then be used to make
+`fit` function. The trained model can then be used to make
 predictions, and we can also get probability estimates for each class
-using the `predict_proba`{.literal} function. Here, `X`{.literal}
-represents a DataFrame of independent variables, whereas `y`{.literal}
+using the `predict_proba` function. Here, `X`
+represents a DataFrame of independent variables, whereas `y`
 represents a DataFrame of dependent variables.
 
-[]{#_idTextAnchor105}
 
-Exercise 3.03: Text Classification -- Logistic Regression {#_idParaDest-104}
+
+Exercise 3.03: Text Classification -- Logistic Regression
 ---------------------------------------------------------
 
 In this exercise, we will classify reviews of musical instruments on
@@ -965,10 +876,7 @@ Follow these steps to implement this exercise:
 
 2.  Insert a new cell and add the following code to import the necessary
     packages:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pandas as pd
@@ -987,15 +895,12 @@ Follow these steps to implement this exercise:
     import warnings
     warnings.filterwarnings('ignore')
     ```
-    :::
+
 
 3.  Read the data file in JSON format using pandas. Add the following
     code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     review_data = pd.read_json\
@@ -1003,28 +908,25 @@ Follow these steps to implement this exercise:
                    lines=True)
     review_data[['reviewText', 'overall']].head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer063 .IMG---Figure}
+
     ![Figure 3.12: Data stored in a DataFrame
-    ](4_files/B16062_03_12.jpg)
-    :::
+    ](./images/B16062_03_12.jpg)
+
 
     Figure 3.12: Data stored in a DataFrame
 
-4.  Use a `lambda`{.literal} function to extract tokens from each
-    `'reviewText'`{.literal} of this DataFrame, lemmatize them, and
-    concatenate them side by side. Use the `join`{.literal} function to
+4.  Use a `lambda` function to extract tokens from each
+    `'reviewText'` of this DataFrame, lemmatize them, and
+    concatenate them side by side. Use the `join` function to
     concatenate a list of words into a single sentence. Use the regular
-    expression method (`re`{.literal}) to replace anything other than
+    expression method (`re`) to replace anything other than
     alphabetical characters, digits, and whitespaces with blank space.
     Add the following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     lemmatizer = WordNetLemmatizer()
@@ -1036,40 +938,34 @@ Follow these steps to implement this exercise:
                                           (re.sub(r'([^\s\w]|_)+', ' ',\
                                            str(x)))]))
     ```
-    :::
+
 
 5.  Create a DataFrame from the TFIDF matrix representation of the
-    cleaned version of `reviewText`{.literal}. Add the following code to
+    cleaned version of `reviewText`. Add the following code to
     implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     review_data[['cleaned_review_text', 'reviewText', \
                  'overall']].head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer064 .IMG---Figure}
+
     ![Figure 3.13: Review texts before and after cleaning, along with
-    their overall scores ](4_files/B16062_03_13.jpg)
-    :::
+    their overall scores ](./images/B16062_03_13.jpg)
+
 
     Figure 3.13: Review texts before and after cleaning, along with
     their overall scores
 
-6.  Create a TFIDF matrix and transform it into a `DataFrame`{.literal}.
+6.  Create a TFIDF matrix and transform it into a `DataFrame`.
     Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -1078,57 +974,48 @@ Follow these steps to implement this exercise:
     tfidf_df.columns = sorted(tfidf_model.vocabulary_)
     tfidf_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer065 .IMG---Figure}
+
     ![Figure 3.14: A TFIDF representation as a DataFrame
-    ](4_files/B16062_03_14.jpg)
-    :::
+    ](./images/B16062_03_14.jpg)
+
 
     Figure 3.14: A TFIDF representation as a DataFrame
 
 7.  The following lines of code are used to create a new column target,
-    which will have `0`{.literal} if the `overall`{.literal} parameter
-    is less than `4`{.literal}, and 1 otherwise. Add the following code
+    which will have `0` if the `overall` parameter
+    is less than `4`, and 1 otherwise. Add the following code
     to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     review_data['target'] = review_data['overall'].apply\
                             (lambda x : 0 if x<=4 else 1)
     review_data['target'].value_counts()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     1     6938
     0     3323
     Name: target, dtype: int64
     ```
-    :::
 
-8.  Use sklearn\'s `LogisticRegression()`{.literal} function to fit a
+
+8.  Use sklearn\'s `LogisticRegression()` function to fit a
     logistic regression model on the TFIDF representation of these
     reviews after cleaning them. Add the following code to implement
     this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.linear_model import LogisticRegression
@@ -1137,51 +1024,45 @@ Follow these steps to implement this exercise:
     predicted_labels = logreg.predict(tfidf_df)
     logreg.predict_proba(tfidf_df)[:,1]
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     array([0.57146961, 0.68579907, 0.56068939, …, 0.65979968, \
            0.5495679 , 0.21186011])
     ```
-    :::
 
-9.  Use the `crosstab`{.literal} function of pandas to compare the
+
+9.  Use the `crosstab` function of pandas to compare the
     results of our classification model with the actual classes
-    (`'target'`{.literal}, in this case) of the reviews. Add the
+    (`'target'`, in this case) of the reviews. Add the
     following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     review_data['predicted_labels'] = predicted_labels
     pd.crosstab(review_data['target'], \
                 review_data['predicted_labels'])
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer066 .IMG---Figure}
+
     ![Figure 3.15: Crosstab between actual target values and predicted
-    labels ](4_files/B16062_03_15.jpg)
-    :::
+    labels ](./images/B16062_03_15.jpg)
+
 
 Figure 3.15: Crosstab between actual target values and predicted labels
 
-Here, we can see `1543`{.literal} instances with the target label 0 that
-are correctly classified and `1780`{.literal} such instances that are
-wrongly classified. Furthermore, `6312`{.literal} instances with the
-target label 1 are correctly classified, whereas `626`{.literal} such
+Here, we can see `1543` instances with the target label 0 that
+are correctly classified and `1780` such instances that are
+wrongly classified. Furthermore, `6312` instances with the
+target label 1 are correctly classified, whereas `626` such
 instances are wrongly classified.
 
 Note
@@ -1194,9 +1075,9 @@ You can also run this example online at <https://packt.live/309yKWc>.
 We\'ve seen how to implement logistic regression; now, let\'s look at
 Naïve Bayes classification.
 
-[]{#_idTextAnchor106}
 
-Naive Bayes Classifiers {#_idParaDest-105}
+
+Naive Bayes Classifiers
 -----------------------
 
 Just like logistic regression, a Naive Bayes classifier is another kind
@@ -1205,9 +1086,9 @@ shown here:
 
 <div>
 
-::: {#_idContainer067 .IMG---Figure}
-![Figure 3.16: Bayes\' theorem ](4_files/B16062_03_16.jpg)
-:::
+
+![Figure 3.16: Bayes\' theorem ](./images/B16062_03_16.jpg)
+
 
 </div>
 
@@ -1234,10 +1115,7 @@ Similar to logistic regression, the scikit-learn library can be used to
 perform naïve Bayes classification and can be implemented in Python
 using the following code:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 from sklearn.naive_bayes import GaussianNB
@@ -1246,19 +1124,19 @@ nb.fit(X,y)
 predicted_labels = nb.predict(X)
 predicted_probability = nb.predict_proba(X)[:,1]
 ```
-:::
 
-Here, we created the base model using the `GaussianNB`{.literal} class
-of scikit-learn. Then, we trained the model using the `fit`{.literal}
+
+Here, we created the base model using the `GaussianNB` class
+of scikit-learn. Then, we trained the model using the `fit`
 function. The trained model can then be used to make predictions; we can
 also get probability estimates for each class using the
-`predict_proba`{.literal} function. Here, `X`{.literal} represents a
-DataFrame of independent variables, whereas `y`{.literal} represents a
+`predict_proba` function. Here, `X` represents a
+DataFrame of independent variables, whereas `y` represents a
 DataFrame of dependent variables.
 
-[]{#_idTextAnchor107}
 
-Exercise 3.04: Text Classification -- Naive Bayes {#_idParaDest-106}
+
+Exercise 3.04: Text Classification -- Naive Bayes
 -------------------------------------------------
 
 In this exercise, we will classify reviews of musical instruments on
@@ -1274,10 +1152,7 @@ To download the dataset for this exercise, visit
 
 2.  Insert a new cell and add the following code to import the necessary
     packages:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pandas as pd
@@ -1296,15 +1171,12 @@ To download the dataset for this exercise, visit
     import warnings
     warnings.filterwarnings('ignore')
     ```
-    :::
+
 
 3.  Read the data file in JSON format using pandas. Add the following
     code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     review_data = pd.read_json\
@@ -1312,28 +1184,25 @@ To download the dataset for this exercise, visit
                    lines=True)
     review_data[['reviewText', 'overall']].head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer068 .IMG---Figure}
+
     ![Figure 3.17: Data stored in a DataFrame
-    ](4_files/B16062_03_17.jpg)
-    :::
+    ](./images/B16062_03_17.jpg)
+
 
     Figure 3.17: Data stored in a DataFrame
 
-4.  Use a `lambda`{.literal} function to extract tokens from each
-    `'reviewText'`{.literal} of this DataFrame, lemmatize them, and
-    concatenate them side by side. Use the `join`{.literal} function to
+4.  Use a `lambda` function to extract tokens from each
+    `'reviewText'` of this DataFrame, lemmatize them, and
+    concatenate them side by side. Use the `join` function to
     concatenate a list of words into a single sentence. Use the regular
-    expression method (`re`{.literal}) to replace anything other than
+    expression method (`re`) to replace anything other than
     alphabets, digits, and whitespaces with blank space. Add the
     following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     lemmatizer = WordNetLemmatizer()
@@ -1345,29 +1214,26 @@ To download the dataset for this exercise, visit
                                          (re.sub(r'([^\s\w]|_)+', ' ',\
                                           str(x)))]))
     ```
-    :::
+
 
 5.  Create a DataFrame from the TFIDF matrix representation of the
-    cleaned version of `reviewText`{.literal}. Add the following code to
+    cleaned version of `reviewText`. Add the following code to
     implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     review_data[['cleaned_review_text', 'reviewText', \
                  'overall']].head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer069 .IMG---Figure}
+
     ![Figure 3.18: Review texts before and after cleaning, along with
-    their overall scores ](4_files/B16062_03_18.jpg)
-    :::
+    their overall scores ](./images/B16062_03_18.jpg)
+
 
     Figure 3.18: Review texts before and after cleaning, along with
     their overall scores
@@ -1375,10 +1241,7 @@ To download the dataset for this exercise, visit
 6.  Create a TFIDF matrix and transform it into a DataFrame. Add the
     following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -1387,56 +1250,47 @@ To download the dataset for this exercise, visit
     tfidf_df.columns = sorted(tfidf_model.vocabulary_)
     tfidf_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer070 .IMG---Figure}
+
     ![Figure 3.19: A TFIDF representation as a DataFrame
-    ](4_files/B16062_03_19.jpg)
-    :::
+    ](./images/B16062_03_19.jpg)
+
 
     Figure 3.19: A TFIDF representation as a DataFrame
 
 7.  The following lines of code are used to create a new column target,
-    which will have the value `0`{.literal} if the `'overall'`{.literal}
-    parameter is less than `4`{.literal}, and 1 otherwise. Add the
+    which will have the value `0` if the `'overall'`
+    parameter is less than `4`, and 1 otherwise. Add the
     following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     review_data['target'] = review_data['overall']\
                             .apply(lambda x : 0 if x<=4 else 1)
     review_data['target'].value_counts()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     1    6938
     0    3323
     Name: target, dtype: int64
     ```
-    :::
 
-8.  Use sklearn\'s `GaussianNB()`{.literal} function to fit a Gaussian
+
+8.  Use sklearn\'s `GaussianNB()` function to fit a Gaussian
     Naive Bayes model on the TFIDF representation of these reviews after
     cleaning them. Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.naive_bayes import GaussianNB
@@ -1445,55 +1299,49 @@ To download the dataset for this exercise, visit
     predicted_labels = nb.predict(tfidf_df)
     nb.predict_proba(tfidf_df)[:,1]
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     array([9.97730158e-01, 3.63599675e-09, 9.45692105e-07, …,
            2.46001047e-02, 3.43660991e-08, 1.72767906e-27])
     ```
-    :::
+
 
     The preceding screenshot shows the predicted probabilities of the
-    input `tfidf_df`{.literal} dataset.
+    input `tfidf_df` dataset.
 
-9.  Use the `crosstab`{.literal} function of pandas to compare the
+9.  Use the `crosstab` function of pandas to compare the
     results of our classification model with the actual classes
-    (`'target'`{.literal}, in this case) of the reviews. Add the
+    (`'target'`, in this case) of the reviews. Add the
     following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     review_data['predicted_labels'] = predicted_labels
     pd.crosstab(review_data['target'], \
                 review_data['predicted_labels'])
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer071 .IMG---Figure}
+
     ![Figure 3.20: Crosstab between actual target values and predicted
-    labels ](4_files/B16062_03_20.jpg)
-    :::
+    labels ](./images/B16062_03_20.jpg)
+
 
 Figure 3.20: Crosstab between actual target values and predicted labels
 
-Here, we can see `2333`{.literal} instances with the target label 0 that
-are correctly classified and `990`{.literal} such instances that have
-been wrongly classified. Furthermore, `4558`{.literal} instances with
+Here, we can see `2333` instances with the target label 0 that
+are correctly classified and `990` such instances that have
+been wrongly classified. Furthermore, `4558` instances with
 the target label 1 have been correctly classified, whereas
-`2380`{.literal} such instances have been wrongly classified.
+`2380` such instances have been wrongly classified.
 
 Note
 
@@ -1504,9 +1352,9 @@ You can also run this example online at <https://packt.live/3fcjT1t>.
 
 We\'ll explore k-nearest neighbors in the next section.
 
-[]{#_idTextAnchor108}
 
-k-nearest Neighbors {#_idParaDest-107}
+
+k-nearest Neighbors
 -------------------
 
 k-nearest neighbors is an algorithm that can be used to solve both
@@ -1529,10 +1377,7 @@ documents that are the most similar to the unknown document.
 We can make use of the scikit-learn library to implement the k-nearest
 neighbors algorithm in Python using the following code:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 from sklearn.neighbors import KNeighborsClassifier
@@ -1540,22 +1385,22 @@ knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X,y)
 prediction = knn.predict(X)
 ```
-:::
+
 
 Here, we created the base model using the
-`KNeighborsClassifier`{.literal} class of scikit-learn and pass it the
+`KNeighborsClassifier` class of scikit-learn and pass it the
 value of k, which in this case is 3. Then, we trained the model using
-the `fit`{.literal} function. The trained model can then be used to make
-predictions using the `predict`{.literal} function. `X`{.literal}
-represents a DataFrame of independent variables, whereas `y`{.literal}
+the `fit` function. The trained model can then be used to make
+predictions using the `predict` function. `X`
+represents a DataFrame of independent variables, whereas `y`
 represents a DataFrame of dependent variables.
 
 Now that we have an understanding of different types of classification,
 let\'s see how we can implement them.
 
-[]{#_idTextAnchor109}
 
-Exercise 3.05: Text Classification Using the k-nearest Neighbors Method {#_idParaDest-108}
+
+Exercise 3.05: Text Classification Using the k-nearest Neighbors Method
 -----------------------------------------------------------------------
 
 In this exercise, we will classify reviews of musical instruments on
@@ -1571,10 +1416,7 @@ To download the dataset for this exercise, visit
 
 2.  Insert a new cell and add the following code to import the necessary
     packages:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pandas as pd
@@ -1593,15 +1435,12 @@ To download the dataset for this exercise, visit
     import warnings
     warnings.filterwarnings('ignore')
     ```
-    :::
+
 
 3.  Read the data file in JSON format using pandas. Add the following
     code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     review_data = pd.read_json\
@@ -1609,28 +1448,25 @@ To download the dataset for this exercise, visit
                    lines=True)
     review_data[['reviewText', 'overall']].head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer072 .IMG---Figure}
+
     ![Figure 3.21: Data stored in a DataFrame
-    ](4_files/B16062_03_21.jpg)
-    :::
+    ](./images/B16062_03_21.jpg)
+
 
     Figure 3.21: Data stored in a DataFrame
 
-4.  Use a `lambda`{.literal} function to extract tokens from each
-    `reviewText`{.literal} of this DataFrame, lemmatize them, and
-    concatenate them side by side. Use the `join`{.literal} function to
+4.  Use a `lambda` function to extract tokens from each
+    `reviewText` of this DataFrame, lemmatize them, and
+    concatenate them side by side. Use the `join` function to
     concatenate a list of words into a single sentence. Use the regular
-    expression method (`re`{.literal}) to replace anything other than
+    expression method (`re`) to replace anything other than
     alphabets, digits, and whitespaces with blank space. Add the
     following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     lemmatizer = WordNetLemmatizer()
@@ -1642,29 +1478,26 @@ To download the dataset for this exercise, visit
                                          (re.sub(r'([^\s\w]|_)+', ' ',\
                                           str(x)))]))
     ```
-    :::
+
 
 5.  Create a DataFrame from the TFIDF matrix representation of the
-    cleaned version of `reviewText`{.literal}. Add the following code to
+    cleaned version of `reviewText`. Add the following code to
     implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     review_data[['cleaned_review_text', 'reviewText', \
                  'overall']].head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer073 .IMG---Figure}
+
     ![Figure 3.22: Review texts before and after cleaning, along with
-    their overall scores ](4_files/B16062_03_22.jpg)
-    :::
+    their overall scores ](./images/B16062_03_22.jpg)
+
 
     Figure 3.22: Review texts before and after cleaning, along with
     their overall scores
@@ -1672,10 +1505,7 @@ To download the dataset for this exercise, visit
 6.  Create a TFIDF matrix and transform it into a DataFrame. Add the
     following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -1684,59 +1514,50 @@ To download the dataset for this exercise, visit
     tfidf_df.columns = sorted(tfidf_model.vocabulary_)
     tfidf_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer074 .IMG---Figure}
+
     ![Figure 3.23: A TFIDF representation as a DataFrame
-    ](4_files/B16062_03_23.jpg)
-    :::
+    ](./images/B16062_03_23.jpg)
+
 
     Figure 3.23: A TFIDF representation as a DataFrame
 
 7.  The following lines of code are used to create a new column target,
-    which will have `0`{.literal} if the `overall`{.literal} parameter
-    is less than `4`{.literal}, and 1 otherwise. Add the following code
+    which will have `0` if the `overall` parameter
+    is less than `4`, and 1 otherwise. Add the following code
     to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     review_data['target'] = review_data['overall']\
                             .apply(lambda x : 0 if x<=4 else 1)
     review_data['target'].value_counts()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     1     6938
     0     3323
     Name:  target, dtype: int64
     ```
-    :::
 
-8.  Use sklearn\'s `KNeighborsClassifier()`{.literal} function to fit a
+
+8.  Use sklearn\'s `KNeighborsClassifier()` function to fit a
     three-nearest neighbor model on the TFIDF representation of these
-    reviews after cleaning them. Use the `crosstab`{.literal} function
+    reviews after cleaning them. Use the `crosstab` function
     of pandas to compare the results of our classification model with
-    the actual classes (`'target'`{.literal}, in this case) of the
+    the actual classes (`'target'`, in this case) of the
     reviews:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.neighbors import KNeighborsClassifier
@@ -1746,22 +1567,22 @@ To download the dataset for this exercise, visit
     pd.crosstab(review_data['target'], \
                 review_data['predicted_labels_knn'])
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer075 .IMG---Figure}
+
     ![Figure 3.24: Crosstab between actual target values and predicted
-    labels by k-nearest neighbors ](4_files/B16062_03_24.jpg)
-    :::
+    labels by k-nearest neighbors ](./images/B16062_03_24.jpg)
+
 
     Figure 3.24: Crosstab between actual target values and predicted
     labels by k-nearest neighbors
 
-    Here, we can see `2594`{.literal} instances with the target label as
-    0 correctly classified and `729`{.literal} such instances wrongly
-    classified. Furthermore, `6563`{.literal} instances with the target
-    label as 1 are correctly classified, whereas `375`{.literal} such
+    Here, we can see `2594` instances with the target label as
+    0 correctly classified and `729` such instances wrongly
+    classified. Furthermore, `6563` instances with the target
+    label as 1 are correctly classified, whereas `375` such
     instances are wrongly classified. You have just learned how to
     perform text classification with the help of various classification
     algorithms.
@@ -1777,9 +1598,9 @@ To download the dataset for this exercise, visit
     In the next section, you will learn about regression, which is
     another type of supervised learning.
 
-    []{#_idTextAnchor110}
+    
 
-    Regression {#_idParaDest-109}
+    Regression
     ----------
 
     To better understand regression, consider a practical example. For
@@ -1809,9 +1630,9 @@ To download the dataset for this exercise, visit
     types of regression mentioned previously, in the next section, we
     will cover linear regression in detail.
 
-    []{#_idTextAnchor111}
+    
 
-    Linear Regression {#_idParaDest-110}
+    Linear Regression
     -----------------
 
     The term \"linear\" refers to the linearity of parameters.
@@ -1819,10 +1640,10 @@ To download the dataset for this exercise, visit
     regression equation. The following formula represents the linear
     regression equation:
 
-    ::: {#_idContainer076 .IMG---Figure}
+
     ![Figure 3.25: Formula for linear regression
-    ](4_files/B16062_03_25.jpg)
-    :::
+    ](./images/B16062_03_25.jpg)
+
 
     Figure 3.25: Formula for linear regression
 
@@ -1838,10 +1659,7 @@ To download the dataset for this exercise, visit
     We can use the scikit-learn library to implement the linear
     regression algorithm in Python with the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.linear_model import LinearRegression
@@ -1851,25 +1669,25 @@ To download the dataset for this exercise, visit
     intercept = linreg.intercept_
     linreg.predict(X)
     ```
-    :::
+
 
     Here, we created the base model using the
-    `LinearRegression`{.literal} class of scikit-learn. Then, we trained
-    the model using the `fit`{.literal} function. Now that our linear
-    regression model has been trained, we can use the `coef_`{.literal}
-    and `intercept_ `{.literal}parameters of the model to get the
+    `LinearRegression` class of scikit-learn. Then, we trained
+    the model using the `fit` function. Now that our linear
+    regression model has been trained, we can use the `coef_`
+    and `intercept_ `parameters of the model to get the
     parameters and error components, as we discussed previously. Here,
-    `X`{.literal} represents a DataFrame of independent variables,
-    whereas `y`{.literal} represents a DataFrame of dependent variables.
+    `X` represents a DataFrame of independent variables,
+    whereas `y` represents a DataFrame of dependent variables.
     The trained model can then be used to make predictions using the
-    `predict`{.literal} function.
+    `predict` function.
 
     In the next section, we will solve an exercise to get a better
     understanding of regression analysis.
 
-    []{#_idTextAnchor112}
+    
 
-    Exercise 3.06: Regression Analysis Using Textual Data {#_idParaDest-111}
+    Exercise 3.06: Regression Analysis Using Textual Data
     -----------------------------------------------------
 
     In this exercise, we will make use of linear regression to predict
@@ -1885,10 +1703,7 @@ To download the dataset for this exercise, visit
 
 10. Insert a new cell and add the following code to import the necessary
     packages:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pandas as pd
@@ -1907,15 +1722,12 @@ To download the dataset for this exercise, visit
     import warnings
     warnings.filterwarnings('ignore')
     ```
-    :::
 
-11. Read the given data file in `JSON`{.literal} format using
-    `pandas`{.literal}. Add the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+11. Read the given data file in `JSON` format using
+    `pandas`. Add the following code to implement this:
+
+
 
     ``` {.language-markup}
     review_data = pd.read_json\
@@ -1923,29 +1735,26 @@ To download the dataset for this exercise, visit
                    lines=True)
     review_data[['reviewText', 'overall']].head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer077 .IMG---Figure}
+
     ![Figure 3.26: Reviews of musical instruments stored as a DataFrame
-    ](4_files/B16062_03_26.jpg)
-    :::
+    ](./images/B16062_03_26.jpg)
+
 
     Figure 3.26: Reviews of musical instruments stored as a DataFrame
 
-12. Use a `lambda`{.literal} function to extract tokens from each
-    `'reviewText'`{.literal} of this DataFrame, lemmatize them, and
-    concatenate them side by side. Then, use the `join`{.literal}
+12. Use a `lambda` function to extract tokens from each
+    `'reviewText'` of this DataFrame, lemmatize them, and
+    concatenate them side by side. Then, use the `join`
     function to concatenate a list of words into a single sentence. In
     order to replace anything other than alphabets, digits, and
     whitespaces with blank space, use the regular expression method
-    (`re`{.literal}). Add the following code to implement this:
+    (`re`). Add the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     lemmatizer = WordNetLemmatizer()
@@ -1958,26 +1767,23 @@ To download the dataset for this exercise, visit
                                           str(x)))]))
     review_data[['cleaned_review_text', 'reviewText', 'overall']].head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer078 .IMG---Figure}
+
     ![Figure 3.27: Review texts before and after cleaning, along with
-    their overall scores ](4_files/B16062_03_27.jpg)
-    :::
+    their overall scores ](./images/B16062_03_27.jpg)
+
 
     Figure 3.27: Review texts before and after cleaning, along with
     their overall scores
 
-13. Create a `DataFrame`{.literal} from the TFIDF matrix representation
-    of cleaned `reviewText`{.literal}. Add the following code to do
+13. Create a `DataFrame` from the TFIDF matrix representation
+    of cleaned `reviewText`. Add the following code to do
     this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -1986,25 +1792,22 @@ To download the dataset for this exercise, visit
     tfidf_df.columns = sorted(tfidf_model.vocabulary_)
     tfidf_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer079 .IMG---Figure}
+
     ![Figure 3.28: TFIDF representation as a DataFrame
-    ](4_files/B16062_03_28.jpg)
-    :::
+    ](./images/B16062_03_28.jpg)
+
 
     Figure 3.28: TFIDF representation as a DataFrame
 
-14. Use sklearn\'s `LinearRegression()`{.literal} function to fit a
+14. Use sklearn\'s `LinearRegression()` function to fit a
     linear regression model on this TFIDF DataFrame. Add the following
     code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.linear_model import LinearRegression
@@ -2012,14 +1815,14 @@ To download the dataset for this exercise, visit
     linreg.fit(tfidf_df,review_data['overall'])
     linreg.coef_
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer080 .IMG---Figure}
+
     ![Figure 3.29: Coefficients of the linear regression model
-    ](4_files/B16062_03_29.jpg)
-    :::
+    ](./images/B16062_03_29.jpg)
+
 
     Figure 3.29: Coefficients of the linear regression model
 
@@ -2031,63 +1834,48 @@ To download the dataset for this exercise, visit
 15. To check the intercept or the error term of the linear regression
     model, type the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     linreg.intercept_
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     4.218882428983381
     ```
-    :::
+
 
 16. To check the prediction in a TFIDF DataFrame, write the following
     code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     linreg.predict(tfidf_df)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     array([4.19200071, 4.25771652, 4.23084868, …, 4.40384767, 
            4.49036403, 4.14791976])
     ```
-    :::
 
-17. Finally, use this model to predict the `'overall'`{.literal} score
+
+17. Finally, use this model to predict the `'overall'` score
     and store it in a column called
-    `'predicted_score_from_linear_regression'`{.literal}. Add the
+    `'predicted_score_from_linear_regression'`. Add the
     following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     review_data['predicted_score_from_linear_regression'] = \
@@ -2095,14 +1883,14 @@ To download the dataset for this exercise, visit
     review_data[['overall', \
                  'predicted_score_from_linear_regression']].head(10)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer081 .IMG---Figure}
+
     ![Figure 3.30: Actual scores and predictions of the linear
-    regression model ](4_files/B16062_03_30.jpg)
-    :::
+    regression model ](./images/B16062_03_30.jpg)
+
 
 Figure 3.30: Actual scores and predictions of the linear regression
 model
@@ -2121,9 +1909,9 @@ You can also run this example online at <https://packt.live/335pLqV>.
 You have just learned how to perform regression analysis on given data.
 In the next section, you will learn about tree methods.
 
-[]{#_idTextAnchor113}
 
-Tree Methods {#_idParaDest-112}
+
+Tree Methods
 ------------
 
 There are several algorithms that have both classification and
@@ -2143,9 +1931,9 @@ and create a decision tree, as shown in the following diagram:
 
 <div>
 
-::: {#_idContainer082 .IMG---Figure}
-![Figure 3.31: Decision tree ](4_files/B16062_03_31.jpg)
-:::
+
+![Figure 3.31: Decision tree ](./images/B16062_03_31.jpg)
+
 
 </div>
 
@@ -2157,16 +1945,13 @@ a positive sentiment, whereas a medium length review has a negative
 sentiment. For reviews that were longer, he had to rely on keywords to
 determine the sentiment as longer length reviews are almost equally
 likely to be positive or negative. If the *excellent* keyword is
-present, the review belongs to the `positive`{.literal} sentiment;
-otherwise, it belongs to the `negative`{.literal} sentiment.
+present, the review belongs to the `positive` sentiment;
+otherwise, it belongs to the `negative` sentiment.
 
 We can make use of the scikit-learn library to implement the decision
 tree algorithm in Python using the following code:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 from sklearn import tree
@@ -2174,19 +1959,19 @@ dtc = tree.DecisionTreeClassifier()
 dtc = dtc.fit(X, y)
 predicted_labels = dtc.predict(X)
 ```
-:::
+
 
 Here, we created the base model using the
-`DecisionTreeClassifier`{.literal} class of scikit-learn. Then, we
-trained the model using the `fit`{.literal} function. The trained model
-can then be used to make predictions using the `predict`{.literal}
-function. Here, `X`{.literal} represents a DataFrame of independent
-variables, whereas `y`{.literal} represents a DataFrame of dependent
+`DecisionTreeClassifier` class of scikit-learn. Then, we
+trained the model using the `fit` function. The trained model
+can then be used to make predictions using the `predict`
+function. Here, `X` represents a DataFrame of independent
+variables, whereas `y` represents a DataFrame of dependent
 variables.
 
-[]{#_idTextAnchor114}
 
-Exercise 3.07: Tree-Based Methods -- Decision Tree {#_idParaDest-113}
+
+Exercise 3.07: Tree-Based Methods -- Decision Tree
 --------------------------------------------------
 
 In this exercise, we will use the tree-based method known as decision
@@ -2203,10 +1988,7 @@ To download the dataset for this exercise, visit
 
 2.  Insert a new cell and add the following code to import the necessary
     packages:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pandas as pd
@@ -2225,15 +2007,12 @@ To download the dataset for this exercise, visit
     import warnings
     warnings.filterwarnings('ignore')
     ```
-    :::
+
 
 3.  Now, read the given data file in JSON format using pandas. Add the
     following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     data_patio_lawn_garden = pd.read_json\
@@ -2242,29 +2021,26 @@ To download the dataset for this exercise, visit
                               lines = True)
     data_patio_lawn_garden[['reviewText', 'overall']].head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer083 .IMG---Figure}
+
     ![Figure 3.32: Storing reviews as a DataFrame
-    ](4_files/B16062_03_32.jpg)
-    :::
+    ](./images/B16062_03_32.jpg)
+
 
     Figure 3.32: Storing reviews as a DataFrame
 
-4.  Use the `lambda`{.literal} function to extract tokens from each
-    `'reviewText'`{.literal} of this DataFrame, lemmatize them using
-    `WorrdNetLemmatizer`{.literal}, and concatenate them side by side.
-    Use the `join`{.literal} function to concatenate a list of words
+4.  Use the `lambda` function to extract tokens from each
+    `'reviewText'` of this DataFrame, lemmatize them using
+    `WorrdNetLemmatizer`, and concatenate them side by side.
+    Use the `join` function to concatenate a list of words
     into a single sentence. Use the regular expression method
-    (`re`{.literal}) to replace anything other than letters, digits, and
+    (`re`) to replace anything other than letters, digits, and
     whitespaces with blank spaces. Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     lemmatizer = WordNetLemmatizer()
@@ -2276,25 +2052,22 @@ To download the dataset for this exercise, visit
     data_patio_lawn_garden[['cleaned_review_text', 'reviewText',\
                             'overall']].head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer084 .IMG---Figure}
+
     ![Figure 3.33: Review text before and after cleaning, along with
-    overall scores ](4_files/B16062_03_33.jpg)
-    :::
+    overall scores ](./images/B16062_03_33.jpg)
+
 
     Figure 3.33: Review text before and after cleaning, along with
     overall scores
 
 5.  Create a DataFrame from the TFIDF matrix representation of the
-    cleaned version of `reviewText`{.literal} with the following code:
+    cleaned version of `reviewText` with the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -2304,25 +2077,22 @@ To download the dataset for this exercise, visit
     tfidf_df.columns = sorted(tfidf_model.vocabulary_)
     tfidf_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer085 .IMG---Figure}
+
     ![Figure 3.34: TFIDF representation as a DataFrame
-    ](4_files/B16062_03_34.jpg)
-    :::
+    ](./images/B16062_03_34.jpg)
+
 
     Figure 3.34: TFIDF representation as a DataFrame
 
 6.  The following lines of code are used to create a new column called
-    target, which will have 0 if the `'overall'`{.literal} parameter is
+    target, which will have 0 if the `'overall'` parameter is
     less than 4; otherwise, it will have 1:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     data_patio_lawn_garden['target'] = data_patio_lawn_garden\
@@ -2330,29 +2100,23 @@ To download the dataset for this exercise, visit
                                        (lambda x : 0 if x<=4 else 1)
     data_patio_lawn_garden['target'].value_counts()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     1     7037
     0     6235
     Name:  target, dtype: int64
     ```
-    :::
 
-7.  Use sklearn\'s `tree()`{.literal} function to fit a decision tree
+
+7.  Use sklearn\'s `tree()` function to fit a decision tree
     classification model on the TFIDF DataFrame we created earlier. Add
     the following code to do this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn import tree
@@ -2361,49 +2125,43 @@ To download the dataset for this exercise, visit
     data_patio_lawn_garden['predicted_labels_dtc'] = dtc.predict\
                                                      (tfidf_df)
     ```
-    :::
 
-8.  Use pandas\' `crosstab`{.literal} function to compare the results of
+
+8.  Use pandas\' `crosstab` function to compare the results of
     the classification model with the actual classes
-    (`'target'`{.literal}, in this case) of the reviews. Add the
+    (`'target'`, in this case) of the reviews. Add the
     following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     pd.crosstab(data_patio_lawn_garden['target'], \
                 data_patio_lawn_garden['predicted_labels_dtc'])
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer086 .IMG---Figure}
+
     ![Figure 3.35: Crosstab between actual target values and predicted
-    labels ](4_files/B16062_03_35.jpg)
-    :::
+    labels ](./images/B16062_03_35.jpg)
+
 
     Figure 3.35: Crosstab between actual target values and predicted
     labels
 
-    Here, we can see `6627`{.literal} instances with a target label of
-    `0`{.literal} correctly classified, and `8`{.literal} such instances
-    wrongly classified. Furthermore, `7036`{.literal} instances with a
-    target label of `1`{.literal} are correctly classified, whereas
-    `1`{.literal} such instance is wrongly classified.
+    Here, we can see `6627` instances with a target label of
+    `0` correctly classified, and `8` such instances
+    wrongly classified. Furthermore, `7036` instances with a
+    target label of `1` are correctly classified, whereas
+    `1` such instance is wrongly classified.
 
-9.  Use sklearn\'s `tree()`{.literal} function to fit a decision tree
+9.  Use sklearn\'s `tree()` function to fit a decision tree
     regression model on the TFIDF representation of these reviews after
     cleaning. To predict the overall scores using this model, add the
     following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn import tree
@@ -2414,14 +2172,14 @@ To download the dataset for this exercise, visit
     data_patio_lawn_garden[['predicted_values_dtr', \
                             'overall']].head(10)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer087 .IMG---Figure}
+
     ![Figure 3.36: Overall scores with predicted values
-    ](4_files/B16062_03_36.jpg)
-    :::
+    ](./images/B16062_03_36.jpg)
+
 
 Figure 3.36: Overall scores with predicted values
 
@@ -2438,9 +2196,9 @@ You can also run this example online at <https://packt.live/39EwKZ6>.
 
 Next, we will look at another tree-based method, random forest.
 
-[]{#_idTextAnchor115}
 
-Random Forest {#_idParaDest-114}
+
+Random Forest
 -------------
 
 Imagine that you must decide whether to join a university. In one
@@ -2477,10 +2235,7 @@ huge amount of time and memory. We can make use of the scikit-learn
 library to implement the random forest algorithm in Python using the
 following code:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 from sklearn.ensemble import RandomForestClassifier 
@@ -2488,18 +2243,18 @@ rfc = RandomForestClassifier()
 rfc = rfc.fit(X, y)
 predicted_labels = rfc.predict(X)
 ```
-:::
+
 
 Here, we created the base model using the
-`RandomForestClassifier`{.literal} class of scikit-learn. Then, we
-trained the model using the `fit`{.literal} function. The trained model
-can then be used to make predictions using the `predict`{.literal}
-function. `X`{.literal} represents a DataFrame of independent variables,
-whereas `y`{.literal} represents a DataFrame of dependent variables.
+`RandomForestClassifier` class of scikit-learn. Then, we
+trained the model using the `fit` function. The trained model
+can then be used to make predictions using the `predict`
+function. `X` represents a DataFrame of independent variables,
+whereas `y` represents a DataFrame of dependent variables.
 
-[]{#_idTextAnchor116}
 
-Gradient Boosting Machine and Extreme Gradient Boost {#_idParaDest-115}
+
+Gradient Boosting Machine and Extreme Gradient Boost
 ----------------------------------------------------
 
 There are various other tree-based algorithms, such as **gradient
@@ -2522,7 +2277,7 @@ solution.
 XGBoost is an enhanced version of GBM that is portable and distributed,
 which means that it can easily be used in different architectures and
 can use multiple cores (a single machine) or multiple machines
-(clusters). As a bonus, the `XGBoost`{.literal} library is written in
+(clusters). As a bonus, the `XGBoost` library is written in
 C++, which makes it fast. It is also useful when working with a huge
 dataset as it allows you to store data on an external disk rather than
 load all the data into memory. The main reasons for the popularity of
@@ -2536,13 +2291,10 @@ XGBoost are as follows:
 XGBoost uses a weighted combination of weak learners during the training
 phase.
 
-We can make use of the `xgboost`{.literal} library to implement the
+We can make use of the `xgboost` library to implement the
 XGBoost algorithm in Python using the following code:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 from xgboost import XGBClassifier
@@ -2550,32 +2302,29 @@ xgb_clf=XGBClassifier()
 xgb_clf = xgb_clf.fit(X, y)
 predicted_labels = rfc.predict(X)
 ```
-:::
 
-Here, we created the base model using the `XGBClassifier`{.literal}
-class of `xgboost`{.literal}. Then, we trained the model using the
-`fit`{.literal} function. The trained model can then be used to make
-predictions using the predict function. Here, `X`{.literal} represents a
-DataFrame of independent variables, whereas `y`{.literal} represents a
+
+Here, we created the base model using the `XGBClassifier`
+class of `xgboost`. Then, we trained the model using the
+`fit` function. The trained model can then be used to make
+predictions using the predict function. Here, `X` represents a
+DataFrame of independent variables, whereas `y` represents a
 DataFrame of dependent variables. To get the important features for the
 trained model, we can use the following code:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 pd.DataFrame({'word':X.columns,'importance':xgb_clf.feature_importances_})
 ```
-:::
+
 
 Let\'s perform some exercises to get a better understanding of
 tree-based methods.
 
-[]{#_idTextAnchor117}
 
-Exercise 3.08: Tree-Based Methods -- Random Forest {#_idParaDest-116}
+
+Exercise 3.08: Tree-Based Methods -- Random Forest
 --------------------------------------------------
 
 In this exercise, we will use the tree-based method random forest to
@@ -2590,10 +2339,7 @@ To download the dataset for this exercise, visit
 
 1.  Open a Jupyter Notebook. Insert a new cell and add the following
     code to import the necessary packages:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pandas as pd
@@ -2612,15 +2358,12 @@ To download the dataset for this exercise, visit
     import warnings
     warnings.filterwarnings('ignore')
     ```
-    :::
 
-2.  Now, read the given data file in `JSON`{.literal} format using
-    `pandas`{.literal}. Add the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+2.  Now, read the given data file in `JSON` format using
+    `pandas`. Add the following code to implement this:
+
+
 
     ``` {.language-markup}
     data_patio_lawn_garden = pd.read_json\
@@ -2629,29 +2372,26 @@ To download the dataset for this exercise, visit
                               lines = True)
     data_patio_lawn_garden[['reviewText', 'overall']].head() 
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer088 .IMG---Figure}
+
     ![Figure 3.37: Storing reviews as a DataFrame
-    ](4_files/B16062_03_37.jpg)
-    :::
+    ](./images/B16062_03_37.jpg)
+
 
     Figure 3.37: Storing reviews as a DataFrame
 
-3.  Use a `lambda`{.literal} function to extract tokens from each
-    `reviewText`{.literal} of this DataFrame, lemmatize them using
-    `WordNetLemmatizer`{.literal}, and concatenate them side by side.
-    Use the `join`{.literal} function to concatenate a list of words
-    into a single sentence. Use a regular expression (`re`{.literal}) to
+3.  Use a `lambda` function to extract tokens from each
+    `reviewText` of this DataFrame, lemmatize them using
+    `WordNetLemmatizer`, and concatenate them side by side.
+    Use the `join` function to concatenate a list of words
+    into a single sentence. Use a regular expression (`re`) to
     replace anything other than letters, digits, and whitespaces with
     blank spaces. Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     lemmatizer = WordNetLemmatizer()
@@ -2663,26 +2403,23 @@ To download the dataset for this exercise, visit
     data_patio_lawn_garden[['cleaned_review_text', 'reviewText', \
                             'overall']].head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer089 .IMG---Figure}
+
     ![Figure 3.38: Review text before and after cleaning, along with
-    overall scores ](4_files/B16062_03_38.jpg)
-    :::
+    overall scores ](./images/B16062_03_38.jpg)
+
 
     Figure 3.38: Review text before and after cleaning, along with
     overall scores
 
-4.  Create a `DataFrame`{.literal} from the TFIDF matrix representation
-    of the cleaned version of `reviewText`{.literal} with the following
+4.  Create a `DataFrame` from the TFIDF matrix representation
+    of the cleaned version of `reviewText` with the following
     code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -2692,25 +2429,22 @@ To download the dataset for this exercise, visit
     tfidf_df.columns = sorted(tfidf_model.vocabulary_)
     tfidf_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer090 .IMG---Figure}
+
     ![Figure 3.39: TFIDF representation as a DataFrame
-    ](4_files/B16062_03_39.jpg)
-    :::
+    ](./images/B16062_03_39.jpg)
+
 
     Figure 3.39: TFIDF representation as a DataFrame
 
 5.  Add the following lines of code to create a new column called
-    target, which will have 0 if the `overall`{.literal} parameter is
+    target, which will have 0 if the `overall` parameter is
     less than 4; otherwise, it will have 1:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     data_patio_lawn_garden['target'] = data_patio_lawn_garden\
@@ -2718,28 +2452,22 @@ To download the dataset for this exercise, visit
                                        (lambda x : 0 if x<=4 else 1)
     data_patio_lawn_garden['target'].value_counts()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     1     7037
     0     6235
     Name:  target, dtype: int64
     ```
-    :::
+
 
 6.  Now, define a generic function for all the classifier models. Add
     the following code to do this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def clf_model(model_type, X_train, y):
@@ -2747,7 +2475,7 @@ To download the dataset for this exercise, visit
         predicted_labels = model.predict(tfidf_df)
         return predicted_labels
     ```
-    :::
+
 
 7.  Train three kinds of classifier models---namely, random forest,
     gradient boosting machines, and XGBoost. For random forest, we
@@ -2755,10 +2483,7 @@ To download the dataset for this exercise, visit
     compare them with their actual class---that is, the target, using
     crosstabs. Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.ensemble import RandomForestClassifier 
@@ -2769,14 +2494,14 @@ To download the dataset for this exercise, visit
     pd.crosstab(data_patio_lawn_garden['target'], \
                 data_patio_lawn_garden['predicted_labels_rfc'])
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer091 .IMG---Figure}
+
     ![Figure 3.40: Crosstab between actual target values and predicted
-    labels ](4_files/B16062_03_40.jpg)
-    :::
+    labels ](./images/B16062_03_40.jpg)
+
 
     Figure 3.40: Crosstab between actual target values and predicted
     labels
@@ -2789,10 +2514,7 @@ To download the dataset for this exercise, visit
 
 8.  Now, define a generic function for all regression models. Add the
     following code to do this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def reg_model(model_type, X_train, y):
@@ -2800,17 +2522,14 @@ To download the dataset for this exercise, visit
         predicted_values = model.predict(tfidf_df)
         return predicted_values
     ```
-    :::
+
 
 9.  Train three kinds of regression models: random forest, gradient
     boosting machines, and XGBoost. For random forest, we predict the
     overall score of the given set of review texts. Add the following
     code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.ensemble import RandomForestRegressor 
@@ -2821,14 +2540,14 @@ To download the dataset for this exercise, visit
     data_patio_lawn_garden[['overall', \
                             'predicted_values_rfg']].head(10)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer092 .IMG---Figure}
+
     ![Figure 3.41: Actual overall score and predicted values using a
-    random forest regressor ](4_files/B16062_03_41.jpg)
-    :::
+    random forest regressor ](./images/B16062_03_41.jpg)
+
 
 Figure 3.41: Actual overall score and predicted values using a random
 forest regressor
@@ -2846,9 +2565,9 @@ You can also run this example online at <https://packt.live/2P8a89V>.
 
 Now, let\'s perform a similar task using the XGBoost method.
 
-[]{#_idTextAnchor118}
 
-Exercise 3.09: Tree-Based Methods -- XGBoost {#_idParaDest-117}
+
+Exercise 3.09: Tree-Based Methods -- XGBoost
 --------------------------------------------
 
 In this exercise, we will use the tree-based method XGBoost to predict
@@ -2866,10 +2585,7 @@ Follow these steps to implement this exercise:
 
 2.  Insert a new cell and add the following code to import the necessary
     packages:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pandas as pd
@@ -2888,15 +2604,12 @@ Follow these steps to implement this exercise:
     import warnings
     warnings.filterwarnings('ignore')
     ```
-    :::
 
-3.  Now, read the given data file in `JSON`{.literal} format using
-    `pandas`{.literal}. Add the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+3.  Now, read the given data file in `JSON` format using
+    `pandas`. Add the following code to implement this:
+
+
 
     ``` {.language-markup}
     data_patio_lawn_garden = pd.read_json\
@@ -2905,29 +2618,26 @@ Follow these steps to implement this exercise:
                               lines = True)
     data_patio_lawn_garden[['reviewText', 'overall']].head() 
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer093 .IMG---Figure}
+
     ![Figure 3.42: Storing reviews as a DataFrame
-    ](4_files/B16062_03_42.jpg)
-    :::
+    ](./images/B16062_03_42.jpg)
+
 
     Figure 3.42: Storing reviews as a DataFrame
 
-4.  Use a `lambda`{.literal} function to extract tokens from each
-    `'reviewText'`{.literal} of this DataFrame, lemmatize them using
-    `WorrdNetLemmatizer`{.literal}, and concatenate them side by side.
-    Use the `join`{.literal} function to concatenate a list of words
+4.  Use a `lambda` function to extract tokens from each
+    `'reviewText'` of this DataFrame, lemmatize them using
+    `WorrdNetLemmatizer`, and concatenate them side by side.
+    Use the `join` function to concatenate a list of words
     into a single sentence. Use the regular expression method
-    (`re`{.literal}) to replace anything other than letters, digits, and
+    (`re`) to replace anything other than letters, digits, and
     whitespaces with blank spaces. Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     lemmatizer = WordNetLemmatizer()
@@ -2942,25 +2652,22 @@ Follow these steps to implement this exercise:
     data_patio_lawn_garden[['cleaned_review_text', 'reviewText', \
                             'overall']].head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer094 .IMG---Figure}
+
     ![Figure 3.43: Review text before and after cleaning, along with
-    overall scores ](4_files/B16062_03_43.jpg)
-    :::
+    overall scores ](./images/B16062_03_43.jpg)
+
 
     Figure 3.43: Review text before and after cleaning, along with
     overall scores
 
 5.  Create a DataFrame from the TFIDF matrix representation of the
-    cleaned version of `reviewText`{.literal} with the following code:
+    cleaned version of `reviewText` with the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -2970,25 +2677,22 @@ Follow these steps to implement this exercise:
     tfidf_df.columns = sorted(tfidf_model.vocabulary_)
     tfidf_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer095 .IMG---Figure}
+
     ![Figure 3.44: TFIDF representation as a DataFrame
-    ](4_files/B16062_03_44.jpg)
-    :::
+    ](./images/B16062_03_44.jpg)
+
 
     Figure 3.44: TFIDF representation as a DataFrame
 
 6.  The following lines of code are used to create a new column called
-    target, which will have 0 if the `'overall'`{.literal} parameter is
+    target, which will have 0 if the `'overall'` parameter is
     less than 4; otherwise, it will have 1:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     data_patio_lawn_garden['target'] = data_patio_lawn_garden\
@@ -2996,28 +2700,22 @@ Follow these steps to implement this exercise:
                                        (lambda x : 0 if x<=4 else 1)
     data_patio_lawn_garden['target'].value_counts()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     1     7037
     0     6235
     Name:  target, dtype: int64
     ```
-    :::
+
 
 7.  Now, define a generic function for all the classifier models. Add
     the following code to do this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def clf_model(model_type, X_train, y):
@@ -3025,17 +2723,14 @@ Follow these steps to implement this exercise:
         predicted_labels = model.predict(tfidf_df)
         return predicted_labels
     ```
-    :::
 
-8.  Predict the class labels of the given set of `reviewText`{.literal}
+
+8.  Predict the class labels of the given set of `reviewText`
     and compare it with their actual class, that is, the target, using
-    the `crosstab`{.literal} function. Add the following code to do
+    the `crosstab` function. Add the following code to do
     this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     pip install xgboost
@@ -3049,14 +2744,14 @@ Follow these steps to implement this exercise:
     pd.crosstab(data_patio_lawn_garden['target'], \
                 data_patio_lawn_garden['predicted_labels_xgbc'])
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer096 .IMG---Figure}
+
     ![Figure 3.45: Crosstab between actual target values and predicted
-    labels using XGBoost ](4_files/B16062_03_45.jpg)
-    :::
+    labels using XGBoost ](./images/B16062_03_45.jpg)
+
 
     Figure 3.45: Crosstab between actual target values and predicted
     labels using XGBoost
@@ -3069,10 +2764,7 @@ Follow these steps to implement this exercise:
 
 9.  Now, define a generic function for all the regression models. Add
     the following code to do this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     def reg_model(model_type, X_train, y):
@@ -3080,15 +2772,12 @@ Follow these steps to implement this exercise:
         predicted_values = model.predict(tfidf_df)
         return predicted_values
     ```
-    :::
+
 
 10. Predict the overall score of the given set of
-    `reviewText`{.literal}. Add the following code to do this:
+    `reviewText`. Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from xgboost import XGBRegressor 
@@ -3100,14 +2789,14 @@ Follow these steps to implement this exercise:
     data_patio_lawn_garden[['overall', \
                             'predicted_values_xgbr']].head(2)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer097 .IMG---Figure}
+
     ![Figure 3.46: Actual overall score and predicted values using an
-    XGBoost regressor ](4_files/B16062_03_46.jpg)
-    :::
+    XGBoost regressor ](./images/B16062_03_46.jpg)
+
 
 Figure 3.46: Actual overall score and predicted values using an XGBoost
 regressor
@@ -3126,9 +2815,9 @@ You can also run this example online at <https://packt.live/2DfTa71>.
 
 In the next section, you will learn about sampling.
 
-[]{#_idTextAnchor119}
 
-Sampling {#_idParaDest-118}
+
+Sampling
 --------
 
 Sampling is the process of creating a subset from a given set of
@@ -3179,9 +2868,9 @@ methods, such as the following:
 
 To better understand these, let\'s perform a simple exercise.
 
-[]{#_idTextAnchor120}
 
-Exercise 3.10: Sampling (Simple Random, Stratified, and Multi-Stage) {#_idParaDest-119}
+
+Exercise 3.10: Sampling (Simple Random, Stratified, and Multi-Stage)
 --------------------------------------------------------------------
 
 In this exercise, we will extract samples from an online retail dataset
@@ -3201,10 +2890,7 @@ Follow these steps to implement this exercise:
 2.  Insert a new cell and add the following code to import pandas and
     read the dataset:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     !pip install xlrd
@@ -3212,54 +2898,42 @@ Follow these steps to implement this exercise:
     data = pd.read_excel('data/Online Retail.xlsx')
     data.shape
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     (54190, 8)
     ```
-    :::
 
-3.  We use pandas\' `sample`{.literal} function to extract a sample from
-    the `DataFrame`{.literal}. Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+3.  We use pandas\' `sample` function to extract a sample from
+    the `DataFrame`. Add the following code to do this:
+
+
 
     ``` {.language-markup}
     # selecting 10% of the data randomly
     data_sample_random = data.sample(frac=0.1,random_state=42)
     data_sample_random.shape
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     (54191, 8)
     ```
-    :::
 
-4.  Use sklearn\'s `train_test_split`{.literal} function to create
+
+4.  Use sklearn\'s `train_test_split` function to create
     stratified samples. Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.model_selection import train_test_split
@@ -3269,49 +2943,43 @@ Follow these steps to implement this exercise:
                                           random_state=42,\
                                           stratify = data['Country'])
     ```
-    :::
+
 
     You can confirm the stratified split by checking the percentage of
     each category in the country column after the split. To get the
     train set percentages, use the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     y_train.value_counts()/y_train.shape[0]
     ```
-    :::
+
 
     The following is part of the output of the preceding code:
 
-    ::: {#_idContainer098 .IMG---Figure}
+
     ![Figure 3.47: The percentage of countries for the training set
-    ](4_files/B16062_03_47.jpg)
-    :::
+    ](./images/B16062_03_47.jpg)
+
 
     Figure 3.47: The percentage of countries for the training set
 
 5.  Similarly, for the validation set, add the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     y_valid.value_counts()/y_valid.shape[0]
     ```
-    :::
+
 
     The following is part of the output of the preceding code:
 
-    ::: {#_idContainer099 .IMG---Figure}
+
     ![Figure 3.48: The percentage of countries for the validation set
-    ](4_files/B16062_03_48.jpg)
-    :::
+    ](./images/B16062_03_48.jpg)
+
 
     Figure 3.48: The percentage of countries for the validation set
 
@@ -3324,10 +2992,7 @@ Follow these steps to implement this exercise:
     Germany, or France and where the corresponding quantity is greater
     than or equal to 2. Add the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     data_ugf = data[data['Country'].isin(['United Kingdom', \
@@ -3337,43 +3002,34 @@ Follow these steps to implement this exercise:
                                             random_state=42)
     data_ugf_q2.shape
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     (356940, 8)
     ```
-    :::
+
 
     Now, add the following line of code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     data_ugf_q2_sample.shape
     ```
-    :::
+
 
     This will generate the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     (7139, 8)
     ```
-    :::
+
 
 We can see the reduction in size of the data when the filtering criteria
 is applied and then the reduction in size when a sample of the filtered
@@ -3390,10 +3046,10 @@ To access the source code for this specific section, please refer to
 You can also run this example online at <https://packt.live/3jT8XsZ>.
 
 
-Developing a Text Classifier {#_idParaDest-120}
+Developing a Text Classifier
 ============================
 
-::: {#_idContainer119 .Content}
+
 A text classifier is a machine learning model that is capable of
 labeling texts based on their content. For instance, a text classifier
 will help you understand whether a random text statement is sarcastic or
@@ -3402,9 +3058,9 @@ classifying huge amounts of text data is impossible. In the next few
 sections, we will learn about the different parts of text classifiers
 and implement them in Python.
 
-[]{#_idTextAnchor122}
 
-Feature Extraction {#_idParaDest-121}
+
+Feature Extraction
 ------------------
 
 When dealing with text data, features denote its different attributes.
@@ -3412,18 +3068,18 @@ Generally, they are numeric representations of the text. As we discussed
 in *Chapter 2*, *Feature Extraction Methods*, TFIDF representations of
 texts are one of the most popular ways of extracting features from them.
 
-[]{#_idTextAnchor123}
 
-Feature Engineering {#_idParaDest-122}
+
+Feature Engineering
 -------------------
 
 Feature engineering is the art of extracting new features from existing
 ones. Extracting novel features, which tend to capture variation in data
 better, requires sound domain expertise.
 
-[]{#_idTextAnchor124}
 
-Removing Correlated Features {#_idParaDest-123}
+
+Removing Correlated Features
 ----------------------------
 
 Correlation refers to the statistical relationship between two
@@ -3438,35 +3094,32 @@ correlation, which can be calculated as follows:
 
 <div>
 
-::: {#_idContainer100 .IMG---Figure}
-![Figure 3.49: Pearson correlation ](5_files/B16062_03_49.jpg)
-:::
+
+![Figure 3.49: Pearson correlation ](./images/B16062_03_49.jpg)
+
 
 </div>
 
 Figure 3.49: Pearson correlation
 
-Here, *cov* is the covariance, `σ`{.literal} is the standard deviation,
+Here, *cov* is the covariance, `σ` is the standard deviation,
 and X and Y are two variables/features of the training data that we are
 testing for correlation.
 
-[]{#_idTextAnchor125}
 
-Exercise 3.11: Removing Highly Correlated Features (Tokens) {#_idParaDest-124}
+
+Exercise 3.11: Removing Highly Correlated Features (Tokens)
 -----------------------------------------------------------
 
 In this exercise, we will remove highly correlated words from a TFIDF
-matrix representation of sklearn\'s `fetch_20newgroups`{.literal} text
+matrix representation of sklearn\'s `fetch_20newgroups` text
 dataset. Follow these steps to implement this exercise:
 
 1.  Open a Jupyter Notebook.
 
 2.  Insert a new cell and add the following code to import the necessary
     packages:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.datasets import fetch_20newsgroups
@@ -3490,44 +3143,35 @@ dataset. Follow these steps to implement this exercise:
     import warnings
     warnings.filterwarnings('ignore')
     ```
-    :::
+
 
 3.  We will be using stop words from the English language only. WordNet
-    is the `lemmatizer`{.literal} we will be using. Add the following
+    is the `lemmatizer` we will be using. Add the following
     code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     stop_words = stopwords.words('english')
     stop_words = stop_words + list(string.printable)
     lemmatizer = WordNetLemmatizer()
     ```
-    :::
+
 
 4.  To specify the categories of news articles you want to fetch, add
     the following code:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     categories= ['misc.forsale', 'sci.electronics', \
                  'talk.religion.misc']
     ```
-    :::
 
-5.  To fetch sklearn\'s `20newsgroups`{.literal} text dataset,
+
+5.  To fetch sklearn\'s `20newsgroups` text dataset,
     corresponding to the categories mentioned earlier, use the following
     lines of code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     news_data = fetch_20newsgroups(subset='train', \
@@ -3538,29 +3182,26 @@ dataset. Follow these steps to implement this exercise:
                                  'category': news_data.target})
     news_data_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer101 .IMG---Figure}
+
     ![Figure 3.50: Texts of news data as a DataFrame
-    ](5_files/B16062_03_50.jpg)
-    :::
+    ](./images/B16062_03_50.jpg)
+
 
     Figure 3.50: Texts of news data as a DataFrame
 
-6.  Now, use the `lambda`{.literal} function to extract tokens from each
-    \"text\" of the `news_data_df`{.literal} DataFrame. Check whether
+6.  Now, use the `lambda` function to extract tokens from each
+    \"text\" of the `news_data_df` DataFrame. Check whether
     any of these tokens are stop words, lemmatize them, and concatenate
-    them side by side. Use the `join`{.literal} function to concatenate
+    them side by side. Use the `join` function to concatenate
     a list of words into a single sentence. Use the regular expression
-    method (`re`{.literal}) to replace anything other than letters,
+    method (`re`) to replace anything other than letters,
     digits, and whitespaces with blank spaces. Add the following code to
     implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     news_data_df['cleaned_text'] = news_data_df['text']\
@@ -3572,15 +3213,12 @@ dataset. Follow these steps to implement this exercise:
                                     str(x))) if word.lower() \
                                     not in stop_words]))
     ```
-    :::
+
 
 7.  Add the following lines of code used to create a TFIDF matrix and
     transform it into a DataFrame:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model = TfidfVectorizer(max_features=20)
@@ -3589,46 +3227,40 @@ dataset. Follow these steps to implement this exercise:
     tfidf_df.columns = sorted(tfidf_model.vocabulary_)
     tfidf_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer102 .IMG---Figure}
+
     ![Figure 3.51: TFIDF representation as a DataFrame
-    ](5_files/B16062_03_51.jpg)
-    :::
+    ](./images/B16062_03_51.jpg)
+
 
     Figure 3.51: TFIDF representation as a DataFrame
 
 8.  Calculate the correlation matrix for this TFIDF representation. Add
     the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     correlation_matrix = tfidf_df.corr()
     correlation_matrix.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer103 .IMG---Figure}
-    ![Figure 3.52: Correlation matrix ](5_files/B16062_03_52.jpg)
-    :::
+
+    ![Figure 3.52: Correlation matrix ](./images/B16062_03_52.jpg)
+
 
     Figure 3.52: Correlation matrix
 
 9.  Now, plot the correlation matrix using seaborn\'s heatmap function.
     Add the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import seaborn as sns
@@ -3636,14 +3268,14 @@ dataset. Follow these steps to implement this exercise:
     sns.heatmap(correlation_matrix,annot=True, fmt='.1g', \
                 vmin=-1, vmax=1, center= 0, cmap= 'coolwarm')
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer104 .IMG---Figure}
+
     ![Figure 3.53: Heatmap representation of a correlation matrix
-    ](5_files/B16062_03_53.jpg)
-    :::
+    ](./images/B16062_03_53.jpg)
+
 
     Figure 3.53: Heatmap representation of a correlation matrix
 
@@ -3651,10 +3283,7 @@ dataset. Follow these steps to implement this exercise:
     triangular matrix from the correlation matrix. Create a stacked
     array out of it and traverse it. Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import numpy as np
@@ -3670,31 +3299,28 @@ dataset. Follow these steps to implement this exercise:
                                & (correlation_matrix_melted\
                                   ['correlation']>.7)]
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer105 .IMG---Figure}
-    ![Figure 3.54: Highly correlated tokens ](5_files/B16062_03_54.jpg)
-    :::
+
+    ![Figure 3.54: Highly correlated tokens ](./images/B16062_03_54.jpg)
+
 
     Figure 3.54: Highly correlated tokens
 
     You can see that the most highly correlated features are
-    `host`{.literal}, `nntp`{.literal}, `posting`{.literal},
-    `organization`{.literal}, and `subject`{.literal}. Next, we will
-    remove `nntp`{.literal}, `posting`{.literal}, and
-    `organization`{.literal} since `host`{.literal} and
-    `subject`{.literal} are highly correlated with them.
+    `host`, `nntp`, `posting`,
+    `organization`, and `subject`. Next, we will
+    remove `nntp`, `posting`, and
+    `organization` since `host` and
+    `subject` are highly correlated with them.
 
 11. Remove terms for which the coefficient of correlation is greater
     than 0.7 and create a separate DataFrame with the remaining terms.
     Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_df_without_correlated_word = tfidf_df.drop(['nntp', \
@@ -3703,14 +3329,14 @@ dataset. Follow these steps to implement this exercise:
                                                      axis = 1)
     tfidf_df_without_correlated_word.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer106 .IMG---Figure}
+
     ![Figure 3.55: The DataFrame after removing correlated tokens
-    ](5_files/B16062_03_55.jpg)
-    :::
+    ](./images/B16062_03_55.jpg)
+
 
 Figure 3.55: The DataFrame after removing correlated tokens
 
@@ -3729,9 +3355,9 @@ You can also run this example online at <https://packt.live/2XbeCAX>.
 In the next section, we will learn how to reduce the size of the dataset
 and understand why this is necessary.
 
-[]{#_idTextAnchor126}
 
-Dimensionality Reduction {#_idParaDest-125}
+
+Dimensionality Reduction
 ------------------------
 
 There are some optional steps that we can follow on a case-to-case
@@ -3753,13 +3379,13 @@ combine these two highly correlated features into a single feature and
 reduce the dimensionality. In the next section, we\'ll look at an
 exercise to get a better understanding of this.
 
-[]{#_idTextAnchor127}
 
-Exercise 3.12: Performing Dimensionality Reduction Using Principal Component Analysis {#_idParaDest-126}
+
+Exercise 3.12: Performing Dimensionality Reduction Using Principal Component Analysis
 -------------------------------------------------------------------------------------
 
 In this exercise, we will reduce the dimensionality of a TFIDF matrix
-representation of sklearn\'s `fetch_20newsgroups`{.literal} text dataset
+representation of sklearn\'s `fetch_20newsgroups` text dataset
 to two. Then, we\'ll create a scatter plot of these documents. Each
 category should be colored differently. Follow these steps to implement
 this exercise:
@@ -3768,10 +3394,7 @@ this exercise:
 
 2.  Insert a new cell and add the following code to import the necessary
     packages:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.datasets import fetch_20newsgroups
@@ -3795,43 +3418,34 @@ this exercise:
     import warnings
     warnings.filterwarnings('ignore')
     ```
-    :::
 
-3.  Use stop words from the English language only. `WordNet`{.literal}
+
+3.  Use stop words from the English language only. `WordNet`
     states the lemmatizer we will be using. Add the following code to
     implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     stop_words = stopwords.words('english')
     stop_words = stop_words + list(string.printable)
     lemmatizer = WordNetLemmatizer()
     ```
-    :::
+
 
 4.  To specify the categories of news articles we want to fetch by, add
     the following code:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     categories= ['misc.forsale', 'sci.electronics', \
                  'talk.religion.misc']
     ```
-    :::
+
 
 5.  To fetch sklearn\'s dataset corresponding to the categories we
     mentioned earlier, use the following lines of code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     news_data = fetch_20newsgroups(subset='train', \
@@ -3842,29 +3456,26 @@ this exercise:
                                  'category': news_data.target})
     news_data_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer107 .IMG---Figure}
+
     ![Figure 3.56: News texts and their categories
-    ](5_files/B16062_03_56.jpg)
-    :::
+    ](./images/B16062_03_56.jpg)
+
 
     Figure 3.56: News texts and their categories
 
-6.  Use the `lambda`{.literal} function to extract tokens from each
-    `text`{.literal} item of the `news_data_df`{.literal} DataFrame,
+6.  Use the `lambda` function to extract tokens from each
+    `text` item of the `news_data_df` DataFrame,
     check whether any of these tokens are stop words, lemmatize them,
-    and concatenate them side by side. Use the `join`{.literal} function
+    and concatenate them side by side. Use the `join` function
     to concatenate a list of words into a single sentence. Use the
-    regular expression method (`re`{.literal}) to replace anything other
+    regular expression method (`re`) to replace anything other
     than letters, digits, and whitespaces with a blank space. Add the
     following code to implement this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     news_data_df['cleaned_text'] = news_data_df['text']\
@@ -3876,15 +3487,12 @@ this exercise:
                                     str(x))) if word.lower() \
                                     not in stop_words]))
     ```
-    :::
+
 
 7.  The following lines of code are used to create a TFIDF matrix and
     transform it into a DataFrame:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model = TfidfVectorizer(max_features=20)
@@ -3893,25 +3501,22 @@ this exercise:
     tfidf_df.columns = sorted(tfidf_model.vocabulary_)
     tfidf_df.head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer108 .IMG---Figure}
+
     ![Figure 3.57: TFIDF representation as a DataFrame
-    ](5_files/B16062_03_57.jpg)
-    :::
+    ](./images/B16062_03_57.jpg)
+
 
     Figure 3.57: TFIDF representation as a DataFrame
 
-8.  In this step, we are using sklearn\'s `PCA`{.literal} function to
+8.  In this step, we are using sklearn\'s `PCA` function to
     extract two principal components from the initial data. Add the
     following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.decomposition import PCA
@@ -3920,27 +3525,24 @@ this exercise:
     reduced_tfidf = pca.transform(tfidf_df)
     reduced_tfidf
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer109 .IMG---Figure}
-    ![Figure 3.58: Principal components ](5_files/B16062_03_58.jpg)
-    :::
+
+    ![Figure 3.58: Principal components ](./images/B16062_03_58.jpg)
+
 
     Figure 3.58: Principal components
 
     In the preceding screenshot, you can see the two principal
     components that the PCA algorithm calculated.
 
-9.  Now, we\'ll create a `scatter`{.literal} plot using these principal
+9.  Now, we\'ll create a `scatter` plot using these principal
     components and represent each category with a separate color. Add
     the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     scatter = plt.scatter(reduced_tfidf[:, 0], \
@@ -3953,14 +3555,14 @@ this exercise:
     plt.title('Representation of NEWS documents in 2D')
     plt.show()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer110 .IMG---Figure}
+
     ![Figure 3.59: Two-dimensional representation of news documents
-    ](5_files/B16062_03_59.jpg)
-    :::
+    ](./images/B16062_03_59.jpg)
+
 
 Figure 3.59: Two-dimensional representation of news documents
 
@@ -3983,9 +3585,9 @@ You can also run this example online at <https://packt.live/3jU0dD7>.
 Next, we will learn how to evaluate the machine learning models that we
 train.
 
-[]{#_idTextAnchor128}
 
-Deciding on a Model Type {#_idParaDest-127}
+
+Deciding on a Model Type
 ------------------------
 
 Once the feature set is ready, it\'s necessary to decide on the type of
@@ -4006,9 +3608,9 @@ explainability and the time that\'s required to develop it. When the
 outcome of a model has to be the probability of the occurrence of a
 certain class, we use logistic regression.
 
-[]{#_idTextAnchor129}
 
-Evaluating the Performance of a Model {#_idParaDest-128}
+
+Evaluating the Performance of a Model
 -------------------------------------
 
 Once a model is ready, it is necessary to evaluate its performance. This
@@ -4027,9 +3629,9 @@ evaluate a model\'s performance. Let\'s work through them one by one:
     predicted values match with the actual values, and how many don\'t.
     Consider the following image:
 
-    ::: {#_idContainer111 .IMG---Figure}
-    ![Figure 3.60: Confusion matrix ](5_files/B16062_03_60.jpg)
-    :::
+
+    ![Figure 3.60: Confusion matrix ](./images/B16062_03_60.jpg)
+
 
 Figure 3.60: Confusion matrix
 
@@ -4039,16 +3641,13 @@ top-right cell will have the count of incorrectly classified **0**
 values, and so on. To create a confusion matrix using Python, you can
 use the following code:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 from sklearn.metrics import confusion_matrix
 confusion_matrix(actual_values,predicted_values)
 ```
-:::
+
 
 -   **Accuracy**
 
@@ -4064,16 +3663,13 @@ confusion_matrix(actual_values,predicted_values)
     To get the accuracy of the predicted values using Python, you can
     use the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.metrics import accuracy_score
     accuracy_score(actual_values,predicted_values)
     ```
-    :::
+
 
 -   **Precision and Recall**
 
@@ -4101,16 +3697,13 @@ confusion_matrix(actual_values,predicted_values)
     To get the F1 score, precision, and recall values using Python, you
     can use the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.metrics import classification_report
     classification_report(actual_values,predicted_values)
     ```
-    :::
+
 
 -   **Receiver Operating Characteristic (ROC) Curve**
 
@@ -4129,10 +3722,7 @@ confusion_matrix(actual_values,predicted_values)
     AUROC, the better the model is. The maximum value of AUROC is 1. To
     create the ROC curve using Python, use the following code:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     fpr,tpr,threshold=roc_curve(actual_values, \
@@ -4145,10 +3735,10 @@ confusion_matrix(actual_values,predicted_values)
     ax.legend(loc='best')
     plt.show()
     ```
-    :::
 
-    Here, `actual_values`{.literal} refers to the actual dependent
-    variable values, whereas `predicted_probabilities`{.literal} is the
+
+    Here, `actual_values` refers to the actual dependent
+    variable values, whereas `predicted_probabilities` is the
     predicted probability of getting 1 from the trained predictor model.
 
 -   **Root Mean Square Error (RMSE)**
@@ -4156,10 +3746,10 @@ confusion_matrix(actual_values,predicted_values)
     This is mainly used for evaluating the accuracy of regression
     models. We define it as follows:
 
-    ::: {#_idContainer112 .IMG---Figure}
+
     ![Figure 3.61: Formula for root mean square error
-    ](5_files/B16062_03_61.jpg)
-    :::
+    ](./images/B16062_03_61.jpg)
+
 
 Figure 3.61: Formula for root mean square error
 
@@ -4168,26 +3758,23 @@ Here, *n* is the number of samples, *Pi* is the predicted value of the
 *i*[th]{.superscript} observation. To find the RMSE using Python, use
 the following code:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 from sklearn.metrics import mean_squared_error
 rmse = sqrt(mean_squared_error(y_actual, y_predicted))
 ```
-:::
+
 
 -   **Maximum Absolute Percentage Error (MAPE)**
 
     Just like RMSE, this is another way to evaluate a regression
     model\'s performance. It is described as follows:
 
-    ::: {#_idContainer113 .IMG---Figure}
+
     ![Figure 3.62: Formula for maximum absolute percentage error
-    ](5_files/B16062_03_62.jpg)
-    :::
+    ](./images/B16062_03_62.jpg)
+
 
 Figure 3.62: Formula for maximum absolute percentage error
 
@@ -4196,20 +3783,17 @@ is, the forecast value) of the *ith* observation, and *O*i is the
 observed value (that is, the actual value) of the *ith* observation. To
 find MAPE in Python, use the following code:
 
-::: {.informalexample}
-::: {.toolbar .clearfix}
-Copy
-:::
+
 
 ``` {.language-markup}
 from sklearn.metrics import mean_absolute_error
 mape = mean_absolute_error(y_actual, y_predicted) * 100
 ```
-:::
 
-[]{#_idTextAnchor130}
 
-Exercise 3.13: Calculating the RMSE and MAPE of a Dataset {#_idParaDest-129}
+
+
+Exercise 3.13: Calculating the RMSE and MAPE of a Dataset
 ---------------------------------------------------------
 
 In this exercise, we will calculate the RMSE and MAPE of hypothetical
@@ -4218,14 +3802,11 @@ exercise:
 
 1.  Open a Jupyter Notebook.
 
-2.  Use sklearn\'s `mean_squared_error`{.literal} to calculate the MSE
-    and then use the `sqrt`{.literal} function to calculate the RMSE.
+2.  Use sklearn\'s `mean_squared_error` to calculate the MSE
+    and then use the `sqrt` function to calculate the RMSE.
     Add the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.metrics import mean_squared_error
@@ -4235,31 +3816,25 @@ exercise:
     rms = sqrt(mean_squared_error(y_actual, y_predicted))
     print('Root Mean Squared Error (RMSE) is:', rms)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     Root Mean Squared Error (RMSE) is: 0.21019038988498018
     ```
-    :::
 
-    The preceding output shows the RMSE of the `y_actual`{.literal} and
-    `y_predicted`{.literal} values that we created previously.
 
-3.  Next, use sklearn\'s `mean_absolute_error`{.literal} to calculate
+    The preceding output shows the RMSE of the `y_actual` and
+    `y_predicted` values that we created previously.
+
+3.  Next, use sklearn\'s `mean_absolute_error` to calculate
     the MAPE of a hypothetical model prediction. Add the following code
     to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.metrics import mean_absolute_error
@@ -4269,22 +3844,19 @@ exercise:
     print('Mean Absolute Percentage Error (MAPE) is:', \
           round(mape,2), '%')
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     Mean Absolute Percentage Error (MAPE) is 16.6 %
     ```
-    :::
 
-    The preceding output shows the MAPE of the `y_actual`{.literal} and
-    `y_predicted`{.literal} values that we created previously.
+
+    The preceding output shows the MAPE of the `y_actual` and
+    `y_predicted` values that we created previously.
 
 You have now learned how to evaluate the machine learning models that we
 train and are equipped to create your very own text classifier.
@@ -4299,9 +3871,9 @@ You can also run this example online at <https://packt.live/39E7i5S>.
 In the next section, we will solve an activity based on classifying
 text.
 
-[]{#_idTextAnchor131}
 
-Activity 3.01: Developing End-to-End Text Classifiers {#_idParaDest-130}
+
+Activity 3.01: Developing End-to-End Text Classifiers
 -----------------------------------------------------
 
 For this activity, you will build an end-to-end classifier that figures
@@ -4342,10 +3914,10 @@ accuracy, precision, recall, F1 plot curve, and ROC curve. In the next
 section, you will learn how to build pipelines for NLP projects.
 
 
-Building Pipelines for NLP Projects {#_idParaDest-131}
+Building Pipelines for NLP Projects
 ===================================
 
-::: {#_idContainer119 .Content}
+
 In general, a pipeline refers to a structure that allows a streamlined
 flow of air, water, or something similar. In this context, pipeline has
 a similar meaning. It helps to streamline various stages of an NLP
@@ -4355,30 +3927,27 @@ An NLP project is done in various stages, such as tokenization,
 stemming, feature extraction (TFIDF matrix generation), and model
 building. Instead of carrying out each stage separately, we create an
 ordered list of all these stages. This list is known as a pipeline. The
-`Pipeline`{.literal} class of sklearn helps us combine these stages into
+`Pipeline` class of sklearn helps us combine these stages into
 one object that we can use to perform these stages one after the other
 in a sequence. We will solve a text classification problem using a
 pipeline in the next section to understand the working of a pipeline
 better.
 
-[]{#_idTextAnchor133}
 
-Exercise 3.14: Building the Pipeline for an NLP Project {#_idParaDest-132}
+
+Exercise 3.14: Building the Pipeline for an NLP Project
 -------------------------------------------------------
 
 In this exercise, we will develop a pipeline that will allow us to
 create a TFIDF matrix representation from sklearn\'s
-`fetch_20newsgroups`{.literal} text dataset. Follow these steps to
+`fetch_20newsgroups` text dataset. Follow these steps to
 implement this exercise:
 
 1.  Open a Jupyter Notebook.
 
 2.  Insert a new cell and add the following code to import the necessary
     packages:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     from sklearn.pipeline import Pipeline
@@ -4388,28 +3957,22 @@ implement this exercise:
     from sklearn.feature_extraction.text import CountVectorizer
     import pandas as pd
     ```
-    :::
+
 
 3.  Specify the categories of news articles you want to fetch. Add the
     following code to do this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     categories = ['misc.forsale', 'sci.electronics', \
                   'talk.religion.misc']
     ```
-    :::
 
-4.  To fetch sklearn\'s `20newsgroups`{.literal} dataset, corresponding
+
+4.  To fetch sklearn\'s `20newsgroups` dataset, corresponding
     to the categories mentioned earlier, we use the following lines of
     code:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     news_data = fetch_20newsgroups(subset='train', \
@@ -4417,17 +3980,14 @@ implement this exercise:
                                    shuffle=True, random_state=42, \
                                    download_if_missing=True)
     ```
-    :::
+
 
 5.  Define a pipeline consisting of two stages:
-    `CountVectorizer`{.literal} and `TfidfTransformer`{.literal}. Fit it
-    on the `news_data`{.literal} we mentioned earlier and use it to
+    `CountVectorizer` and `TfidfTransformer`. Fit it
+    on the `news_data` we mentioned earlier and use it to
     transform that data. Add the following code to implement this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     text_classifier_pipeline = Pipeline([('vect', \
@@ -4438,14 +3998,14 @@ implement this exercise:
     pd.DataFrame(text_classifier_pipeline.fit_transform\
                  (news_data.data, news_data.target).todense()).head()
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer114 .IMG---Figure}
+
     ![Figure 3.63: TFIDF representation of the DataFrame created using a
-    pipeline ](6_files/B16062_03_63.jpg)
-    :::
+    pipeline ](./images/B16062_03_63.jpg)
+
 
 Figure 3.63: TFIDF representation of the DataFrame created using a
 pipeline
@@ -4462,34 +4022,34 @@ To access the source code for this specific section, please refer to
 You can also run this example online at <https://packt.live/3113qrJ>.
 
 
-Saving and Loading Models {#_idParaDest-133}
+Saving and Loading Models
 =========================
 
-::: {#_idContainer119 .Content}
+
 After a model has been built and its performance matches our
 expectations, we may want to save it for future use. This eliminates the
 time needed for rebuilding it. Models can be saved on the hard disk
-using the `joblib`{.literal} and `pickle`{.literal} libraries.
+using the `joblib` and `pickle` libraries.
 
-The `pickle`{.literal} module makes use of binary protocols to save and
-load Python objects. `joblib`{.literal} makes use of the
-`pickle`{.literal} library protocols, but it improves on them to provide
+The `pickle` module makes use of binary protocols to save and
+load Python objects. `joblib` makes use of the
+`pickle` library protocols, but it improves on them to provide
 an efficient replacement to save large Python objects. Both libraries
 have two main functions that we will make use of to save and load our
 models:
 
--   `dump`{.literal}: This function is used to save a Python object to a
+-   `dump`: This function is used to save a Python object to a
     file on the disk.
--   `loads`{.literal}: This function is used to load a saved Python
+-   `loads`: This function is used to load a saved Python
     object from a file on the disk.
 
 To deploy saved models, we need to load them from the hard disk to the
 memory. In the next section, we will perform an exercise based on this
 to get a better understanding of this process.
 
-[]{#_idTextAnchor135}
 
-Exercise 3.15: Saving and Loading Models {#_idParaDest-134}
+
+Exercise 3.15: Saving and Loading Models
 ----------------------------------------
 
 In this exercise, we will create a TFIDF representation of sentences.
@@ -4500,24 +4060,18 @@ Follow these steps to implement this exercise:
 
 2.  Insert a new cell and the following code to import the necessary
     packages:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     import pickle
     from joblib import dump, load
     from sklearn.feature_extraction.text import TfidfVectorizer
     ```
-    :::
+
 
 3.  Define a corpus consisting of four sentences by adding the following
     code:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     corpus = ['Data Science is an overlap between Arts and Science',\
@@ -4527,103 +4081,88 @@ Follow these steps to implement this exercise:
               'becomes difficult', \
               'Natural Language Processing is a part of Data Science']
     ```
-    :::
+
 
 4.  Fit a TFIDF model to it. Add the following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model = TfidfVectorizer()
     tfidf_vectors = tfidf_model.fit_transform(corpus).todense()
     print(tfidf_vectors)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer115 .IMG---Figure}
+
     ![Figure 3.64: TFIDF representation as a matrix
-    ](7_files/B16062_03_64.jpg)
-    :::
+    ](./images/B16062_03_64.jpg)
+
 
     Figure 3.64: TFIDF representation as a matrix
 
-5.  Save this TFIDF model on disk using `joblib`{.literal}. Add the
+5.  Save this TFIDF model on disk using `joblib`. Add the
     following code to do this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     dump(tfidf_model, 'tfidf_model.joblib')
     ```
-    :::
+
 
 6.  Finally, load this model from disk to memory and use it. Add the
     following code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     tfidf_model_loaded = load('tfidf_model.joblib')
     loaded_tfidf_vectors = tfidf_model_loaded.transform(corpus).todense()
     print(loaded_tfidf_vectors)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer116 .IMG---Figure}
+
     ![Figure 3.65: TFIDF representation as a matrix
-    ](7_files/B16062_03_65.jpg)
-    :::
+    ](./images/B16062_03_65.jpg)
+
 
     Figure 3.65: TFIDF representation as a matrix
 
-7.  Save this TFIDF model on disk using `pickle`{.literal}. Add the
+7.  Save this TFIDF model on disk using `pickle`. Add the
     following code to do this:
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     pickle.dump(tfidf_model, open("tfidf_model.pickle.dat", "wb"))
     ```
-    :::
+
 
 8.  Load this model from disk to memory and use it. Add the following
     code to do this:
 
-    ::: {.informalexample}
-    ::: {.toolbar .clearfix}
-    Copy
-    :::
+
 
     ``` {.language-markup}
     loaded_model = pickle.load(open("tfidf_model.pickle.dat", "rb"))
     loaded_tfidf_vectors = loaded_model.transform(corpus).todense()
     print(loaded_tfidf_vectors)
     ```
-    :::
+
 
     The preceding code generates the following output:
 
-    ::: {#_idContainer117 .IMG---Figure}
-    :::
 
-    ::: {#_idContainer118 .IMG---Figure}
+
+
+
     ![Figure 3.66: TFIDF representation as a matrix
-    ](7_files/B16062_03_66.jpg)
-    :::
+    ](./images/B16062_03_66.jpg)
+
 
 Figure 3.66: TFIDF representation as a matrix
 
@@ -4640,10 +4179,10 @@ To access the source code for this specific section, please refer to
 You can also run this example online at <https://packt.live/3hIay38>.
 
 
-Summary {#_idParaDest-135}
+Summary
 =======
 
-::: {#_idContainer119 .Content}
+
 In this chapter, you learned about the different types of machine
 learning techniques, such as supervised and unsupervised learning. We
 explored unsupervised algorithms such as hierarchical clustering and
