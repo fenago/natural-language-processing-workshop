@@ -6,14 +6,14 @@
 
 Overview
 
-This chapter introduces you to one of the most exciting applications of
+This lab introduces you to one of the most exciting applications of
 natural language processing---that is, sentiment analysis. You will
 explore the various tools used to perform sentiment analysis, such as
 popular NLP libraries and deep learning frameworks. You will then
 perform sentiment analysis on given text data using the powerful
 `textblob` library. You will load textual data and perform
 preprocessing on it to fine-tune the results of your sentiment analysis
-program. By the end of the chapter, you will be able to train a
+program. By the end of the lab, you will be able to train a
 sentiment analysis model.
 
 
@@ -21,11 +21,11 @@ Introduction
 ============
 
 
-In the previous chapter, we looked at text generation, paraphrasing, and
+In the previous lab, we looked at text generation, paraphrasing, and
 summarization, all of which can be immensely useful in helping us focus
 on only the essential and meaningful parts of the text corpus. This, in
 turn, helps us to further refine the results of our NLP project. In this
-chapter, we will look at **sentiment analysis**, which, as the name
+lab, we will look at **sentiment analysis**, which, as the name
 suggests, is the area of NLP that involves teaching computers how to
 identify the sentiment behind written content or parsed audio---that is,
 audio converted to text. Adding this ability to automatically detect
@@ -171,7 +171,7 @@ sentiment analysis.
 
 **Classification**
 
-As we learned in *Chapter 3*, *Developing a Text Classifier*,
+As we learned in *Lab 3*, *Developing a Text Classifier*,
 classification is the NLP technique of assigning one or more classes to
 text documents. This helps in separating and sorting the documents. If
 you use classification for sentiment analysis, you assign different
@@ -922,7 +922,7 @@ and lowercase conversion, to name a few. We then explored ways in which
 we can represent our text data in numerical form so that it can be
 understood by machines in order to implement various algorithms. After
 getting some practical knowledge of topic modeling, we moved on to text
-vectorization, and finally, in this chapter, we explored various
+vectorization, and finally, in this lab, we explored various
 applications of sentiment analysis. This included different tools that
 use sentiment analysis, from technologies available from online
 marketplaces to deep learning frameworks. More importantly, we learned

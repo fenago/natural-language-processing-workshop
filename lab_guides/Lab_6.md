@@ -6,7 +6,7 @@
 
 Overview
 
-This chapter introduces you to the various ways in which text can be
+This lab introduces you to the various ways in which text can be
 represented in the form of vectors. You will start by learning why this
 is important, and the different types of vector representation. You will
 then perform one-hot encoding on words, using the
@@ -37,7 +37,7 @@ different machine learning algorithms and other NLP techniques to it.
 These numeric representations are called vectors and are also sometimes
 called word embeddings or simply embeddings.
 
-This chapter begins with a discussion of vectors, how text can be
+This lab begins with a discussion of vectors, how text can be
 represented as vectors, and how vectors can be composed to represent
 complex speech. We will walk through the various representations in both
 directions---learning how to encode text as vectors as well as how to
@@ -110,12 +110,12 @@ Frequency-based embedding is a technique in which the text is
 represented in vector form by considering the frequency of the word in a
 corpus. The techniques that come under this category are the following:
 
--   Bag of words: As we\'ve already seen in *Chapter 2*, *Feature
+-   Bag of words: As we\'ve already seen in *Lab 2*, *Feature
     Extraction Methods*, bag of words is the technique of converting
     text into vector or numeric form by representing each sentence or
     document in a list the length of which is equal to the total number
     of unique words in the corpus.
--   TFIDF: As seen previously in *Chapter 2*, *Feature Extraction
+-   TFIDF: As seen previously in *Lab 2*, *Feature Extraction
     Methods*, this technique considers the frequency of a term as well
     as the inverse of its occurrence in the corpus.
 -   Term frequency-based technique: This is a somewhat simpler version
@@ -1425,7 +1425,7 @@ pyplot framework of the Matplotlib library. We will be using
 
 The pre-trained model being used for this file can be found at
 <https://www.kaggle.com/watts2/glove6b50dtxt/download>. Download this
-file and place it in the `data` folder of *Chapter 6, Vector
+file and place it in the `data` folder of *Lab 6, Vector
 Representation*.
 
 Follow these steps to complete this exercise:
@@ -2074,21 +2074,21 @@ activity:
 So, in this activity, we were able to find similar news headlines with
 the help of document vectors. A common use case of inferring text
 similarity from document vectors is in text paraphrasing, which we\'ll
-explore in detail in the next chapter.
+explore in detail in the next lab.
 
 
 Summary
 =======
 
 
-In this chapter, we learned about the motivations behind converting
+In this lab, we learned about the motivations behind converting
 human language in the form of text into vectors. This helps machine
 learning algorithms to execute mathematical functions on the text,
 detect patterns in language, and gain an understanding of the meaning of
 the text. We also saw different types of vector representation
 techniques, such as character-level encoding and one-hot encoding.
 
-In the next chapter, we will look at the areas of text paraphrasing,
+In the next lab, we will look at the areas of text paraphrasing,
 summarization, and generation. We will see how we can automate the
 process of text summarization using the NLP techniques we have learned
 so far.

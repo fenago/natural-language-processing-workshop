@@ -7,14 +7,14 @@
 
 Overview
 
-This chapter introduces topic modeling, which means using unsupervised
+This lab introduces topic modeling, which means using unsupervised
 machine learning to find \"topics\" within a given set of documents. You
 will explore the most common approaches to topic modeling, which are
 **Latent Semantic Analysis** (**LSA**), **Latent Dirichlet Allocation**
 (**LDA**), and the **Hierachical Dirichlet Process** (**HDP**), and
 learn the differences between them. You will then practice implementing
 these approaches in Python and review the common practical challenges in
-topic modeling. By the end of this chapter, you will be able to create
+topic modeling. By the end of this lab, you will be able to create
 topic models from any given dataset.
 
 
@@ -22,8 +22,8 @@ Introduction
 ============
 
 
-In the previous chapter, we learned about different ways to collect data
-from local files and online resources. In this chapter, we will focus on
+In the previous lab, we learned about different ways to collect data
+from local files and online resources. In this lab, we will focus on
 **topic modeling**, which is an important area within natural language
 processing. Topic modeling is a simple way to capture the sense of what
 a document or a collection of documents is about. Note that in this
@@ -97,7 +97,7 @@ Exploratory Data Analysis
 It is recommended to do exploratory data analysis prior to performing
 any machine learning project. This helps you learn about the probability
 distribution of the items in the dataset. We have seen this with word
-clouds in *Chapter 2*, *Feature Extraction Methods*. Even better
+clouds in *Lab 2*, *Feature Extraction Methods*. Even better
 exploration is possible with topic modeling. Doing this can give you a
 sense of the statistical properties of the text dataset and how the
 documents can be grouped.
@@ -153,7 +153,7 @@ We will look at approaches that explicitly model sequences in later
 chapters. The sequential structure of languages is different from the
 sequential structure in time-series data. Moreover, some aspects of the
 sequential structure may be specific to the natural language being
-considered. This will be discussed in more detail in *Chapter 6*,
+considered. This will be discussed in more detail in *Lab 6*,
 *Vector Representation*.
 
 
@@ -1653,7 +1653,7 @@ Summary
 =======
 
 
-In this chapter, we discussed topic modeling in detail. Without delving
+In this lab, we discussed topic modeling in detail. Without delving
 into advanced statistics, we reviewed various topic-modeling algorithms
 (such as LSA, LDA, and HDP) and how they can be used for topic modeling
 on a given dataset. We explored the challenges involved in topic
@@ -1661,6 +1661,6 @@ modeling, how experimentation can help address those challenges, and,
 finally, broadly discussed the current state-of-the-art approaches to
 topic modeling.
 
-In the next chapter, we will learn about vector representation of text,
+In the next lab, we will learn about vector representation of text,
 which helps us convert text into a numerical format to make it more
 easily understandable by machines.

@@ -6,11 +6,11 @@
 
 Overview
 
-In this chapter, you will learn the difference between **Natural
+In this lab, you will learn the difference between **Natural
 Language Processing** (**NLP**) and basic text analytics. You will
 implement various preprocessing tasks such as tokenization,
 lemmatization, stemming, stop word removal, and more. By the end of this
-chapter, you will have a deep understanding of the various phases of an
+lab, you will have a deep understanding of the various phases of an
 NLP project, from data collection to model deployment.
 
 
@@ -1856,7 +1856,7 @@ Data Preprocessing
 
 Once the data is collected, we need to clean it. For the process of
 cleaning, we will make use of the different preprocessing steps that we
-have learned about in this chapter. It is necessary to clean the
+have learned about in this lab. It is necessary to clean the
 collected data to ensure effectiveness and accuracy. In our case, we
 will follow these preprocessing steps:
 
@@ -1925,13 +1925,13 @@ Summary
 =======
 
 
-In this chapter, we learned about the basics of NLP and how it differs
+In this lab, we learned about the basics of NLP and how it differs
 from text analytics. We covered the various preprocessing steps that are
 included in NLP, such as tokenization, PoS tagging, stemming,
 lemmatization, and more. We also looked at the different phases an NLP
 project has to pass through, from data collection to model deployment.
 
-In the next chapter, you will learn about the different methods of
+In the next lab, you will learn about the different methods of
 extracting features from unstructured text, such as TF-IDF and bag of
 words. You will also learn about NLP tasks such as tokenization,
 lemmatization, and stemming in more detail. Furthermore, text

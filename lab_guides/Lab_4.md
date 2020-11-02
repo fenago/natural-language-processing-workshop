@@ -6,7 +6,7 @@
 
 Overview
 
-This chapter introduces you to the concept of web scraping. You will
+This lab introduces you to the concept of web scraping. You will
 first learn how to extract data (such as text, images, lists, and
 tables) from pages that are written using HTML. You will then learn
 about the various types of semi-structured data used to create web pages
@@ -19,9 +19,9 @@ Introduction
 ============
 
 
-In the last chapter, we developed a simple classifier using feature
+In the last lab, we developed a simple classifier using feature
 extraction methods. We also covered different algorithms that fall under
-supervised and unsupervised learning. In this chapter, you will learn
+supervised and unsupervised learning. In this lab, you will learn
 how to collect text data by scraping web pages, and then you will learn
 how to process that data. Web scraping helps you extract useful data
 from online content, such as product prices and customer reviews, which
@@ -717,7 +717,7 @@ Dealing with Semi-Structured Data
 =================================
 
 
-We learned about various types of data in *Chapter 2*, *Feature
+We learned about various types of data in *Lab 2*, *Feature
 Extraction Methods*. Let\'s quickly recapitulate what semi-structured
 data refers to. A dataset is said to be semi-structured if it is not in
 a row-column format but, if required, can be converted into a structured
@@ -1263,7 +1263,7 @@ help you implement this activity:
 In this activity, we extracted data from Twitter and loaded it into a
 pandas DataFrame. This data can also be used to analyze tweets and
 create a word cloud out of them, something that we will explore in
-detail in *Chapter 8*, *Sentiment Analysis*.
+detail in *Lab 8*, *Sentiment Analysis*.
 
 Publisher\'s **Note**
 
@@ -1277,10 +1277,10 @@ Summary
 =======
 
 
-In this chapter, we have learned various ways to collect data by
+In this lab, we have learned various ways to collect data by
 scraping web pages. We also successfully scraped data from
 semi-structured formats such as JSON and XML and explored different
 methods of retrieving data in real time from a website without
-authentication. In the next chapter, you will learn about topic
+authentication. In the next lab, you will learn about topic
 modeling---an unsupervised natural language processing technique that
 helps group documents according to the topics that it detects in them.

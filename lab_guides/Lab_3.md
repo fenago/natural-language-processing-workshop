@@ -6,7 +6,7 @@
 
 Overview
 
-This chapter starts with an introduction to the various types of machine
+This lab starts with an introduction to the various types of machine
 learning methods, that is, the supervised and unsupervised methods. You
 will learn about hierarchical clustering and k-means clustering and
 implement them using various datasets. Next, you will explore tree-based
@@ -25,14 +25,14 @@ which are used to extract features from unstructured text. We also
 discussed Bag of Words and **Term Frequency-Inverse Document Frequency**
 (**TFIDF**).
 
-In this chapter, you will learn how to use these extracted features to
+In this lab, you will learn how to use these extracted features to
 develop machine learning models. These models are capable of solving
 real-world problems, such as detecting whether sentiments carried by
 texts are positive or negative, predicting whether emails are spam or
 not, and so on. We will also cover concepts such as supervised and
 unsupervised learning, classifications and regressions, sampling and
 splitting data, along with evaluating the performance of a model in
-depth. This chapter also discusses how to load and save these models for
+depth. This lab also discusses how to load and save these models for
 future use.
 
 
@@ -93,7 +93,7 @@ association:
     are all synonyms of *good*. Association rule mining can easily find
     patterns like this in any NLP dataset. However, the detailed
     theoretical explanations of these algorithms are beyond the scope of
-    this chapter.
+    this lab.
 
 Let\'s explore the different types of clustering. In particular, we will
 be talking about hierarchical and k-means clustering, and the different
@@ -1358,7 +1358,7 @@ k-nearest Neighbors
 -------------------
 
 k-nearest neighbors is an algorithm that can be used to solve both
-regression and classification. In this chapter, we will focus on the
+regression and classification. In this lab, we will focus on the
 classification aspect of the algorithm as it is used for NLP
 applications. Consider, for instance, the saying \"birds of a feather
 flock together.\" This means that people who have similar interests
@@ -3065,7 +3065,7 @@ Feature Extraction
 
 When dealing with text data, features denote its different attributes.
 Generally, they are numeric representations of the text. As we discussed
-in *Chapter 2*, *Feature Extraction Methods*, TFIDF representations of
+in *Lab 2*, *Feature Extraction Methods*, TFIDF representations of
 texts are one of the most popular ways of extracting features from them.
 
 
@@ -4168,7 +4168,7 @@ Figure 3.66: TFIDF representation as a matrix
 
 From the preceding screenshot, we can see that the saved model and the
 model that was loaded from the disk are identical. You have now learned
-how to save and load models. This section marks the end of this chapter,
+how to save and load models. This section marks the end of this lab,
 where you learned how to build a text classifier from scratch.
 
 **Note**
@@ -4183,7 +4183,7 @@ Summary
 =======
 
 
-In this chapter, you learned about the different types of machine
+In this lab, you learned about the different types of machine
 learning techniques, such as supervised and unsupervised learning. We
 explored unsupervised algorithms such as hierarchical clustering and
 k-means clustering, and supervised learning algorithms, such as
@@ -4195,5 +4195,5 @@ into training and validation sets. Finally, we covered the process of
 saving a model on the hard disk and loading it back into memory for
 future use.
 
-In the next chapter, you will learn about several techniques that you
+In the next lab, you will learn about several techniques that you
 can use to collect data from various sources.

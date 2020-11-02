@@ -6,11 +6,11 @@
 
 Overview
 
-This chapter begins with the concept of text generation using Markov
+This lab begins with the concept of text generation using Markov
 chains, before moving on to two types of text summarization---namely,
 abstractive and extractive summarization. You will then explore the
 TextRank algorithm and use it with different datasets. By the end of
-this chapter, you will understand the applications and challenges of
+this lab, you will understand the applications and challenges of
 text generation and summarization using **Natural Language Processing**
 (**NLP**) approaches.
 
@@ -26,7 +26,7 @@ ability to replace a piece of text with different but equivalent text
 piece of text (summarization) are all key elements of using language.
 Although sentence generation, paraphrasing, and summarization are
 challenging tasks in NLP, there have been great strides recently that
-have made them considerably more accessible. In this chapter, we explore
+have made them considerably more accessible. In this lab, we explore
 them in detail and see how we can implement them in Python.
 
 
@@ -331,7 +331,7 @@ paraphrasing in this form of summarization. This second type will be the
 focus of the remainder of this section. We will look at the TextRank
 algorithm, which is an unsupervised machine learning method. For
 simplicity, we will focus on single-document summarization in this
-chapter. To implement this, we will be using the gensim library.
+lab. To implement this, we will be using the gensim library.
 
 
 
@@ -857,7 +857,7 @@ TextRank.
 You can find the dataset to be used for this activity at
 <https://www.dropbox.com/sh/qmq3x3ah1cf3ecz/AAAg_E6f0I5vdaB4WVmR6TCga?dl=0&preview=Consumer_Complaints.csv>.
 To complete the activity, you will need to place the `.csv`
-file into the `data` folder for this chapter in your local
+file into the `data` folder for this lab in your local
 directory.
 
 Follow these steps to implement this activity:
@@ -962,7 +962,7 @@ reproduced.
 
 Furthermore, we don\'t know how the Microsoft NLG model does with a
 naïve test such as the Little Red Riding Hood test. In general,
-extractive summarization of the kind discussed earlier in this chapter
+extractive summarization of the kind discussed earlier in this lab
 is by far the most useful for practitioners compared with the utility of
 the state-of-the-art technology in text generation and paraphrasing. Due
 to this, in the next section, we\'ll largely focus on practical
@@ -991,8 +991,8 @@ Summary
 =======
 
 
-In this chapter, we learned about text generation using Markov chains
+In this lab, we learned about text generation using Markov chains
 and extractive summarization using the TextRank algorithm. We also
 explored both the power and limitations of various advanced approaches.
-In the next chapter, we will learn about sentiment analysis.
+In the next lab, we will learn about sentiment analysis.
 

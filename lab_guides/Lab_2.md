@@ -6,7 +6,7 @@
 
 Overview
 
-In this chapter, you will be able to categorize data based on its
+In this lab, you will be able to categorize data based on its
 content and structure. You will be able to describe preprocessing steps
 in detail and implement them to clean up text data. You will learn about
 feature engineering and calculate the similarity between texts. Once you
@@ -18,10 +18,10 @@ Introduction
 ============
 
 
-In the previous chapter, we learned about the
+In the previous lab, we learned about the
 concepts of **Natural Language Processing** (**NLP**) and text
 analytics. We also took a quick look at various preprocessing steps. In
-this chapter, we will learn how to make text understandable to machine
+this lab, we will learn how to make text understandable to machine
 learning algorithms.
 
 As we know, to use a machine learning algorithm on textual data, we need
@@ -31,12 +31,12 @@ before converting the text data into numerical form, we will need to
 pass it through some preprocessing steps such as tokenization, stemming,
 lemmatization, and stop-word removal.
 
-So, in this chapter, we will learn a little bit more about these
+So, in this lab, we will learn a little bit more about these
 preprocessing steps and how to extract features from the preprocessed
 text and convert them into vectors. We will also explore two popular
 methods for feature extraction (Bag of Words and Term Frequency-Inverse
 Document Frequency), as well as various methods for finding similarity
-between different texts. By the end of this chapter, you will have
+between different texts. By the end of this lab, you will have
 gained an in-depth understanding of how text data can be visualized.
 
 
@@ -194,7 +194,7 @@ libraries that we will be using here:
 -   `textblob`: This is an open source Python library that
     provides different methods for performing various NLP tasks such as
     tokenization and PoS tagging. It is similar to `nltk`,
-    which was introduced in *Chapter 1, Introduction to Natural Language
+    which was introduced in *Lab 1, Introduction to Natural Language
     Processing*. It is built on the top of `nltk` and is much
     simpler as it has an easier to use interface and excellent
     documentation. In projects that don\'t involve a lot of complexity,
@@ -210,7 +210,7 @@ libraries that we will be using here:
 Tokenization
 ------------
 
-Tokenization and word tokenizers were briefly described in *Chapter 1*,
+Tokenization and word tokenizers were briefly described in *Lab 1*,
 *Introduction to Natural Language Processing*. Tokenization is the
 process of splitting sentences into their constituents; that is, words
 and punctuation. Let\'s perform a simple exercise to see how this can be
@@ -2090,7 +2090,7 @@ document---not the frequency of the words/tokens in a document. If we
 are going to use the semantics of any sentence, the frequency of the
 words plays an important role. To overcome this issue, there is another
 feature extraction model called TFIDF, which we will discuss later in
-this chapter.
+this lab.
 
 
 
@@ -2388,7 +2388,7 @@ Finding Text Similarity -- Application of Feature Extraction
 ============================================================
 
 
-So far in this chapter, we have learned how to generate vectors from
+So far in this lab, we have learned how to generate vectors from
 text. These vectors are then fed to machine learning algorithms to
 perform various tasks. Other than using them in machine learning
 applications, we can also perform simple NLP tasks using these vectors.
@@ -3086,7 +3086,7 @@ Summary
 =======
 
 
-In this chapter, you have learned about various types of data and ways
+In this lab, you have learned about various types of data and ways
 to deal with unstructured text data. Text data is usually extremely
 noisy and needs to be cleaned and preprocessed, which mainly consists of
 tokenization, stemming, lemmatization, and stop-word removal. After
@@ -3094,10 +3094,10 @@ preprocessing, features are extracted from texts using various methods,
 such as BoW and TFIDF. These methods convert unstructured text data into
 structured numeric data. New features are created from existing features
 using a technique called feature engineering. In the last part of this
-chapter, we explored various ways of visualizing text data, such as word
+lab, we explored various ways of visualizing text data, such as word
 clouds.
 
-In the next chapter, you will learn how to develop machine learning
+In the next lab, you will learn how to develop machine learning
 models to classify texts using the feature extraction methods you have
-learned about in this chapter. Moreover, different sampling techniques
+learned about in this lab. Moreover, different sampling techniques
 and model evaluation parameters will be introduced.
