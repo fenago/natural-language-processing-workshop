@@ -277,7 +277,7 @@ Austen\'s *Pride and Prejudice*.
 Note
 
 The text file used for this exercise can be found at
-<https://packt.live/3hUxNqQ>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
 Follow these steps to implement this exercise:
 
@@ -500,9 +500,9 @@ Figure 6.5: Dense array
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/2Xd2aAU>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/39GSAeu>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 The preceding output shows that we have achieved our objective of
 one-hot encoding words.
@@ -658,10 +658,10 @@ complete this exercise:
     Note
 
     To access the source code for this specific section, please refer to
-    <https://packt.live/314aTX1>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
     You can also run this example online at
-    <https://packt.live/3gaWbE5>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
 We have learned how character-level one-hot encoding can be performed
 manually by developing our own function. We will focus on performing
@@ -982,10 +982,10 @@ the Keras library. Follow these steps to implement this exercise:
     Note
 
     To access the source code for this specific section, please refer to
-    <https://packt.live/2ECjNnf>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
     You can also run this example online at
-    <https://packt.live/2P9c69V>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the preceding section, we learned how to convert text into one-hot
 vectors at either the character level or the word level. One-hot
@@ -1105,7 +1105,7 @@ vector representation using Matplotlib\'s pyplot framework.
 Note
 
 The file we are using for this exercise can be found at
-<https://packt.live/39JeZYP>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
 Follow these steps to implement this exercise:
 
@@ -1363,9 +1363,9 @@ Figure 6.14: Graph of the vector when the input is \"sad\"
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/317nb11>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/2BJC40I>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the preceding figure, we can see the vector representation when the
 word provided to the `show_vector()` function is \"sad\". We
@@ -1707,7 +1707,7 @@ Figure 6.23: Graph generated with (king-man+woman) as input
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/33btLpH>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
 This section does not currently have an online interactive example, and
 will need to be run locally.
@@ -1791,7 +1791,7 @@ of the Matplotlib library. Follow these steps to complete this exercise:
 Note
 
 The file which we are going to use in this exercise is in zipped format
-and can be found at <https://packt.live/3fhE2TG>. It should be unzipped
+and can be found at <https://github.com/fenago/natural-language-processing-workshop>. It should be unzipped
 once downloaded.
 
 1.  Open a Jupyter notebook.
@@ -2031,9 +2031,9 @@ Figure 6.26: Image representation of a given vector
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/30dFxxV>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/39MiTQG>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 We have learned how to represent a document as a vector. We have also
 seen a visual representation of this. In the next section, we will

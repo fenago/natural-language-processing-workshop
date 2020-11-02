@@ -286,9 +286,9 @@ consecutive tokens together.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/2CQikt7>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/33cn0nF>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Next, we will look at an exercise where n-grams can be extracted from a
 given text.
@@ -490,9 +490,9 @@ methods.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/2PabHUK>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/2XbjFRX>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
@@ -568,9 +568,9 @@ With that, we have learned how to tokenize texts using the
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3393hFi>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/39Dtu09>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will discuss the different types of tokenizers.
 
@@ -795,9 +795,9 @@ and their `nltk` implementation.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3hSbDWi>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3hOi7oR>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Now, we\'re ready to use them in our programs.
 
@@ -895,9 +895,9 @@ perform stemming using `nltk`\'s `RegexpStemmer`.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3hRYUm6>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/2D0Ztvk>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
@@ -958,10 +958,10 @@ these steps to complete this exercise:
     Note
 
     To access the source code for this specific section, please refer to
-    <https://packt.live/2CUqelc>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
     You can also run this example online at
-    <https://packt.live/2X8WUhD>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
 `PorterStemmer` is a generic rule-based stemmer that tries to
 convert a word into its basic form by removing common suffixes and
@@ -1043,9 +1043,9 @@ word to its correct nearest grammatical form.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/2X5JEKA>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/30Zqt6v>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will deal with other kinds of word variations by
 looking at singularizing and pluralizing words using
@@ -1136,10 +1136,10 @@ to complete this exercise:
     Note
 
     To access the source code for this specific section, please refer to
-    <https://packt.live/3gooUoQ>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
     You can also run this example online at
-    <https://packt.live/309Gqrm>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
 Now, in the next section, we will learn about another preprocessing
 task: language translation.
@@ -1206,9 +1206,9 @@ from one language to another.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/2XquGiH>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3hQiVK8>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will look at another preprocessing task:
 stop-word removal.
@@ -1276,9 +1276,9 @@ Thus, we\'ve seen how stop words can be removed from a sentence.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/337aMwH>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/30buvJF>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next activity, we\'ll put our knowledge of preprocessing steps
 into practice.
@@ -1294,7 +1294,7 @@ keywords from a sample news article.
 Note
 
 The new article that\'s being used for this activity can be found at
-<https://packt.live/314mg1r>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
 The following steps will help you implement this activity:
 
@@ -1520,9 +1520,9 @@ data.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/2X9jLcS>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3fgrYSK>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Let\'s perform another exercise to get a better understanding of this.
 
@@ -1540,7 +1540,7 @@ digits, words, and whitespaces.
 Note
 
 The dataset that is being used in this exercise can be found at this
-link: <https://packt.live/3k0qCPR>.
+link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 1.  Open a Jupyter Notebook.
 
@@ -1929,9 +1929,9 @@ given text.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3jSsLNh>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3hPFmPA>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Now, let\'s explore how we can extract unique features.
 
@@ -2078,9 +2078,9 @@ frequent terms
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3gdhViJ>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3hPUTi8>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In this section, we learned what BoW is and how to can use it to convert
 a sentence or document into a vector. BoW is the easiest way to convert
@@ -2273,9 +2273,9 @@ the proportionality of two lists.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/30ZnKtD>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3f9ZFoT>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
@@ -2376,9 +2376,9 @@ corresponding index.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3gdzsHA>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3fdP5gS>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will solve an activity to extract specific
 features from texts.
@@ -2654,9 +2654,9 @@ measure.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/2Eyw0JC>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/2XbGRQ3>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
@@ -2803,9 +2803,9 @@ right definition of ambiguous words.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/39GzJAs>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3fbxQwK>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
@@ -2939,9 +2939,9 @@ visualize this with matplotlib.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/30eaSRn>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/2EzqLJJ>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will explore other visualizations, such as
 dependency parse trees and named entities.
@@ -3038,9 +3038,9 @@ Figure 2.30: Named entities
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/313m4iD>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3103fgr>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Now that you have learned about visualizations, we will solve an
 activity based on them to gain an even better understanding.
@@ -3058,7 +3058,7 @@ of frequently occurring words.
 Note
 
 The text\_corpus.txt file that\'s being used in this activity can be
-found at <https://packt.live/2DiVIBj>.
+found at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Follow these steps to implement this activity:
 

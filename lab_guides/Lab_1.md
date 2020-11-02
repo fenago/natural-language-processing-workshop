@@ -158,7 +158,7 @@ Before going to the exercises, let\'s define some prerequisites for
 running the exercises. Whether you are using Windows, Mac or Linux, you
 need to run your Jupyter Notebook in a virtual environment. You will
 also need to ensure that you have installed the requirements as stated
-in the *requirements.txt* file on <https://packt.live/3fJ4qap>.
+in the *requirements.txt* file on <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
@@ -359,9 +359,9 @@ We are now well acquainted with basic text analytics techniques.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/38Yrf77>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/2ZsCvpf>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, let\'s dive deeper into the various steps and
 subtasks in NLP.
@@ -481,9 +481,9 @@ We can see the list of tokens generated with the help of the
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/30bGG85>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/30dK1mZ>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will see another pre-processing step:
 **Parts-of-Speech (PoS) tagging**.
@@ -626,9 +626,9 @@ for **proper noun singular**, and **NNS** stands for **noun plural**.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/306WY24>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/38VLDpF>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 We have learned about assigning appropriate PoS labels to tokens in a
 sentence. In the next section, we will learn about **stop words** in
@@ -809,9 +809,9 @@ We have learned how to remove stop words from given text.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3j4KBw7>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3fyYSir>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will focus on normalizing text.
 
@@ -922,9 +922,9 @@ In the preceding code, we can see that our text has been normalized.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/2Wm49T8>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/2Wm4d5k>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Over the next sections, we will explore various other ways in which text
 can be normalized.
@@ -1089,9 +1089,9 @@ aware of context.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/38YVCKJ>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3gVpbj4>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will look at stemming, which is another form of
 text normalization.
@@ -1262,9 +1262,9 @@ into their base forms.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/2DLzisD>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/30h147K>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will focus on **lemmatization**, which is
 another form of text normalization.
@@ -1395,10 +1395,10 @@ exercise:
     Note
 
     To access the source code for this specific section, please refer to
-    <https://packt.live/3903ETS>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
     You can also run this example online at
-    <https://packt.live/2Wlqu33>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will look at another preprocessing step in NLP:
 **named entity recognition** (**NER**).
@@ -1502,10 +1502,10 @@ Birmingham.\"
     Note
 
     To access the source code for this specific section, please refer to
-    <https://packt.live/3ezeukC>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
     You can also run this example online at
-    <https://packt.live/32rsOJs>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will focus on word sense disambiguation, which
 helps us to identify the right sense of any word.
@@ -1656,10 +1656,10 @@ different sentences. Follow these steps to implement this exercise:
     Note
 
     To access the source code for this specific section, please refer to
-    <https://packt.live/399JCq5>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
     You can also run this example online at
-    <https://packt.live/30haCQ6>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will focus on **sentence boundary detection**,
 which helps detect the start and end points of sentences.
@@ -1757,9 +1757,9 @@ involved in NLP.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/2ZseU86>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/2CC8Ukp>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Now, using the knowledge we\'ve gained, let\'s perform an activity.
 
@@ -1775,7 +1775,7 @@ to get some meaning out of the text.
 Note
 
 The text corpus, `file.txt`, can be found at this location:
-<https://packt.live/30cu54z>[](https://packt.live/30cu54z)
+<https://github.com/fenago/natural-language-processing-workshop/blob/master/Lab01/data/file.txt>[](https://github.com/fenago/natural-language-processing-workshop/blob/master/Lab01/data/file.txt)
 
 After downloading the file, place it in the same directory as the
 notebook.

@@ -115,7 +115,7 @@ exercise. Each different output corresponds to new text generation.
 Note
 
 You can find the text file that\'s been used for this exercise at
-<https://packt.live/2DiGAE3>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
 Follow these steps to complete this exercise:
 
@@ -258,9 +258,9 @@ Figure 7.3: Phrases generated, consisting of four and five words
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/313fiJY>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/33ilO2l>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 It\'s quite interesting that we are able to generate text using a random
 walk over a Markov chain. If we look more closely, we will see that only
@@ -451,10 +451,10 @@ the sentences from the original text will be used to create the summary.
 Note
 
 The text corpus for O. Henry\'s short story, After Twenty Years, being
-used in this exercise can be found at <https://packt.live/33atvr0>.
+used in this exercise can be found at <https://github.com/fenago/natural-language-processing-workshop>.
 
 The Oscar Wilde section from the Wikipedia article can be found at
-<https://packt.live/3fhEocY>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
 Complete the following steps to implement this exercise:
 
@@ -607,9 +607,9 @@ Figure 7.11: Summarized text when the ratio is 0.25
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3i5sNQn>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/39G0Knx>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 We find that the summary for the Wikipedia article is much more coherent
 than the short story. We can also see that the summary with a
@@ -634,8 +634,8 @@ performs on this summarization.
 Note
 
 You can find the text from the Watty Piper variation at
-<https://packt.live/2Xd30xy>. The text from the Charles Perrault version
-can be found at <https://packt.live/30g5ZHy>.
+<https://github.com/fenago/natural-language-processing-workshop>. The text from the Charles Perrault version
+can be found at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Complete the following steps to implement this exercise:
 
@@ -819,9 +819,9 @@ Figure 7.17: Output after implementing TextRank on the Perrault version
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3i5sRzB>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/2XfObu1>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 With this, we\'ve found that the four summaries lack coherency and are
 also incomplete. This is also true of the two summaries with a

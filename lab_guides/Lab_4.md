@@ -127,7 +127,7 @@ bold, and a table present in an HTML file.
 Note
 
 The data for this sample HTML file can be accessed from
-<https://packt.live/338opvv>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
 Follow these steps to implement this exercise:
 
@@ -343,9 +343,9 @@ We have learned how to extract tag-based information from an HTML file.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3gekCAA>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/2EyJp4q>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will focus on fetching content from web pages.
 
@@ -501,9 +501,9 @@ help of the `requests` library.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3fhu1pv>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/2Dmov7L>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Now, let\'s look at analyzing HTML content from Jupyter Notebooks.
 
@@ -519,7 +519,7 @@ imported, and check the models and their performance.
 Note
 
 The HTML file used for this exercise, can be accessed at
-<https://packt.live/3fcYIfJ>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
 Follow these steps to complete this exercise:
 
@@ -625,9 +625,9 @@ from the HTML file using `BeautifulSoup` by referring to the
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/2PaM1Yk>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/315liSk>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 So far, we have seen how to get content from the web using the
 `requests` package, and in this exercise, we saw how to parse
@@ -776,7 +776,7 @@ their qualifications, and additional qualifications from a JSON file.
 
 Note
 
-The sample JSON file can be accessed at <https://packt.live/2P6ZwrI>.
+The sample JSON file can be accessed at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Follow these steps to complete this exercise:
 
@@ -874,9 +874,9 @@ applications.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/33aSGKi>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/315MekS>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Now that we have learned how to load JSON data, let\'s extract data
 using another format, called **Extensible Markup Language** (**XML**),
@@ -948,7 +948,7 @@ the total salaries of all employees.
 Note
 
 The sample XML data file can be accessed here:
-<https://packt.live/3hPCaDl>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
 Follow these steps to complete this exercise:
 
@@ -1046,9 +1046,9 @@ many URLs return an XML file.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3hQzuFM>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3jU8VRP>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will look at how APIs can be used to retrieve
 real-time data.
@@ -1149,9 +1149,9 @@ currency exchange rates. We just learned how to collect data using APIs.
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/3jQAcEG>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/3jVIBa0>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will see how to create an API.
 

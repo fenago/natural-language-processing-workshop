@@ -524,10 +524,10 @@ exercise:
     Note
 
     To access the source code for this specific section, please refer to
-    <https://packt.live/2DlQvbM>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
     You can also run this example online at
-    <https://packt.live/3jXvAN1>.
+    <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the code, we can see the `polarity` and
 `subjectivity` scores for a given text. The output indicates a
@@ -551,7 +551,7 @@ library.
 Note
 
 You can find the data to be used for this activity here:
-<https://packt.live/33cnr1q>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
 Follow these steps to implement this activity:
 
@@ -646,7 +646,7 @@ datasets---namely Amazon, Yelp, and IMDb.
 Note
 
 You can find the data being used in this exercise here:
-<https://packt.live/2XgeQqJ>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
 Follow these steps to implement this exercise:
 
@@ -817,9 +817,9 @@ Figure 8.7: Reviews from the Yelp dataset
 Note
 
 To access the source code for this specific section, please refer to
-<https://packt.live/2XfwmLB>.
+<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://packt.live/339NTss>.
+You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 We have learned how to load data that could be used to train a sentiment
 analysis model. The review files mentioned in this exercise are an

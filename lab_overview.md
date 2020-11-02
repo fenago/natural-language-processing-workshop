@@ -46,6 +46,6 @@ Do you want to learn how to communicate with computer systems using Natural Lang
 
 With The Natural Language Processing Workshop, you can expect to make consistent progress as a beginner, and get up to speed in an interactive way, with the help of hands-on activities and fun exercises.
 
-The book starts with an introduction to NLP. You’ll study different approaches to NLP tasks, and perform exercises in Python to understand the process of preparing datasets for NLP models. Next, you’ll use advanced NLP algorithms and visualization techniques to collect datasets from open websites, and to summarize and generate random text from a document. In the final chapters, you’ll use NLP to create a chatbot that detects positive or negative sentiment in text documents such as movie reviews.
+The course starts with an introduction to NLP. You’ll study different approaches to NLP tasks, and perform exercises in Python to understand the process of preparing datasets for NLP models. Next, you’ll use advanced NLP algorithms and visualization techniques to collect datasets from open websites, and to summarize and generate random text from a document. In the final labs, you’ll use NLP to create a chatbot that detects positive or negative sentiment in text documents such as movie reviews.
 
-By the end of this book, you’ll be equipped with the essential NLP tools and techniques you need to solve common business problems that involve processing text.
+By the end of this course, you’ll be equipped with the essential NLP tools and techniques you need to solve common business problems that involve processing text.
