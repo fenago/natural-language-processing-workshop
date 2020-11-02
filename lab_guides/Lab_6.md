@@ -289,7 +289,7 @@ Follow these steps to implement this exercise:
     following code:
 
 
-    ``` {.language-markup}
+    ```
     from pathlib import Path
     data = Path('../data')
     novel_lines_file = data / 'novel_lines.txt'
@@ -303,7 +303,7 @@ Follow these steps to implement this exercise:
     this:
 
 
-    ``` {.language-markup}
+    ```
     with novel_lines_file.open() as f:
         novel_lines_raw = f.read()
     ```
@@ -314,7 +314,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     novel_lines_raw
     ```
 
@@ -341,7 +341,7 @@ Follow these steps to implement this exercise:
     `novel_lines`. Add the following code:
 
 
-    ``` {.language-markup}
+    ```
     import string
     import re
     alpha_characters = str.maketrans('', '', string.punctuation)
@@ -361,7 +361,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     novel_lines
     ```
 
@@ -380,7 +380,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import numpy as np
     novel_lines_array = np.array([novel_lines])
     novel_lines_array = novel_lines_array.reshape(-1, 1)
@@ -392,7 +392,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     (459, 1)
     ```
 
@@ -415,7 +415,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn import preprocessing
     labelEncoder = preprocessing.LabelEncoder()
     novel_lines_labels = labelEncoder.fit_transform(\
@@ -437,7 +437,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     novel_lines_labels
     ```
 
@@ -463,7 +463,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     line_onehot
     ```
 
@@ -472,7 +472,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     <459x199 sparse matrix of type '<class 'numpy.float64'>'
                     With 459 stored elements in Compressed Sparse Row format>
     ```
@@ -484,7 +484,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     line_onehot.toarray()
     ```
 
@@ -582,7 +582,7 @@ complete this exercise:
     to implement this:
 
 
-    ``` {.language-markup}
+    ```
     def onehot_word(word):
         lookup = {v[1]: v[0] for v in enumerate(set(word))}
         word_vector = []
@@ -603,7 +603,7 @@ complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
         for c in word:
             one_hot_vector = [0] * len(lookup)
         
@@ -622,7 +622,7 @@ complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     onehot_vector = onehot_word('data')
     print(onehot_vector)
     ```
@@ -632,7 +632,7 @@ complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [0, 0, 1], [1, 0, 0], [0, 1, 0], [1, 0, 0]
     ```
 
@@ -709,7 +709,7 @@ the Keras library. Follow these steps to implement this exercise:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     from keras.preprocessing.text import Tokenizer
     import numpy as np
     ```
@@ -721,7 +721,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     char_tokenizer = Tokenizer(char_level=True)
     ```
 
@@ -739,7 +739,7 @@ the Keras library. Follow these steps to implement this exercise:
     assign a string to the `text` variable:
 
 
-    ``` {.language-markup}
+    ```
     text = 'The quick brown fox jumped over the lazy dog'
     ```
 
@@ -750,7 +750,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     char_tokenizer.fit_on_texts(text)
     ```
 
@@ -768,7 +768,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     seq =char_tokenizer.texts_to_sequences(text)
     seq
     ```
@@ -792,7 +792,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     char_tokenizer.sequences_to_texts(seq)
     ```
 
@@ -812,7 +812,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     char_vectors = char_tokenizer.texts_to_matrix(text)
     ```
 
@@ -825,7 +825,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     char_vectors
     ```
 
@@ -846,7 +846,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     char_vectors.shape
     ```
 
@@ -855,7 +855,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     (44, 27)
     ```
 
@@ -869,7 +869,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     char_vectors[0]
     ```
 
@@ -879,7 +879,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     array([0 ., 0., 0., 0., 1., 0., 0., 0., 0 .,
            0., 0., 0., 0., 0., 0., 0.,0., 0 .,
            0., 0., 0., 0., 0., 0., 0 ., 0., 0])
@@ -892,7 +892,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     np.argmax(char_vectors[0])
     ```
 
@@ -901,7 +901,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     4
     ```
 
@@ -914,7 +914,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     char_tokenizer.index_word
     ```
 
@@ -933,7 +933,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     char_tokenizer.word_index
     ```
 
@@ -958,7 +958,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     char_tokenizer.index_word[np.argmax(char_vectors[0])]
     ```
 
@@ -967,7 +967,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     't'
     ```
 
@@ -1118,7 +1118,7 @@ Follow these steps to implement this exercise:
     code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     import requests
     import json
     import re
@@ -1131,7 +1131,7 @@ Follow these steps to implement this exercise:
     following steps to implement this:
 
 
-    ``` {.language-markup}
+    ```
     with open('../data/ProjectGutenbergBooks.json', 'r') \
         as catalog_file:
         catalog = json.load(catalog_file)
@@ -1143,7 +1143,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     catalog
     ```
 
@@ -1164,7 +1164,7 @@ Follow these steps to implement this exercise:
     and add the following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     GUTENBERG_URL ='https://www.gutenberg.org/files/{}/{}-0.txt'
     def load_book(book_id):
         url = GUTENBERG_URL.format(book_id, book_id)
@@ -1185,7 +1185,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     book_ids = [ book['id'] for book in catalog ]
     books = [ load_book(id) for id in book_ids]
     ```
@@ -1196,7 +1196,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     books[:5]
     ```
 
@@ -1221,7 +1221,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from gensim.summarization import textcleaner
     from gensim.utils import simple_preprocess
     def to_sentences(book):
@@ -1243,7 +1243,7 @@ Follow these steps to implement this exercise:
     Insert a new cell and add the following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     books_sentences = [to_sentences(book) for book in books]
     documents = [sentence for book_sent in books_sentences \
                  for sentence in book_sent]
@@ -1255,7 +1255,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     len(documents)
     ```
 
@@ -1264,7 +1264,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     32922
     ```
 
@@ -1275,7 +1275,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from gensim.models import Word2Vec
     # build vocabulary and train model
     model = Word2Vec(
@@ -1293,7 +1293,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     (27809439, 37551450)
     ```
 
@@ -1306,7 +1306,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     model.wv.most_similar(positive="worse")
     ```
 
@@ -1331,7 +1331,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     %matplotlib inline
     import matplotlib.pyplot as plt
     def show_vector(word):
@@ -1435,7 +1435,7 @@ Follow these steps to complete this exercise:
 2.  Add the following statement to import the `numpy` library:
 
 
-    ``` {.language-markup}
+    ```
     import numpy as np
     import zipfile
     ```
@@ -1447,7 +1447,7 @@ Follow these steps to complete this exercise:
     following code to unzip the embeddings from the ZIP file:
 
 
-    ``` {.language-markup}
+    ```
     GLOVE_DIR = '../data/'
     GLOVE_ZIP = GLOVE_DIR + 'glove6B50d.txt.zip'
     print(GLOVE_ZIP)
@@ -1463,7 +1463,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def load_glove_vectors(fn):
         print("Loading Glove Model")
         with open( fn,'r', encoding='utf8') as glove_vector_file:
@@ -1488,7 +1488,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     Loading Glove Model
     Loaded 400000 words
     ```
@@ -1499,7 +1499,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     glove_vectors
     ```
 
@@ -1523,7 +1523,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     glove_vectors["dog"]
     ```
 
@@ -1540,7 +1540,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     glove_vectors["cat"]
     ```
 
@@ -1558,7 +1558,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     %matplotlib inline
     import matplotlib.pyplot as plt
     def to_vector(glove_vectors, word):
@@ -1595,7 +1595,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     man = to_image(to_vector(glove_vectors, "man"))
     ```
 
@@ -1614,7 +1614,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     woman = to_image(to_vector(glove_vectors, "woman"))
     ```
 
@@ -1633,7 +1633,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     king = to_image(to_vector(glove_vectors, "king"))
     ```
 
@@ -1652,7 +1652,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     queen = to_image(to_vector(glove_vectors, "queen"))
     ```
 
@@ -1671,7 +1671,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     diff = to_image(king – man + woman - queen)
     ```
 
@@ -1690,7 +1690,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     nd = to_image(king – man + woman)
     ```
 
@@ -1802,7 +1802,7 @@ once downloaded.
 
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     from gensim import utils
     from gensim.models.doc2vec import TaggedDocument
@@ -1826,7 +1826,7 @@ once downloaded.
     variable of the path as follows:
 
 
-    ``` {.language-markup}
+    ```
     sample_news_data = '../data/sample_news_data.txt'
     ```
 
@@ -1834,7 +1834,7 @@ once downloaded.
 4.  Now load the file:
 
 
-    ``` {.language-markup}
+    ```
     with open(sample_news_data, encoding="utf8", \
               errors='ignore') as f:
         news_lines = [line for line in f.readlines()]
@@ -1844,7 +1844,7 @@ once downloaded.
 5.  Now create a DataFrame out of the headlines as follows:
 
 
-    ``` {.language-markup}
+    ```
     lines_df = pd.DataFrame()
     indices  = list(range(len(news_lines)))
     lines_df['news'] = news_lines
@@ -1856,7 +1856,7 @@ once downloaded.
 
 
 
-    ``` {.language-markup}
+    ```
     lines_df.head()
     ```
 
@@ -1875,7 +1875,7 @@ once downloaded.
 
 
 
-    ``` {.language-markup}
+    ```
     class DocumentDataset(object):
         
         def __init__(self, data:pd.DataFrame, column):
@@ -1913,7 +1913,7 @@ once downloaded.
     add the following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     documents_dataset = DocumentDataset(lines_df, 'news')
     ```
 
@@ -1923,7 +1923,7 @@ once downloaded.
     this:
 
 
-    ``` {.language-markup}
+    ```
     docVecModel = Doc2Vec(min_count=1, window=5, vector_size=100, \
                           sample=1e-4, negative=5, workers=8)
     docVecModel.build_vocab(documents_dataset.tagged_documents())
@@ -1938,7 +1938,7 @@ once downloaded.
     this:
 
 
-    ``` {.language-markup}
+    ```
     docVecModel.train(documents_dataset.\
                       tagged_documents(shuffle=True),\
                       total_examples = docVecModel.corpus_count,\
@@ -1949,7 +1949,7 @@ once downloaded.
 11. Save this model for future use as follows:
 
 
-    ``` {.language-markup}
+    ```
     docVecModel.save('../data/docVecModel.d2v')
     ```
 
@@ -1961,7 +1961,7 @@ once downloaded.
 
 
 
-    ``` {.language-markup}
+    ```
     docVecModel[657]
     ```
 
@@ -1986,7 +1986,7 @@ once downloaded.
     this:
 
 
-    ``` {.language-markup}
+    ```
     import matplotlib.pyplot as plt
     def show_image(vector, line):
         fig, ax = plt.subplots(1,1, figsize=(10, 2))
@@ -2014,7 +2014,7 @@ once downloaded.
 
 
 
-    ``` {.language-markup}
+    ```
     show_news_lines(872)
     ```
 
@@ -2069,7 +2069,7 @@ activity:
 
     Note
 
-    The full solution to this activity can be found on page 406.
+    The full solution to this activity can be found below.
 
 So, in this activity, we were able to find similar news headlines with
 the help of document vectors. A common use case of inferring text

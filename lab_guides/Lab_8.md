@@ -456,7 +456,7 @@ exercise:
     library:
 
 
-    ``` {.language-markup}
+    ```
     from textblob import TextBlob
     ```
 
@@ -465,7 +465,7 @@ exercise:
     Insert a new cell and add the following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     sentence = "but you are Late Flight again!! "\
                "Again and again! Where are the  crew?" 
     ```
@@ -477,7 +477,7 @@ exercise:
     this:
 
 
-    ``` {.language-markup}
+    ```
     blob = TextBlob(sentence)
     ```
 
@@ -487,7 +487,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     print(blob)
     ```
 
@@ -496,7 +496,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     but you are Late Flight again!! Again and again! Where are the crew?
     ```
 
@@ -507,7 +507,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     blob.sentiment
     ```
 
@@ -516,7 +516,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     Sentiment(polarity=—0.5859375, subjectivity=0.6
     ```
 
@@ -618,7 +618,7 @@ neutral; moreover, no subjectivity is detected for these tweets.
 
 Note
 
-The solution to this activity can be found on page 412.
+The solution to this activity can be found below.
 
 In the next section, we will explore more about performing sentiment
 analysis using online web services.
@@ -657,7 +657,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     pd.set_option('display.max_colwidth', 200)
     ```
@@ -673,7 +673,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     DATA_DIR = 'data/sentiment_labelled_sentences/'
     IMDB_DATA_FILE = DATA_DIR + 'imdb_labelled.txt'
     YELP_DATA_FILE = DATA_DIR + 'yelp_labelled.txt'
@@ -690,7 +690,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     imdb_reviews = pd.read_table(IMDB_DATA_FILE, names=COLUMN_NAMES)
     ```
 
@@ -703,7 +703,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     imdb_reviews.head(10)
     ```
 
@@ -727,7 +727,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     imdb_reviews.Sentiment.value_counts()
     ```
 
@@ -736,7 +736,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     1          386
     0          362
     Name:    Sentiment, dtype: int64
@@ -751,7 +751,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     imdb_counts = imdb_reviews.Sentiment.value_counts().to_frame()
     imdb_counts.index = pd.Series(['Positive', 'Negative'])
     imdb_counts
@@ -777,7 +777,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     amazon_reviews = pd.read_table(AMAZON_DATA_FILE, \
                                    names=COLUMN_NAMES)
     amazon_reviews.head(10)
@@ -798,7 +798,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     yelp_reviews = pd.read_table(YELP_DATA_FILE, \
                                  names=COLUMN_NAMES)
     yelp_reviews.head(10)
@@ -909,7 +909,7 @@ help you complete this activity:
 
     Note
 
-    The full solution to this activity can be found on page 418.
+    The full solution to this activity can be found below.
 
 
 Summary

@@ -179,7 +179,7 @@ steps to implement this exercise using the following sentence:
     new cell and add the following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     sentence = 'The quick brown fox jumps over the lazy dog'
     sentence
     ```
@@ -190,7 +190,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     def find_word(word, sentence):
         return word in sentence
     find_word('quick', sentence)
@@ -204,7 +204,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_index(word, text):
         return text.index(word)
     get_index('fox', sentence)
@@ -218,7 +218,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     get_index('lazy', sentence.split())
     ```
 
@@ -229,7 +229,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_word(text,rank):
         return text.split()[rank]
     get_word(sentence,2)
@@ -243,7 +243,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     get_word(sentence,2)[::-1]
     ```
 
@@ -255,7 +255,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     def concat_words(text):
         """
         This method will concat first and last 
@@ -282,7 +282,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_even_position_words(text):
         words = text.split()
         return [words[i] for i in range(len(words)) if i%2 == 0]
@@ -294,7 +294,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     ['The', 'brown', 'jumps', 'the', 'dog']
     ```
 
@@ -303,7 +303,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_last_n_letters(text, n):
         return text[-n:]
     get_last_n_letters(sentence,3)
@@ -316,7 +316,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_reverse(text):
         return text[::-1]
     get_reverse(sentence)
@@ -327,7 +327,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     'god yzal eht revo spmuj xof nworb kciuq ehT'
     ```
 
@@ -337,7 +337,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_word_reverse(text):
         words = text.split()
         return ' '.join([word[::-1] for word in words])
@@ -349,7 +349,7 @@ steps to implement this exercise using the following sentence:
 
 
 
-    ``` {.language-markup}
+    ```
     ehT kciuq nworb xof spmuj revo eht yzal god
     ```
 
@@ -424,7 +424,7 @@ exercise using the sentence, \"I am reading NLP Fundamentals.\"
 
 
 
-    ``` {.language-markup}
+    ```
     from nltk import word_tokenize, download
     download(['punkt','averaged_perceptron_tagger','stopwords'])
     ```
@@ -448,7 +448,7 @@ exercise using the sentence, \"I am reading NLP Fundamentals.\"
     add the following code:
 
 
-    ``` {.language-markup}
+    ```
     def get_tokens(sentence):
         words = word_tokenize(sentence)
         return words
@@ -461,7 +461,7 @@ exercise using the sentence, \"I am reading NLP Fundamentals.\"
 
 
 
-    ``` {.language-markup}
+    ```
     print(get_tokens("I am reading NLP Fundamentals."))
     ```
 
@@ -470,7 +470,7 @@ exercise using the sentence, \"I am reading NLP Fundamentals.\"
 
 
 
-    ``` {.language-markup}
+    ```
     ['I', 'am', 'reading', 'NLP', 'Fundamentals', '.']
     ```
 
@@ -504,7 +504,7 @@ word/token. This will look as follows:
 
 
 
-``` {.language-markup}
+```
 [('The', 'DT'), ('sky', 'NN'), ('is', 'VBZ'), ('blue', 'JJ')]
 ```
 
@@ -556,7 +556,7 @@ word/token. Follow these steps to implement this exercise:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     from nltk import word_tokenize, pos_tag
     ```
 
@@ -566,7 +566,7 @@ word/token. Follow these steps to implement this exercise:
     following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     def get_tokens(sentence):
         words = word_tokenize(sentence)
         return words
@@ -578,7 +578,7 @@ word/token. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     words  = get_tokens("I am reading NLP Fundamentals")
     print(words)
     ```
@@ -588,7 +588,7 @@ word/token. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     ['I', 'am', 'reading', 'NLP', 'Fundamentals']
     ```
 
@@ -598,7 +598,7 @@ word/token. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_pos(words):
         return pos_tag(words)
     get_pos(words)
@@ -609,7 +609,7 @@ word/token. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [('I', 'PRP'),
      ('am', 'VBP'),
      ('reading', 'VBG'),
@@ -666,7 +666,7 @@ stop words included in our text:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     from nltk import download
     download('stopwords')
     from nltk import word_tokenize
@@ -680,7 +680,7 @@ stop words included in our text:
     following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     stop_words = stopwords.words('english')
     ```
 
@@ -692,7 +692,7 @@ stop words included in our text:
 
 
 
-    ``` {.language-markup}
+    ```
     print(stop_words)
     ```
 
@@ -713,7 +713,7 @@ stop words included in our text:
 
 
 
-    ``` {.language-markup}
+    ```
     sentence = "I am learning Python. It is one of the "\
                "most popular programming languages"
     sentence_words = word_tokenize(sentence)
@@ -732,7 +732,7 @@ stop words included in our text:
 
 
 
-    ``` {.language-markup}
+    ```
     print(sentence_words)
     ```
 
@@ -741,7 +741,7 @@ stop words included in our text:
 
 
 
-    ``` {.language-markup}
+    ```
     ['I', 'am', 'learning', 'Python', '.', 'It', 'is', 'one', 'of', 'the', 'most', 'popular', 'programming', 'languages']
     ```
 
@@ -752,7 +752,7 @@ stop words included in our text:
     a new cell and add the following code:
 
 
-    ``` {.language-markup}
+    ```
     def remove_stop_words(sentence_words, stop_words):
         return ' '.join([word for word in sentence_words if \
                          word not in stop_words])
@@ -765,7 +765,7 @@ stop words included in our text:
 
 
 
-    ``` {.language-markup}
+    ```
     print(remove_stop_words(sentence_words,stop_words))
     ```
 
@@ -774,7 +774,7 @@ stop words included in our text:
 
 
 
-    ``` {.language-markup}
+    ```
     I learning Python. It one popular programming languages
     ```
 
@@ -787,7 +787,7 @@ stop words included in our text:
 
 
 
-    ``` {.language-markup}
+    ```
     stop_words.extend(['I','It', 'one'])
     print(remove_stop_words(sentence_words,stop_words))
     ```
@@ -797,7 +797,7 @@ stop words included in our text:
 
 
 
-    ``` {.language-markup}
+    ```
     learning Python . popular programming languages
     ```
 
@@ -856,7 +856,7 @@ Follow these steps to complete this exercise:
     the `sentence` variable:
 
 
-    ``` {.language-markup}
+    ```
     sentence = "I visited the US from the UK on 22-10-18"
     ```
 
@@ -870,7 +870,7 @@ Follow these steps to complete this exercise:
     add the following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     def normalize(text):
         return text.replace("US", "United States")\
                    .replace("UK", "United Kingdom")\
@@ -883,7 +883,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     normalized_sentence = normalize(sentence)
     print(normalized_sentence)
     ```
@@ -893,7 +893,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     I visited the United States from the United Kingdom on 22-10-2018
     ```
 
@@ -902,7 +902,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     normalized_sentence = normalize('US and UK are two superpowers')
     print(normalized_sentence)
     ```
@@ -912,7 +912,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     United States and United Kingdom are two superpowers
     ```
 
@@ -980,7 +980,7 @@ Follow these steps in order to complete this exercise:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     from nltk import word_tokenize
     from autocorrect import Speller
     ```
@@ -995,7 +995,7 @@ Follow these steps in order to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     spell = Speller(lang='en')
     spell('Natureal')
     ```
@@ -1005,7 +1005,7 @@ Follow these steps in order to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'Natural'
     ```
 
@@ -1016,7 +1016,7 @@ Follow these steps in order to complete this exercise:
     cell and add the following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     sentence = word_tokenize("Ntural Luanguage Processin deals with "\
                              "the art of extracting insightes from "\
                              "Natural Languaes")
@@ -1028,7 +1028,7 @@ Follow these steps in order to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     print(sentence)
     ```
 
@@ -1037,7 +1037,7 @@ Follow these steps in order to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     ['Ntural', 'Luanguage', 'Processin', 'deals', 'with', 'the', 'art', 'of', 'extracting', 'insightes', 'from', 'Natural', 'Languaes']
     ```
 
@@ -1048,7 +1048,7 @@ Follow these steps in order to complete this exercise:
     this:
 
 
-    ``` {.language-markup}
+    ```
     def correct_spelling(tokens):
         sentence_corrected = ' '.join([spell(word) \
                                        for word in tokens])
@@ -1061,7 +1061,7 @@ Follow these steps in order to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     print(correct_spelling(sentence))
     ```
 
@@ -1070,7 +1070,7 @@ Follow these steps in order to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     ['Natural', 'Language', 'Procession', 'deals', 'with', 'the', 'art', 
      'of', 'extracting', 'insights', 'from', 'Natural', 'Languages']
     ```
@@ -1147,7 +1147,7 @@ implement this exercise:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     from nltk import stem
     ```
 
@@ -1157,7 +1157,7 @@ implement this exercise:
     code:
 
 
-    ``` {.language-markup}
+    ```
     def get_stems(word,stemmer):
         return stemmer.stem(word)
     porterStem = stem.PorterStemmer()
@@ -1169,7 +1169,7 @@ implement this exercise:
     generated:
 
 
-    ``` {.language-markup}
+    ```
     'product'
     ```
 
@@ -1179,7 +1179,7 @@ implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     get_stems("coming",porterStem)
     ```
 
@@ -1188,7 +1188,7 @@ implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'come'
     ```
 
@@ -1198,7 +1198,7 @@ implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
       get_stems("firing",porterStem)
     ```
 
@@ -1208,7 +1208,7 @@ implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'fire'
     ```
 
@@ -1218,7 +1218,7 @@ implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
       get_stems("battling",porterStem)
     ```
 
@@ -1228,7 +1228,7 @@ implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'battl'
     ```
 
@@ -1238,7 +1238,7 @@ implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     stemmer = stem.SnowballStemmer("english")
     get_stems("battling",stemmer)
     ```
@@ -1248,7 +1248,7 @@ implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'battl'
     ```
 
@@ -1311,7 +1311,7 @@ exercise:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     from nltk import download
     download('wordnet')
     from nltk.stem.wordnet import WordNetLemmatizer
@@ -1322,7 +1322,7 @@ exercise:
     a new cell and add the following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     lemmatizer = WordNetLemmatizer()
     ```
 
@@ -1334,7 +1334,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_lemma(word):
         return lemmatizer.lemmatize(word)
     get_lemma('products')
@@ -1346,7 +1346,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'product'
     ```
 
@@ -1355,7 +1355,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     get_lemma('production')
     ```
 
@@ -1365,7 +1365,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'production'
     ```
 
@@ -1374,7 +1374,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     get_lemma('coming')
     ```
 
@@ -1384,7 +1384,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'coming'
     ```
 
@@ -1453,7 +1453,7 @@ Birmingham.\"
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     from nltk import download
     from nltk import pos_tag
     from nltk import ne_chunk
@@ -1467,7 +1467,7 @@ Birmingham.\"
     Insert a new cell and add the following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     sentence = "We are reading a book published by Packt "\
                "which is based out of Birmingham."
     ```
@@ -1478,7 +1478,7 @@ Birmingham.\"
 
 
 
-    ``` {.language-markup}
+    ```
     def get_ner(text):
         i = ne_chunk(pos_tag(word_tokenize(text)), binary=True)
         return [a for a in i if len(a)==1]
@@ -1490,7 +1490,7 @@ Birmingham.\"
 
 
 
-    ``` {.language-markup}
+    ```
     [Tree('NE', [('Packt', 'NNP')]), Tree('NE', [('Birmingham', 'NNP')])]
     ```
 
@@ -1586,7 +1586,7 @@ different sentences. Follow these steps to implement this exercise:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     import nltk
     nltk.download('wordnet')
     from nltk.wsd import lesk
@@ -1599,7 +1599,7 @@ different sentences. Follow these steps to implement this exercise:
     Insert a new cell and the following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     sentence1 = "Keep your savings in the bank"
     sentence2 = "It's so risky to drive over the banks of the road"
     ```
@@ -1612,7 +1612,7 @@ different sentences. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_synset(sentence, word):
         return lesk(word_tokenize(sentence), word)
     get_synset(sentence1,'bank')
@@ -1623,7 +1623,7 @@ different sentences. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     Synset('savings_bank.n.02')
     ```
 
@@ -1634,7 +1634,7 @@ different sentences. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     get_synset(sentence2,'bank')
     ```
 
@@ -1643,7 +1643,7 @@ different sentences. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     Synset('bank.v.07')
     ```
 
@@ -1694,7 +1694,7 @@ detect sentence boundaries. The following steps need to be performed:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     import nltk
     from nltk.tokenize import sent_tokenize
     ```
@@ -1706,7 +1706,7 @@ detect sentence boundaries. The following steps need to be performed:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_sentences(text):
         return sent_tokenize(text)
     get_sentences("We are reading a book. Do you know who is "\
@@ -1719,7 +1719,7 @@ detect sentence boundaries. The following steps need to be performed:
 
 
 
-    ``` {.language-markup}
+    ```
     ['We are reading a book.'
      'Do you know who is the publisher?'
      'It is Packt.',
@@ -1732,7 +1732,7 @@ detect sentence boundaries. The following steps need to be performed:
 
 
 
-    ``` {.language-markup}
+    ```
     get_sentences("Mr. Donald John Trump is the current "\
                   "president of the USA. Before joining "\
                   "politics, he was a businessman.")
@@ -1743,7 +1743,7 @@ detect sentence boundaries. The following steps need to be performed:
 
 
 
-    ``` {.language-markup}
+    ```
     ['Mr. Donald John Trump is the current president of the USA.',
      'Before joining politics, he was a businessman.']
     ```
@@ -1805,7 +1805,7 @@ Follow these steps to implement this activity:
 
     Note
 
-    The solution to this activity can be found on page 366.
+    The solution to this activity can be found below.
 
 We have learned about and achieved the preprocessing of given data. By
 now, you should be familiar with what NLP is and what basic

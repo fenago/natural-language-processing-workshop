@@ -299,7 +299,7 @@ languages).
 
 
 
-``` {.language-markup}
+```
 python -m spacy download en_core_web_sm
 ```
 
@@ -329,7 +329,7 @@ Follow these steps to complete this exercise:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     import numpy as np
     import matplotlib.pyplot as plt
     %matplotlib inline
@@ -348,7 +348,7 @@ Follow these steps to complete this exercise:
     code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     import re
     HANDLE = '@\w+'
     LINK = 'https?://t\.co/\w+'
@@ -367,7 +367,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import wikipedia
     wikipedia.search('Cricket World Cup'),\
     wikipedia.search('FIFA World Cup')
@@ -389,7 +389,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     latest_soccer_cricket=['2018 FIFA World Cup',\
                            '2019 Cricket World Cup']
     corpus=''
@@ -414,7 +414,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     text=clean(corpus)
     import spacy
     nlp = spacy.load('en_core_web_sm')
@@ -452,7 +452,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     dictionary = corpora.Dictionary(preproc_text)
     corpus = [dictionary.doc2bow(text) for text in preproc_text]
     NUM_TOPICS=3
@@ -490,7 +490,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     model_arr = np.argmax(lsamodel.get_topics(),axis=0)
     y, x = np.histogram(model_arr, bins=np.arange(NUM_TOPICS+1))
     fig, ax = plt.subplots()
@@ -691,7 +691,7 @@ The following steps will help you complete this exercise:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     pd.set_option('display.max_colwidth', 800)
     import numpy as np
@@ -704,7 +704,7 @@ The following steps will help you complete this exercise:
     of the Canadian Open Data Inventory, and clean the text:
 
 
-    ``` {.language-markup}
+    ```
     OPEN_DATA_URL = '../data/canada-open-data/inventory.csv'
     import re
     HANDLE = '@\w+'
@@ -734,7 +734,7 @@ The following steps will help you complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import spacy
     nlp = spacy.load('en_core_web_sm')
     doc=nlp(text)
@@ -773,7 +773,7 @@ The following steps will help you complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import tomotopy as tp
     NUM_TOPICS=20
     mdl = tp.LDAModel(k=NUM_TOPICS,seed=1234)
@@ -801,7 +801,7 @@ The following steps will help you complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     mdl.train(10)
     for k in range(mdl.k):
         print('Top 10 words of topic #{}'.format(k))
@@ -813,7 +813,7 @@ The following steps will help you complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     Top 10 words of topic #0
     [('polygon', 0.36050185561180115), ('dataset', 0.0334757782722234726), ('information', 0.03004324994981289), ('soil', 0,029185116291046143), ('area', 0,026610717177391052), ('surface', 0.025752583518624306), ('map', 0.024036318063735962)]
     ```
@@ -825,7 +825,7 @@ The following steps will help you complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     bag_of_words=[word for sent in preproc_text for word in sent]
     doc_inst = mdl.make_doc(bag_of_words)
     mdl.infer(doc_inst)[0]
@@ -837,7 +837,7 @@ The following steps will help you complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     array([11,17,14,19,12,  7,  4, 13, 10,  2,  3, 15,  1, 18, 16,  9,  0,
             6,  8,  5], dtype=int64)
     ```
@@ -848,7 +848,7 @@ The following steps will help you complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     print(mdl.get_topic_words(11, top_n=7))
     ```
 
@@ -857,7 +857,7 @@ The following steps will help you complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [('table', 0.24849626421928406), ('census', 0.1265643984079361), ('level', 0.06526772677898407), ('series', 0.06306280940771103), ('topic', 0.062401335686445236), ('geography', 0.062401335686445236), ('country', 0.06218084320425987)]
     ```
 
@@ -867,7 +867,7 @@ The following steps will help you complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     print(mdl.get_topic_words(17, top_n=7))
     ```
 
@@ -876,7 +876,7 @@ The following steps will help you complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [('datum', 0.0603327676653862), ('information', 0.057247743010520935), ('year', 0.03462424501776695), ('dataset', 0.03291034325957298), ('project', 0.017828006289734993), ('website', 0.014057422056794167), ('activity', 0.012000739574432373)]
     ```
 
@@ -886,7 +886,7 @@ The following steps will help you complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     print(mdl.get_topic_words(5, top_n=7))
     ```
 
@@ -895,7 +895,7 @@ The following steps will help you complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [('survey', 0.04966237023472786), ('catch', 0.03862873837351799), ('sponge', 0.0364220105111599), ('sea', 0.0342152863740921), ('datum', 0.028698472306132317), ('fishing', 0.02759511023759842), ('matter', 0.026491746306419373)]
     ```
 
@@ -964,7 +964,7 @@ Follow these steps to complete this activity:
 
     Note
 
-    The full solution to this activity can be found on page 395.
+    The full solution to this activity can be found below.
 
 
 Hierarchical Dirichlet Process (HDP)
@@ -1028,7 +1028,7 @@ The dataset used for this exercise can be found at
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     pd.set_option('display.max_colwidth', 800)
     import numpy as np
@@ -1043,7 +1043,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     OPEN_DATA_URL = '../data/aroundtheworld/pg103.txt'
     f=open(OPEN_DATA_URL,'r',encoding='utf-8')
     text=f.read()
@@ -1079,7 +1079,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     import spacy
     nlp = spacy.load('en_core_web_sm')
     doc=nlp(text)
@@ -1115,7 +1115,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     import tomotopy as tp
     mdl = tp.HDPModel(min_cf=5,seed=0)
     for line in preproc_text:
@@ -1146,7 +1146,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     bag_of_words=[word for sent in preproc_text for word in sent]
     doc_inst = mdl.make_doc(bag_of_words)
     np.argsort(np.array(mdl.infer(doc_inst)[0]))[::-1]
@@ -1168,7 +1168,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     print(mdl.get_topic_words(33, top_n=7))
     ```
 
@@ -1177,7 +1177,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     [('danger', 0.1534954458475113), ('hour', 0.0015197568573057652), ('time', 0.0015197568573057652), ('train', 0.0015197568573057652), ('master', 0.0015197568573057652), ('man', 0.0015197568573057652), ('steamer', 0.0015197568573057652)]
     ```
 
@@ -1187,7 +1187,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     print(mdl.get_topic_words(21, top_n=7))
     ```
 
@@ -1196,7 +1196,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     [('hour', 0.1344495415687561), ('minute', 0.1232500821352005), ('day', 0.08405196666717529), ('quarter', 0.07285250723361969), ('moment', 0.07285250723361969), ('clock', 0.005605331063270569), ('card', 0.039254117757081985)]
     ```
 
@@ -1206,7 +1206,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     print(mdl.get_topic_words(70, top_n=7))
     ```
 
@@ -1215,7 +1215,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     [('event', 0.12901155650615692), ('midnight', 0.12901155650615692), ('detective', 0.06482669711112976), ('bed', 0.06482669711112976), ('traveller', 0.06482669711112976), ('watch', 0.06482669711112976), ('clown', 0.06482669711112976)]
     ```
 
@@ -1225,7 +1225,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     print(mdl.get_topic_words(4, top_n=7))
     ```
 
@@ -1234,7 +1234,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     [('house', 0.20237493515014648), ('opium', 0.10131379961967468), ('town', 0.07604850828647614), ('brick', 0.07604850828647614), ('mansion', 0.07604850828647614), ('glimpse', 0.50783220678567886), ('ball', 0.050783220678567886)]
     ```
 
@@ -1284,7 +1284,7 @@ The dataset used for this exercise can be found at
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     pd.set_option('display.max_colwidth', 800)
     import numpy as np
@@ -1299,7 +1299,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     OPEN_DATA_URL = '../data/robinsoncrusoe/521-0.txt'
     f=open(OPEN_DATA_URL,'r',encoding='utf-8')
     text=f.read()
@@ -1335,7 +1335,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     import spacy
     nlp = spacy.load('en_core_web_sm')
     doc=nlp(text)
@@ -1374,7 +1374,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     import tomotopy as tp 
     mdl = tp.HDPModel(alpha=0.8,seed=0)
     for line in preproc_text:
@@ -1403,7 +1403,7 @@ The dataset used for this exercise can be found at
     model:
 
 
-    ``` {.language-markup}
+    ```
     mdl.save('../data/robinsoncrusoe/hdp_model.bin')
     ```
 
@@ -1412,7 +1412,7 @@ The dataset used for this exercise can be found at
     model:
 
 
-    ``` {.language-markup}
+    ```
     mdl = tp.HDPModel.load('../data/robinsoncrusoe/'\
                            'hdp_model.bin')
     ```
@@ -1424,7 +1424,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     bag_of_words=[word for sent in preproc_text for word in sent]
     doc_inst = mdl.make_doc(bag_of_words)
     mdl.infer(doc_inst)[0]
@@ -1447,7 +1447,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     print(mdl.get_topic_words(163, top_n=7))
     ```
 
@@ -1456,7 +1456,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     [('horse', 0.13098040223121643), ('way', 0.026405228301882744), ('mankind', 0.26405228301882744), ('fire', 0.026405228301882744), ('object', 0.026405228301882744), ('bridle', 0.026405228301882744), ('distress', 0.026405228301882744)]
     ```
 
@@ -1466,7 +1466,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     print(mdl.get_topic_words(103, top_n=7))
     ```
 
@@ -1475,7 +1475,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     [('manor', 0.03706422075629234), ('inheritance', 0.03706422075629234), ('lord', 0.03706422075629234), ('man', 0.0003669724682377309), ('shore', 0.0003669724682377309), ('ship',0.0003669724682377309)]
     ```
 
@@ -1485,7 +1485,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     print(mdl.get_topic_words(28, top_n=7))
     ```
 
@@ -1494,7 +1494,7 @@ The dataset used for this exercise can be found at
 
 
 
-    ``` {.language-markup}
+    ```
     [('thought', 0.07716038823127747), ('mind', 0.045609116554260254), ('word', 0.038597721606492996), ('face', 0.03509202599525452), ('terror', 0.03509202599525452), ('tear', 0.3158633038401604), ('apprehension', 0.3158633038401604)]
     ```
 
@@ -1616,7 +1616,7 @@ Follow these steps to complete this activity:
 
 
 
-    ``` {.language-markup}
+    ```
     mdl.save('../data/consumercomplaints/hdp_model.bin')
     ```
 
@@ -1625,7 +1625,7 @@ Follow these steps to complete this activity:
 
 
 
-    ``` {.language-markup}
+    ```
     mdl = tp.HDPModel.load('../data/consumercomplaints/hdp_model.bin')
     ```
 
@@ -1643,7 +1643,7 @@ Follow these steps to complete this activity:
 
     Note
 
-    The full solution to this activity can be found on page 400.
+    The full solution to this activity can be found below.
 
 In this activity, we successfully compared two different models both
 qualitatively and quantitatively.

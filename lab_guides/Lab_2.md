@@ -229,7 +229,7 @@ it. Follow these steps to complete this exercise:
 2.  Import the `re` package:
 
 
-    ``` {.language-markup}
+    ```
     import re
     ```
 
@@ -241,7 +241,7 @@ it. Follow these steps to complete this exercise:
     characters, and we will replace all of them with an empty string:
 
 
-    ``` {.language-markup}
+    ```
     def clean_text(sentence):
         return re.sub(r'([^\s\w]|_)+', ' ', sentence).split()
     ```
@@ -253,7 +253,7 @@ it. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     sentence = 'Sunil tweeted, "Witnessing 70th Republic Day "\
                 "of India from Rajpath, New Delhi. "\
                 "Mesmerizing performance by Indian Army! "\
@@ -311,7 +311,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import re
     def n_gram_extractor(sentence, n):
         tokens = re.sub(r'([^\s\w]|_)+', ' ', sentence).split()
@@ -330,7 +330,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     n_gram_extractor('The cute little boy is playing with the kitten.', \
                      2)
     ```
@@ -340,7 +340,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     ['The', 'cute']
     ['cute', 'little']
     ['little', 'boy']
@@ -357,7 +357,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     n_gram_extractor('The cute little boy is playing with the kitten.', \
                      3)
     ```
@@ -367,7 +367,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     ['The', 'cute', 'little']
     ['cute', 'little', 'boy']
     ['little', 'boy', 'is']
@@ -383,7 +383,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from nltk import ngrams
     list(ngrams('The cute little boy is playing with the kitten.'\
                 .split(), 2))
@@ -394,7 +394,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [('The', 'cute'),
      ('cute', 'little'),
      ('little', 'boy'),
@@ -411,7 +411,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     list(ngrams('The cute little boy is playing with the kitten.'.split(), 3))
     ```
 
@@ -420,7 +420,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [('The', 'cute', 'little'),
      ('cute', 'little', 'boy'),
      ('little', 'boy', 'is'),
@@ -435,7 +435,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     !pip install -U textblob
     from textblob import TextBlob
     blob = TextBlob("The cute little boy is playing with the kitten.")
@@ -447,7 +447,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [WordList(['The', 'cute']),
      WordList(['cute', 'little']),
      WordList(['little', 'boy']),
@@ -464,7 +464,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     blob.ngrams(n=3)
     ```
 
@@ -473,7 +473,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [WordList(['The', 'cute', 'little']),
      WordList(['cute', 'little', 'boy']),
      WordList(['little', 'boy', 'is']),
@@ -508,7 +508,7 @@ to tokenize texts. Follow these steps to complete this exercise:
     declare a variable named `sentence`, as follows.
 
 
-    ``` {.language-markup}
+    ```
     from keras.preprocessing.text import text_to_word_sequence
     from textblob import TextBlob
     sentence = 'Sunil tweeted, "Witnessing 70th Republic Day "\
@@ -525,7 +525,7 @@ to tokenize texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_keras_tokens(text):
         return text_to_word_sequence(text)
     get_keras_tokens(sentence)
@@ -545,7 +545,7 @@ to tokenize texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_textblob_tokens(text):
         blob = TextBlob(text)
         return blob.words
@@ -620,7 +620,7 @@ Perform the following steps to implement this exercise:
     tokenizers and declare a variable sentence:
 
 
-    ``` {.language-markup}
+    ```
     from nltk.tokenize import TweetTokenizer
     from nltk.tokenize import MWETokenizer
     from nltk.tokenize import RegexpTokenizer
@@ -640,7 +640,7 @@ Perform the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def tokenize_with_tweet_tokenizer(text):
         # Here will create an object of tweetTokenizer
         tweet_tokenizer = TweetTokenizer() 
@@ -678,7 +678,7 @@ Perform the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def tokenize_with_mwe(text):
         mwe_tokenizer = MWETokenizer([('Republic', 'Day')])
         mwe_tokenizer.add_mwe(('Indian', 'Army'))
@@ -705,7 +705,7 @@ Perform the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     tokenize_with_mwe(sentence.replace('!',''))
     ```
 
@@ -728,7 +728,7 @@ Perform the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def tokenize_with_regex_tokenizer(text):
         reg_tokenizer = RegexpTokenizer('\w+|\$[\d\.]+|\S+')
         return reg_tokenizer.tokenize(text)
@@ -750,7 +750,7 @@ Perform the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def tokenize_with_wst(text):
         wh_tokenizer = WhitespaceTokenizer()
         return wh_tokenizer.tokenize(text)
@@ -772,7 +772,7 @@ Perform the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def tokenize_with_wordpunct_tokenizer(text):
         wp_tokenizer = WordPunctTokenizer()
         return wp_tokenizer.tokenize(text)
@@ -851,7 +851,7 @@ the stemmed string. Follow these steps to complete this exercise:
 2.  Insert a new cell and import `RegexpStemmer`:
 
 
-    ``` {.language-markup}
+    ```
     from nltk.stem import RegexpStemmer
     ```
 
@@ -861,7 +861,7 @@ the stemmed string. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_stems(text):
         """
         Creating an object of RegexpStemmer, any string ending 
@@ -883,7 +883,7 @@ the stemmed string. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'I love play football'
     ```
 
@@ -925,7 +925,7 @@ these steps to complete this exercise:
     `sentence` variable. Add the following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     from nltk.stem.porter import *
     sentence = "Before eating, it would be nice to "\
                "sanitize your hands with a sanitizer"
@@ -937,7 +937,7 @@ these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_stems(text):
         ps_stemmer = PorterStemmer()
         return ' '.join([ps_stemmer.stem(wd) for \
@@ -950,7 +950,7 @@ these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'befor eating, it would be nice to sanit your hand wash with a sanit'
     ```
 
@@ -1001,7 +1001,7 @@ these steps to complete this exercise:
     this:
 
 
-    ``` {.language-markup}
+    ```
     import nltk
     from nltk.stem import WordNetLemmatizer
     from nltk import word_tokenize
@@ -1017,7 +1017,7 @@ these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     lemmatizer = WordNetLemmatizer()
     def get_lemmas(text):
         lemmatizer = WordNetLemmatizer()
@@ -1031,7 +1031,7 @@ these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'The product produced by the process today are far better than what it produce generally.'
     ```
 
@@ -1067,7 +1067,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from textblob import TextBlob
     sentence = TextBlob('She sells seashells on the seashore')
     ```
@@ -1077,7 +1077,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     sentence.words
     ```
 
@@ -1086,7 +1086,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     WordList(['She', 'sells', 'seashells', 'on', 'the', 'seashore'])
     ```
 
@@ -1096,7 +1096,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def singularize(word):
         return word.singularize()
     singularize(sentence.words[2])
@@ -1107,7 +1107,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'seashell'
     ```
 
@@ -1117,7 +1117,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def pluralize(word):
         return word.pluralize()
     pluralize(sentence.words[5])
@@ -1128,7 +1128,7 @@ to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'seashores'
     ```
 
@@ -1172,7 +1172,7 @@ implement this exercise:
 2.  Import `TextBlob`, as follows:
 
 
-    ``` {.language-markup}
+    ```
     from textblob import TextBlob
     ```
 
@@ -1183,7 +1183,7 @@ implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def translate(text,from_l,to_l):
         en_blob = TextBlob(text)
         return en_blob.translate(from_lang=from_l, to=to_l)
@@ -1195,7 +1195,7 @@ implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     TextBlob("very well")
     ```
 
@@ -1241,7 +1241,7 @@ Follow these steps to complete this exercise:
     with the text in question:
 
 
-    ``` {.language-markup}
+    ```
     from nltk import word_tokenize
     sentence = "She sells seashells on the seashore"
     ```
@@ -1253,7 +1253,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def remove_stop_words(text,stop_word_list):
         return ' '.join([word for word in word_tokenize(text) \
                          if word.lower() not in stop_word_list])
@@ -1266,7 +1266,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'sells seashells seashore'
     ```
 
@@ -1322,7 +1322,7 @@ The following steps will help you implement this activity:
 
     Note
 
-    The solution to this activity can be found on page 373.
+    The solution to this activity can be found below.
 
 With that, we have learned about the various ways we can clean
 unstructured data. Now, let\'s examine the concept of extracting
@@ -1382,7 +1382,7 @@ steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     from textblob import TextBlob
     df = pd.DataFrame([['The interim budget for 2019 will '\
@@ -1414,7 +1414,7 @@ steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def add_num_words(df):
         df['number_of_words'] = df['text'].apply(lambda x : \
                                 len(TextBlob(str(x)).words))
@@ -1427,7 +1427,7 @@ steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     0     11
     1     15
     2      8
@@ -1448,7 +1448,7 @@ steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def is_present(wh_words, df):
         """
         The below line of code will find the intersection 
@@ -1472,7 +1472,7 @@ steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     0     False
     1     True
     2     False
@@ -1492,7 +1492,7 @@ steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_language(df):
         df['language'] = df['text'].apply(lambda x : \
                          TextBlob(str(x)).detect_language())
@@ -1505,7 +1505,7 @@ steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     0     en
     1     en
     2     en
@@ -1548,7 +1548,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     from string import punctuation
     import nltk
@@ -1566,7 +1566,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     def get_tagsets():
         tagdict = load('help/tagsets/upenn_tagset.pickle')
         return list(tagdict.keys())
@@ -1589,7 +1589,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     """
     This method will count the occurrence of pos 
     tags in each sentence.
@@ -1635,7 +1635,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     def add_punctuation_count(feature_df, data):
         
         feature_df['num_of_unique_punctuations'] = data['text'].\
@@ -1657,7 +1657,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     0      0
     1      0
     2      1
@@ -1672,7 +1672,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     def get_capitalized_word_count(feature_df, data):
         """
         The below code line will tokenize text in every row and 
@@ -1697,7 +1697,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     0      1
     1      1
     2      1
@@ -1715,7 +1715,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     def get_small_word_count(feature_df, data):
         """
         The below code line will tokenize text in every row and 
@@ -1739,7 +1739,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     0      4
     1      3
     2      7
@@ -1758,7 +1758,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     def get_number_of_alphabets(feature_df, data):
         feature_df['number_of_alphabets'] = data['text']. \
             apply(lambda x: len([ch for ch in str(x) \
@@ -1776,7 +1776,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     0     19
     1     18
     2     28
@@ -1795,7 +1795,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     def get_number_of_digit_count(feature_df, data):
         """
         The below code line will break the text line in a list of 
@@ -1817,7 +1817,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     0      0
     1      0
     2      0
@@ -1832,7 +1832,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     def get_number_of_words(feature_df, data):
         """
         The below code line will break the text line in a list of 
@@ -1854,7 +1854,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     0      5
     1      4
     2      9
@@ -1869,7 +1869,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     def get_number_of_whitespaces(feature_df, data):
         """
         The below code line will generate list of white spaces 
@@ -1892,7 +1892,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     0      4
     1      3
     2      7
@@ -1907,7 +1907,7 @@ link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
-    ``` {.language-markup}
+    ```
     feature_df.head()
     ```
 
@@ -1981,7 +1981,7 @@ Follow these steps to implement this exercise:
     following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     from sklearn.feature_extraction.text import CountVectorizer
     ```
@@ -1992,7 +1992,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def vectorize_text(corpus):
         """
         Will return a dataframe in which every row will ,be
@@ -2040,7 +2040,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def bow_top_n(corpus, n):
         """
         Will return a dataframe in which every row 
@@ -2139,7 +2139,7 @@ steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from pylab import *
     import nltk
     nltk.download('stopwords')
@@ -2158,7 +2158,7 @@ steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_stop_words():
         stop_words = stopwords.words('english')
         stop_words = stop_words + list(string.printable)
@@ -2191,7 +2191,7 @@ steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_frequency(corpus, n):
         token_count_di = Counter(corpus)
         return token_count_di.most_common(n)
@@ -2207,7 +2207,7 @@ steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     stop_word_list = get_stop_words()
     corpus = get_and_prepare_data(stop_word_list)
     get_frequency(corpus, 50)
@@ -2235,7 +2235,7 @@ steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     def get_actual_and_expected_frequencies(corpus):
         freq_dict = get_frequency(corpus, 1000)
         actual_frequencies = []
@@ -2330,7 +2330,7 @@ Follow these steps to implement this exercise:
     the TFIDF of the corpus. Add the following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.feature_extraction.text import TfidfVectorizer
     def get_tf_idf_vectors(corpus):
         tfidf_model = TfidfVectorizer()
@@ -2343,7 +2343,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     corpus = ['Data Science is an overlap between Arts and Science',\
               'Generally, Arts graduates are right-brained and '\
               'Science graduates are left-brained',\
@@ -2458,7 +2458,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
     packages:
 
 
-    ``` {.language-markup}
+    ```
     from nltk import word_tokenize
     from nltk.stem import WordNetLemmatizer
     from sklearn.feature_extraction.text import TfidfVectorizer
@@ -2471,7 +2471,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
     of sentences by adding the following code:
 
 
-    ``` {.language-markup}
+    ```
     def extract_text_similarity_jaccard(text1, text2):
         """
         This method will return Jaccard similarity between two texts
@@ -2496,7 +2496,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
     and `pair3`, as follows.
 
 
-    ``` {.language-markup}
+    ```
     pair1 = ["What you do defines you", "Your deeds define you"]
     pair2 = ["Once upon a time there lived a king.", \
              "Who is your queen?"]
@@ -2509,7 +2509,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     extract_text_similarity_jaccard(pair1[0],pair1[1])
     ```
 
@@ -2518,7 +2518,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     0.14285714285714285
     ```
 
@@ -2528,7 +2528,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     extract_text_similarity_jaccard(pair2[0],pair2[1])
     ```
 
@@ -2537,7 +2537,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     0.0
     ```
 
@@ -2547,7 +2547,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     extract_text_similarity_jaccard(pair3[0],pair3[1])
     ```
 
@@ -2556,7 +2556,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     0.6
     ```
 
@@ -2566,7 +2566,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
     text:
 
 
-    ``` {.language-markup}
+    ```
     def get_tf_idf_vectors(corpus):
         tfidf_vectorizer = TfidfVectorizer()
         tfidf_results = tfidf_vectorizer.fit_transform(corpus).\
@@ -2579,7 +2579,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
     text document. Add the following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     corpus = [pair1[0], pair1[1], pair2[0], \
               pair2[1], pair3[0], pair3[1]]
     tf_idf_vectors = get_tf_idf_vectors(corpus)
@@ -2591,7 +2591,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     cosine_similarity(tf_idf_vectors[0],tf_idf_vectors[1])
     ```
 
@@ -2600,7 +2600,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     array([[0.3082764]])
     ```
 
@@ -2610,7 +2610,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     cosine_similarity(tf_idf_vectors[2],tf_idf_vectors[3])
     ```
 
@@ -2619,7 +2619,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     array([[0.]])
     ```
 
@@ -2629,7 +2629,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     cosine_similarity(tf_idf_vectors[4],tf_idf_vectors[5])
     ```
 
@@ -2638,7 +2638,7 @@ for a given pair of texts. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     array([[0.80368547]])
     ```
 
@@ -2694,7 +2694,7 @@ complete this exercise:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     from sklearn.metrics.pairwise import cosine_similarity
     from nltk import word_tokenize
@@ -2707,7 +2707,7 @@ complete this exercise:
 3.  Define a method for getting the TFIDF vectors of a corpus:
 
 
-    ``` {.language-markup}
+    ```
     def get_tf_idf_vectors(corpus):
         tfidf_vectorizer = TfidfVectorizer()
         tfidf_results = tfidf_vectorizer.fit_transform\
@@ -2719,7 +2719,7 @@ complete this exercise:
 4.  Define a method to convert the corpus into lowercase:
 
 
-    ``` {.language-markup}
+    ```
     def to_lower_case(corpus):
         lowercase_corpus = [x.lower() for x in corpus]
         return lowercase_corpus
@@ -2731,7 +2731,7 @@ complete this exercise:
     similarity score:
 
 
-    ``` {.language-markup}
+    ```
     def find_sentence_definition(sent_vector,defnition_vectors):
         """
         This method will find cosine similarity of sentence with
@@ -2753,7 +2753,7 @@ complete this exercise:
     definitions as the top three sentences:
 
 
-    ``` {.language-markup}
+    ```
     corpus = ["On the banks of river Ganga, there lies the scent "\
               "of spirituality",\
               "An institute where people can store extra "\
@@ -2773,7 +2773,7 @@ complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     lower_case_corpus  = to_lower_case(corpus)
     corpus_tf_idf  = get_tf_idf_vectors(lower_case_corpus)
     sent_vector = corpus_tf_idf[0]
@@ -2790,7 +2790,7 @@ complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     The definition of word bank is def2 with similarity of 0.14419130686278897
     ```
 
@@ -2850,7 +2850,7 @@ these steps to complete this exercise:
     to do this:
 
 
-    ``` {.language-markup}
+    ```
     import nltk
     nltk.download('stopwords')
     import matplotlib.pyplot as plt
@@ -2866,7 +2866,7 @@ these steps to complete this exercise:
 3.  Write the `get_data()` method to fetch the data:
 
 
-    ``` {.language-markup}
+    ```
     def get_data(n):
         newsgroups_data_sample = fetch_20newsgroups(subset='train')
         text = str(newsgroups_data_sample['data'][:n])
@@ -2877,7 +2877,7 @@ these steps to complete this exercise:
 4.  Add a method to remove stop words:
 
 
-    ``` {.language-markup}
+    ```
     def load_stop_words():
         other_stopwords_to_remove = ['\\n', 'n', '\\', '>', \
                                      'nLines', 'nI',"n'"]
@@ -2892,7 +2892,7 @@ these steps to complete this exercise:
     cloud object:
 
 
-    ``` {.language-markup}
+    ```
     def generate_word_cloud(text, stopwords):
         """
         This method generates word cloud object
@@ -2913,7 +2913,7 @@ these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     text = get_data(1000)
     stop_words = load_stop_words()
     wordcloud = generate_word_cloud(text, stop_words)
@@ -2982,7 +2982,7 @@ named entities. Follow these steps to complete this exercise:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     import spacy
     from spacy import displacy
     !python -m spacy download
@@ -2997,7 +2997,7 @@ named entities. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     doc = nlp('God helps those who help themselves')
     displacy.render(doc, style='dep', jupyter=True)
     ```
@@ -3016,7 +3016,7 @@ named entities. Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     text = 'Once upon a time there lived a saint named '\
            'Ramakrishna Paramahansa. His chief disciple '\
            'Narendranath Dutta also known as Swami Vivekananda '\
@@ -3079,7 +3079,7 @@ Follow these steps to implement this activity:
 
     Note
 
-    The solution to this activity can be found on page 375.
+    The solution to this activity can be found below.
 
 
 Summary

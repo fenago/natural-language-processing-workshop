@@ -138,7 +138,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from bs4 import BeautifulSoup
     ```
 
@@ -152,7 +152,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     soup = BeautifulSoup(open('../data/sample_doc.html'), \
                          'html.parser')
     ```
@@ -168,7 +168,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     soup.text
     ```
 
@@ -187,7 +187,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     soup.contents
     ```
 
@@ -203,7 +203,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     soup.find('address')
     ```
 
@@ -212,7 +212,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     <address> Mess on No. 72, Banamali Naskar Lane, Kolkata.</address>
     ```
 
@@ -222,7 +222,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     soup.find_all('address')
     ```
 
@@ -231,7 +231,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [<address> Mess on No. 72, Banamali Naskar Lane, Kolkata.</address>,
      <address>221B, Baker Street, London, UK.</address>]
     ```
@@ -241,7 +241,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     soup.find_all('q')
     ```
 
@@ -250,7 +250,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [<q> There are more things in heaven and earth, Horatio, <br/> 
      Than are dreamt of in your philosophy. </q>]
     ```
@@ -260,7 +260,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     soup.find_all('b')
     ```
 
@@ -269,7 +269,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [<b>Sherlock </b>, <b>Hamlet</b>, <b>Horatio</b>]
     ```
 
@@ -278,7 +278,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     table = soup.find('table')
     table
     ```
@@ -298,7 +298,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     for row in table.find_all('tr'):
         columns = row.find_all('td')
         print(columns)
@@ -309,7 +309,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [ ]
     [<td>Gangaram</td>, <td>B.Tech</td>, <td>NA</td>, <td>NA</td>]
     [<td>Ganga</td>, <td>B.A.</td>, <td>NA</td>, <td>NA</td>]
@@ -324,7 +324,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     table.find_all('tr')[3].find_all('td')[2]
     ```
 
@@ -333,7 +333,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     <td>M.Tech</td>
     ```
 
@@ -381,7 +381,7 @@ steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import requests
     """"
     Let's read the text version of david copper field 
@@ -396,7 +396,7 @@ steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     200
     ```
 
@@ -413,7 +413,7 @@ steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     r.text[:1000]
     ```
 
@@ -431,7 +431,7 @@ steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from pathlib import Path
     open(Path("../data/David_Copperfield.txt"),'w',\
          encoding='utf-8').write(r.text)
@@ -442,7 +442,7 @@ steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     2033139
     ```
 
@@ -452,7 +452,7 @@ steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import urllib3
     http = urllib3.PoolManager()
     rr = http.request('GET', \
@@ -468,7 +468,7 @@ steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     rr.data[:1000]
     ```
 
@@ -480,7 +480,7 @@ steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     open(Path("../data/David_Copperfield_new.txt"), \
          'wb').write(rr.data)
     ```
@@ -490,7 +490,7 @@ steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     2033139
     ```
 
@@ -528,7 +528,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(open('../data/text_classifier.html'), \
                          'html.parser')
@@ -542,7 +542,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     '\n\n\nCh3_Activity7_Developing_end_to_end_Text_Classifiers\n\n\n\n    /*!\n*\n* Twitter Bootstrap\n*\n*/\n/*!\n*'
     ```
 
@@ -551,7 +551,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     len(soup.find_all('img'))
     ```
 
@@ -560,7 +560,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     3
     ```
 
@@ -574,7 +574,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [i.get_text() for i in soup.find_all\
     ('span',attrs={"class":"nn"})]
     ```
@@ -598,7 +598,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     for md,i in zip(soup.find_all('h2'), \
     soup.find_all('div',\
     attrs={"class":"output_subarea output_stream "\
@@ -674,7 +674,7 @@ these steps to implement this activity:
 
     Note
 
-    The solution to this activity can be found on page 386.
+    The solution to this activity can be found below.
 
 We are now well-versed in extracting generic data from HTML pages.
 Let\'s perform another activity now, where we\'ll be using regular
@@ -705,7 +705,7 @@ this activity:
 
     Note
 
-    The solution to this activity can be found on page 388.
+    The solution to this activity can be found below.
 
 In this activity, we were able to fetch data from online sources and
 analyze it in various ways. Now that we are well-versed in scraping web
@@ -787,7 +787,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import json
     from pprint import pprint
     data = json.load(open('../data/sample_json.json'))
@@ -812,7 +812,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [dt['name'] for dt in data['students']]
     ```
 
@@ -821,7 +821,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     ['Gangaram', 'Ganga', 'Ram', 'Ramlal']
     ```
 
@@ -831,7 +831,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [dt['qualification'] for dt in data['students']]
     ```
 
@@ -840,7 +840,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     ['B.Tech', 'B.A.', 'B.Tech', 'B.Music']
     ```
 
@@ -852,7 +852,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [dt['additional qualification'] if 'additional qualification' \
     in dt.keys() else None for dt in data['students']]
     ```
@@ -862,7 +862,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [None, None, 'M.Tech', None]
     ```
 
@@ -959,7 +959,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import xml.etree.ElementTree as ET
     tree = ET.parse('../data/sample_xml_data.xml')
     root = tree.getroot()
@@ -971,7 +971,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     <Element 'records' at 0.112291710>
     ```
 
@@ -980,7 +980,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     root.tag
     ```
 
@@ -989,7 +989,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     'records'
     ```
 
@@ -999,7 +999,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     for record in root.findall('record')[:20]:
         print(record.find('name').text, "---",\
               record.find('company').text)
@@ -1024,7 +1024,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     sum([int(record.find('salary').text.replace('$','').\
     replace(',','')) for record in root.findall('record')])
     ```
@@ -1034,7 +1034,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     745609
     ```
 
@@ -1087,7 +1087,7 @@ exercise:
 2.  Import the necessary packages. Add the following code to do so:
 
 
-    ``` {.language-markup}
+    ```
     import json 
     import pprint 
     import requests 
@@ -1099,7 +1099,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     r = requests.get("https://api.exchangerate-api.com/"\
                      "v4/latest/USD")
     data = r.json()
@@ -1128,7 +1128,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     df = pd.DataFrame(data)
     df.head()
     ```
@@ -1192,7 +1192,7 @@ Your Python code should look like this:
 
 
 
-``` {.language-markup}
+```
 import tweepy
 consumer_key = 'your consumer key here'
 consumer_secret = 'your consumer secret key here'
@@ -1216,7 +1216,7 @@ follows:
 
 
 
-``` {.language-markup}
+```
 tweepy.Cursor(api.search, q='randomquery', lang="en")
 ```
 
@@ -1258,7 +1258,7 @@ help you implement this activity:
 
     Note
 
-    The full solution to this activity can be found on page 391.
+    The full solution to this activity can be found below.
 
 In this activity, we extracted data from Twitter and loaded it into a
 pandas DataFrame. This data can also be used to analyze tweets and

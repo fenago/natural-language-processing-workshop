@@ -160,7 +160,7 @@ following code:
 
 
 
-``` {.language-markup}
+```
 import scipy.cluster.hierarchy as sch
 dendrogram = sch.dendrogram(sch.linkage(X, method='ward'))
 plt.title('Dendrogram')
@@ -190,7 +190,7 @@ actual categories. Follow these steps to implement this exercise:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.datasets import fetch_20newsgroups
     from scipy.cluster.hierarchy import ward, dendrogram
     import matplotlib as mpl
@@ -219,7 +219,7 @@ actual categories. Follow these steps to implement this exercise:
     to implement this:
 
 
-    ``` {.language-markup}
+    ```
     nltk.download('stopwords')
     stop_words=stopwords.words('english')
     stop_words=stop_words+list(string.printable)
@@ -234,7 +234,7 @@ actual categories. Follow these steps to implement this exercise:
     this:
 
 
-    ``` {.language-markup}
+    ```
     categories= ['misc.forsale', 'sci.electronics', \
                  'talk.religion.misc']
     ```
@@ -243,7 +243,7 @@ actual categories. Follow these steps to implement this exercise:
 5.  To fetch the dataset, add the following lines of code:
 
 
-    ``` {.language-markup}
+    ```
     news_data = fetch_20newsgroups(subset='train', \
                                    categories=categories, \
                                    shuffle=True, random_state=42, \
@@ -255,7 +255,7 @@ actual categories. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     news_data['data'][:5]
     ```
 
@@ -274,7 +274,7 @@ actual categories. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     print(news_data.target)
     ```
 
@@ -285,7 +285,7 @@ actual categories. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     [0 0 1 … 0 1 0]
     ```
 
@@ -299,7 +299,7 @@ actual categories. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     news_data_df = pd.DataFrame({'text' : news_data['data'], \
                                  'category': news_data.target})
     news_data_df.head()
@@ -321,7 +321,7 @@ actual categories. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     news_data_df['category'].value_counts()
     ```
 
@@ -330,7 +330,7 @@ actual categories. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     1        591
     0        585
     2        377
@@ -348,7 +348,7 @@ actual categories. Follow these steps to implement this exercise:
     (`re`). Add the following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     news_data_df['cleaned_text'] = news_data_df['text']\
                                    .apply(lambda x : ' '.join\
                                    ([lemmatizer.lemmatize\
@@ -365,7 +365,7 @@ actual categories. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model = TfidfVectorizer(max_features=200)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
                (news_data_df['cleaned_text']).todense())
@@ -386,7 +386,7 @@ actual categories. Follow these steps to implement this exercise:
 12. Calculate the distance using the sklearn library:
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.metrics.pairwise import \
     euclidean_distances as euclidean
     dist = 1 - euclidean(tfidf_df)
@@ -397,7 +397,7 @@ actual categories. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import scipy.cluster.hierarchy as sch
     dendrogram = sch.dendrogram(sch.linkage(dist, method='ward'))
     plt.xlabel('Data Points')
@@ -422,7 +422,7 @@ actual categories. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     k=4
     clusters = fcluster(sch.linkage(dist, method='ward'), k, \
                         criterion='maxclust')
@@ -434,7 +434,7 @@ actual categories. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     array([3, 3, 3, …, 4, 4, 1], dtype=int32)
     ```
 
@@ -445,7 +445,7 @@ actual categories. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     news_data_df['obtained_clusters'] = clusters
     pd.crosstab(news_data_df['category']\
                 .replace({0:'misc.forsale', \
@@ -523,7 +523,7 @@ the following code:
 
 
 
-``` {.language-markup}
+```
 from sklearn.cluster import KMeans
 kmeans = KMeans(n_clusters=4)
 kmeans.fit(X)
@@ -555,7 +555,7 @@ Follow these steps to implement this exercise:
     packages:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     from sklearn.datasets import fetch_20newsgroups
     import matplotlib.pyplot as plt
@@ -587,7 +587,7 @@ Follow these steps to implement this exercise:
     code:
 
 
-    ``` {.language-markup}
+    ```
     stop_words = stopwords.words('english')
     stop_words = stop_words + list(string.printable)
     lemmatizer = WordNetLemmatizer()
@@ -597,7 +597,7 @@ Follow these steps to implement this exercise:
 4.  To specify the categories of news articles, add the following code:
 
 
-    ``` {.language-markup}
+    ```
     categories= ['misc.forsale', 'sci.electronics', \
                  'talk.religion.misc']
     ```
@@ -607,7 +607,7 @@ Follow these steps to implement this exercise:
     a pandas DataFrame:
 
 
-    ``` {.language-markup}
+    ```
     news_data = fetch_20newsgroups(subset='train', \
                                    categories=categories, \
                                    shuffle=True, \
@@ -628,7 +628,7 @@ Follow these steps to implement this exercise:
     a blank space. Add the following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     news_data_df['cleaned_text'] = news_data_df['text']\
                                    .apply(lambda x : ' '.join\
                                    ([lemmatizer.lemmatize(word.lower()) \
@@ -644,7 +644,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model = TfidfVectorizer(max_features=200)
     tfidf_df = pd.DataFrame(tfidf_model\
                             .fit_transform\
@@ -668,7 +668,7 @@ Follow these steps to implement this exercise:
     following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     kmeans = KMeans(n_clusters=4)
     kmeans.fit(tfidf_df)
     y_kmeans = kmeans.predict(tfidf_df)
@@ -682,7 +682,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     pd.crosstab(news_data_df['category']\
                 .replace({0:'misc.forsale', \
                           1:'sci.electronics', \
@@ -719,7 +719,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     distortions = []
     K = range(1,6)
     for k in K:
@@ -840,7 +840,7 @@ Python using the following code:
 
 
 
-``` {.language-markup}
+```
 from sklearn.linear_model import LogisticRegression
 log_reg = LogisticRegression()
 log_reg.fit(X,y)
@@ -878,7 +878,7 @@ Follow these steps to implement this exercise:
     packages:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     import matplotlib.pyplot as plt
     %matplotlib inline
@@ -902,7 +902,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     review_data = pd.read_json\
                   ('data/reviews_Musical_Instruments_5.json', \
                    lines=True)
@@ -928,7 +928,7 @@ Follow these steps to implement this exercise:
     Add the following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     lemmatizer = WordNetLemmatizer()
     review_data['cleaned_review_text'] = review_data['reviewText']\
                                          .apply(lambda x : ' '.join\
@@ -946,7 +946,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     review_data[['cleaned_review_text', 'reviewText', \
                  'overall']].head()
     ```
@@ -967,7 +967,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model = TfidfVectorizer(max_features=500)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
                (review_data['cleaned_review_text']).todense())
@@ -992,7 +992,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     review_data['target'] = review_data['overall'].apply\
                             (lambda x : 0 if x<=4 else 1)
     review_data['target'].value_counts()
@@ -1003,7 +1003,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     1     6938
     0     3323
     Name: target, dtype: int64
@@ -1017,7 +1017,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.linear_model import LogisticRegression
     logreg = LogisticRegression()
     logreg.fit(tfidf_df,review_data['target'])
@@ -1030,7 +1030,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     array([0.57146961, 0.68579907, 0.56068939, …, 0.65979968, \
            0.5495679 , 0.21186011])
     ```
@@ -1043,7 +1043,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     review_data['predicted_labels'] = predicted_labels
     pd.crosstab(review_data['target'], \
                 review_data['predicted_labels'])
@@ -1117,7 +1117,7 @@ using the following code:
 
 
 
-``` {.language-markup}
+```
 from sklearn.naive_bayes import GaussianNB
 nb = GaussianNB()
 nb.fit(X,y)
@@ -1154,7 +1154,7 @@ To download the dataset for this exercise, visit
     packages:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     import matplotlib.pyplot as plt
     %matplotlib inline
@@ -1178,7 +1178,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     review_data = pd.read_json\
                   ('data/reviews_Musical_Instruments_5.json', \
                    lines=True)
@@ -1204,7 +1204,7 @@ To download the dataset for this exercise, visit
     following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     lemmatizer = WordNetLemmatizer()
     review_data['cleaned_review_text'] = review_data['reviewText']\
                                          .apply(lambda x : ' '.join\
@@ -1222,7 +1222,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     review_data[['cleaned_review_text', 'reviewText', \
                  'overall']].head()
     ```
@@ -1243,7 +1243,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model = TfidfVectorizer(max_features=500)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
                (review_data['cleaned_review_text']).todense())
@@ -1268,7 +1268,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     review_data['target'] = review_data['overall']\
                             .apply(lambda x : 0 if x<=4 else 1)
     review_data['target'].value_counts()
@@ -1279,7 +1279,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     1    6938
     0    3323
     Name: target, dtype: int64
@@ -1292,7 +1292,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.naive_bayes import GaussianNB
     nb = GaussianNB()
     nb.fit(tfidf_df,review_data['target'])
@@ -1305,7 +1305,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     array([9.97730158e-01, 3.63599675e-09, 9.45692105e-07, …,
            2.46001047e-02, 3.43660991e-08, 1.72767906e-27])
     ```
@@ -1321,7 +1321,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     review_data['predicted_labels'] = predicted_labels
     pd.crosstab(review_data['target'], \
                 review_data['predicted_labels'])
@@ -1379,7 +1379,7 @@ neighbors algorithm in Python using the following code:
 
 
 
-``` {.language-markup}
+```
 from sklearn.neighbors import KNeighborsClassifier
 knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X,y)
@@ -1418,7 +1418,7 @@ To download the dataset for this exercise, visit
     packages:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     import matplotlib.pyplot as plt
     %matplotlib inline
@@ -1442,7 +1442,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     review_data = pd.read_json\
                   ('data/reviews_Musical_Instruments_5.json',\
                    lines=True)
@@ -1468,7 +1468,7 @@ To download the dataset for this exercise, visit
     following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     lemmatizer = WordNetLemmatizer()
     review_data['cleaned_review_text'] = review_data['reviewText']\
                                          .apply(lambda x : ' '.join\
@@ -1486,7 +1486,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     review_data[['cleaned_review_text', 'reviewText', \
                  'overall']].head()
     ```
@@ -1507,7 +1507,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model = TfidfVectorizer(max_features=500)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
                (review_data['cleaned_review_text']).todense())
@@ -1532,7 +1532,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     review_data['target'] = review_data['overall']\
                             .apply(lambda x : 0 if x<=4 else 1)
     review_data['target'].value_counts()
@@ -1543,7 +1543,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     1     6938
     0     3323
     Name:  target, dtype: int64
@@ -1559,7 +1559,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.neighbors import KNeighborsClassifier
     knn = KNeighborsClassifier(n_neighbors=3)
     knn.fit(tfidf_df,review_data['target'])
@@ -1661,7 +1661,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.linear_model import LinearRegression
     linreg = LinearRegression()
     linreg.fit(X,y)
@@ -1705,7 +1705,7 @@ To download the dataset for this exercise, visit
     packages:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     import matplotlib.pyplot as plt
     %matplotlib inline
@@ -1729,7 +1729,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     review_data = pd.read_json\
                   ('data/reviews_Musical_Instruments_5.json', \
                    lines=True)
@@ -1756,7 +1756,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     lemmatizer = WordNetLemmatizer()
     review_data['cleaned_review_text'] = review_data['reviewText']\
                                          .apply(lambda x : ' '.join\
@@ -1785,7 +1785,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model = TfidfVectorizer(max_features=500)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
                (review_data['cleaned_review_text']).todense())
@@ -1809,7 +1809,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.linear_model import LinearRegression
     linreg = LinearRegression()
     linreg.fit(tfidf_df,review_data['overall'])
@@ -1836,7 +1836,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     linreg.intercept_
     ```
 
@@ -1845,7 +1845,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     4.218882428983381
     ```
 
@@ -1855,7 +1855,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     linreg.predict(tfidf_df)
     ```
 
@@ -1864,7 +1864,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     array([4.19200071, 4.25771652, 4.23084868, …, 4.40384767, 
            4.49036403, 4.14791976])
     ```
@@ -1877,7 +1877,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     review_data['predicted_score_from_linear_regression'] = \
     linreg.predict(tfidf_df)
     review_data[['overall', \
@@ -1953,7 +1953,7 @@ tree algorithm in Python using the following code:
 
 
 
-``` {.language-markup}
+```
 from sklearn import tree
 dtc = tree.DecisionTreeClassifier()
 dtc = dtc.fit(X, y)
@@ -1990,7 +1990,7 @@ To download the dataset for this exercise, visit
     packages:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     import matplotlib.pyplot as plt
     %matplotlib inline
@@ -2014,7 +2014,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     data_patio_lawn_garden = pd.read_json\
                              ('data/'\
                               'reviews_Patio_Lawn_and_Garden_5.json',\
@@ -2042,7 +2042,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     lemmatizer = WordNetLemmatizer()
     data_patio_lawn_garden['cleaned_review_text'] = \
     data_patio_lawn_garden['reviewText']\
@@ -2069,7 +2069,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model = TfidfVectorizer(max_features=500)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
                (data_patio_lawn_garden['cleaned_review_text'])\
@@ -2094,7 +2094,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     data_patio_lawn_garden['target'] = data_patio_lawn_garden\
                                        ['overall'].apply\
                                        (lambda x : 0 if x<=4 else 1)
@@ -2106,7 +2106,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     1     7037
     0     6235
     Name:  target, dtype: int64
@@ -2118,7 +2118,7 @@ To download the dataset for this exercise, visit
     the following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     from sklearn import tree
     dtc = tree.DecisionTreeClassifier()
     dtc = dtc.fit(tfidf_df, data_patio_lawn_garden['target'])
@@ -2134,7 +2134,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     pd.crosstab(data_patio_lawn_garden['target'], \
                 data_patio_lawn_garden['predicted_labels_dtc'])
     ```
@@ -2163,7 +2163,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn import tree
     dtr = tree.DecisionTreeRegressor()
     dtr = dtr.fit(tfidf_df, data_patio_lawn_garden['overall'])
@@ -2237,7 +2237,7 @@ following code:
 
 
 
-``` {.language-markup}
+```
 from sklearn.ensemble import RandomForestClassifier 
 rfc = RandomForestClassifier()
 rfc = rfc.fit(X, y)
@@ -2296,7 +2296,7 @@ XGBoost algorithm in Python using the following code:
 
 
 
-``` {.language-markup}
+```
 from xgboost import XGBClassifier
 xgb_clf=XGBClassifier()
 xgb_clf = xgb_clf.fit(X, y)
@@ -2314,7 +2314,7 @@ trained model, we can use the following code:
 
 
 
-``` {.language-markup}
+```
 pd.DataFrame({'word':X.columns,'importance':xgb_clf.feature_importances_})
 ```
 
@@ -2341,7 +2341,7 @@ To download the dataset for this exercise, visit
     code to import the necessary packages:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     import matplotlib.pyplot as plt
     %matplotlib inline
@@ -2365,7 +2365,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     data_patio_lawn_garden = pd.read_json\
                              ('data/'\
                               'reviews_Patio_Lawn_and_Garden_5.json',\
@@ -2393,7 +2393,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     lemmatizer = WordNetLemmatizer()
     data_patio_lawn_garden['cleaned_review_text'] = \
     data_patio_lawn_garden['reviewText']\
@@ -2421,7 +2421,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model = TfidfVectorizer(max_features=500)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
                (data_patio_lawn_garden['cleaned_review_text'])\
@@ -2446,7 +2446,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     data_patio_lawn_garden['target'] = data_patio_lawn_garden\
                                        ['overall'].apply\
                                        (lambda x : 0 if x<=4 else 1)
@@ -2458,7 +2458,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     1     7037
     0     6235
     Name:  target, dtype: int64
@@ -2469,7 +2469,7 @@ To download the dataset for this exercise, visit
     the following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     def clf_model(model_type, X_train, y):
         model = model_type.fit(X_train,y)
         predicted_labels = model.predict(tfidf_df)
@@ -2485,7 +2485,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.ensemble import RandomForestClassifier 
     rfc = RandomForestClassifier(n_estimators=20,max_depth=4,\
                                  max_features='sqrt',random_state=1)
@@ -2516,7 +2516,7 @@ To download the dataset for this exercise, visit
     following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     def reg_model(model_type, X_train, y):
         model = model_type.fit(X_train,y)
         predicted_values = model.predict(tfidf_df)
@@ -2531,7 +2531,7 @@ To download the dataset for this exercise, visit
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.ensemble import RandomForestRegressor 
     rfg = RandomForestRegressor(n_estimators=20,max_depth=4,\
                                 max_features='sqrt',random_state=1)
@@ -2587,7 +2587,7 @@ Follow these steps to implement this exercise:
     packages:
 
 
-    ``` {.language-markup}
+    ```
     import pandas as pd
     import matplotlib.pyplot as plt
     %matplotlib inline
@@ -2611,7 +2611,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     data_patio_lawn_garden = pd.read_json\
                              ('data/'\
                               'reviews_Patio_Lawn_and_Garden_5.json',\
@@ -2639,7 +2639,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     lemmatizer = WordNetLemmatizer()
     data_patio_lawn_garden['cleaned_review_text'] = \
     data_patio_lawn_garden['reviewText'].apply(lambda x : ' '.join\
@@ -2669,7 +2669,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model = TfidfVectorizer(max_features=500)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
                (data_patio_lawn_garden['cleaned_review_text'])\
@@ -2694,7 +2694,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     data_patio_lawn_garden['target'] = data_patio_lawn_garden\
                                        ['overall'].apply\
                                        (lambda x : 0 if x<=4 else 1)
@@ -2706,7 +2706,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     1     7037
     0     6235
     Name:  target, dtype: int64
@@ -2717,7 +2717,7 @@ Follow these steps to implement this exercise:
     the following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     def clf_model(model_type, X_train, y):
         model = model_type.fit(X_train,y)
         predicted_labels = model.predict(tfidf_df)
@@ -2732,7 +2732,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     pip install xgboost
     from xgboost import XGBClassifier
     xgb_clf=XGBClassifier(n_estimators=20,learning_rate=0.03,\
@@ -2766,7 +2766,7 @@ Follow these steps to implement this exercise:
     the following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     def reg_model(model_type, X_train, y):
         model = model_type.fit(X_train,y)
         predicted_values = model.predict(tfidf_df)
@@ -2779,7 +2779,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from xgboost import XGBRegressor 
     xgbr = XGBRegressor(n_estimators=20,learning_rate=0.03,\
                         max_depth=5,subsample=0.6,\
@@ -2892,7 +2892,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     !pip install xlrd
     import pandas as pd
     data = pd.read_excel('data/Online Retail.xlsx')
@@ -2904,7 +2904,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     (54190, 8)
     ```
 
@@ -2914,7 +2914,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     # selecting 10% of the data randomly
     data_sample_random = data.sample(frac=0.1,random_state=42)
     data_sample_random.shape
@@ -2925,7 +2925,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     (54191, 8)
     ```
 
@@ -2935,7 +2935,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.model_selection import train_test_split
     X_train, X_valid, y_train, y_valid = train_test_split\
                                          (data, data['Country'],\
@@ -2951,7 +2951,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     y_train.value_counts()/y_train.shape[0]
     ```
 
@@ -2969,7 +2969,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     y_valid.value_counts()/y_valid.shape[0]
     ```
 
@@ -2994,7 +2994,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     data_ugf = data[data['Country'].isin(['United Kingdom', \
                                           'Germany', 'France'])]
     data_ugf_q2 = data_ugf[data_ugf['Quantity']>=2]
@@ -3008,7 +3008,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     (356940, 8)
     ```
 
@@ -3017,7 +3017,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     data_ugf_q2_sample.shape
     ```
 
@@ -3026,7 +3026,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     (7139, 8)
     ```
 
@@ -3121,7 +3121,7 @@ dataset. Follow these steps to implement this exercise:
     packages:
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.datasets import fetch_20newsgroups
     import matplotlib as mpl
     import pandas as pd
@@ -3150,7 +3150,7 @@ dataset. Follow these steps to implement this exercise:
     code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     stop_words = stopwords.words('english')
     stop_words = stop_words + list(string.printable)
     lemmatizer = WordNetLemmatizer()
@@ -3161,7 +3161,7 @@ dataset. Follow these steps to implement this exercise:
     the following code:
 
 
-    ``` {.language-markup}
+    ```
     categories= ['misc.forsale', 'sci.electronics', \
                  'talk.religion.misc']
     ```
@@ -3173,7 +3173,7 @@ dataset. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     news_data = fetch_20newsgroups(subset='train', \
                                    categories=categories, \
                                    shuffle=True, random_state=42, \
@@ -3203,7 +3203,7 @@ dataset. Follow these steps to implement this exercise:
     implement this:
 
 
-    ``` {.language-markup}
+    ```
     news_data_df['cleaned_text'] = news_data_df['text']\
                                    .apply(lambda x : ' '.join\
                                    ([lemmatizer.lemmatize\
@@ -3220,7 +3220,7 @@ dataset. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model = TfidfVectorizer(max_features=20)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
                (news_data_df['cleaned_text']).todense())
@@ -3243,7 +3243,7 @@ dataset. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     correlation_matrix = tfidf_df.corr()
     correlation_matrix.head()
     ```
@@ -3262,7 +3262,7 @@ dataset. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import seaborn as sns
     fig, ax = plt.subplots(figsize=(20, 20))
     sns.heatmap(correlation_matrix,annot=True, fmt='.1g', \
@@ -3285,7 +3285,7 @@ dataset. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     import numpy as np
     correlation_matrix_ut = correlation_matrix.where(np.triu\
                             (np.ones(correlation_matrix.shape))\
@@ -3322,7 +3322,7 @@ dataset. Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_df_without_correlated_word = tfidf_df.drop(['nntp', \
                                                       'posting', \
                                                       'organization'],\
@@ -3396,7 +3396,7 @@ this exercise:
     packages:
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.datasets import fetch_20newsgroups
     import matplotlib as mpl
     import pandas as pd
@@ -3425,7 +3425,7 @@ this exercise:
     implement this:
 
 
-    ``` {.language-markup}
+    ```
     stop_words = stopwords.words('english')
     stop_words = stop_words + list(string.printable)
     lemmatizer = WordNetLemmatizer()
@@ -3436,7 +3436,7 @@ this exercise:
     the following code:
 
 
-    ``` {.language-markup}
+    ```
     categories= ['misc.forsale', 'sci.electronics', \
                  'talk.religion.misc']
     ```
@@ -3447,7 +3447,7 @@ this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     news_data = fetch_20newsgroups(subset='train', \
                                    categories=categories, \
                                    shuffle=True, random_state=42, \
@@ -3477,7 +3477,7 @@ this exercise:
     following code to implement this:
 
 
-    ``` {.language-markup}
+    ```
     news_data_df['cleaned_text'] = news_data_df['text']\
                                    .apply(lambda x : ' '.join\
                                    ([lemmatizer.lemmatize\
@@ -3494,7 +3494,7 @@ this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model = TfidfVectorizer(max_features=20)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
                (news_data_df['cleaned_text']).todense())
@@ -3518,7 +3518,7 @@ this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.decomposition import PCA
     pca = PCA(2)
     pca.fit(tfidf_df)
@@ -3544,7 +3544,7 @@ this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     scatter = plt.scatter(reduced_tfidf[:, 0], \
                           reduced_tfidf[:, 1], \
                           c=news_data_df['category'], cmap='gray')
@@ -3643,7 +3643,7 @@ use the following code:
 
 
 
-``` {.language-markup}
+```
 from sklearn.metrics import confusion_matrix
 confusion_matrix(actual_values,predicted_values)
 ```
@@ -3665,7 +3665,7 @@ confusion_matrix(actual_values,predicted_values)
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.metrics import accuracy_score
     accuracy_score(actual_values,predicted_values)
     ```
@@ -3699,7 +3699,7 @@ confusion_matrix(actual_values,predicted_values)
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.metrics import classification_report
     classification_report(actual_values,predicted_values)
     ```
@@ -3724,7 +3724,7 @@ confusion_matrix(actual_values,predicted_values)
 
 
 
-    ``` {.language-markup}
+    ```
     fpr,tpr,threshold=roc_curve(actual_values, \
                                 predicted_probabilities)
     print ('\nArea under ROC curve for validation set:', auc(fpr,tpr))
@@ -3760,7 +3760,7 @@ the following code:
 
 
 
-``` {.language-markup}
+```
 from sklearn.metrics import mean_squared_error
 rmse = sqrt(mean_squared_error(y_actual, y_predicted))
 ```
@@ -3785,7 +3785,7 @@ find MAPE in Python, use the following code:
 
 
 
-``` {.language-markup}
+```
 from sklearn.metrics import mean_absolute_error
 mape = mean_absolute_error(y_actual, y_predicted) * 100
 ```
@@ -3808,7 +3808,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.metrics import mean_squared_error
     from math import sqrt
     y_actual = [0,1,2,1,0]
@@ -3822,7 +3822,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     Root Mean Squared Error (RMSE) is: 0.21019038988498018
     ```
 
@@ -3836,7 +3836,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.metrics import mean_absolute_error
     y_actual = [0,1,2,1,0]
     y_predicted = [0.03,1.2,1.6,.9,0.1]
@@ -3850,7 +3850,7 @@ exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     Mean Absolute Percentage Error (MAPE) is 16.6 %
     ```
 
@@ -3902,7 +3902,7 @@ Follow these steps to implement this activity:
 
     Note
 
-    The solution to this activity can be found on page 380.
+    The solution to this activity can be found below.
 
 We have seen how to build end-to-end classifiers. Developing an
 end-to-end classifier was done in phases. Firstly, the text corpus was
@@ -3949,7 +3949,7 @@ implement this exercise:
     packages:
 
 
-    ``` {.language-markup}
+    ```
     from sklearn.pipeline import Pipeline
     from sklearn.feature_extraction.text import TfidfTransformer
     from sklearn import tree
@@ -3963,7 +3963,7 @@ implement this exercise:
     following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     categories = ['misc.forsale', 'sci.electronics', \
                   'talk.religion.misc']
     ```
@@ -3974,7 +3974,7 @@ implement this exercise:
     code:
 
 
-    ``` {.language-markup}
+    ```
     news_data = fetch_20newsgroups(subset='train', \
                                    categories=categories, \
                                    shuffle=True, random_state=42, \
@@ -3989,7 +3989,7 @@ implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     text_classifier_pipeline = Pipeline([('vect', \
                                           CountVectorizer()), \
                                          ('tfidf', \
@@ -4062,7 +4062,7 @@ Follow these steps to implement this exercise:
     packages:
 
 
-    ``` {.language-markup}
+    ```
     import pickle
     from joblib import dump, load
     from sklearn.feature_extraction.text import TfidfVectorizer
@@ -4073,7 +4073,7 @@ Follow these steps to implement this exercise:
     code:
 
 
-    ``` {.language-markup}
+    ```
     corpus = ['Data Science is an overlap between Arts and Science',\
               'Generally, Arts graduates are right-brained and '\
               'Science graduates are left-brained', \
@@ -4087,7 +4087,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model = TfidfVectorizer()
     tfidf_vectors = tfidf_model.fit_transform(corpus).todense()
     print(tfidf_vectors)
@@ -4107,7 +4107,7 @@ Follow these steps to implement this exercise:
     following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     dump(tfidf_model, 'tfidf_model.joblib')
     ```
 
@@ -4117,7 +4117,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     tfidf_model_loaded = load('tfidf_model.joblib')
     loaded_tfidf_vectors = tfidf_model_loaded.transform(corpus).todense()
     print(loaded_tfidf_vectors)
@@ -4137,7 +4137,7 @@ Follow these steps to implement this exercise:
     following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     pickle.dump(tfidf_model, open("tfidf_model.pickle.dat", "wb"))
     ```
 
@@ -4147,7 +4147,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     loaded_model = pickle.load(open("tfidf_model.pickle.dat", "rb"))
     loaded_tfidf_vectors = loaded_model.transform(corpus).todense()
     print(loaded_tfidf_vectors)

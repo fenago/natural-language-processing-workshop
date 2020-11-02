@@ -125,7 +125,7 @@ Follow these steps to complete this exercise:
     libraries and read the dataset:
 
 
-    ``` {.language-markup}
+    ```
     import re
     import random
     OPEN_DATA_URL = '../data/robertfrost/pg3026.txt'
@@ -139,7 +139,7 @@ Follow these steps to complete this exercise:
     using regular expressions:
 
 
-    ``` {.language-markup}
+    ```
     HANDLE = '@\w+\n'
     LINK = 'https?://t\.co/\w+'
     SPECIAL_CHARS = '&lt;|&lt;|&amp;|#'
@@ -159,7 +159,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     corpus=text.split()
     corpus_length=len(corpus)
     corpus_length
@@ -170,7 +170,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     19985
     ```
 
@@ -180,7 +180,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     succ_func={}
     corpus_counter=0
     for token in corpus:
@@ -218,7 +218,7 @@ Follow these steps to complete this exercise:
     following code to do this:
 
 
-    ``` {.language-markup}
+    ```
     initial_states=['The','A','I','He','She','If',\
                     'This','Why','Where']
     def generate_words(k=5):
@@ -239,7 +239,7 @@ Follow these steps to complete this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     for k in range(3,5):
         for j in range(10):
             generate_words(k)
@@ -439,7 +439,7 @@ In addition to these libraries, you will need to import the following:
 
 
 
-``` {.language-markup}
+```
 from gensim.summarization import summarize
 summarize(text,ratio=0.20)
 ```
@@ -465,7 +465,7 @@ Complete the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     from gensim.summarization import summarize
     import wikipedia
     import re
@@ -497,7 +497,7 @@ Complete the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     summary_text_after_twenty=summarize(text_after_twenty, \
                                         ratio=0.2)
     print(summary_text_after_twenty)
@@ -519,7 +519,7 @@ Complete the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     summary_text_after_twenty=summarize(text_after_twenty, \
                                         ratio=0.25)
     print(summary_text_after_twenty)
@@ -540,7 +540,7 @@ Complete the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     #text_wiki_oscarwilde=wikipedia.summary("Oscar Wilde")
     file_url_wiki_oscarwilde=r'../data/oscarwilde/'\
                               'ow_wikipedia_sum.txt'
@@ -567,7 +567,7 @@ Complete the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     summary_wiki_oscarwilde=summarize(text_wiki_oscarwilde, \
                                       ratio=0.2)
     print(summary_wiki_oscarwilde)
@@ -588,7 +588,7 @@ Complete the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     summary_wiki_oscarwilde=summarize(text_wiki_oscarwilde, \
                                       ratio=0.25)
     print(summary_wiki_oscarwilde)
@@ -645,7 +645,7 @@ Complete the following steps to implement this exercise:
     libraries:
 
 
-    ``` {.language-markup}
+    ```
     from gensim.summarization import summarize
     import re
     ```
@@ -656,7 +656,7 @@ Complete the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     file_url_grimms=r'../data/littleredrh/pg11592.txt'
     with open(file_url_grimms, 'r') as f:
             contents_grimms = f.read()
@@ -687,7 +687,7 @@ Complete the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     file_url_perrault=r'../data/littleredrh/pg29021.txt'
     with open(file_url_perrault, 'r') as f:
             contents_perrault = f.read()
@@ -717,7 +717,7 @@ Complete the following steps to implement this exercise:
     summaries with a `ratio` of `0.20`:
 
 
-    ``` {.language-markup}
+    ```
     llrh_grimms_textrank=summarize(text_grimms,ratio=0.20)
     llrh_perrault_textrank=summarize(text_perrault,ratio=0.20)
     ```
@@ -729,7 +729,7 @@ Complete the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     print(llrh_grimms_textrank)
     ```
 
@@ -750,7 +750,7 @@ Complete the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     print(llrh_perrault_textrank)
     ```
 
@@ -769,7 +769,7 @@ Complete the following steps to implement this exercise:
     `ratio` of `0.5`:
 
 
-    ``` {.language-markup}
+    ```
     llrh_grimms_textrank=summarize(text_grimms,ratio=0.5)
     llrh_perrault_textrank=summarize(text_perrault,ratio=0.5)
     ```
@@ -781,7 +781,7 @@ Complete the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     print(llrh_grimms_textrank)
     ```
 
@@ -802,7 +802,7 @@ Complete the following steps to implement this exercise:
 
 
 
-    ``` {.language-markup}
+    ```
     print(llrh_perrault_textrank)
     ```
 
@@ -894,7 +894,7 @@ Figure 7.18: DataFrame showing the summarized complaints
 
 Note
 
-The full solution to this activity can be found on page 409.
+The full solution to this activity can be found below.
 
 
 Recent Developments in Text Generation and Summarization
