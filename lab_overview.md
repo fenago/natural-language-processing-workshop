@@ -21,24 +21,24 @@
 
 ### Labs
 
-Labs for this course are available at path shared below. Elev8ed Notecourses (powered by Jupyter) will be accessible at the port given to you by your instructor.
+Labs for this course are available at endpoints shared below. Update `<host-ip>` with the lab environment DNS.
 
 1. ##### Introduction to Natural Language Processing
-		* <host-ip>:<port>/lab/workspaces/lab1_NLP
+		* http://<host-ip>/lab/workspaces/lab1_NLP
 2. ##### Feature Extraction Methods
-		* <host-ip>:<port>/lab/workspaces/lab2_Feature_Feature
+		* http://<host-ip>/lab/workspaces/lab2_Feature_Feature
 3. ##### Developing a Text Classifier
-		* <host-ip>:<port>/lab/workspaces/lab3_Classifier
+		* http://<host-ip>/lab/workspaces/lab3_Classifier
 4. ##### Collecting Text Data with Web Scraping and APIs
-		* <host-ip>:<port>/lab/workspaces/lab4_Text_Data
+		* http://<host-ip>/lab/workspaces/lab4_Text_Data
 5. ##### Topic Modeling
-		* <host-ip>:<port>/lab/workspaces/lab5_Modeling
+		* http://<host-ip>/lab/workspaces/lab5_Modeling
 6. ##### Vector Representation
-		* <host-ip>:<port>/lab/workspaces/lab6_Vector
+		* http://<host-ip>/lab/workspaces/lab6_Vector
 7. ##### Text Generation and Summarization
-		* <host-ip>:<port>/lab/workspaces/lab7_Text
+		* http://<host-ip>/lab/workspaces/lab7_Text
 8. ##### Sentiment Analysis
-		* <host-ip>:<port>/lab/workspaces/lab8_Sentiment
+		* http://<host-ip>/lab/workspaces/lab8_Sentiment
 
 
 ### About
