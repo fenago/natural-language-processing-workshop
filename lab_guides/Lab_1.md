@@ -1515,7 +1515,7 @@ Follow these steps to implement this activity:
 
     Note:
 
-    The solution to this activity can be found below.
+    The solution to this activity in the current directory.
 
 We have learned about and achieved the preprocessing of given data. By
 now, you should be familiar with what NLP is and what basic

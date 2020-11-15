@@ -2216,7 +2216,7 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-    
+
 ![](./images/B16062_03_42.jpg)
 
 
@@ -3298,7 +3298,7 @@ Follow these steps to implement this activity:
 
     Note:
 
-    The solution to this activity can be found below.
+    The solution to this activity in the current directory.
 
 We have seen how to build end-to-end classifiers. Developing an
 end-to-end classifier was done in phases. Firstly, the text corpus was

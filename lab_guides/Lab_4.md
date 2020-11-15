@@ -548,7 +548,7 @@ these steps to implement this activity:
 
     Note:
 
-    The solution to this activity can be found below.
+    The solution to this activity in the current directory.
 
 We are now well-versed in extracting generic data from HTML pages.
 Let\'s perform another activity now, where we\'ll be using regular
@@ -577,7 +577,7 @@ this activity:
 
     Note:
 
-    The solution to this activity can be found below.
+    The solution to this activity in the current directory.
 
 In this activity, we were able to fetch data from online sources and
 analyze it in various ways. Now that we are well-versed in scraping web

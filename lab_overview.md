@@ -1,6 +1,6 @@
 <img align="right" src="./logo.png">
 
-<h2><span style="color:red;">The Natural Language Processing </span></h2>
+<h2><span style="color:red;">Natural Language Processing </span></h2>
 
 ### Description
 
@@ -26,7 +26,7 @@ Labs for this course are available at endpoints shared below. Update `<host-ip>`
 1. ##### Introduction to Natural Language Processing
 		* http://<host-ip>/lab/workspaces/lab1_NLP
 2. ##### Feature Extraction Methods
-		* http://<host-ip>/lab/workspaces/lab2_Feature_Feature
+		* http://<host-ip>/lab/workspaces/lab2_Feature_Extraction
 3. ##### Developing a Text Classifier
 		* http://<host-ip>/lab/workspaces/lab3_Classifier
 4. ##### Collecting Text Data with Web Scraping and APIs

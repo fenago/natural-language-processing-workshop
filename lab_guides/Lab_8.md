@@ -563,7 +563,7 @@ neutral; moreover, no subjectivity is detected for these tweets.
 
 **Note**
 
-The solution to this activity can be found below.
+The solution to this activity in the current directory.
 
 In the next section, we will explore more about performing sentiment
 analysis using online web services.

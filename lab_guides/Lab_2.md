@@ -1100,7 +1100,7 @@ The following steps will help you implement this activity:
 
     Note:
 
-    The solution to this activity can be found below.
+    The solution to this activity in the current directory.
 
 With that, we have learned about the various ways we can clean
 unstructured data. Now, let\'s examine the concept of extracting
@@ -2639,7 +2639,7 @@ Follow these steps to implement this activity:
 
     Note:
 
-    The solution to this activity can be found below.
+    The solution to this activity in the current directory.
 
 
 Summary
