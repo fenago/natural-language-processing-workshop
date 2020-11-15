@@ -569,7 +569,7 @@ follows:
 <div>
 
 
-![Figure 8.1: Positive tweets ](./images/B16062_08_01.jpg)
+![](./images/B16062_08_01.jpg)
 
 
 </div>
@@ -586,7 +586,7 @@ The output for negative tweets is as follows:
 <div>
 
 
-![Figure 8.2: Negative tweets ](./images/B16062_08_02.jpg)
+![](./images/B16062_08_02.jpg)
 
 
 </div>
@@ -603,7 +603,7 @@ The output for neutral tweets should be as follows:
 <div>
 
 
-![Figure 8.3: Neutral tweets ](./images/B16062_08_03.jpg)
+![](./images/B16062_08_03.jpg)
 
 
 </div>
@@ -710,11 +710,10 @@ Follow these steps to implement this exercise:
     The code generates the following output:
 
 
-    ![Figure 8.4: The first few records in the IMDb movie review file
-    ](./images/B16062_08_04.jpg)
+![](./images/B16062_08_04.jpg)
 
 
-    Figure 8.4: The first few records in the IMDb movie review file
+
 
     In the preceding figure, you can see that the negative reviews have
     sentiment scores of `0` and positive reviews have
@@ -760,12 +759,10 @@ Follow these steps to implement this exercise:
     The code generates the following output:
 
 
-    ![Figure 8.5: Counts of positive and negative sentiments in the IMDb
-    review file ](./images/B16062_08_05.jpg)
+![](./images/B16062_08_05.jpg)
 
 
-    Figure 8.5: Counts of positive and negative sentiments in the IMDb
-    review file
+
 
     We called `value_counts()`, created a DataFrame, and
     assigned `Positive` and `Negative` as index
@@ -786,11 +783,10 @@ Follow these steps to implement this exercise:
     The code generates the following output:
 
 
-    ![Figure 8.6: Reviews from the Amazon dataset
-    ](./images/B16062_08_06.jpg)
+![](./images/B16062_08_06.jpg)
 
 
-    Figure 8.6: Reviews from the Amazon dataset
+
 
 9.  To load the Yelp reviews, insert a new cell and add the following
     code:
@@ -807,8 +803,7 @@ Follow these steps to implement this exercise:
     The code generates the following output:
 
 
-    ![Figure 8.7: Reviews from the Yelp dataset
-    ](./images/B16062_08_07.jpg)
+![](./images/B16062_08_07.jpg)
 
 
 Figure 8.7: Reviews from the Yelp dataset

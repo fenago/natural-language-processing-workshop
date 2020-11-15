@@ -108,7 +108,7 @@ calculated as follows:
 <div>
 
 
-![Figure 3.1: Formula for Euclidean distance ](./images/B16062_03_01.jpg)
+![](./images/B16062_03_01.jpg)
 
 
 </div>
@@ -147,8 +147,7 @@ a suitable position to get a suitable number of clusters:
 <div>
 
 
-![Figure 3.2: Output dendrogram after performing hierarchical clustering
-](./images/B16062_03_02.jpg)
+![](./images/B16062_03_02.jpg)
 
 
 </div>
@@ -265,11 +264,10 @@ actual categories. Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.3: The first five news articles
-    ](./images/B16062_03_03.jpg)
+![](./images/B16062_03_03.jpg)
 
 
-    Figure 3.3: The first five news articles
+
 
 7.  To check the categories of news articles, insert a new cell and add
     the following code:
@@ -311,11 +309,10 @@ actual categories. Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.4: Text corpus of news data corresponding to the
-    categories in a DataFrame ](./images/B16062_03_04.jpg)
+![](./images/B16062_03_04.jpg)
 
 
-    Figure 3.4: Text corpus of news data corresponding to the categories
+
     in a DataFrame
 
 9.  To count the number of occurrences of each category appearing in
@@ -379,11 +376,10 @@ actual categories. Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.5: TFIDF representation as a DataFrame
-    ](./images/B16062_03_05.jpg)
+![](./images/B16062_03_05.jpg)
 
 
-    Figure 3.5: TFIDF representation as a DataFrame
+
 
 12. Calculate the distance using the sklearn library:
 
@@ -412,10 +408,10 @@ actual categories. Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.6: Truncated dendrogram ](./images/B16062_03_06.jpg)
+![](./images/B16062_03_06.jpg)
 
 
-    Figure 3.6: Truncated dendrogram
+
 
     Here, you can see that a cluster count of four seems optimal.
 
@@ -462,8 +458,7 @@ actual categories. Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.7: Crosstab between actual categories and obtained
-    clusters ](./images/B16062_03_07.jpg)
+![](./images/B16062_03_07.jpg)
 
 
 Figure 3.7: Crosstab between actual categories and obtained clusters
@@ -659,11 +654,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.8: TFIDF representation as a DataFrame
-    ](./images/B16062_03_08.jpg)
+![](./images/B16062_03_08.jpg)
 
 
-    Figure 3.8: TFIDF representation as a DataFrame
+
 
 8.  Use the `KMeans` function of sklearn to create four
     clusters from a TFIDF representation of news articles. Add the
@@ -699,12 +693,8 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.9: Crosstab between the actual categories and obtained
-    clusters xxx ](./images/B16062_03_09.jpg)
+![](./images/B16062_03_09.jpg)
 
-
-    Figure 3.9: Crosstab between the actual categories and obtained
-    clusters xxx
 
     From the figure above, you can see, cluster 2 has majorly religion
     related articles and cluster 4 has mostly for sale related articles.
@@ -742,8 +732,7 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.10: Optimal clusters represented in a graph using the
-    elbow method ](./images/B16062_03_10.jpg)
+![](./images/B16062_03_10.jpg)
 
 
 Figure 3.10: Optimal clusters represented in a graph using the elbow
@@ -826,8 +815,7 @@ spam (1) or not (0), as shown in the following graph:
 <div>
 
 
-![Figure 3.11: Example of logistic regression
-](./images/B16062_03_11.jpg)
+![](./images/B16062_03_11.jpg)
 
 
 </div>
@@ -912,11 +900,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.12: Data stored in a DataFrame
-    ](./images/B16062_03_12.jpg)
+![](./images/B16062_03_12.jpg)
 
 
-    Figure 3.12: Data stored in a DataFrame
+
 
 4.  Use a `lambda` function to extract tokens from each
     `'reviewText'` of this DataFrame, lemmatize them, and
@@ -954,11 +941,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.13: Review texts before and after cleaning, along with
-    their overall scores ](./images/B16062_03_13.jpg)
+![](./images/B16062_03_13.jpg)
 
 
-    Figure 3.13: Review texts before and after cleaning, along with
+
     their overall scores
 
 6.  Create a TFIDF matrix and transform it into a `DataFrame`.
@@ -978,11 +964,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.14: A TFIDF representation as a DataFrame
-    ](./images/B16062_03_14.jpg)
+![](./images/B16062_03_14.jpg)
 
 
-    Figure 3.14: A TFIDF representation as a DataFrame
+
 
 7.  The following lines of code are used to create a new column target,
     which will have `0` if the `overall` parameter
@@ -1052,8 +1037,7 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.15: Crosstab between actual target values and predicted
-    labels ](./images/B16062_03_15.jpg)
+![](./images/B16062_03_15.jpg)
 
 
 Figure 3.15: Crosstab between actual target values and predicted labels
@@ -1086,7 +1070,7 @@ shown here:
 <div>
 
 
-![Figure 3.16: Bayes\' theorem ](./images/B16062_03_16.jpg)
+![](./images/B16062_03_16.jpg)
 
 
 </div>
@@ -1188,11 +1172,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.17: Data stored in a DataFrame
-    ](./images/B16062_03_17.jpg)
+![](./images/B16062_03_17.jpg)
 
 
-    Figure 3.17: Data stored in a DataFrame
+
 
 4.  Use a `lambda` function to extract tokens from each
     `'reviewText'` of this DataFrame, lemmatize them, and
@@ -1230,12 +1213,9 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.18: Review texts before and after cleaning, along with
-    their overall scores ](./images/B16062_03_18.jpg)
+![](./images/B16062_03_18.jpg)
 
 
-    Figure 3.18: Review texts before and after cleaning, along with
-    their overall scores
 
 6.  Create a TFIDF matrix and transform it into a DataFrame. Add the
     following code to do this:
@@ -1254,11 +1234,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.19: A TFIDF representation as a DataFrame
-    ](./images/B16062_03_19.jpg)
+![](./images/B16062_03_19.jpg)
 
 
-    Figure 3.19: A TFIDF representation as a DataFrame
+
 
 7.  The following lines of code are used to create a new column target,
     which will have the value `0` if the `'overall'`
@@ -1330,8 +1309,7 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.20: Crosstab between actual target values and predicted
-    labels ](./images/B16062_03_20.jpg)
+![](./images/B16062_03_20.jpg)
 
 
 Figure 3.20: Crosstab between actual target values and predicted labels
@@ -1452,11 +1430,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.21: Data stored in a DataFrame
-    ](./images/B16062_03_21.jpg)
+![](./images/B16062_03_21.jpg)
 
 
-    Figure 3.21: Data stored in a DataFrame
+
 
 4.  Use a `lambda` function to extract tokens from each
     `reviewText` of this DataFrame, lemmatize them, and
@@ -1494,11 +1471,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.22: Review texts before and after cleaning, along with
-    their overall scores ](./images/B16062_03_22.jpg)
+![](./images/B16062_03_22.jpg)
 
 
-    Figure 3.22: Review texts before and after cleaning, along with
+
     their overall scores
 
 6.  Create a TFIDF matrix and transform it into a DataFrame. Add the
@@ -1518,11 +1494,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.23: A TFIDF representation as a DataFrame
-    ](./images/B16062_03_23.jpg)
+![](./images/B16062_03_23.jpg)
 
 
-    Figure 3.23: A TFIDF representation as a DataFrame
+
 
 7.  The following lines of code are used to create a new column target,
     which will have `0` if the `overall` parameter
@@ -1571,11 +1546,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.24: Crosstab between actual target values and predicted
-    labels by k-nearest neighbors ](./images/B16062_03_24.jpg)
+![](./images/B16062_03_24.jpg)
 
 
-    Figure 3.24: Crosstab between actual target values and predicted
+
     labels by k-nearest neighbors
 
     Here, we can see `2594` instances with the target label as
@@ -1636,11 +1610,10 @@ To download the dataset for this exercise, visit
     regression equation:
 
 
-    ![Figure 3.25: Formula for linear regression
-    ](./images/B16062_03_25.jpg)
+![](./images/B16062_03_25.jpg)
 
 
-    Figure 3.25: Formula for linear regression
+
 
     Here, y is termed a dependent variable (output); it is continuous. X
     is an independent variable or feature (input). β0 and β1 are
@@ -1735,11 +1708,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.26: Reviews of musical instruments stored as a DataFrame
-    ](./images/B16062_03_26.jpg)
+![](./images/B16062_03_26.jpg)
 
 
-    Figure 3.26: Reviews of musical instruments stored as a DataFrame
+
 
 12. Use a `lambda` function to extract tokens from each
     `'reviewText'` of this DataFrame, lemmatize them, and
@@ -1767,11 +1739,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.27: Review texts before and after cleaning, along with
-    their overall scores ](./images/B16062_03_27.jpg)
+![](./images/B16062_03_27.jpg)
 
 
-    Figure 3.27: Review texts before and after cleaning, along with
+
     their overall scores
 
 13. Create a `DataFrame` from the TFIDF matrix representation
@@ -1792,11 +1763,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.28: TFIDF representation as a DataFrame
-    ](./images/B16062_03_28.jpg)
+![](./images/B16062_03_28.jpg)
 
 
-    Figure 3.28: TFIDF representation as a DataFrame
+
 
 14. Use sklearn\'s `LinearRegression()` function to fit a
     linear regression model on this TFIDF DataFrame. Add the following
@@ -1815,11 +1785,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.29: Coefficients of the linear regression model
-    ](./images/B16062_03_29.jpg)
+![](./images/B16062_03_29.jpg)
 
 
-    Figure 3.29: Coefficients of the linear regression model
+
 
     The preceding output shows the coefficients of the different
     features of the trained model.
@@ -1883,8 +1852,7 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.30: Actual scores and predictions of the linear
-    regression model ](./images/B16062_03_30.jpg)
+![](./images/B16062_03_30.jpg)
 
 
 Figure 3.30: Actual scores and predictions of the linear regression
@@ -1927,7 +1895,7 @@ and create a decision tree, as shown in the following diagram:
 <div>
 
 
-![Figure 3.31: Decision tree ](./images/B16062_03_31.jpg)
+![](./images/B16062_03_31.jpg)
 
 
 </div>
@@ -2021,11 +1989,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.32: Storing reviews as a DataFrame
-    ](./images/B16062_03_32.jpg)
+![](./images/B16062_03_32.jpg)
 
 
-    Figure 3.32: Storing reviews as a DataFrame
+
 
 4.  Use the `lambda` function to extract tokens from each
     `'reviewText'` of this DataFrame, lemmatize them using
@@ -2052,11 +2019,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.33: Review text before and after cleaning, along with
-    overall scores ](./images/B16062_03_33.jpg)
+![](./images/B16062_03_33.jpg)
 
 
-    Figure 3.33: Review text before and after cleaning, along with
+
     overall scores
 
 5.  Create a DataFrame from the TFIDF matrix representation of the
@@ -2077,11 +2043,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.34: TFIDF representation as a DataFrame
-    ](./images/B16062_03_34.jpg)
+![](./images/B16062_03_34.jpg)
 
 
-    Figure 3.34: TFIDF representation as a DataFrame
+
 
 6.  The following lines of code are used to create a new column called
     target, which will have 0 if the `'overall'` parameter is
@@ -2138,11 +2103,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.35: Crosstab between actual target values and predicted
-    labels ](./images/B16062_03_35.jpg)
+![](./images/B16062_03_35.jpg)
 
 
-    Figure 3.35: Crosstab between actual target values and predicted
+
     labels
 
     Here, we can see `6627` instances with a target label of
@@ -2172,8 +2136,7 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.36: Overall scores with predicted values
-    ](./images/B16062_03_36.jpg)
+![](./images/B16062_03_36.jpg)
 
 
 Figure 3.36: Overall scores with predicted values
@@ -2372,11 +2335,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.37: Storing reviews as a DataFrame
-    ](./images/B16062_03_37.jpg)
+![](./images/B16062_03_37.jpg)
 
 
-    Figure 3.37: Storing reviews as a DataFrame
+
 
 3.  Use a `lambda` function to extract tokens from each
     `reviewText` of this DataFrame, lemmatize them using
@@ -2403,11 +2365,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.38: Review text before and after cleaning, along with
-    overall scores ](./images/B16062_03_38.jpg)
+![](./images/B16062_03_38.jpg)
 
 
-    Figure 3.38: Review text before and after cleaning, along with
+
     overall scores
 
 4.  Create a `DataFrame` from the TFIDF matrix representation
@@ -2429,11 +2390,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.39: TFIDF representation as a DataFrame
-    ](./images/B16062_03_39.jpg)
+![](./images/B16062_03_39.jpg)
 
 
-    Figure 3.39: TFIDF representation as a DataFrame
+
 
 5.  Add the following lines of code to create a new column called
     target, which will have 0 if the `overall` parameter is
@@ -2494,11 +2454,10 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.40: Crosstab between actual target values and predicted
-    labels ](./images/B16062_03_40.jpg)
+![](./images/B16062_03_40.jpg)
 
 
-    Figure 3.40: Crosstab between actual target values and predicted
+
     labels
 
     Here, we can see **3302** instances with a target label of 0
@@ -2540,8 +2499,7 @@ To download the dataset for this exercise, visit
     The preceding code generates the following output:
 
 
-    ![Figure 3.41: Actual overall score and predicted values using a
-    random forest regressor ](./images/B16062_03_41.jpg)
+![](./images/B16062_03_41.jpg)
 
 
 Figure 3.41: Actual overall score and predicted values using a random
@@ -2618,11 +2576,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.42: Storing reviews as a DataFrame
-    ](./images/B16062_03_42.jpg)
+![](./images/B16062_03_42.jpg)
 
 
-    Figure 3.42: Storing reviews as a DataFrame
+
 
 4.  Use a `lambda` function to extract tokens from each
     `'reviewText'` of this DataFrame, lemmatize them using
@@ -2652,11 +2609,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.43: Review text before and after cleaning, along with
-    overall scores ](./images/B16062_03_43.jpg)
+![](./images/B16062_03_43.jpg)
 
 
-    Figure 3.43: Review text before and after cleaning, along with
+
     overall scores
 
 5.  Create a DataFrame from the TFIDF matrix representation of the
@@ -2677,11 +2633,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.44: TFIDF representation as a DataFrame
-    ](./images/B16062_03_44.jpg)
+![](./images/B16062_03_44.jpg)
 
 
-    Figure 3.44: TFIDF representation as a DataFrame
+
 
 6.  The following lines of code are used to create a new column called
     target, which will have 0 if the `'overall'` parameter is
@@ -2744,11 +2699,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.45: Crosstab between actual target values and predicted
-    labels using XGBoost ](./images/B16062_03_45.jpg)
+![](./images/B16062_03_45.jpg)
 
 
-    Figure 3.45: Crosstab between actual target values and predicted
+
     labels using XGBoost
 
     Here, we can see **4300** instances with a target label of 0
@@ -2789,8 +2743,7 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.46: Actual overall score and predicted values using an
-    XGBoost regressor ](./images/B16062_03_46.jpg)
+![](./images/B16062_03_46.jpg)
 
 
 Figure 3.46: Actual overall score and predicted values using an XGBoost
@@ -2954,11 +2907,10 @@ Follow these steps to implement this exercise:
     The following is part of the output of the preceding code:
 
 
-    ![Figure 3.47: The percentage of countries for the training set
-    ](./images/B16062_03_47.jpg)
+![](./images/B16062_03_47.jpg)
 
 
-    Figure 3.47: The percentage of countries for the training set
+
 
 5.  Similarly, for the validation set, add the following code:
 
@@ -2972,11 +2924,10 @@ Follow these steps to implement this exercise:
     The following is part of the output of the preceding code:
 
 
-    ![Figure 3.48: The percentage of countries for the validation set
-    ](./images/B16062_03_48.jpg)
+![](./images/B16062_03_48.jpg)
 
 
-    Figure 3.48: The percentage of countries for the validation set
+
 
     As we can see, the percentages of all countries are similar in both
     the train and validation sets.
@@ -3090,7 +3041,7 @@ correlation, which can be calculated as follows:
 <div>
 
 
-![Figure 3.49: Pearson correlation ](./images/B16062_03_49.jpg)
+![](./images/B16062_03_49.jpg)
 
 
 </div>
@@ -3182,11 +3133,10 @@ dataset. Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.50: Texts of news data as a DataFrame
-    ](./images/B16062_03_50.jpg)
+![](./images/B16062_03_50.jpg)
 
 
-    Figure 3.50: Texts of news data as a DataFrame
+
 
 6.  Now, use the `lambda` function to extract tokens from each
     \"text\" of the `news_data_df` DataFrame. Check whether
@@ -3227,11 +3177,10 @@ dataset. Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.51: TFIDF representation as a DataFrame
-    ](./images/B16062_03_51.jpg)
+![](./images/B16062_03_51.jpg)
 
 
-    Figure 3.51: TFIDF representation as a DataFrame
+
 
 8.  Calculate the correlation matrix for this TFIDF representation. Add
     the following code to implement this:
@@ -3247,10 +3196,10 @@ dataset. Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.52: Correlation matrix ](./images/B16062_03_52.jpg)
+![](./images/B16062_03_52.jpg)
 
 
-    Figure 3.52: Correlation matrix
+
 
 9.  Now, plot the correlation matrix using seaborn\'s heatmap function.
     Add the following code to implement this:
@@ -3268,11 +3217,10 @@ dataset. Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.53: Heatmap representation of a correlation matrix
-    ](./images/B16062_03_53.jpg)
+![](./images/B16062_03_53.jpg)
 
 
-    Figure 3.53: Heatmap representation of a correlation matrix
+
 
 10. To identify a pair of terms with high correlation, create an upper
     triangular matrix from the correlation matrix. Create a stacked
@@ -3299,10 +3247,10 @@ dataset. Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.54: Highly correlated tokens ](./images/B16062_03_54.jpg)
+![](./images/B16062_03_54.jpg)
 
 
-    Figure 3.54: Highly correlated tokens
+
 
     You can see that the most highly correlated features are
     `host`, `nntp`, `posting`,
@@ -3329,8 +3277,7 @@ dataset. Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.55: The DataFrame after removing correlated tokens
-    ](./images/B16062_03_55.jpg)
+![](./images/B16062_03_55.jpg)
 
 
 Figure 3.55: The DataFrame after removing correlated tokens
@@ -3456,11 +3403,10 @@ this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.56: News texts and their categories
-    ](./images/B16062_03_56.jpg)
+![](./images/B16062_03_56.jpg)
 
 
-    Figure 3.56: News texts and their categories
+
 
 6.  Use the `lambda` function to extract tokens from each
     `text` item of the `news_data_df` DataFrame,
@@ -3501,11 +3447,10 @@ this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.57: TFIDF representation as a DataFrame
-    ](./images/B16062_03_57.jpg)
+![](./images/B16062_03_57.jpg)
 
 
-    Figure 3.57: TFIDF representation as a DataFrame
+
 
 8.  In this step, we are using sklearn\'s `PCA` function to
     extract two principal components from the initial data. Add the
@@ -3525,10 +3470,10 @@ this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.58: Principal components ](./images/B16062_03_58.jpg)
+![](./images/B16062_03_58.jpg)
 
 
-    Figure 3.58: Principal components
+
 
     In the preceding screenshot, you can see the two principal
     components that the PCA algorithm calculated.
@@ -3555,8 +3500,7 @@ this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.59: Two-dimensional representation of news documents
-    ](./images/B16062_03_59.jpg)
+![](./images/B16062_03_59.jpg)
 
 
 Figure 3.59: Two-dimensional representation of news documents
@@ -3625,7 +3569,7 @@ evaluate a model\'s performance. Let\'s work through them one by one:
     Consider the following image:
 
 
-    ![Figure 3.60: Confusion matrix ](./images/B16062_03_60.jpg)
+![](./images/B16062_03_60.jpg)
 
 
 Figure 3.60: Confusion matrix
@@ -3742,8 +3686,7 @@ confusion_matrix(actual_values,predicted_values)
     models. We define it as follows:
 
 
-    ![Figure 3.61: Formula for root mean square error
-    ](./images/B16062_03_61.jpg)
+![](./images/B16062_03_61.jpg)
 
 
 Figure 3.61: Formula for root mean square error
@@ -3767,8 +3710,7 @@ rmse = sqrt(mean_squared_error(y_actual, y_predicted))
     model\'s performance. It is described as follows:
 
 
-    ![Figure 3.62: Formula for maximum absolute percentage error
-    ](./images/B16062_03_62.jpg)
+![](./images/B16062_03_62.jpg)
 
 
 Figure 3.62: Formula for maximum absolute percentage error
@@ -3998,8 +3940,7 @@ implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.63: TFIDF representation of the DataFrame created using a
-    pipeline ](./images/B16062_03_63.jpg)
+![](./images/B16062_03_63.jpg)
 
 
 Figure 3.63: TFIDF representation of the DataFrame created using a
@@ -4092,11 +4033,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.64: TFIDF representation as a matrix
-    ](./images/B16062_03_64.jpg)
+![](./images/B16062_03_64.jpg)
 
 
-    Figure 3.64: TFIDF representation as a matrix
+
 
 5.  Save this TFIDF model on disk using `joblib`. Add the
     following code to do this:
@@ -4122,11 +4062,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 3.65: TFIDF representation as a matrix
-    ](./images/B16062_03_65.jpg)
+![](./images/B16062_03_65.jpg)
 
 
-    Figure 3.65: TFIDF representation as a matrix
+
 
 7.  Save this TFIDF model on disk using `pickle`. Add the
     following code to do this:
@@ -4155,8 +4094,7 @@ Follow these steps to implement this exercise:
 
 
 
-    ![Figure 3.66: TFIDF representation as a matrix
-    ](./images/B16062_03_66.jpg)
+![](./images/B16062_03_66.jpg)
 
 
 Figure 3.66: TFIDF representation as a matrix

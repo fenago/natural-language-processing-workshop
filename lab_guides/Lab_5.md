@@ -207,8 +207,7 @@ gives a simplified illustration of a term-to-document matrix:
 <div>
 
 
-![Figure 5.1: A simplified view of a term-to-document matrix
-](./images/B16062_05_01.jpg)
+![](./images/B16062_05_01.jpg)
 
 
 </div>
@@ -224,8 +223,7 @@ side:
 <div>
 
 
-![Figure 5.2: Document matrix and its broken matrices
-](./images/B16062_05_02.jpg)
+![](./images/B16062_05_02.jpg)
 
 
 </div>
@@ -239,7 +237,7 @@ splits it, as shown in the following formula:
 <div>
 
 
-![Figure 5.3: Splitting the matrix M ](./images/B16062_05_03.jpg)
+![](./images/B16062_05_03.jpg)
 
 
 </div>
@@ -379,11 +377,10 @@ Follow these steps to complete this exercise:
     The code generates the following output:
 
 
-    ![Figure 5.4: Wikipedia articles related to the World Cup
-    ](./images/B16062_05_04.jpg)
+![](./images/B16062_05_04.jpg)
 
 
-    Figure 5.4: Wikipedia articles related to the World Cup
+
 
 5.  Insert a new cell and add the following code fetch the Wikipedia
     articles about the 2018 FIFA World Cup and the 2019 Cricket World
@@ -404,11 +401,10 @@ Follow these steps to complete this exercise:
     The code generates the following output:
 
 
-    ![Figure 5.5: Result after concatenating articles from 2018 and 2019
-    ](./images/B16062_05_05.jpg)
+![](./images/B16062_05_05.jpg)
 
 
-    Figure 5.5: Result after concatenating articles from 2018 and 2019
+
 
 6.  Insert a new cell and add the following code to clean the text,
     using the spaCy English language model to tokenize the corpus and
@@ -441,11 +437,10 @@ Follow these steps to complete this exercise:
     The code generates the following output:
 
 
-    ![Figure 5.6: Output after tokenizing the corpus
-    ](./images/B16062_05_06.jpg)
+![](./images/B16062_05_06.jpg)
 
 
-    Figure 5.6: Output after tokenizing the corpus
+
 
 7.  Insert a new cell and add the following code to convert the corpus
     into a list in which each token corresponds to a number for more
@@ -467,10 +462,10 @@ Follow these steps to complete this exercise:
     The code generates the following output:
 
 
-    ![Figure 5.7: Topics in the corpus ](./images/B16062_05_07.jpg)
+![](./images/B16062_05_07.jpg)
 
 
-    Figure 5.7: Topics in the corpus
+
 
     To create our `LsiModel`, we had to decide up front how
     many topics we wanted. This would not necessarily match the number
@@ -506,8 +501,7 @@ Follow these steps to complete this exercise:
     The code generates the following output:
 
 
-    ![Figure 5.8: Graph representing weight of topics for the documents
-    ](./images/B16062_05_08.jpg)
+![](./images/B16062_05_08.jpg)
 
 
 Figure 5.8: Graph representing weight of topics for the documents
@@ -581,8 +575,7 @@ of times each word is found in each document:
 <div>
 
 
-![Figure 5.9: Occurrence of words in different documents
-](./images/B16062_05_09.jpg)
+![](./images/B16062_05_09.jpg)
 
 
 </div>
@@ -600,7 +593,7 @@ selecting a specific topic when sampling a particular document:
 <div>
 
 
-![Figure 5.10: Probability tables ](./images/B16062_05_10.jpg)
+![](./images/B16062_05_10.jpg)
 
 
 </div>
@@ -646,7 +639,7 @@ this closeness. The formula for log perplexity is as follows:
 <div>
 
 
-![Figure 5.11: Formula for log perplexity ](./images/B16062_05_11.jpg)
+![](./images/B16062_05_11.jpg)
 
 
 </div>
@@ -760,11 +753,10 @@ The following steps will help you complete this exercise:
     The code generates the following output:
 
 
-    ![Figure 5.12: Tokenized corpus after text preprocessing
-    ](./images/B16062_05_12.jpg)
+![](./images/B16062_05_12.jpg)
 
 
-    Figure 5.12: Tokenized corpus after text preprocessing
+
 
     The pandas DataFrame was sampled. 25% of the dataset has been
     considered so that the memory restrictions related to spaCy can be
@@ -791,11 +783,10 @@ The following steps will help you complete this exercise:
     The code generates the following output:
 
 
-    ![Figure 5.13: Variation of negative log likelihood with different
-    iterations ](./images/B16062_05_13.jpg)
+![](./images/B16062_05_13.jpg)
 
 
-    Figure 5.13: Variation of negative log likelihood with different
+
     iterations
 
 6.  Insert a new cell and add the following code to train a topic model
@@ -1068,11 +1059,10 @@ The dataset used for this exercise can be found at
     The code generates the following output:
 
 
-    ![Figure 5.14: Text from \"Around the World in Eighty Days\"
-    ](./images/B16062_05_14.jpg)
+![](./images/B16062_05_14.jpg)
 
 
-    Figure 5.14: Text from \"Around the World in Eighty Days\"
+
 
 4.  Insert a new cell and add the following code to import the necessary
     libraries, clean the text (using the spaCy English language model to
@@ -1104,11 +1094,10 @@ The dataset used for this exercise can be found at
     The code generates the following output:
 
 
-    ![Figure 5.15: Tokenized corpus after the text is cleaned
-    ](./images/B16062_05_15.jpg)
+![](./images/B16062_05_15.jpg)
 
 
-    Figure 5.15: Tokenized corpus after the text is cleaned
+
 
 5.  Insert a new cell and add the following code to create HDP models in
     which tokens that occur fewer than five times are ignored, and then
@@ -1135,11 +1124,10 @@ The dataset used for this exercise can be found at
     The code generates the following output:
 
 
-    ![Figure 5.16: Variation of negative log likelihood with number of
-    iterations ](./images/B16062_05_16.jpg)
+![](./images/B16062_05_16.jpg)
 
 
-    Figure 5.16: Variation of negative log likelihood with number of
+
     iterations
 
 6.  Insert a new cell and add the following code to see the probability
@@ -1158,11 +1146,10 @@ The dataset used for this exercise can be found at
     The code generates the following output:
 
 
-    ![Figure 5.17: Probability distribution of topics if the entire
-    dataset is considered ](./images/B16062_05_17.jpg)
+![](./images/B16062_05_17.jpg)
 
 
-    Figure 5.17: Probability distribution of topics if the entire
+
     dataset is considered
 
 7.  Insert a new cell and add the following code to see the probability
@@ -1324,11 +1311,10 @@ The dataset used for this exercise can be found at
     The code generates the following output:
 
 
-    ![Figure 5.18: Text from The Life and Adventures of Robinson Crusoe
-    ](./images/B16062_05_18.jpg)
+![](./images/B16062_05_18.jpg)
 
 
-    Figure 5.18: Text from The Life and Adventures of Robinson Crusoe
+
 
 4.  Insert a new cell and add the following code to import the necessary
     libraries. Clean the text using the spaCy English language model to
@@ -1363,11 +1349,10 @@ The dataset used for this exercise can be found at
     The code generates the following output:
 
 
-    ![Figure 5.19: Tokenized corpus after preprocessing is done
-    ](./images/B16062_05_19.jpg)
+![](./images/B16062_05_19.jpg)
 
 
-    Figure 5.19: Tokenized corpus after preprocessing is done
+
 
 5.  Insert a new cell and add the following code to import the necessary
     libraries. Create an HDP model with the `α` concentration
@@ -1394,12 +1379,9 @@ The dataset used for this exercise can be found at
     The code generates the following output:
 
 
-    ![Figure 5.20: Variation of negative log likelihood with the number
-    of iterations ](./images/B16062_05_20.jpg)
+![](./images/B16062_05_20.jpg)
 
 
-    Figure 5.20: Variation of negative log likelihood with the number of
-    iterations
 
 6.  Insert a new cell and add the following code to save the topic
     model:
@@ -1437,11 +1419,10 @@ The dataset used for this exercise can be found at
     The code generates the following output:
 
 
-    ![Figure 5.21: Probability distribution if the entire corpus is
-    considered ](./images/B16062_05_21.jpg)
+![](./images/B16062_05_21.jpg)
 
 
-    Figure 5.21: Probability distribution if the entire corpus is
+
     considered
 
 9.  Insert a new cell and add the following code to see the probability

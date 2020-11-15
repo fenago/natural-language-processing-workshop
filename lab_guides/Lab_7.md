@@ -61,7 +61,7 @@ this, consider the following diagram:
 <div>
 
 
-![Figure 7.1: Markov chain for weather ](./images/B16062_07_01.jpg)
+![](./images/B16062_07_01.jpg)
 
 
 </div>
@@ -200,11 +200,10 @@ Follow these steps to complete this exercise:
     only displaying a part of the output here.
 
 
-    ![Figure 7.2: Dictionary of successor states
-    ](./images/B16062_07_02.jpg)
+![](./images/B16062_07_02.jpg)
 
 
-    Figure 7.2: Dictionary of successor states
+
 
     We find that \"he\" is shown as a successor of \"who\" more than
     once. This is because this occurs more than once in the dataset. In
@@ -251,8 +250,7 @@ Follow these steps to complete this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.3: Phrases generated, consisting of four and five words
-    ](./images/B16062_07_03.jpg)
+![](./images/B16062_07_03.jpg)
 
 
 Figure 7.3: Phrases generated, consisting of four and five words
@@ -360,11 +358,10 @@ The TextRank algorithm works as follows:
     follows:
 
 
-    ![Figure 7.4: Formula for similarity between two sentences
-    ](./images/B16062_07_04.jpg)
+![](./images/B16062_07_04.jpg)
 
 
-    Figure 7.4: Formula for similarity between two sentences
+
 
 4.  For each node, we compute a new importance score, which is a
     function of the importance score of the neighboring nodes and the
@@ -375,11 +372,10 @@ The TextRank algorithm works as follows:
     the damping factor (*d*). This can be represented as follows:
 
 
-    ![Figure 7.5: Formula for importance score
-    ](./images/B16062_07_05.jpg)
+![](./images/B16062_07_05.jpg)
 
 
-    Figure 7.5: Formula for importance score
+
 
     *d*=0.85 is typically used as the damping factor. While we have used
     a directed graph here, an undirected graph could also be used with a
@@ -479,11 +475,10 @@ Complete the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.6: Text from After Twenty Years
-    ](./images/B16062_07_06.jpg)
+![](./images/B16062_07_06.jpg)
 
 
-    Figure 7.6: Text from After Twenty Years
+
 
 3.  Add the following code to extract the required text and print the
     summarized text, with the `ratio` parameter set to
@@ -501,11 +496,10 @@ Complete the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.7: Summarized text when the ratio parameter is 0.2
-    ](./images/B16062_07_07.jpg)
+![](./images/B16062_07_07.jpg)
 
 
-    Figure 7.7: Summarized text when the ratio parameter is 0.2
+
 
 4.  Insert a new cell and add the following code to summarize the text
     and print the summarized text, with the `ratio` parameter
@@ -523,11 +517,10 @@ Complete the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.8: Summarized text when the ratio parameter is 0.25
-    ](./images/B16062_07_08.jpg)
+![](./images/B16062_07_08.jpg)
 
 
-    Figure 7.8: Summarized text when the ratio parameter is 0.25
+
 
 5.  Insert a new cell and add the following code to extract the required
     text from the Wikipedia page for Oscar Wilde:
@@ -550,11 +543,10 @@ Complete the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.9: Text from the Wikipedia page for Oscar Wilde
-    ](./images/B16062_07_09.jpg)
+![](./images/B16062_07_09.jpg)
 
 
-    Figure 7.9: Text from the Wikipedia page for Oscar Wilde
+
 
 6.  Insert a new cell and add the following code to summarize the text
     and print the summarized text using `ratio=0.2`:
@@ -571,11 +563,10 @@ Complete the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.10: Summarized text when the ratio parameter is 0.2
-    ](./images/B16062_07_10.jpg)
+![](./images/B16062_07_10.jpg)
 
 
-    Figure 7.10: Summarized text when the ratio parameter is 0.2
+
 
 7.  Add the following code to summarize the text and print the
     summarized text using `ratio=0.25`:
@@ -592,8 +583,7 @@ Complete the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.11: Summarized text when the ratio is 0.25
-    ](./images/B16062_07_11.jpg)
+![](./images/B16062_07_11.jpg)
 
 
 Figure 7.11: Summarized text when the ratio is 0.25
@@ -664,11 +654,10 @@ Complete the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.12: Text from the Watty Piper variation of Little Red
-    Riding Hood ](./images/B16062_07_12.jpg)
+![](./images/B16062_07_12.jpg)
 
 
-    Figure 7.12: Text from the Watty Piper variation of Little Red
+
     Riding Hood
 
 4.  Insert a new cell, add the following code, and fetch the Perrault
@@ -695,11 +684,10 @@ Complete the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.13: Tales from the Perrault version of Little Red Riding
-    Hood ](./images/B16062_07_13.jpg)
+![](./images/B16062_07_13.jpg)
 
 
-    Figure 7.13: Tales from the Perrault version of Little Red Riding
+
     Hood
 
 5.  Insert a new cell and add the following code to generate the two
@@ -726,11 +714,10 @@ Complete the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.14: Output after implementing TextRank on the Watty Piper
-    variation ](./images/B16062_07_14.jpg)
+![](./images/B16062_07_14.jpg)
 
 
-    Figure 7.14: Output after implementing TextRank on the Watty Piper
+
     variation
 
 7.  Insert a new cell and add the following code to print the TextRank
@@ -747,11 +734,10 @@ Complete the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.15: Output after implementing TextRank on the Perrault
-    version ](./images/B16062_07_15.jpg)
+![](./images/B16062_07_15.jpg)
 
 
-    Figure 7.15: Output after implementing TextRank on the Perrault
+
     version
 
 8.  Add the following code to generate two summaries with a
@@ -778,12 +764,9 @@ Complete the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.16: Output after implementing TextRank on the Watty Piper
-    variation ](./images/B16062_07_16.jpg)
+![](./images/B16062_07_16.jpg)
 
 
-    Figure 7.16: Output after implementing TextRank on the Watty Piper
-    variation
 
 10. Add the following code to print a TextRank summary
     (`ratio` of `0.5`) of Perrault\'s version of
@@ -799,8 +782,7 @@ Complete the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 7.17: Output after implementing TextRank on the Perrault
-    version ](./images/B16062_07_17.jpg)
+![](./images/B16062_07_17.jpg)
 
 
 Figure 7.17: Output after implementing TextRank on the Perrault version
@@ -875,8 +857,7 @@ Follow these steps to implement this activity:
 5.  Show the DataFrame. You should get an output similar to the
     following figure:
 
-    ![Figure 7.18: DataFrame showing the summarized complaints
-    ](./images/B16062_07_18.jpg)
+![](./images/B16062_07_18.jpg)
 
 
 Figure 7.18: DataFrame showing the summarized complaints

@@ -657,11 +657,10 @@ stop words included in our text:
     This code generates the following output:
 
 
-    ![Figure 1.1: List of stop words provided by English
-    ](./images/B16062_01_01.jpg)
+![](./images/B16062_01_01.jpg)
 
 
-    Figure 1.1: List of stop words provided by English
+
 
 5.  To remove the stop words from a sentence, we first assign a string
     to the `sentence` variable and tokenize it into words
@@ -1047,8 +1046,7 @@ words get transformed into their base forms:
 <div>
 
 
-![Figure 1.2: Stemming of the word \"product\"
-](./images/B16062_01_02.jpg)
+![](./images/B16062_01_02.jpg)
 
 
 </div>
@@ -1440,7 +1438,7 @@ sentences:
 <div>
 
 
-![Figure 1.3: Word sense disambiguation ](./images/B16062_01_03.jpg)
+![](./images/B16062_01_03.jpg)
 
 
 </div>
@@ -1718,7 +1716,7 @@ which are outlined in the following figure:
 <div>
 
 
-![Figure 1.4: Phases of an NLP project ](./images/B16062_01_04.jpg)
+![](./images/B16062_01_04.jpg)
 
 
 </div>

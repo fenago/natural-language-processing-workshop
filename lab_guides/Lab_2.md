@@ -63,8 +63,7 @@ the following diagram:
 <div>
 
 
-![Figure 2.1: Categorization based on content
-](./images/B16062_02_01.jpg)
+![](./images/B16062_02_01.jpg)
 
 
 </div>
@@ -78,7 +77,7 @@ These three categories are as follows:
     **Comma-Separated Value** (**CSV**) files. The following image shows
     what structured data usually looks like:
 
-    ![Figure 2.2: Structured data ](./images/B16062_02_02.jpg)
+![](./images/B16062_02_02.jpg)
 
 
 Figure 2.2: Structured data
@@ -94,7 +93,7 @@ attributes.
     data. The following screenshot shows how semi-structured data can
     appear:
 
-    ![Figure 2.3: Semi-structured data ](./images/B16062_02_03.jpg)
+![](./images/B16062_02_03.jpg)
 
 
 Figure 2.3: Semi-structured data
@@ -110,7 +109,7 @@ that can convert this data into structured data.
     corpora and images are examples of unstructured data. The following
     image shows what unstructured data looks like:
 
-    ![Figure 2.4: Unstructured data ](./images/B16062_02_04.jpg)
+![](./images/B16062_02_04.jpg)
 
 
 Figure 2.4: Unstructured data
@@ -132,8 +131,7 @@ the following diagram:
 <div>
 
 
-![Figure 2.5: Categorizing data based on structure
-](./images/B16062_02_05.jpg)
+![](./images/B16062_02_05.jpg)
 
 
 </div>
@@ -270,7 +268,7 @@ it. Follow these steps to complete this exercise:
     is present. The output should be as follows:
 
 
-    ![Figure 2.6: Fragmented string ](./images/B16062_02_06.jpg)
+![](./images/B16062_02_06.jpg)
 
 
 Figure 2.6: Fragmented string
@@ -523,10 +521,10 @@ to tokenize texts. Follow these steps to complete this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.7: Tokenization using Keras ](./images/B16062_02_07.jpg)
+![](./images/B16062_02_07.jpg)
 
 
-    Figure 2.7: Tokenization using Keras
+
 
 4.  To tokenize using the `textblob` library, add the
     following code:
@@ -544,8 +542,7 @@ to tokenize texts. Follow these steps to complete this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.8: Tokenization using textblob
-    ](./images/B16062_02_08.jpg)
+![](./images/B16062_02_08.jpg)
 
 
 Figure 2.8: Tokenization using textblob
@@ -645,11 +642,10 @@ Perform the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.9: Tokenization using TweetTokenizer
-    ](./images/B16062_02_09.jpg)
+![](./images/B16062_02_09.jpg)
 
 
-    Figure 2.9: Tokenization using TweetTokenizer
+
 
     As you can see, the hashtags, emojis, websites, and Twitter IDs are
     extracted as single tokens. If we had used the white space
@@ -673,11 +669,10 @@ Perform the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.10: Tokenization using the MWE tokenizer
-    ](./images/B16062_02_10.jpg)
+![](./images/B16062_02_10.jpg)
 
 
-    Figure 2.10: Tokenization using the MWE tokenizer
+
 
     In the preceding screenshot, the words \"Indian\" and \"Army!\",
     which should have been treated as a single identity, were treated
@@ -696,12 +691,10 @@ Perform the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.11: Tokenization using the MWE tokenizer after removing
-    the \"!\" sign ](./images/B16062_02_11.jpg)
+![](./images/B16062_02_11.jpg)
 
 
-    Figure 2.11: Tokenization using the MWE tokenizer after removing the
-    \"!\" sign
+
 
     Here, we can see that instead of being treated as separate tokens,
     \"Indian\" and \"Army\" are treated as a single entity.
@@ -722,11 +715,10 @@ Perform the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.12: Tokenization using the regular expression tokenizer
-    ](./images/B16062_02_12.jpg)
+![](./images/B16062_02_12.jpg)
 
 
-    Figure 2.12: Tokenization using the regular expression tokenizer
+
 
 7.  To tokenize the text using the whitespace tokenizer, add the
     following code:
@@ -744,11 +736,10 @@ Perform the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.13: Tokenization using the whitespace tokenizer
-    ](./images/B16062_02_13.jpg)
+![](./images/B16062_02_13.jpg)
 
 
-    Figure 2.13: Tokenization using the whitespace tokenizer
+
 
 8.  To tokenize the text using the Word Punct tokenizer, add the
     following code:
@@ -766,8 +757,7 @@ Perform the following steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.14: Tokenization using the Word Punct tokenizer
-    ](./images/B16062_02_14.jpg)
+![](./images/B16062_02_14.jpg)
 
 
 Figure 2.14: Tokenization using the Word Punct tokenizer
@@ -1356,11 +1346,10 @@ steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.15: DataFrame consisting of four sentences
-    ](./images/B16062_02_15.jpg)
+![](./images/B16062_02_15.jpg)
 
 
-    Figure 2.15: DataFrame consisting of four sentences
+
 
 3.  Use the `apply()` function to iterate through each row of
     the column text, convert them into `TextBlob` objects, and
@@ -1527,10 +1516,10 @@ digits, words, and whitespaces.
     The preceding code generates the following output:
 
 
-    ![Figure 2.16: List of PoS ](./images/B16062_02_16.jpg)
+![](./images/B16062_02_16.jpg)
 
 
-    Figure 2.16: List of PoS
+
 
 4.  Calculate the number of occurrences of each PoS by iterating through
     each document and annotating each word with the corresponding
@@ -1573,11 +1562,10 @@ digits, words, and whitespaces.
     The preceding code generates the following output:
 
 
-    ![Figure 2.17: Number of occurrences of each PoS in the sentence
-    ](./images/B16062_02_17.jpg)
+![](./images/B16062_02_17.jpg)
 
 
-    Figure 2.17: Number of occurrences of each PoS in the sentence
+
 
 5.  To calculate the number of punctuation marks, add the following
     code:
@@ -1866,8 +1854,7 @@ digits, words, and whitespaces.
     output:
 
 
-    ![Figure 2.18: DataFrame consisting of the features we have created
-    ](./images/B16062_02_18.jpg)
+![](./images/B16062_02_18.jpg)
 
 
 Figure 2.18: DataFrame consisting of the features we have created
@@ -1978,11 +1965,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.19: DataFrame of the output of the BoW model
-    ](./images/B16062_02_19.jpg)
+![](./images/B16062_02_19.jpg)
 
 
-    Figure 2.19: DataFrame of the output of the BoW model
+
 
 4.  Create a BoW model for the 10 most frequent terms. Add the following
     code to implement this:
@@ -2017,8 +2003,7 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.20: DataFrame of the output of the BoW model for the 10
-    most frequent terms ](./images/B16062_02_20.jpg)
+![](./images/B16062_02_20.jpg)
 
 
 Figure 2.20: DataFrame of the output of the BoW model for the 10 most
@@ -2055,7 +2040,7 @@ their frequency of occurrence, then the frequency of the word at the
 <div>
 
 
-![Figure 2.21: Zipf\'s law ](./images/B16062_02_21.jpg)
+![](./images/B16062_02_21.jpg)
 
 
 </div>
@@ -2166,11 +2151,10 @@ steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.22: The 50 most frequent words of the corpus
-    ](./images/B16062_02_22.jpg)
+![](./images/B16062_02_22.jpg)
 
 
-    Figure 2.22: The 50 most frequent words of the corpus
+
 
 5.  Plot the actual ranks of words that we got from frequency dictionary
     and the ranks expected as per Zipf\'s law. Calculate the frequencies
@@ -2209,8 +2193,7 @@ steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.23: Illustration of Zipf\'s law
-    ](./images/B16062_02_23.jpg)
+![](./images/B16062_02_23.jpg)
 
 
 Figure 2.23: Illustration of Zipf\'s law
@@ -2248,7 +2231,7 @@ following formula:
 <div>
 
 
-![Figure 2.24: TFIDF formula ](./images/B16062_02_24.jpg)
+![](./images/B16062_02_24.jpg)
 
 
 </div>
@@ -2310,8 +2293,7 @@ Follow these steps to implement this exercise:
     output:
 
 
-    ![Figure 2.25: TFIDF representation of the 10 most frequent terms
-    ](./images/B16062_02_25.jpg)
+![](./images/B16062_02_25.jpg)
 
 
 Figure 2.25: TFIDF representation of the 10 most frequent terms
@@ -2360,7 +2342,7 @@ strings or texts. They are explained one by one here:
     similarity between the vectors of the text. This is calculated as
     follows:
 
-    ![Figure 2.26: Cosine similarity ](./images/B16062_02_26.jpg)
+![](./images/B16062_02_26.jpg)
 
 
 Figure 2.26: Cosine similarity
@@ -2770,7 +2752,7 @@ they have occurred, as shown in the following image:
 <div>
 
 
-![Figure 2.27: Example of a word cloud ](./images/B16062_02_27.jpg)
+![](./images/B16062_02_27.jpg)
 
 
 </div>
@@ -2875,8 +2857,7 @@ these steps to complete this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.28: Word cloud representation of the first 10 articles
-    ](./images/B16062_02_28.jpg)
+![](./images/B16062_02_28.jpg)
 
 
 Figure 2.28: Word cloud representation of the first 10 articles
@@ -2955,10 +2936,10 @@ named entities. Follow these steps to complete this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.29: Dependency parse tree ](./images/B16062_02_29.jpg)
+![](./images/B16062_02_29.jpg)
 
 
-    Figure 2.29: Dependency parse tree
+
 
 4.  Visualize the named entities of the text corpus by adding the
     following code:
@@ -2979,7 +2960,7 @@ named entities. Follow these steps to complete this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 2.30: Named entities ](./images/B16062_02_30.jpg)
+![](./images/B16062_02_30.jpg)
 
 
 Figure 2.30: Named entities

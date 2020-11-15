@@ -57,7 +57,7 @@ HTML tag:
 <div>
 
 
-![Figure 4.1: Tags and attributes of HTML ](./images/B16062_04_01.jpg)
+![](./images/B16062_04_01.jpg)
 
 
 </div>
@@ -71,7 +71,7 @@ tags are shown and explained as follows:
 <div>
 
 
-![Figure 4.2: Basic HTML structure ](./images/B16062_04_02.jpg)
+![](./images/B16062_04_02.jpg)
 
 
 </div>
@@ -179,11 +179,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 4.3: Text content of an HTML file
-    ](./images/B16062_04_03.jpg)
+![](./images/B16062_04_03.jpg)
 
 
-    Figure 4.3: Text content of an HTML file
+
 
 5.  Similarly, to see the contents, you can simply write the following
     code:
@@ -196,10 +195,10 @@ Follow these steps to implement this exercise:
 
 
 
-    ![Figure 4.4: Text content ](./images/B16062_04_04.jpg)
+![](./images/B16062_04_04.jpg)
 
 
-    Figure 4.4: Text content
+
 
 6.  To find the addresses from the document, insert a new cell and add
     the following code:
@@ -290,10 +289,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 4.5: Contents of the table tag ](./images/B16062_04_05.jpg)
+![](./images/B16062_04_05.jpg)
 
 
-    Figure 4.5: Contents of the table tag
+
 
 11. You can also view the contents of `table` by looping
     through it. Insert a new cell and add the following code to
@@ -424,10 +423,10 @@ steps to complete this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 4.6: Text contents of the file ](./images/B16062_04_06.jpg)
+![](./images/B16062_04_06.jpg)
 
 
-    Figure 4.6: Text contents of the file
+
 
 3.  Now, write the fetched content into a text file. To do this, add the
     following code:
@@ -475,9 +474,6 @@ steps to complete this exercise:
     rr.data[:1000]
     ```
 
-
-    You will see that you get the same output as shown in *Figure 4.6*.
-
 6.  Again, add the following code to write the fetched content into a
     text file:
 
@@ -500,12 +496,6 @@ steps to complete this exercise:
 
 We have just learned how to collect data from online sources with the
 help of the `requests` library.
-
-**Note**
-
-
-
-
 
 
 Now, let\'s look at analyzing HTML content from Jupyter Notebooks.
@@ -587,10 +577,10 @@ Follow these steps to complete this exercise:
     output:
 
 
-    ![Figure 4.7: List of libraries imported ](./images/B16062_04_07.jpg)
+![](./images/B16062_04_07.jpg)
 
 
-    Figure 4.7: List of libraries imported
+
 
 4.  To extract the models and their performance, look at the HTML
     document and see which `class` attribute the models and
@@ -615,8 +605,7 @@ Follow these steps to complete this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 4.8: Models and their performance
-    ](./images/B16062_04_08.jpg)
+![](./images/B16062_04_08.jpg)
 
 
 Figure 4.8: Models and their performance
@@ -752,7 +741,7 @@ what a JSON file looks like:
 <div>
 
 
-![Figure 4.9: A sample JSON file ](./images/B16062_04_09.jpg)
+![](./images/B16062_04_09.jpg)
 
 
 </div>
@@ -795,11 +784,10 @@ Follow these steps to complete this exercise:
     output:
 
 
-    ![Figure 4.10: Dictionary form of the fetched data
-    ](./images/B16062_04_10.jpg)
+![](./images/B16062_04_10.jpg)
 
 
-    Figure 4.10: Dictionary form of the fetched data
+
 
 3.  To extract the names of the students, add the following code:
 
@@ -898,7 +886,7 @@ following figure depicts what an XML file looks like:
 <div>
 
 
-![Figure 4.11: A sample XML file ](./images/B16062_04_11.jpg)
+![](./images/B16062_04_11.jpg)
 
 
 </div>
@@ -915,8 +903,7 @@ original XML file and a tree representation of an XML file:
 <div>
 
 
-![Figure 4.12: Comparison of an XML structure
-](./images/B16062_04_12.jpg)
+![](./images/B16062_04_12.jpg)
 
 
 </div>
@@ -1002,11 +989,10 @@ Follow these steps to complete this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 4.13: Data of the name and company tags printed
-    ](./images/B16062_04_13.jpg)
+![](./images/B16062_04_13.jpg)
 
 
-    Figure 4.13: Data of the name and company tags printed
+
 
 5.  To find the sum of the salaries, create a list consisting of the
     salaries of all employees by iterating over each record and finding
@@ -1110,11 +1096,10 @@ exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 4.14: Fetched data in the Python dict format
-    ](./images/B16062_04_14.jpg)
+![](./images/B16062_04_14.jpg)
 
 
-    Figure 4.14: Fetched data in the Python dict format
+
 
 4.  To create the DataFrame of the fetched data and print it, add the
     following code:
@@ -1130,8 +1115,7 @@ exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 4.15: DataFrame showing details of currency exchange rates
-    ](./images/B16062_04_15.jpg)
+![](./images/B16062_04_15.jpg)
 
 
 Figure 4.15: DataFrame showing details of currency exchange rates

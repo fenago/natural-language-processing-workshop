@@ -73,8 +73,7 @@ places:
 <div>
 
 
-![Figure 6.1: Weather indicators at two different places
-](./images/B16062_06_01.jpg)
+![](./images/B16062_06_01.jpg)
 
 
 </div>
@@ -325,10 +324,10 @@ Follow these steps to implement this exercise:
     The code generates the following output:
 
 
-    ![Figure 6.2: Raw text from the file ](./images/B16062_06_02.jpg)
+![](./images/B16062_06_02.jpg)
 
 
-    Figure 6.2: Raw text from the file
+
 
     In the output, you will see a lot of newline characters. This is
     because we loaded the entire content at once into a single variable
@@ -372,11 +371,10 @@ Follow these steps to implement this exercise:
     The code generates the following output:
 
 
-    ![Figure 6.3: Text after preprocessing is done
-    ](./images/B16062_06_03.jpg)
+![](./images/B16062_06_03.jpg)
 
 
-    Figure 6.3: Text after preprocessing is done
+
 
 7.  Insert a new cell and add the following code to convert the list to
     a NumPy array and print the shape of the array:
@@ -448,10 +446,10 @@ Follow these steps to implement this exercise:
     The preceding code generates output that looks as follows:
 
 
-    ![Figure 6.4: List of encoded labels ](./images/B16062_06_04.jpg)
+![](./images/B16062_06_04.jpg)
 
 
-    Figure 6.4: List of encoded labels
+
 
     The `OneHotEncoder()` class encodes the categorical
     integer features as a one-hot numeric array. The
@@ -495,7 +493,7 @@ Follow these steps to implement this exercise:
     The code generates the following output:
 
 
-    ![Figure 6.5: Dense array ](./images/B16062_06_05.jpg)
+![](./images/B16062_06_05.jpg)
 
 
 Figure 6.5: Dense array
@@ -776,11 +774,10 @@ the Keras library. Follow these steps to implement this exercise:
     The code generates the following output:
 
 
-    ![Figure 6.6: List of integers assigned to each character
-    ](./images/B16062_06_06.jpg)
+![](./images/B16062_06_06.jpg)
 
 
-    Figure 6.6: List of integers assigned to each character
+
 
     As you can see, there were **44** characters in the `text`
     variable. From the output, we can see that for every unique
@@ -799,11 +796,10 @@ the Keras library. Follow these steps to implement this exercise:
     The snippet of the preceding output follows:
 
 
-    ![Figure 6.7: Text generated from the sequence
-    ](./images/B16062_06_07.jpg)
+![](./images/B16062_06_07.jpg)
 
 
-    Figure 6.7: Text generated from the sequence
+
 
 8.  Now look at the actual one-hot encoded values. For this, use the
     `texts_to_matrix()` function. Insert a new cell and add
@@ -833,11 +829,10 @@ the Keras library. Follow these steps to implement this exercise:
     vectors:
 
 
-    ![Figure 6.8: Actual one-hot encoded values for the given text
-    ](./images/B16062_06_08.jpg)
+![](./images/B16062_06_08.jpg)
 
 
-    Figure 6.8: Actual one-hot encoded values for the given text
+
 
 10. In order to investigate the dimensions of the NumPy array, make use
     of the `shape` attribute. Insert a new cell and add the
@@ -921,10 +916,10 @@ the Keras library. Follow these steps to implement this exercise:
     The code generates the following output:
 
 
-    ![Figure 6.9: The index\_word dictionary ](./images/B16062_06_09.jpg)
+![](./images/B16062_06_09.jpg)
 
 
-    Figure 6.9: The index\_word dictionary
+
 
     As you can see in this figure, the indices act as keys, and the
     characters act as values. Now insert a new cell and the following
@@ -940,11 +935,10 @@ the Keras library. Follow these steps to implement this exercise:
     The code generates the following output:
 
 
-    ![Figure 6.10: The word\_index dictionary
-    ](./images/B16062_06_10.jpg)
+![](./images/B16062_06_10.jpg)
 
 
-    Figure 6.10: The word\_index dictionary
+
 
     In this figure, the characters act as keys, and the indices act as
     values.
@@ -1143,11 +1137,10 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 
 
-    ![Figure 6.11: Book details in the catalog
-    ](./images/B16062_06_11.jpg)
+![](./images/B16062_06_11.jpg)
 
 
-    Figure 6.11: Book details in the catalog
+
 
 5.  Create a function named `load_book()`, which will take
     `book_id` as a parameter and, based on that
@@ -1197,11 +1190,10 @@ Follow these steps to implement this exercise:
     follows:
 
 
-    ![Figure 6.12: Information of various books
-    ](./images/B16062_06_12.jpg)
+![](./images/B16062_06_12.jpg)
 
 
-    Figure 6.12: Information of various books
+
 
 7.  Before you can train the word vectors, you need to split the books
     into a list of documents. In this case, you want to teach the
@@ -1306,10 +1298,10 @@ Follow these steps to implement this exercise:
     The code generates the following output:
 
 
-    ![Figure 6.13: Most similar words ](./images/B16062_06_13.jpg)
+![](./images/B16062_06_13.jpg)
 
 
-    Figure 6.13: Most similar words
+
 
     **Note**
 
@@ -1346,8 +1338,7 @@ Follow these steps to implement this exercise:
     The code generates the following output:
 
 
-    ![Figure 6.14: Graph of the vector when the input is \"sad\"
-    ](./images/B16062_06_14.jpg)
+![](./images/B16062_06_14.jpg)
 
 
 Figure 6.14: Graph of the vector when the input is \"sad\"
@@ -1499,11 +1490,10 @@ Follow these steps to complete this exercise:
     You will get the following output:
 
 
-    ![Figure 6.15: Dictionary of glove\_vectors
-    ](./images/B16062_06_15.jpg)
+![](./images/B16062_06_15.jpg)
 
 
-    Figure 6.15: Dictionary of glove\_vectors
+
 
     The order of the result dictionary can vary as it is a Python dict.
 
@@ -1521,11 +1511,10 @@ Follow these steps to complete this exercise:
 
 
 
-    ![Figure 6.16: Array of glove vectors with an input of dog
-    ](./images/B16062_06_16.jpg)
+![](./images/B16062_06_16.jpg)
 
 
-    Figure 6.16: Array of glove vectors with an input of dog
+
 
     In order to see the vector for the word `cat`, add the
     following code:
@@ -1538,11 +1527,10 @@ Follow these steps to complete this exercise:
 
 
 
-    ![Figure 6.17: Array of glove vectors with an input of cat
-    ](./images/B16062_06_17.jpg)
+![](./images/B16062_06_17.jpg)
 
 
-    Figure 6.17: Array of glove vectors with an input of cat
+
 
 6.  Now that you have the vectors, represent them as an image using the
     pyplot framework of the Matplotlib library. Insert a new cell and
@@ -1595,11 +1583,10 @@ Follow these steps to complete this exercise:
     The code generates the following output:
 
 
-    ![Figure 6.18: Graph generated with an input of man
-    ](./images/B16062_06_18.jpg)
+![](./images/B16062_06_18.jpg)
 
 
-    Figure 6.18: Graph generated with an input of man
+
 
 8.  To find the image representation of the word `woman`, type
     the following code:
@@ -1614,11 +1601,10 @@ Follow these steps to complete this exercise:
     This will generate the following output:
 
 
-    ![Figure 6.19: Graph generated with an input of woman
-    ](./images/B16062_06_19.jpg)
+![](./images/B16062_06_19.jpg)
 
 
-    Figure 6.19: Graph generated with an input of woman
+
 
 9.  To find the image representation of the word `king`, type
     the following code:
@@ -1633,11 +1619,10 @@ Follow these steps to complete this exercise:
     This will generate the following output:
 
 
-    ![Figure 6.20: Graph generated with an input of king
-    ](./images/B16062_06_20.jpg)
+![](./images/B16062_06_20.jpg)
 
 
-    Figure 6.20: Graph generated with an input of king
+
 
 10. To find the image representation of the word `queen`, type
     the following code:
@@ -1652,11 +1637,10 @@ Follow these steps to complete this exercise:
     This will generate the following output:
 
 
-    ![Figure 6.21: Graph generated with an input of queen
-    ](./images/B16062_06_21.jpg)
+![](./images/B16062_06_21.jpg)
 
 
-    Figure 6.21: Graph generated with an input of queen
+
 
 11. To find the image representation of the vector for
     `king – man + woman – queen`, type the following code:
@@ -1671,11 +1655,10 @@ Follow these steps to complete this exercise:
     This will generate the following output:
 
 
-    ![Figure 6.22: Graph generated with (king-man+woman-queen) as input
-    ](./images/B16062_06_22.jpg)
+![](./images/B16062_06_22.jpg)
 
 
-    Figure 6.22: Graph generated with (king-man+woman-queen) as input
+
 
 12. To find the image representation of the vector for
     `king – man + woman`, type the following code:
@@ -1690,8 +1673,7 @@ Follow these steps to complete this exercise:
     This will generate the following output:
 
 
-    ![Figure 6.23: Graph generated with (king-man+woman) as input
-    ](./images/B16062_06_23.jpg)
+![](./images/B16062_06_23.jpg)
 
 
 Figure 6.23: Graph generated with (king-man+woman) as input
@@ -1851,10 +1833,10 @@ of the Matplotlib library. Follow these steps to complete this exercise:
     This will create the following output:
 
 
-    ![Figure 6.24: Head of the DataFrame ](./images/B16062_06_24.jpg)
+![](./images/B16062_06_24.jpg)
 
 
-    Figure 6.24: Head of the DataFrame
+
 
 7.  Create a class, the object of which will create the training
     instances for the `Doc2Vec` model. Insert a new cell and
@@ -1956,11 +1938,10 @@ of the Matplotlib library. Follow these steps to complete this exercise:
     You should get an output similar to the one below:
 
 
-    ![Figure 6.25: Lines represented as vectors
-    ](./images/B16062_06_25.jpg)
+![](./images/B16062_06_25.jpg)
 
 
-    Figure 6.25: Lines represented as vectors
+
 
 13. To check the image representation of any given vector, make use of
     the pyplot framework of the Matplotlib library. The
@@ -2009,8 +1990,7 @@ of the Matplotlib library. Follow these steps to complete this exercise:
     The code generates the following output:
 
 
-    ![Figure 6.26: Image representation of a given vector
-    ](./images/B16062_06_26.jpg)
+![](./images/B16062_06_26.jpg)
 
 
 Figure 6.26: Image representation of a given vector
