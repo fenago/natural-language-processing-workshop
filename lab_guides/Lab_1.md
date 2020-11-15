@@ -1,13 +1,13 @@
+<img align="right" src="../logo.png">
 
-1. Introduction to Natural Language Processing
+
+Lab 1. Introduction to Natural Language Processing
 ==============================================
-
 
 
 Overview
 
-In this lab, you will learn the difference between **Natural
-Language Processing** (**NLP**) and basic text analytics. You will
+In this lab, you will learn the difference between **Natural Language Processing** (NLP) and basic text analytics. You will
 implement various preprocessing tasks such as tokenization,
 lemmatization, stemming, stop word removal, and more. By the end of this
 lab, you will have a deep understanding of the various phases of an
@@ -17,21 +17,11 @@ NLP project, from data collection to model deployment.
 Introduction
 ============
 
-
 Before we can get into NLP in any depth, we first need to understand
 what natural language is. To put it in simple terms, it is a means for
 us to express our thoughts and ideas. To define it more specifically,
 language is a mutually agreed upon set of protocols involving
 words/sounds that we use to communicate with each other.
-
-In this era of digitization and computation, we are constantly
-interacting with machines around us through various means, such as voice
-commands and typing instructions in the form of words. Thus, it has
-become essential to develop mechanisms by which human language can be
-comprehended accurately by computers. NLP helps us do this. So, NLP can
-be defined as a field of computer science that is concerned with
-enabling computer algorithms to understand, analyze, and generate
-natural languages.
 
 Let\'s look at an example. You have probably interacted with Siri or
 Alexa at some point. Ask Alexa for a cricket score, and it will reply
@@ -64,24 +54,16 @@ History of NLP
 ==============
 
 
-NLP is a field that has emerged from various other fields such as
-artificial intelligence, linguistics, and data science. With the
-advancement of computing technologies and the increased availability of
-data, NLP has undergone a huge change. Previously, a traditional
-rule-based system was used for computations, in which you had to
-explicitly write hardcoded rules. Today, computations on natural
-language are being done using machine learning and deep learning
-techniques.
-
-Consider an example. Let\'s say we have to extract the names of some
+- NLP is a field that has emerged from various other fields such as
+artificial intelligence, linguistics, and data science.
+- Consider an example. Let\'s say we have to extract the names of some
 politicians from a set of political news articles. So, if we want to
 apply rule-based grammar, we must manually craft certain rules based on
 human understanding of language. Some of the rules for extracting a
 person\'s name can be that the word should be a proper noun, every word
 should start with a capital letter, and so on. As we can see, using a
 rule-based system like this would not yield very accurate results.
-
-Rule-based systems do work well in some cases, but the disadvantages far
+- Rule-based systems do work well in some cases, but the disadvantages far
 outweigh the advantages. One major disadvantage is that the same rule
 cannot be applicable in all cases, given the complex and nuanced nature
 of most language. These disadvantages can be overcome by using machine
@@ -153,12 +135,6 @@ thus making it easier for humans to understand the machine. These tasks,
 which are part of NLP, are not part of text analytics. Let\'s walk
 through the basics of text analytics and see how we can execute it in
 Python.
-
-Before going to the exercises, let\'s define some prerequisites for
-running the exercises. Whether you are using Windows, Mac or Linux, you
-need to run your Jupyter Notebook in a virtual environment. You will
-also need to ensure that you have installed the requirements as stated
-in the *requirements.txt* file on <https://github.com/fenago/natural-language-processing-workshop>.
 
 
 
@@ -356,14 +332,7 @@ steps to implement this exercise using the following sentence:
 
 We are now well acquainted with basic text analytics techniques.
 
-**Note**
-
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
-
-In the next section, let\'s dive deeper into the various steps and
+**Note** In the next section, let\'s dive deeper into the various steps and
 subtasks in NLP.
 
 
@@ -478,14 +447,7 @@ exercise using the sentence, \"I am reading NLP Fundamentals.\"
 We can see the list of tokens generated with the help of the
 `word_tokenize()` method.
 
-**Note**
-
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
-
-In the next section, we will see another pre-processing step:
+**Note** In the next section, we will see another pre-processing step:
 **Parts-of-Speech (PoS) tagging**.
 
 
@@ -624,11 +586,6 @@ for **verb present**, **VGB** stands for **verb gerund**, **NNP** stands
 for **proper noun singular**, and **NNS** stands for **noun plural**.
 
 **Note**
-
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 We have learned about assigning appropriate PoS labels to tokens in a
 sentence. In the next section, we will learn about **stop words** in
@@ -806,15 +763,6 @@ As we can see from the output, now words such as \"I,\" \"It,\" and\*
 \"One\" are removed as we have added them to our custom stop word list.
 We have learned how to remove stop words from given text.
 
-**Note**
-
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
-
-In the next section, we will focus on normalizing text.
-
 
 
 Text Normalization
@@ -919,14 +867,7 @@ Follow these steps to complete this exercise:
 
 In the preceding code, we can see that our text has been normalized.
 
-**Note**
-
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
-
-Over the next sections, we will explore various other ways in which text
+**Note** Over the next sections, we will explore various other ways in which text
 can be normalized.
 
 
@@ -1086,14 +1027,7 @@ spelled words have been corrected. But the word
 rectify this, we need to use other kinds of spelling correctors that are
 aware of context.
 
-**Note**
-
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
-
-In the next section, we will look at stemming, which is another form of
+**Note** In the next section, we will look at stemming, which is another form of
 text normalization.
 
 
@@ -1259,14 +1193,7 @@ different languages such as Spanish, French, and many more. From the
 preceding code snippets, we can see that the entered words are converted
 into their base forms.
 
-**Note**
-
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
-
-In the next section, we will focus on **lemmatization**, which is
+**Note** In the next section, we will focus on **lemmatization**, which is
 another form of text normalization.
 
 
@@ -1392,15 +1319,7 @@ exercise:
     Hence, we have learned how to use the lemmatization process to
     transform a given word into its base form.
 
-    **Note**
-
-    To access the source code for this specific section, please refer to
-    <https://github.com/fenago/natural-language-processing-workshop>.
-
-    You can also run this example online at
-    <https://github.com/fenago/natural-language-processing-workshop>.
-
-In the next section, we will look at another preprocessing step in NLP:
+    **Note** In the next section, we will look at another preprocessing step in NLP:
 **named entity recognition** (**NER**).
 
 
@@ -1499,15 +1418,7 @@ Birmingham.\"
     entities \"`Packt`\" and \"`Birmingham`\" and
     maps them to an already-defined category, \"`NNP`.\"
 
-    **Note**
-
-    To access the source code for this specific section, please refer to
-    <https://github.com/fenago/natural-language-processing-workshop>.
-
-    You can also run this example online at
-    <https://github.com/fenago/natural-language-processing-workshop>.
-
-In the next section, we will focus on word sense disambiguation, which
+    **Note** In the next section, we will focus on word sense disambiguation, which
 helps us to identify the right sense of any word.
 
 
@@ -1653,15 +1564,7 @@ different sentences. Follow these steps to implement this exercise:
     Thus, with the help of the Lesk algorithm, we were able to identify
     the sense of a word in whatever context.
 
-    **Note**
-
-    To access the source code for this specific section, please refer to
-    <https://github.com/fenago/natural-language-processing-workshop>.
-
-    You can also run this example online at
-    <https://github.com/fenago/natural-language-processing-workshop>.
-
-In the next section, we will focus on **sentence boundary detection**,
+    **Note** In the next section, we will focus on **sentence boundary detection**,
 which helps detect the start and end points of sentences.
 
 
@@ -1748,21 +1651,10 @@ detect sentence boundaries. The following steps need to be performed:
      'Before joining politics, he was a businessman.']
     ```
 
-
 As you can see in the code, the `sent_tokenize` method is able
 to differentiate between the period (.) after \"Mr\" and the one used to
 end the sentence. We have covered all the preprocessing steps that are
 involved in NLP.
-
-**Note**
-
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
-
-Now, using the knowledge we\'ve gained, let\'s perform an activity.
-
 
 
 Activity 1.01: Preprocessing of Raw Text

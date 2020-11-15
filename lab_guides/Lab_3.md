@@ -1,5 +1,7 @@
+<img align="right" src="../logo.png">
 
-3. Developing a Text Classifier
+
+Lab 3. Developing a Text Classifier
 ===============================
 
 
@@ -478,10 +480,10 @@ were classified into those respective clusters, while the articles on
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 One major disadvantage of hierarchical clustering is scalability. Using
 hierarchical clustering for large datasets is very difficult; for such
@@ -752,10 +754,10 @@ clusters is 2.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 We have seen how unsupervised learning can be implemented in Python.
 Now, let us talk about supervised learning.
@@ -866,9 +868,6 @@ In this exercise, we will classify reviews of musical instruments on
 Amazon with the help of the logistic regression classification
 algorithm.
 
-**Note**
-
-To download the dataset, visit <https://github.com/fenago/natural-language-processing-workshop>.
 
 Follow these steps to implement this exercise:
 
@@ -1067,10 +1066,10 @@ instances are wrongly classified.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 We\'ve seen how to implement logistic regression; now, let\'s look at
 Naïve Bayes classification.
@@ -1146,7 +1145,7 @@ these steps to implement this exercise:
 **Note**
 
 To download the dataset for this exercise, visit
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 1.  Open a Jupyter Notebook.
 
@@ -1345,10 +1344,10 @@ the target label 1 have been correctly classified, whereas
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 We\'ll explore k-nearest neighbors in the next section.
 
@@ -1410,7 +1409,7 @@ algorithm. Follow these steps to implement this exercise:
 **Note**
 
 To download the dataset for this exercise, visit
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 1.  Open a Jupyter Notebook.
 
@@ -1589,11 +1588,7 @@ To download the dataset for this exercise, visit
 
     **Note**
 
-    To access the source code for this specific section, please refer to
-    <https://github.com/fenago/natural-language-processing-workshop>.
-
-    You can also run this example online at
-    <https://github.com/fenago/natural-language-processing-workshop>.
+    
 
     In the next section, you will learn about regression, which is
     another type of supervised learning.
@@ -1697,7 +1692,7 @@ To download the dataset for this exercise, visit
     **Note**
 
     The dataset for this exercise can be downloaded from
-    <https://github.com/fenago/natural-language-processing-workshop>.
+    
 
 9.  Open a Jupyter Notebook.
 
@@ -1901,10 +1896,10 @@ the performance of the model.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 You have just learned how to perform regression analysis on given data.
 In the next section, you will learn about tree methods.
@@ -1982,7 +1977,7 @@ this exercise:
 **Note**
 
 To download the dataset for this exercise, visit
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 1.  Open a Jupyter Notebook.
 
@@ -2189,10 +2184,10 @@ the performance of the model.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 Next, we will look at another tree-based method, random forest.
 
@@ -2335,7 +2330,7 @@ exercise:
 **Note**
 
 To download the dataset for this exercise, visit
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 1.  Open a Jupyter Notebook. Insert a new cell and add the following
     code to import the necessary packages:
@@ -2558,10 +2553,10 @@ the performance of the model.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 Now, let\'s perform a similar task using the XGBoost method.
 
@@ -2577,7 +2572,7 @@ products on Amazon.
 **Note**
 
 To download the dataset for this exercise, visit
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 Follow these steps to implement this exercise:
 
@@ -2808,10 +2803,10 @@ tree-based methods to predict scores in data.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 In the next section, you will learn about sampling.
 
@@ -2881,7 +2876,7 @@ multi-stage sampling.
 **Note**
 
 To download the dataset for this exercise, visit
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 Follow these steps to implement this exercise:
 
@@ -3040,10 +3035,10 @@ section.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 
 Developing a Text Classifier
@@ -3347,10 +3342,10 @@ classifier.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 In the next section, we will learn how to reduce the size of the dataset
 and understand why this is necessary.
@@ -3577,10 +3572,10 @@ visualize datasets.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 Next, we will learn how to evaluate the machine learning models that we
 train.
@@ -3863,10 +3858,10 @@ train and are equipped to create your very own text classifier.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 In the next section, we will solve an activity based on classifying
 text.
@@ -3882,7 +3877,7 @@ out whether a news article is political or not.
 **Note**
 
 The dataset for this activity can be found at
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 Follow these steps to implement this activity:
 
@@ -4016,10 +4011,10 @@ the text data that has been passed to it as an argument.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 
 Saving and Loading Models
@@ -4173,10 +4168,10 @@ where you learned how to build a text classifier from scratch.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 
 Summary

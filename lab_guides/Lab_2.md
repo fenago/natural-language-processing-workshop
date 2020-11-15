@@ -1,5 +1,7 @@
+<img align="right" src="../logo.png">
 
-2. Feature Extraction Methods
+
+Lab 2. Feature Extraction Methods
 =============================
 
 
@@ -285,11 +287,6 @@ consecutive tokens together.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
-
 Next, we will look at an exercise where n-grams can be extracted from a
 given text.
 
@@ -483,17 +480,8 @@ to complete this exercise:
      WordList(['with', 'the' 'kitten'])]
     ```
 
-
 In this exercise, we learned how to generate n-grams using various
 methods.
-
-**Note**
-
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
-
 
 
 Exercise 2.03: Tokenizing Text with Keras and TextBlob
@@ -566,11 +554,6 @@ With that, we have learned how to tokenize texts using the
 `keras` and `textblob` libraries.
 
 **Note**
-
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 In the next section, we will discuss the different types of tokenizers.
 
@@ -794,11 +777,6 @@ and their `nltk` implementation.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
-
 Now, we\'re ready to use them in our programs.
 
 
@@ -892,14 +870,6 @@ As we can see, the word `playing` has been changed into its
 base form, `play`. In this exercise, we learned how we can
 perform stemming using `nltk`\'s `RegexpStemmer`.
 
-**Note**
-
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
-
-
 
 The Porter Stemmer
 ------------------
@@ -954,14 +924,6 @@ these steps to complete this exercise:
     'befor eating, it would be nice to sanit your hand wash with a sanit'
     ```
 
-
-    **Note**
-
-    To access the source code for this specific section, please refer to
-    <https://github.com/fenago/natural-language-processing-workshop>.
-
-    You can also run this example online at
-    <https://github.com/fenago/natural-language-processing-workshop>.
 
 `PorterStemmer` is a generic rule-based stemmer that tries to
 convert a word into its basic form by removing common suffixes and
@@ -1042,10 +1004,10 @@ word to its correct nearest grammatical form.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 In the next section, we will deal with other kinds of word variations by
 looking at singularizing and pluralizing words using
@@ -1133,14 +1095,6 @@ to complete this exercise:
     ```
 
 
-    **Note**
-
-    To access the source code for this specific section, please refer to
-    <https://github.com/fenago/natural-language-processing-workshop>.
-
-    You can also run this example online at
-    <https://github.com/fenago/natural-language-processing-workshop>.
-
 Now, in the next section, we will learn about another preprocessing
 task: language translation.
 
@@ -1205,10 +1159,10 @@ from one language to another.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 In the next section, we will look at another preprocessing task:
 stop-word removal.
@@ -1275,10 +1229,10 @@ Thus, we\'ve seen how stop words can be removed from a sentence.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 In the next activity, we\'ll put our knowledge of preprocessing steps
 into practice.
@@ -1294,7 +1248,7 @@ keywords from a sample news article.
 **Note**
 
 The new article that\'s being used for this activity can be found at
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 The following steps will help you implement this activity:
 
@@ -1519,10 +1473,10 @@ data.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 Let\'s perform another exercise to get a better understanding of this.
 
@@ -1536,11 +1490,6 @@ documents. The dataset that we will be using here consists of random
 statements. Our objective is to find the frequency of various general
 features such as punctuation, uppercase and lowercase words, letters,
 digits, words, and whitespaces.
-
-**Note**
-
-The dataset that is being used in this exercise can be found at this
-link: <https://github.com/fenago/natural-language-processing-workshop>.
 
 1.  Open a Jupyter Notebook.
 
@@ -1928,10 +1877,10 @@ given text.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 Now, let\'s explore how we can extract unique features.
 
@@ -2077,10 +2026,10 @@ frequent terms
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 In this section, we learned what BoW is and how to can use it to convert
 a sentence or document into a vector. BoW is the easiest way to convert
@@ -2272,10 +2221,10 @@ the proportionality of two lists.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 
 
@@ -2375,10 +2324,10 @@ corresponding index.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 In the next section, we will solve an activity to extract specific
 features from texts.
@@ -2653,10 +2602,10 @@ measure.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 
 
@@ -2802,10 +2751,10 @@ right definition of ambiguous words.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 
 
@@ -2938,10 +2887,10 @@ visualize this with matplotlib.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 In the next section, we will explore other visualizations, such as
 dependency parse trees and named entities.
@@ -3037,10 +2986,10 @@ Figure 2.30: Named entities
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 Now that you have learned about visualizations, we will solve an
 activity based on them to gain an even better understanding.
@@ -3058,7 +3007,7 @@ of frequently occurring words.
 **Note**
 
 The text\_corpus.txt file that\'s being used in this activity can be
-found at <https://github.com/fenago/natural-language-processing-workshop>.
+found at `~/work/natural-language-processing-workshop/Lab02/data`
 
 Follow these steps to implement this activity:
 

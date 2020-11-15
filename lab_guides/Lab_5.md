@@ -1,6 +1,8 @@
 
+<img align="right" src="../logo.png">
 
-5. Topic Modeling
+
+Lab 5. Topic Modeling
 =================
 
 
@@ -319,7 +321,7 @@ documents within an article.
 **Note**
 
 The dataset used for this exercise can be found at
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 Follow these steps to complete this exercise:
 
@@ -524,10 +526,10 @@ exactly the same topic model, we can save and load topic models, which
 we\'ll do in *Exercise 5.04*, *Topics in The Life and Adventures of
 Robinson Crusoe by Daniel Defoe*.
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 We have now performed topic modeling with the help of LSA. In the next
 section, we will learn about another topic-modeling algorithm: LDA.
@@ -681,7 +683,7 @@ corpus has twenty topics.
 **Note**
 
 The dataset used for this exercise can be found at
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 The following steps will help you complete this exercise:
 
@@ -915,8 +917,8 @@ exactly the same topic model, we can save and load topic models; we do
 this in *Exercise 5.04*, *Topics in The Life and Adventures of Robinson
 Crusoe by Daniel Defoe*.
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
+
+
 
 This section does not currently have an online interactive example and
 will need to be run locally.
@@ -935,7 +937,7 @@ topic modeling on a dataset of Jeopardy questions.
 **Note**
 
 The dataset to be used for this activity can be found at
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 Follow these steps to complete this activity:
 
@@ -1020,7 +1022,7 @@ of topics.
 **Note**
 
 The dataset used for this exercise can be found at
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 1.  Open a Jupyter Notebook.
 
@@ -1256,10 +1258,10 @@ we can save and load topic models, which we\'ll do now in *Exercise
 5.04*, *Topics in The Life and Adventures of Robinson Crusoe by Daniel
 Defoe*.
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 
 
@@ -1276,7 +1278,7 @@ parts of speech, before training the model.
 **Note**
 
 The dataset used for this exercise can be found at
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 1.  Open a Jupyter Notebook.
 
@@ -1517,8 +1519,8 @@ The dataset used for this exercise can be found at
     to be different. In order to have exactly the same topic model, we
     can save and load topic models, and this was used in this exercise.
 
-    To access the source code for this specific section, please refer to
-    <https://github.com/fenago/natural-language-processing-workshop>.
+    
+    
 
     This section does not currently have an online interactive example
     and will need to be run locally.
@@ -1596,7 +1598,7 @@ complaints.
 **Note**
 
 The dataset to be used for this activity can be found at
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 Follow these steps to complete this activity:
 

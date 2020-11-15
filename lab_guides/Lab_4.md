@@ -1,5 +1,8 @@
 
-4. Collecting Text Data with Web Scraping and APIs
+<img align="right" src="../logo.png">
+
+
+Lab 4. Collecting Text Data with Web Scraping and APIs
 ==================================================
 
 
@@ -127,7 +130,7 @@ bold, and a table present in an HTML file.
 **Note**
 
 The data for this sample HTML file can be accessed from
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 Follow these steps to implement this exercise:
 
@@ -342,10 +345,10 @@ We have learned how to extract tag-based information from an HTML file.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 In the next section, we will focus on fetching content from web pages.
 
@@ -500,10 +503,10 @@ help of the `requests` library.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 Now, let\'s look at analyzing HTML content from Jupyter Notebooks.
 
@@ -519,7 +522,7 @@ imported, and check the models and their performance.
 **Note**
 
 The HTML file used for this exercise, can be accessed at
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 Follow these steps to complete this exercise:
 
@@ -622,12 +625,6 @@ So, in the preceding output, we have extracted a classification report
 from the HTML file using `BeautifulSoup` by referring to the
 `<h2>` and `<div>` tags.
 
-**Note**
-
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
-
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
 
 So far, we have seen how to get content from the web using the
 `requests` package, and in this exercise, we saw how to parse
@@ -774,9 +771,6 @@ Exercise 4.04: Working with JSON Files
 In this exercise, we will extract details such as the names of students,
 their qualifications, and additional qualifications from a JSON file.
 
-**Note**
-
-The sample JSON file can be accessed at <https://github.com/fenago/natural-language-processing-workshop>.
 
 Follow these steps to complete this exercise:
 
@@ -784,7 +778,6 @@ Follow these steps to complete this exercise:
 
 2.  Insert a new cell and import `json`. Pass the location of
     the file mentioned using the following commands:
-
 
 
     ```
@@ -873,10 +866,10 @@ applications.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 Now that we have learned how to load JSON data, let\'s extract data
 using another format, called **Extensible Markup Language** (**XML**),
@@ -948,7 +941,7 @@ the total salaries of all employees.
 **Note**
 
 The sample XML data file can be accessed here:
-<https://github.com/fenago/natural-language-processing-workshop>.
+
 
 Follow these steps to complete this exercise:
 
@@ -1045,10 +1038,10 @@ many URLs return an XML file.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 In the next section, we will look at how APIs can be used to retrieve
 real-time data.
@@ -1148,10 +1141,10 @@ currency exchange rates. We just learned how to collect data using APIs.
 
 **Note**
 
-To access the source code for this specific section, please refer to
-<https://github.com/fenago/natural-language-processing-workshop>.
 
-You can also run this example online at <https://github.com/fenago/natural-language-processing-workshop>.
+
+
+
 
 In the next section, we will see how to create an API.
 
