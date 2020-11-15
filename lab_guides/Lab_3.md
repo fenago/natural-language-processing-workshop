@@ -1350,7 +1350,7 @@ To download the dataset for this exercise, visit
     perform text classification with the help of various classification
     algorithms.
 
-    **Note**
+    Note:
 
     
 
@@ -1446,7 +1446,7 @@ To download the dataset for this exercise, visit
     the overall ratings from the reviews of musical instruments on
     Amazon. Follow these steps to implement this exercise:
 
-    **Note**
+    Note:
 
     The dataset for this exercise can be downloaded from
     
@@ -2166,9 +2166,6 @@ the performance of the model.
 
 **Note**
 
-
-
-
 Now, let\'s perform a similar task using the XGBoost method.
 
 Exercise 3.09: Tree-Based Methods -- XGBoost
@@ -2177,10 +2174,6 @@ Exercise 3.09: Tree-Based Methods -- XGBoost
 In this exercise, we will use the tree-based method XGBoost to predict
 the overall scores and labels of reviews of patio, lawn, and garden
 products on Amazon.
-
-**Note**
-
-To download the dataset for this exercise, visit
 
 
 Follow these steps to implement this exercise:
@@ -2223,6 +2216,7 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
+    
 ![](./images/B16062_03_42.jpg)
 
 
@@ -3302,7 +3296,7 @@ Follow these steps to implement this activity:
     confusion matrix, accuracy, precision, recall, F1 plot curve, and
     ROC curve.
 
-    **Note**
+    Note:
 
     The solution to this activity can be found below.
 

@@ -546,7 +546,7 @@ these steps to implement this activity:
 
 7.  Print the list of universities named after Tagore.
 
-    **Note**
+    Note:
 
     The solution to this activity can be found below.
 
@@ -575,7 +575,7 @@ this activity:
 
 5.  Fetch the phone numbers, with the help of regular expressions.
 
-    **Note**
+    Note:
 
     The solution to this activity can be found below.
 
@@ -902,7 +902,7 @@ exercise:
     ```
 
 
-    **Note**
+    Note:
 
     Watch out for the slashes in the string below. Remember that the
     backslashes ( `\` ) are used to split the code across
@@ -1031,7 +1031,7 @@ help you implement this activity:
 
 7.  Create a DataFrame consisting of tweets.
 
-    **Note**
+    Note:
 
     The full solution to this activity can be found below.
 

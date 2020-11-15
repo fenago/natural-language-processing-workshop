@@ -490,7 +490,7 @@ exercise:
     ```
 
 
-    **Note**
+    Note:
 
     
 
@@ -809,7 +809,7 @@ help you complete this activity:
 11. Test the model on these sentences: *\"I loved this place\"* and *\"I
     hated this place\"*.
 
-    **Note**
+    Note:
 
     The full solution to this activity can be found below.
 

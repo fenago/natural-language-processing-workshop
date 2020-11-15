@@ -413,7 +413,7 @@ Follow these steps to complete this exercise:
     many topics we wanted. This would not necessarily match the number
     of topics that are actually in the corpus.
 
-    **Note** that, in the output, you can see that negative weights are
+    Note: that, in the output, you can see that negative weights are
     associated with some words in a few topics. Also, the sum of the
     weights does not add up to one. The weights are not to be
     interpreted as probabilities. This makes it difficult to even
@@ -827,7 +827,7 @@ Follow these steps to complete this activity:
 
 10. Sample a few topics and check for interpretability.
 
-    **Note**
+    Note:
 
     The full solution to this activity can be found below.
 
@@ -1280,7 +1280,7 @@ The dataset used for this exercise can be found at
     the topic model has a much smaller role to play in the discovery of
     the thematic structure.
 
-    **Note**
+    Note:
 
     In general, the topics found are extremely sensitive to
     randomization in both gensim and tomotopy. While setting a
@@ -1404,7 +1404,7 @@ Follow these steps to complete this activity:
     trained in this activity. Also, compare these two models
     quantitatively.
 
-    **Note**
+    Note:
 
     The full solution to this activity can be found below.
 

@@ -231,7 +231,7 @@ steps to implement this exercise using the following sentence:
     ```
 
 
-    **Note**
+    Note:
 
     The triple-quotes ( `"""` ) shown in the code snippet
     above are used to denote the start and end points of a multi-line
@@ -612,7 +612,7 @@ stop words included in our text:
     ```
 
 
-    **Note**
+    Note:
 
     The code snippet shown here uses a backslash ( `\` ) to
     split the logic across multiple lines. When the code is executed,
@@ -1171,7 +1171,7 @@ exercise:
     Hence, we have learned how to use the lemmatization process to
     transform a given word into its base form.
 
-    **Note** In the next section, we will look at another preprocessing step in NLP:
+    Note: In the next section, we will look at another preprocessing step in NLP:
 **named entity recognition** (**NER**).
 
 Named Entity Recognition (NER)
@@ -1262,7 +1262,7 @@ Birmingham.\"
     entities \"`Packt`\" and \"`Birmingham`\" and
     maps them to an already-defined category, \"`NNP`.\"
 
-    **Note** In the next section, we will focus on word sense disambiguation, which
+    Note: In the next section, we will focus on word sense disambiguation, which
 helps us to identify the right sense of any word.
 
 
@@ -1392,7 +1392,7 @@ different sentences. Follow these steps to implement this exercise:
     Thus, with the help of the Lesk algorithm, we were able to identify
     the sense of a word in whatever context.
 
-    **Note** In the next section, we will focus on **sentence boundary detection**,
+    Note: In the next section, we will focus on **sentence boundary detection**,
 which helps detect the start and end points of sentences.
 
 
@@ -1513,7 +1513,7 @@ Follow these steps to implement this activity:
 8.  Detect the sentence boundaries in the given text corpus and print
     the total number of sentences.
 
-    **Note**
+    Note:
 
     The solution to this activity can be found below.
 

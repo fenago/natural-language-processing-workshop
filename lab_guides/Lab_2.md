@@ -563,7 +563,7 @@ Perform the following steps to implement this exercise:
     ```
 
 
-    **Note**
+    Note:
 
     The `#` symbol in the code snippet above denotes a code
     comment. Comments are added into code to help explain specific bits
@@ -1098,7 +1098,7 @@ The following steps will help you implement this activity:
 
 9.  Calculate the frequency of all the words after stemming.
 
-    **Note**
+    Note:
 
     The solution to this activity can be found below.
 
@@ -2637,7 +2637,7 @@ Follow these steps to implement this activity:
 6.  Justify the word cloud by comparing it with the word frequency that
     you calculated.
 
-    **Note**
+    Note:
 
     The solution to this activity can be found below.
 

@@ -175,7 +175,7 @@ corpus. The techniques that come under this category are the following:
     1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0\], and so on. **Note** that the
     order needs to be consistent here, too.
 
-    **Note**
+    Note:
 
     It is recommended that you use preprocessing techniques such as
     stemming, stop word removal, and conversion to lowercase before
@@ -374,7 +374,7 @@ Follow these steps to implement this exercise:
     `459` rows and `1` column. Each row is a word in
     the original `novel_lines` file.
 
-    **Note**
+    Note:
 
     NumPy arrays are more specific to NLP algorithms than Python lists.
     It is the format that is required for the scikit-learn library,
@@ -546,7 +546,7 @@ complete this exercise:
     use the `lookup` table to find the position of the
     character and set that character\'s value to `1`.
 
-    **Note**
+    Note:
 
     Execute the code for *step 1* and *step 2* together.
 
@@ -600,7 +600,7 @@ complete this exercise:
     characters, and sometimes, non-alphabetical characters are also
     considered.
 
-    **Note**
+    Note:
 
     
 
@@ -666,7 +666,7 @@ the Keras library. Follow these steps to implement this exercise:
     Since you are encoding at the character level, in the constructor,
     `char_level` is set to `True`.
 
-    **Note**
+    Note:
 
     By default, `char_level` is set to `False` if we
     are encoding words.
@@ -1157,7 +1157,7 @@ Follow these steps to implement this exercise:
 ![](./images/B16062_06_13.jpg)
 
 
-    **Note**
+    Note:
 
     You may get a slightly different output as the output depends on the
     model training process, so you may have a different model than the
@@ -1784,7 +1784,7 @@ activity:
 
 6.  Test both the functions.
 
-    **Note**
+    Note:
 
     The full solution to this activity can be found below.
 
