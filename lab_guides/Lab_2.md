@@ -4,8 +4,6 @@
 Lab 2. Feature Extraction Methods
 =============================
 
-
-
 Overview
 
 In this lab, you will be able to categorize data based on its
@@ -51,8 +49,6 @@ in which it exists. First, let\'s explore the types of data that exist.
 There are two main ways to categorize data (by structure and by
 content), as explained in the upcoming sections.
 
-
-
 Categorizing Data Based on Structure
 ------------------------------------
 
@@ -60,15 +56,9 @@ Data can be divided on the basis of structure into three categories,
 namely, structured, semi-structured, and unstructured data, as shown in
 the following diagram:
 
-<div>
-
-
 ![](./images/B16062_02_01.jpg)
 
 
-</div>
-
-Figure 2.1: Categorization based on content
 
 These three categories are as follows:
 
@@ -80,7 +70,7 @@ These three categories are as follows:
 ![](./images/B16062_02_02.jpg)
 
 
-Figure 2.2: Structured data
+
 
 The preceding table contains information about five people, with each
 row representing a person and each column representing one of their
@@ -96,7 +86,7 @@ attributes.
 ![](./images/B16062_02_03.jpg)
 
 
-Figure 2.3: Semi-structured data
+
 
 The format shown in the preceding screenshot is called markup language
 format. Here, the data is stored between tags, hierarchically. It is a
@@ -112,7 +102,7 @@ that can convert this data into structured data.
 ![](./images/B16062_02_04.jpg)
 
 
-Figure 2.4: Unstructured data
+
 
 This is called unstructured data because if we want to get employee
 details from the preceding text snippet with our program, we will not be
@@ -120,23 +110,15 @@ able to do so by simple parsing. We have to make our algorithm
 understand the semantics of the language to make it able to extract
 information from this.
 
-
-
 Categorizing Data Based on Content
 ----------------------------------
 
 Data can be divided into four categories based on content, as shown in
 the following diagram:
 
-<div>
-
-
 ![](./images/B16062_02_05.jpg)
 
 
-</div>
-
-Figure 2.5: Categorizing data based on structure
 
 Let\'s look at each category here:
 
@@ -205,8 +187,6 @@ libraries that we will be using here:
     functionality, it also provides methods for basic text processing
     and NLP tasks.
 
-
-
 Tokenization
 ------------
 
@@ -215,8 +195,6 @@ Tokenization and word tokenizers were briefly described in *Lab 1*,
 process of splitting sentences into their constituents; that is, words
 and punctuation. Let\'s perform a simple exercise to see how this can be
 done using various packages.
-
-
 
 Exercise 2.01: Text Cleaning and Tokenization
 ---------------------------------------------
@@ -251,8 +229,6 @@ it. Follow these steps to complete this exercise:
     `sentence` and pass it through the preceding function. Add
     the following code to this: implement
 
-
-
     ```
     sentence = 'Sunil tweeted, "Witnessing 70th Republic Day "\
                 "of India from Rajpath, New Delhi. "\
@@ -266,12 +242,10 @@ it. Follow these steps to complete this exercise:
 
     The preceding command fragments the string wherever any blank space
     is present. The output should be as follows:
-
-
 ![](./images/B16062_02_06.jpg)
 
 
-Figure 2.6: Fragmented string
+
 
 With that, we have learned how to extract tokens from text. Often,
 extracting each token separately does not help. For instance, consider
@@ -288,8 +262,6 @@ consecutive tokens together.
 Next, we will look at an exercise where n-grams can be extracted from a
 given text.
 
-
-
 Exercise 2.02: Extracting n-grams
 ---------------------------------
 
@@ -303,8 +275,6 @@ to complete this exercise:
 2.  Import the `re` package and create a custom-defined
     function, which we can use to extract `n`-grams. Add the
     following code to do this:
-
-
 
     ```
     import re
@@ -323,8 +293,6 @@ to complete this exercise:
     resulting in bigrams. To check the bigrams, we pass the function the
     text and with `n`=2. Add the following code to do this:
 
-
-
     ```
     n_gram_extractor('The cute little boy is playing with the kitten.', \
                      2)
@@ -332,8 +300,6 @@ to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     ['The', 'cute']
@@ -350,8 +316,6 @@ to complete this exercise:
 4.  To check the trigrams, we pass the function with the text and with
     `n`=3. Add the following code to do this:
 
-
-
     ```
     n_gram_extractor('The cute little boy is playing with the kitten.', \
                      3)
@@ -359,8 +323,6 @@ to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     ['The', 'cute', 'little']
@@ -376,8 +338,6 @@ to complete this exercise:
 5.  To check the bigrams using the `nltk` library, add the
     following code:
 
-
-
     ```
     from nltk import ngrams
     list(ngrams('The cute little boy is playing with the kitten.'\
@@ -386,8 +346,6 @@ to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     [('The', 'cute'),
@@ -404,16 +362,12 @@ to complete this exercise:
 6.  To check the trigrams using the `nltk` library, add the
     following code:
 
-
-
     ```
     list(ngrams('The cute little boy is playing with the kitten.'.split(), 3))
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     [('The', 'cute', 'little'),
@@ -428,8 +382,6 @@ to complete this exercise:
 7.  To check the bigrams using the `textblob` library, add the
     following code:
 
-
-
     ```
     !pip install -U textblob
     from textblob import TextBlob
@@ -439,8 +391,6 @@ to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     [WordList(['The', 'cute']),
@@ -457,16 +407,12 @@ to complete this exercise:
 8.  To check the trigrams using the `textblob` library, add
     the following code:
 
-
-
     ```
     blob.ngrams(n=3)
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     [WordList(['The', 'cute', 'little']),
@@ -509,8 +455,6 @@ to tokenize texts. Follow these steps to complete this exercise:
 3.  To tokenize using the `keras` library, add the following
     code:
 
-
-
     ```
     def get_keras_tokens(text):
         return text_to_word_sequence(text)
@@ -519,17 +463,11 @@ to tokenize texts. Follow these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_07.jpg)
-
-
 
 
 4.  To tokenize using the `textblob` library, add the
     following code:
-
-
 
     ```
     def get_textblob_tokens(text):
@@ -540,12 +478,10 @@ to tokenize texts. Follow these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_08.jpg)
 
 
-Figure 2.8: Tokenization using textblob
+
 
 With that, we have learned how to tokenize texts using the
 `keras` and `textblob` libraries.
@@ -553,8 +489,6 @@ With that, we have learned how to tokenize texts using the
 **Note**
 
 In the next section, we will discuss the different types of tokenizers.
-
-
 
 Types of Tokenizers
 -------------------
@@ -586,8 +520,6 @@ Now that we have learned about the different types of tokenizers, in the
 next section, we will carry out an exercise to get a better
 understanding of them.
 
-
-
 Exercise 2.04: Tokenizing Text Using Various Tokenizers
 -------------------------------------------------------
 
@@ -618,8 +550,6 @@ Perform the following steps to implement this exercise:
 3.  To tokenize the text using `TweetTokenizer`, add the
     following code:
 
-
-
     ```
     def tokenize_with_tweet_tokenizer(text):
         # Here will create an object of tweetTokenizer
@@ -640,11 +570,7 @@ Perform the following steps to implement this exercise:
     of logic.
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_09.jpg)
-
-
 
 
     As you can see, the hashtags, emojis, websites, and Twitter IDs are
@@ -654,8 +580,6 @@ Perform the following steps to implement this exercise:
 
 4.  To tokenize the text using `MWETokenizer`, add the
     following code:
-
-
 
     ```
     def tokenize_with_mwe(text):
@@ -667,11 +591,7 @@ Perform the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_10.jpg)
-
-
 
 
     In the preceding screenshot, the words \"Indian\" and \"Army!\",
@@ -681,19 +601,13 @@ Perform the following steps to implement this exercise:
 
 5.  Add the following code to fix the issues in the previous step:
 
-
-
     ```
     tokenize_with_mwe(sentence.replace('!',''))
     ```
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_11.jpg)
-
-
 
 
     Here, we can see that instead of being treated as separate tokens,
@@ -701,8 +615,6 @@ Perform the following steps to implement this exercise:
 
 6.  To tokenize the text using the regular expression tokenizer, add the
     following code:
-
-
 
     ```
     def tokenize_with_regex_tokenizer(text):
@@ -713,17 +625,11 @@ Perform the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_12.jpg)
-
-
 
 
 7.  To tokenize the text using the whitespace tokenizer, add the
     following code:
-
-
 
     ```
     def tokenize_with_wst(text):
@@ -734,17 +640,11 @@ Perform the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_13.jpg)
-
-
 
 
 8.  To tokenize the text using the Word Punct tokenizer, add the
     following code:
-
-
 
     ```
     def tokenize_with_wordpunct_tokenizer(text):
@@ -755,12 +655,10 @@ Perform the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_14.jpg)
 
 
-Figure 2.14: Tokenization using the Word Punct tokenizer
+
 
 In this section, we have learned about different tokenization techniques
 and their `nltk` implementation.
@@ -768,8 +666,6 @@ and their `nltk` implementation.
 **Note**
 
 Now, we\'re ready to use them in our programs.
-
-
 
 Stemming
 --------
@@ -786,8 +682,6 @@ entities, which can lead to erroneous inferences. In Python,
 `RegexpStemmer` and `PorterStemmer` are the most
 widely used stemmers. Let\'s explore them one at a time.
 
-
-
 RegexpStemmer
 -------------
 
@@ -800,8 +694,6 @@ becomes \"play\".
 
 Let\'s complete the following exercise to get some hands-on experience
 with `RegexpStemmer`.
-
-
 
 Exercise 2.05: Converting Words in the Present Continuous Tense into Base Words with RegexpStemmer
 --------------------------------------------------------------------------------------------------
@@ -827,8 +719,6 @@ the stemmed string. Follow these steps to complete this exercise:
 3.  Use `regex_stemmer` to stem each word of the
     `sentence` variable. Add the following code to do this:
 
-
-
     ```
     def get_stems(text):
         """
@@ -849,8 +739,6 @@ the stemmed string. Follow these steps to complete this exercise:
 
     The preceding code generates the following output:
 
-
-
     ```
     'I love play football'
     ```
@@ -870,8 +758,6 @@ as suffixes, prefixes, and the plural \"s\") from English words. In
 doing so, it helps us extract the base form of a word from its
 variations. To get a better understanding of this, let\'s carry out a
 simple exercise.
-
-
 
 Exercise 2.06: Using the Porter Stemmer
 ---------------------------------------
@@ -895,8 +781,6 @@ these steps to complete this exercise:
 3.  Now, we\'ll make use of the Porter stemmer to stem each word of the
     `sentence` variables:
 
-
-
     ```
     def get_stems(text):
         ps_stemmer = PorterStemmer()
@@ -907,8 +791,6 @@ these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     'befor eating, it would be nice to sanit your hand wash with a sanit'
@@ -927,8 +809,6 @@ base form), the word `sanitize` has been converted into
 may lead to some problems if we use it. To overcome this issue, there is
 another technique we can use called lemmatization.
 
-
-
 Lemmatization
 -------------
 
@@ -937,8 +817,6 @@ often generates meaningless words. Lemmatization deals with such cases
 by using vocabulary and analyzing the words\' morphologies. It returns
 the base forms of words that can be found in dictionaries. Let\'s walk
 through a simple exercise to understand this better.
-
-
 
 Exercise 2.07: Performing Lemmatization
 ---------------------------------------
@@ -967,8 +845,6 @@ these steps to complete this exercise:
 3.  To lemmatize the tokens, we extracted from the sentence, add the
     following code:
 
-
-
     ```
     lemmatizer = WordNetLemmatizer()
     def get_lemmas(text):
@@ -980,8 +856,6 @@ these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     'The product produced by the process today are far better than what it produce generally.'
@@ -997,13 +871,9 @@ word to its correct nearest grammatical form.
 
 
 
-
-
 In the next section, we will deal with other kinds of word variations by
 looking at singularizing and pluralizing words using
 `textblob`.
-
-
 
 Exercise 2.08: Singularizing and Pluralizing Words
 --------------------------------------------------
@@ -1017,8 +887,6 @@ to complete this exercise:
 2.  Import `TextBlob` and declare a `sentence`
     variable. Add the following code to implement this:
 
-
-
     ```
     from textblob import TextBlob
     sentence = TextBlob('She sells seashells on the seashore')
@@ -1027,16 +895,12 @@ to complete this exercise:
 
     To check the list of words in the sentence, type the following code:
 
-
-
     ```
     sentence.words
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     WordList(['She', 'sells', 'seashells', 'on', 'the', 'seashore'])
@@ -1045,8 +909,6 @@ to complete this exercise:
 
 3.  To singularize the third word in the sentence, type the following
     code:
-
-
 
     ```
     def singularize(word):
@@ -1057,8 +919,6 @@ to complete this exercise:
 
     The preceding code generates the following output:
 
-
-
     ```
     'seashell'
     ```
@@ -1066,8 +926,6 @@ to complete this exercise:
 
 4.  To pluralize the fifth word in the given sentence, type the
     following code:
-
-
 
     ```
     def pluralize(word):
@@ -1078,8 +936,6 @@ to complete this exercise:
 
     The preceding code generates the following output:
 
-
-
     ```
     'seashores'
     ```
@@ -1087,8 +943,6 @@ to complete this exercise:
 
 Now, in the next section, we will learn about another preprocessing
 task: language translation.
-
-
 
 Language Translation
 --------------------
@@ -1101,8 +955,6 @@ language translation or machine translation. In Python, we can use
 in which you have to pass text in the source language. The method will
 return the translated word in the destination language. Let\'s look at
 how this is done.
-
-
 
 Exercise 2.09: Language Translation
 -----------------------------------
@@ -1125,8 +977,6 @@ implement this exercise:
     `TextBlob` to translate the input text from Spanish to
     English. Add the following code to do this:
 
-
-
     ```
     def translate(text,from_l,to_l):
         en_blob = TextBlob(text)
@@ -1136,8 +986,6 @@ implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     TextBlob("very well")
@@ -1152,12 +1000,8 @@ from one language to another.
 
 
 
-
-
 In the next section, we will look at another preprocessing task:
 stop-word removal.
-
-
 
 Stop-Word Removal
 -----------------
@@ -1170,8 +1014,6 @@ text is one of the preprocessing steps in NLP tasks. In Python,
 `nltk`, and `textblob`, text can be used to remove
 stop words from text. To get a better understanding of this, let\'s look
 at an exercise.
-
-
 
 Exercise 2.10: Removing Stop Words from Text
 --------------------------------------------
@@ -1195,8 +1037,6 @@ Follow these steps to complete this exercise:
     list of stop words from the sentence by using the following lines of
     code:
 
-
-
     ```
     def remove_stop_words(text,stop_word_list):
         return ' '.join([word for word in word_tokenize(text) \
@@ -1207,8 +1047,6 @@ Follow these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     'sells seashells seashore'
@@ -1222,12 +1060,8 @@ Thus, we\'ve seen how stop words can be removed from a sentence.
 
 
 
-
-
 In the next activity, we\'ll put our knowledge of preprocessing steps
 into practice.
-
-
 
 Activity 2.01: Extracting Top Keywords from the News Article
 ------------------------------------------------------------
@@ -1296,8 +1130,6 @@ into two different categories:
 
 Let\'s explore these in detail.
 
-
-
 Extracting General Features from Raw Text
 -----------------------------------------
 
@@ -1307,8 +1139,6 @@ Let\'s consider these two sentences: \"The sky is blue\" and \"The
 pillar is yellow\". Here, the sentences have the same number of words (a
 general feature)---that is, four. But the individual constituent tokens
 are different. Let\'s complete an exercise to understand this better.
-
-
 
 Exercise 2.11: Extracting General Features from Raw Text
 --------------------------------------------------------
@@ -1323,8 +1153,6 @@ steps to implement this exercise:
 
 2.  Import the `pandas` library and create a DataFrame with
     four sentences. Add the following code to implement this:
-
-
 
     ```
     import pandas as pd
@@ -1344,18 +1172,12 @@ steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_15.jpg)
-
-
 
 
 3.  Use the `apply()` function to iterate through each row of
     the column text, convert them into `TextBlob` objects, and
     extract words from them. Add the following code to implement this:
-
-
 
     ```
     def add_num_words(df):
@@ -1367,8 +1189,6 @@ steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     0     11
@@ -1388,8 +1208,6 @@ steps to implement this exercise:
     and extract the words from them to check whether any of them belong
     to the list of \"wh\" words that has been declared. Add the
     following code to do so:
-
-
 
     ```
     def is_present(wh_words, df):
@@ -1413,8 +1231,6 @@ steps to implement this exercise:
 
     The preceding code generates the following output:
 
-
-
     ```
     0     False
     1     True
@@ -1433,8 +1249,6 @@ steps to implement this exercise:
     the column text, convert them into `TextBlob` objects, and
     detect their languages:
 
-
-
     ```
     def get_language(df):
         df['language'] = df['text'].apply(lambda x : \
@@ -1445,8 +1259,6 @@ steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     0     en
@@ -1465,11 +1277,7 @@ data.
 
 
 
-
-
 Let\'s perform another exercise to get a better understanding of this.
-
-
 
 Exercise 2.12: Extracting General Features from Text
 ----------------------------------------------------
@@ -1502,8 +1310,6 @@ digits, words, and whitespaces.
 3.  To see what different kinds of parts of speech `nltk`
     provides, add the following code:
 
-
-
     ```
     def get_tagsets():
         tagdict = load('help/tagsets/upenn_tagset.pickle')
@@ -1514,18 +1320,12 @@ digits, words, and whitespaces.
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_16.jpg)
-
-
 
 
 4.  Calculate the number of occurrences of each PoS by iterating through
     each document and annotating each word with the corresponding
     `pos` tag. Add the following code to implement this:
-
-
 
     ```
     """
@@ -1560,17 +1360,11 @@ digits, words, and whitespaces.
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_17.jpg)
-
-
 
 
 5.  To calculate the number of punctuation marks, add the following
     code:
-
-
 
     ```
     def add_punctuation_count(feature_df, data):
@@ -1592,8 +1386,6 @@ digits, words, and whitespaces.
     column of the DataFrame. The preceding code generates the following
     output:
 
-
-
     ```
     0      0
     1      0
@@ -1606,8 +1398,6 @@ digits, words, and whitespaces.
 
 6.  To calculate the number of capitalized words, add the following
     code:
-
-
 
     ```
     def get_capitalized_word_count(feature_df, data):
@@ -1632,8 +1422,6 @@ digits, words, and whitespaces.
     `number_of_capital_words` column of the DataFrame. The
     preceding code generates the following output:
 
-
-
     ```
     0      1
     1      1
@@ -1649,8 +1437,6 @@ digits, words, and whitespaces.
     count of the number of capital letter words in each row.
 
 7.  To calculate the number of lowercase words, add the following code:
-
-
 
     ```
     def get_small_word_count(feature_df, data):
@@ -1674,8 +1460,6 @@ digits, words, and whitespaces.
     to the `number_of_small_words` column of the DataFrame.
     The preceding code generates the following output:
 
-
-
     ```
     0      4
     1      3
@@ -1693,8 +1477,6 @@ digits, words, and whitespaces.
 8.  To calculate the number of letters in the DataFrame, use the
     following code:
 
-
-
     ```
     def get_number_of_alphabets(feature_df, data):
         feature_df['number_of_alphabets'] = data['text']. \
@@ -1710,8 +1492,6 @@ digits, words, and whitespaces.
     characters in each row and add the count of that list to the
     `number_of_alphabets` columns. This will produce the
     following output:
-
-
 
     ```
     0     19
@@ -1729,8 +1509,6 @@ digits, words, and whitespaces.
 
 9.  To calculate the number of digits in the DataFrame, add the
     following code:
-
-
 
     ```
     def get_number_of_digit_count(feature_df, data):
@@ -1752,8 +1530,6 @@ digits, words, and whitespaces.
     the count of that list to the `number_of_digits` columns.
     The preceding code generates the following output:
 
-
-
     ```
     0      0
     1      0
@@ -1766,8 +1542,6 @@ digits, words, and whitespaces.
 
 10. To calculate the number of words in the DataFrame, add the following
     code:
-
-
 
     ```
     def get_number_of_words(feature_df, data):
@@ -1789,8 +1563,6 @@ digits, words, and whitespaces.
     `number_of_digits` columns. We will get the following
     output:
 
-
-
     ```
     0      5
     1      4
@@ -1803,8 +1575,6 @@ digits, words, and whitespaces.
 
 11. To calculate the number of whitespaces in the DataFrame, add the
     following code:
-
-
 
     ```
     def get_number_of_whitespaces(feature_df, data):
@@ -1827,8 +1597,6 @@ digits, words, and whitespaces.
     `number_of_white_spaces` columns. The preceding code
     generates the following output:
 
-
-
     ```
     0      4
     1      3
@@ -1842,8 +1610,6 @@ digits, words, and whitespaces.
 12. To view the full feature set we have just created, add the following
     code:
 
-
-
     ```
     feature_df.head()
     ```
@@ -1852,12 +1618,10 @@ digits, words, and whitespaces.
     We will be printing the head of the final DataFrame, which means we
     will print five rows of all the columns. We will get the following
     output:
-
-
 ![](./images/B16062_02_18.jpg)
 
 
-Figure 2.18: DataFrame consisting of the features we have created
+
 
 With that, we have learned how to extract general features from the
 given text.
@@ -1867,11 +1631,7 @@ given text.
 
 
 
-
-
 Now, let\'s explore how we can extract unique features.
-
-
 
 Bag of Words (BoW)
 ------------------
@@ -1893,8 +1653,6 @@ assigned a unique index number. In the second step, every document is
 represented by a list whose length is equal to the number of words in
 the vocabulary. The following exercise illustrates how BoW can be
 implemented using Python.
-
-
 
 Exercise 2.13: Creating a Bag of Words
 --------------------------------------
@@ -1925,8 +1683,6 @@ Follow these steps to implement this exercise:
 
 3.  Use the `CountVectorizer` function to create the BoW
     model. Add the following code to do this:
-
-
 
     ```
     def vectorize_text(corpus):
@@ -1963,17 +1719,11 @@ Follow these steps to implement this exercise:
     vector representation of a document in the corpus.
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_19.jpg)
-
-
 
 
 4.  Create a BoW model for the 10 most frequent terms. Add the following
     code to implement this:
-
-
 
     ```
     def bow_top_n(corpus, n):
@@ -2001,17 +1751,13 @@ Follow these steps to implement this exercise:
     it.
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_20.jpg)
 
 
-Figure 2.20: DataFrame of the output of the BoW model for the 10 most
+
 frequent terms
 
 **Note**
-
-
 
 
 
@@ -2026,8 +1772,6 @@ words plays an important role. To overcome this issue, there is another
 feature extraction model called TFIDF, which we will discuss later in
 this lab.
 
-
-
 Zipf\'s Law
 -----------
 
@@ -2037,15 +1781,9 @@ terms, if the words in a corpus are arranged in descending order of
 their frequency of occurrence, then the frequency of the word at the
 *i*[th]{.superscript} rank will be proportional to *1/i*:
 
-<div>
-
-
 ![](./images/B16062_02_21.jpg)
 
 
-</div>
-
-Figure 2.21: Zipf\'s law
 
 This also means that the frequency of the most frequent word will be
 twice the frequency of the second most frequent word. For example, if we
@@ -2055,8 +1793,6 @@ English, the word \"the\" is the most frequent word (its frequency is
 frequency of 36,411). As we can see, its frequency is almost half of the
 most frequently occurring word. To get a better understanding of this,
 let\'s perform a simple exercise.
-
-
 
 Exercise 2.14: Zipf\'s Law
 --------------------------
@@ -2070,8 +1806,6 @@ steps to implement this exercise:
 1.  Open a Jupyter Notebook.
 
 2.  Import the necessary libraries:
-
-
 
     ```
     from pylab import *
@@ -2089,8 +1823,6 @@ steps to implement this exercise:
 
     Add two methods for loading stop words and the data from the
     `newsgroups_data_sample` variable:
-
-
 
     ```
     def get_stop_words():
@@ -2123,8 +1855,6 @@ steps to implement this exercise:
 
 3.  Add the following method to calculate the frequency of each token:
 
-
-
     ```
     def get_frequency(corpus, n):
         token_count_di = Counter(corpus)
@@ -2139,8 +1869,6 @@ steps to implement this exercise:
 4.  Now, call all the preceding methods to calculate the frequency of
     the top 50 most frequent tokens:
 
-
-
     ```
     stop_word_list = get_stop_words()
     corpus = get_and_prepare_data(stop_word_list)
@@ -2149,11 +1877,7 @@ steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_22.jpg)
-
-
 
 
 5.  Plot the actual ranks of words that we got from frequency dictionary
@@ -2165,8 +1889,6 @@ steps to implement this exercise:
     `expected_frequencies` list. Use the log of actual
     frequencies to downscale the numbers. After getting the actual and
     expected frequencies, plot them using matplotlib:
-
-
 
     ```
     def get_actual_and_expected_frequencies(corpus):
@@ -2191,22 +1913,16 @@ steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_23.jpg)
 
 
-Figure 2.23: Illustration of Zipf\'s law
+
 
 So, as we can see from the preceding output, both lines have almost the
 same slope. In other words, we can say that the lines (or graphs) depict
 the proportionality of two lists.
 
 **Note**
-
-
-
-
 
 
 
@@ -2228,15 +1944,9 @@ Hence, this representation gives more weightage to the rarer or less
 frequent words than frequently occurring words. It does so with the
 following formula:
 
-<div>
-
-
 ![](./images/B16062_02_24.jpg)
 
 
-</div>
-
-Figure 2.24: TFIDF formula
 
 Here, term frequency is the frequency of a word in the given document.
 Inverse document frequency can be defined as log(D/df), where df is
@@ -2245,8 +1955,6 @@ background corpus.
 
 Now, let\'s complete an exercise and learn how TFIDF can be implemented
 in Python.
-
-
 
 Exercise 2.15: TFIDF Representation
 -----------------------------------
@@ -2273,8 +1981,6 @@ Follow these steps to implement this exercise:
 
 3.  To create a TFIDF model, write the following code:
 
-
-
     ```
     corpus = ['Data Science is an overlap between Arts and Science',\
               'Generally, Arts graduates are right-brained and '\
@@ -2291,12 +1997,10 @@ Follow these steps to implement this exercise:
     will generate TFIDF vectors from the corpus. You will then call this
     method on a given corpus. The preceding code generates the following
     output:
-
-
 ![](./images/B16062_02_25.jpg)
 
 
-Figure 2.25: TFIDF representation of the 10 most frequent terms
+
 
 The preceding output represents the TFIDF vectors for each row. As you
 can see from the results, each document is represented by a list whose
@@ -2305,8 +2009,6 @@ length is equal to the unique words in the corpus and in each list
 corresponding index.
 
 **Note**
-
-
 
 
 
@@ -2345,7 +2047,7 @@ strings or texts. They are explained one by one here:
 ![](./images/B16062_02_26.jpg)
 
 
-Figure 2.26: Cosine similarity
+
 
 Here, A and B are two vectors, A.B is the dot product of two vectors,
 and \|A\| and \|B\| are the magnitude of two vectors.
@@ -2374,8 +2076,6 @@ and \|A\| and \|B\| are the magnitude of two vectors.
 
 To get a better understanding of text similarity, we will complete an
 exercise.
-
-
 
 Exercise 2.16: Calculating Text Similarity Using Jaccard and Cosine Similarity
 ------------------------------------------------------------------------------
@@ -2438,16 +2138,12 @@ for a given pair of texts. Follow these steps to complete this exercise:
 5.  To check the Jaccard similarity between the statements in
     `pair1`, write the following code:
 
-
-
     ```
     extract_text_similarity_jaccard(pair1[0],pair1[1])
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     0.14285714285714285
@@ -2457,16 +2153,12 @@ for a given pair of texts. Follow these steps to complete this exercise:
 6.  To check the Jaccard similarity between the statements in
     `pair2`, write the following code:
 
-
-
     ```
     extract_text_similarity_jaccard(pair2[0],pair2[1])
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     0.0
@@ -2476,16 +2168,12 @@ for a given pair of texts. Follow these steps to complete this exercise:
 7.  To check the Jaccard similarity between the statements in
     `pair3`, write the following code:
 
-
-
     ```
     extract_text_similarity_jaccard(pair3[0],pair3[1])
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     0.6
@@ -2520,16 +2208,12 @@ for a given pair of texts. Follow these steps to complete this exercise:
 10. To check the cosine similarity between the initial two texts, write
     the following code:
 
-
-
     ```
     cosine_similarity(tf_idf_vectors[0],tf_idf_vectors[1])
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     array([[0.3082764]])
@@ -2539,16 +2223,12 @@ for a given pair of texts. Follow these steps to complete this exercise:
 11. To check the cosine similarity between the third and fourth texts,
     write the following code:
 
-
-
     ```
     cosine_similarity(tf_idf_vectors[2],tf_idf_vectors[3])
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     array([[0.]])
@@ -2558,16 +2238,12 @@ for a given pair of texts. Follow these steps to complete this exercise:
 12. To check the cosine similarity between the fifth and sixth texts,
     write the following code:
 
-
-
     ```
     cosine_similarity(tf_idf_vectors[4],tf_idf_vectors[5])
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     array([[0.80368547]])
@@ -2587,10 +2263,6 @@ measure.
 
 
 
-
-
-
-
 Word Sense Disambiguation Using the Lesk Algorithm
 --------------------------------------------------
 
@@ -2606,8 +2278,6 @@ background in `synsets`. The definition that is closer to the
 meaning of a word being used in the context of the sentence will be
 taken as the right definition. Let\'s perform a simple exercise to get a
 better idea of how we can implement this.
-
-
 
 Exercise 2.17: Implementing the Lesk Algorithm Using String Similarity and Text Vectorization
 ---------------------------------------------------------------------------------------------
@@ -2702,8 +2372,6 @@ complete this exercise:
 7.  Use the previously defined methods to find the definition of the
     word bank:
 
-
-
     ```
     lower_case_corpus  = to_lower_case(corpus)
     corpus_tf_idf  = get_tf_idf_vectors(lower_case_corpus)
@@ -2718,8 +2386,6 @@ complete this exercise:
 
 
     You will get the following output:
-
-
 
     ```
     The definition of word bank is def2 with similarity of 0.14419130686278897
@@ -2736,10 +2402,6 @@ right definition of ambiguous words.
 
 
 
-
-
-
-
 Word Clouds
 -----------
 
@@ -2749,23 +2411,15 @@ by using word clouds. A word cloud is a visualization of a text corpus
 in which the sizes of the tokens (words) represent the number of times
 they have occurred, as shown in the following image:
 
-<div>
-
-
 ![](./images/B16062_02_27.jpg)
 
 
-</div>
-
-Figure 2.27: Example of a word cloud
 
 In the following exercise, we will be using a Python library called
 `wordcloud` to build a word cloud from the
 `20newsgroups` dataset.
 
 Let\'s go through an exercise to understand this better.
-
-
 
 Exercise 2.18: Generating Word Clouds
 -------------------------------------
@@ -2842,8 +2496,6 @@ these steps to complete this exercise:
     stop word list, generate a word cloud object, and finally plot the
     word cloud with matplotlib:
 
-
-
     ```
     text = get_data(1000)
     stop_words = load_stop_words()
@@ -2855,12 +2507,10 @@ these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_28.jpg)
 
 
-Figure 2.28: Word cloud representation of the first 10 articles
+
 
 So, in this exercise, we learned what word clouds are and how to
 generate word clouds with Python\'s `wordcloud` library and
@@ -2871,12 +2521,8 @@ visualize this with matplotlib.
 
 
 
-
-
 In the next section, we will explore other visualizations, such as
 dependency parse trees and named entities.
-
-
 
 Other Visualizations
 --------------------
@@ -2896,8 +2542,6 @@ texts. Some of the most popular ways are listed here:
     different colors.
 
 Let\'s go through the following exercise to understand this better.
-
-
 
 Exercise 2.19: Other Visualizations Dependency Parse Trees and Named Entities
 -----------------------------------------------------------------------------
@@ -2925,8 +2569,6 @@ named entities. Follow these steps to complete this exercise:
 3.  Depict the sentence \"God helps those who help themselves\" using a
     dependency parse tree with the following code:
 
-
-
     ```
     doc = nlp('God helps those who help themselves')
     displacy.render(doc, style='dep', jupyter=True)
@@ -2934,17 +2576,11 @@ named entities. Follow these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_29.jpg)
-
-
 
 
 4.  Visualize the named entities of the text corpus by adding the
     following code:
-
-
 
     ```
     text = 'Once upon a time there lived a saint named '\
@@ -2958,24 +2594,18 @@ named entities. Follow these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_02_30.jpg)
 
 
-Figure 2.30: Named entities
+
 
 **Note**
 
 
 
 
-
-
 Now that you have learned about visualizations, we will solve an
 activity based on them to gain an even better understanding.
-
-
 
 Activity 2.02: Text Visualization
 ---------------------------------

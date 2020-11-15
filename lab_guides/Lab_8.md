@@ -5,8 +5,6 @@
 Lab 8. Sentiment Analysis
 ==========================
 
-
-
 Overview
 
 This lab introduces you to one of the most exciting applications of
@@ -46,8 +44,6 @@ emotions present in a sentence, such as joy or anger. For example, \"I
 love oranges\" implies an emotionally positive statement, whereas \"I
 hate politics\" is a strong negative emotion.
 
-
-
 Why Is Sentiment Analysis Required?
 -----------------------------------
 
@@ -66,8 +62,6 @@ picture. Artificial intelligence is useful when it is impractical for
 people to perform the task. In this case, the task is reading thousands
 of reviews.
 
-
-
 The Growth of Sentiment Analysis
 --------------------------------
 
@@ -79,8 +73,6 @@ customers\' sentiments have a major advantage in predicting and shaping
 purchasing decisions. Finally, NLP technology has improved
 significantly, allowing the much wider application of sentiment
 analysis.
-
-
 
 The Monetization of Emotion
 ---------------------------
@@ -100,15 +92,11 @@ people like or dislike. This data is of significant value not only in
 business but also in political campaigns. This means that sentiment has
 significant business value and can be monetized.
 
-
-
 Types of Sentiments
 -------------------
 
 There are various sentiments that we can try to detect in language
 sources. Let\'s discuss a few of them in detail.
-
-
 
 ### Emotion
 
@@ -164,8 +152,6 @@ subjective opinion and statement 2 as an objective fact. Determining the
 objectivity of a statement helps us decide on the appropriate response
 to the statement.
 
-
-
 Key Ideas and Terms
 -------------------
 
@@ -218,8 +204,6 @@ intensity is measured in terms of arousal, which ranges from low to
 high. Most often, the level of intensity is included in the sentiment
 score. It is measured by looking at the closeness of the score to 0 or
 1.
-
-
 
 Applications of Sentiment Analysis
 ----------------------------------
@@ -291,8 +275,6 @@ There are a lot of tools capable of analyzing sentiment. Each tool has
 its advantages and disadvantages. We will look at each of them in
 detail.
 
-
-
 NLP Services from Major Cloud Providers
 ---------------------------------------
 
@@ -333,8 +315,6 @@ major cloud providers:
     one-solution-fits-all and is considered very generic, so it won\'t
     necessarily apply to niche use cases.
 
-
-
 Online Marketplaces
 -------------------
 
@@ -362,8 +342,6 @@ Here are the advantages and disadvantages of online marketplaces:
     big risk since their solution has a direct dependency on a third
     party that is outside their control.
 
-
-
 Python NLP Libraries
 --------------------
 
@@ -390,8 +368,6 @@ Here are the advantages and disadvantages of Python NLP libraries:
 -   This won\'t be considered a true disadvantage since libraries are
     meant to be general-purpose, but for complex use cases, developers
     would have to write their own implementations as required.
-
-
 
 Deep Learning Frameworks
 ------------------------
@@ -442,8 +418,6 @@ sections, we will do an exercise and an activity to get a better
 understanding of how we can use `textblob` for sentiment
 analysis.
 
-
-
 Exercise 8.01: Basic Sentiment Analysis Using the textblob Library
 ------------------------------------------------------------------
 
@@ -488,16 +462,12 @@ exercise:
 5.  In order to view the details of the `blob` object, insert
     a new cell and add the following code:
 
-
-
     ```
     print(blob)
     ```
 
 
     The code generates the following output:
-
-
 
     ```
     but you are Late Flight again!! Again and again! Where are the crew?
@@ -508,16 +478,12 @@ exercise:
     `TextBlob` class (which returns a tuple), insert a new
     cell and add the following code:
 
-
-
     ```
     blob.sentiment
     ```
 
 
     The code generates the following output:
-
-
 
     ```
     Sentiment(polarity=—0.5859375, subjectivity=0.6
@@ -536,8 +502,6 @@ somewhat on the subjective side, though not entirely subjective. We have
 performed sentiment analysis on a given text using the
 `textblob` library. In the next section, we will perform
 sentiment analysis on tweets about airlines.
-
-
 
 Activity 8.01: Tweet Sentiment Analysis Using the textblob library
 ------------------------------------------------------------------
@@ -566,15 +530,9 @@ Follow these steps to implement this activity:
 After executing those steps, the output for positive tweets should be as
 follows:
 
-<div>
-
-
 ![](./images/B16062_08_01.jpg)
 
 
-</div>
-
-Figure 8.1: Positive tweets
 
 As you can see from the preceding output, the `Polarity`
 column shows a positive integer. This implies that the tweet displays
@@ -583,15 +541,9 @@ most tweets are found to be of a subjective nature.
 
 The output for negative tweets is as follows:
 
-<div>
-
-
 ![](./images/B16062_08_02.jpg)
 
 
-</div>
-
-Figure 8.2: Negative tweets
 
 The preceding output shows a `Polarity` column with a negative
 integer, implying that the tweet displays negative sentiment, while the
@@ -600,15 +552,9 @@ the same as before---personal opinion or feeling.
 
 The output for neutral tweets should be as follows:
 
-<div>
-
-
 ![](./images/B16062_08_03.jpg)
 
 
-</div>
-
-Figure 8.3: Neutral tweets
 
 The preceding output has a `Polarity` column and a
 `Subjectivity` column with a zero or almost zero value. This
@@ -633,8 +579,6 @@ Supervised datasets are a kind of dataset that is labeled with the
 target variable, usually a column that specifies the sentiment value in
 the text. This is the value we want to predict in the unseen text.
 
-
-
 Exercise 8.02: Loading Data for Sentiment Analysis
 --------------------------------------------------
 
@@ -654,8 +598,6 @@ Follow these steps to implement this exercise:
 2.  Insert a new cell and add the following code to import the necessary
     libraries:
 
-
-
     ```
     import pandas as pd
     pd.set_option('display.max_colwidth', 200)
@@ -669,8 +611,6 @@ Follow these steps to implement this exercise:
 3.  To specify where the sentiment data is located, first load three
     different datasets from Yelp, IMDb, and Amazon. Insert a new cell
     and add the following code to implement this:
-
-
 
     ```
     DATA_DIR = 'data/sentiment_labelled_sentences/'
@@ -687,8 +627,6 @@ Follow these steps to implement this exercise:
 4.  To load the IMDb reviews, insert a new cell and add the following
     code:
 
-
-
     ```
     imdb_reviews = pd.read_table(IMDB_DATA_FILE, names=COLUMN_NAMES)
     ```
@@ -700,19 +638,13 @@ Follow these steps to implement this exercise:
 5.  Display the top `10` records in the DataFrame. Add the
     following code in the new cell:
 
-
-
     ```
     imdb_reviews.head(10)
     ```
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_08_04.jpg)
-
-
 
 
     In the preceding figure, you can see that the negative reviews have
@@ -723,16 +655,12 @@ Follow these steps to implement this exercise:
     the `value_counts()` function. Add the following code in a
     new cell to implement this:
 
-
-
     ```
     imdb_reviews.Sentiment.value_counts()
     ```
 
 
     The expected output with total reviews should be as follows:
-
-
 
     ```
     1          386
@@ -747,8 +675,6 @@ Follow these steps to implement this exercise:
 
 7.  Format the data by adding the following code in a new cell:
 
-
-
     ```
     imdb_counts = imdb_reviews.Sentiment.value_counts().to_frame()
     imdb_counts.index = pd.Series(['Positive', 'Negative'])
@@ -757,11 +683,7 @@ Follow these steps to implement this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_08_05.jpg)
-
-
 
 
     We called `value_counts()`, created a DataFrame, and
@@ -771,8 +693,6 @@ Follow these steps to implement this exercise:
 8.  To load the Amazon reviews, insert a new cell and add the following
     code:
 
-
-
     ```
     amazon_reviews = pd.read_table(AMAZON_DATA_FILE, \
                                    names=COLUMN_NAMES)
@@ -781,17 +701,11 @@ Follow these steps to implement this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_08_06.jpg)
-
-
 
 
 9.  To load the Yelp reviews, insert a new cell and add the following
     code:
-
-
 
     ```
     yelp_reviews = pd.read_table(YELP_DATA_FILE, \
@@ -801,16 +715,12 @@ Follow these steps to implement this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_08_07.jpg)
 
 
-Figure 8.7: Reviews from the Yelp dataset
+
 
 **Note**
-
-
 
 
 
@@ -860,8 +770,6 @@ sentiment analysis model, the following steps should be taken:
 In the next section, we will train a sentiment model. We\'ll make use of
 the `TfidfVectorizer` and `LogisticRegression`
 classes, which we explored in one of the previous chapters.
-
-
 
 Activity 8.02: Training a Sentiment Model Using TFIDF and Logistic Regression
 -----------------------------------------------------------------------------

@@ -4,8 +4,6 @@
 Lab 7. Text Generation and Summarization
 ====================================
 
-
-
 Overview
 
 This lab begins with the concept of text generation using Markov
@@ -15,8 +13,6 @@ TextRank algorithm and use it with different datasets. By the end of
 this lab, you will understand the applications and challenges of
 text generation and summarization using **Natural Language Processing**
 (**NLP**) approaches.
-
-
 
 Introduction
 ============
@@ -45,8 +41,6 @@ be generated in many different ways, which we will explore using Markov
 chains. Whether this generated text can correspond to a coherent line of
 thought is something that we will address later in this section.
 
-
-
 Markov Chains
 -------------
 
@@ -58,15 +52,9 @@ function describes how a system in its current state can move to a
 different state or even continue in the same state. To better understand
 this, consider the following diagram:
 
-<div>
-
-
 ![](./images/B16062_07_01.jpg)
 
 
-</div>
-
-Figure 7.1: Markov chain for weather
 
 The successor function of a Markov chain is a random selection of a
 successor state based on probabilities. For instance, consider that the
@@ -91,8 +79,6 @@ way, followed by the next successor state found in a random way, and
 continue in the same manner until we have generated a sequence of words
 of the required length. In the next section, we will do an exercise
 related to Markov chains to get a better understanding of them.
-
-
 
 Exercise 7.01: Text Generation Using a Random Walk over a Markov Chain
 ----------------------------------------------------------------------
@@ -159,8 +145,6 @@ Follow these steps to complete this exercise:
 4.  Split the corpus into a list of words. Show the number of words in
     the corpus:
 
-
-
     ```
     corpus=text.split()
     corpus_length=len(corpus)
@@ -170,8 +154,6 @@ Follow these steps to complete this exercise:
 
     The preceding code generates the following output:
 
-
-
     ```
     19985
     ```
@@ -179,8 +161,6 @@ Follow these steps to complete this exercise:
 
 5.  Insert a new cell and add the following code to define the successor
     states for each state. Use a dictionary for this:
-
-
 
     ```
     succ_func={}
@@ -198,11 +178,7 @@ Follow these steps to complete this exercise:
 
     The preceding code generates an output as follows. **Note** that we\'re
     only displaying a part of the output here.
-
-
 ![](./images/B16062_07_02.jpg)
-
-
 
 
     We find that \"he\" is shown as a successor of \"who\" more than
@@ -238,8 +214,6 @@ Follow these steps to complete this exercise:
     containing 10 phrases of four words (including the initial word) and
     10 phrases of five words (including the initial word):
 
-
-
     ```
     for k in range(3,5):
         for j in range(10):
@@ -248,16 +222,12 @@ Follow these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_03.jpg)
 
 
-Figure 7.3: Phrases generated, consisting of four and five words
+
 
 **Note**
-
-
 
 
 
@@ -333,8 +303,6 @@ algorithm, which is an unsupervised machine learning method. For
 simplicity, we will focus on single-document summarization in this
 lab. To implement this, we will be using the gensim library.
 
-
-
 TextRank
 --------
 
@@ -356,11 +324,7 @@ The TextRank algorithm works as follows:
     (say, *w*[k]{.subscript}) in the two sentences divided by the sum of
     the number of words in the two sentences. This can be represented as
     follows:
-
-
 ![](./images/B16062_07_04.jpg)
-
-
 
 
 4.  For each node, we compute a new importance score, which is a
@@ -370,11 +334,7 @@ The TextRank algorithm works as follows:
     neighboring nodes that are directed toward that node that is
     adjusted by all the outward edge weights (*w*[jk]{.subscript}) and
     the damping factor (*d*). This can be represented as follows:
-
-
 ![](./images/B16062_07_05.jpg)
-
-
 
 
     *d*=0.85 is typically used as the damping factor. While we have used
@@ -420,8 +380,6 @@ of the similarity measure described in *step 3* of the algorithm. This
 will be clearer in the following exercise, in which you will summarize
 text using TextRank.
 
-
-
 Exercise 7.02: Performing Summarization Using TextRank
 ------------------------------------------------------
 
@@ -434,8 +392,6 @@ using the gensim implementation of the TextRank algorithm. In all, we
 shall extract and print four summaries.
 
 In addition to these libraries, you will need to import the following:
-
-
 
 ```
 from gensim.summarization import summarize
@@ -452,8 +408,6 @@ Complete the following steps to implement this exercise:
 
 2.  Insert a new cell and add the following code to import the necessary
     libraries and extract the required text from *After Twenty Years*:
-
-
 
     ```
     from gensim.summarization import summarize
@@ -473,18 +427,12 @@ Complete the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_06.jpg)
-
-
 
 
 3.  Add the following code to extract the required text and print the
     summarized text, with the `ratio` parameter set to
     `0.2`:
-
-
 
     ```
     summary_text_after_twenty=summarize(text_after_twenty, \
@@ -494,18 +442,12 @@ Complete the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_07.jpg)
-
-
 
 
 4.  Insert a new cell and add the following code to summarize the text
     and print the summarized text, with the `ratio` parameter
     set to `0.25`:
-
-
 
     ```
     summary_text_after_twenty=summarize(text_after_twenty, \
@@ -515,17 +457,11 @@ Complete the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_08.jpg)
-
-
 
 
 5.  Insert a new cell and add the following code to extract the required
     text from the Wikipedia page for Oscar Wilde:
-
-
 
     ```
     #text_wiki_oscarwilde=wikipedia.summary("Oscar Wilde")
@@ -541,17 +477,11 @@ Complete the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_09.jpg)
-
-
 
 
 6.  Insert a new cell and add the following code to summarize the text
     and print the summarized text using `ratio=0.2`:
-
-
 
     ```
     summary_wiki_oscarwilde=summarize(text_wiki_oscarwilde, \
@@ -561,17 +491,11 @@ Complete the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_10.jpg)
-
-
 
 
 7.  Add the following code to summarize the text and print the
     summarized text using `ratio=0.25`:
-
-
 
     ```
     summary_wiki_oscarwilde=summarize(text_wiki_oscarwilde, \
@@ -581,16 +505,12 @@ Complete the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_11.jpg)
 
 
-Figure 7.11: Summarized text when the ratio is 0.25
+
 
 **Note**
-
-
 
 
 
@@ -601,8 +521,6 @@ than the short story. We can also see that the summary with a
 `ratio` of `0.25`. Would extractive summarization
 work better for a children\'s fairytale than it does for an O. Henry
 short story? Let\'s explore this in the next exercise.
-
-
 
 Exercise 7.03: Summarizing a Children\'s Fairy Tale Using TextRank
 ------------------------------------------------------------------
@@ -633,8 +551,6 @@ Complete the following steps to implement this exercise:
 3.  Insert a new cell and add the following code to fetch Watty Piper\'s
     version of *Little Red Riding Hood*:
 
-
-
     ```
     file_url_grimms=r'../data/littleredrh/pg11592.txt'
     with open(file_url_grimms, 'r') as f:
@@ -652,18 +568,12 @@ Complete the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_12.jpg)
-
-
 
     Riding Hood
 
 4.  Insert a new cell, add the following code, and fetch the Perrault
     fairy tale version of *Little Red Riding Hood*:
-
-
 
     ```
     file_url_perrault=r'../data/littleredrh/pg29021.txt'
@@ -682,11 +592,7 @@ Complete the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_13.jpg)
-
-
 
     Hood
 
@@ -704,19 +610,13 @@ Complete the following steps to implement this exercise:
     summary (`ratio` of `0.20`) of Grimm\'s version
     of *Little Red Riding Hood*:
 
-
-
     ```
     print(llrh_grimms_textrank)
     ```
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_14.jpg)
-
-
 
     variation
 
@@ -724,19 +624,13 @@ Complete the following steps to implement this exercise:
     summary (`ratio` of `0.20`) of Perrault\'s
     version of *Little Red Riding Hood*:
 
-
-
     ```
     print(llrh_perrault_textrank)
     ```
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_15.jpg)
-
-
 
     version
 
@@ -754,25 +648,17 @@ Complete the following steps to implement this exercise:
     (`ratio` of `0.5`) of Piper\'s version of
     *Little Red Riding Hood*:
 
-
-
     ```
     print(llrh_grimms_textrank)
     ```
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_16.jpg)
-
-
 
 10. Add the following code to print a TextRank summary
     (`ratio` of `0.5`) of Perrault\'s version of
     *Little Red Riding Hood*:
-
-
 
     ```
     print(llrh_perrault_textrank)
@@ -780,16 +666,12 @@ Complete the following steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_07_17.jpg)
 
 
-Figure 7.17: Output after implementing TextRank on the Perrault version
+
 
 **Note**
-
-
 
 
 
@@ -811,8 +693,6 @@ a fairytale is unsuitable for extractive summarization. Lets now do an
 activity in which we\'ll use the TextRank algorithm to summarize
 complaints that customers have written against some organizations.
 
-
-
 Activity 7.01: Summarizing Complaints in the Consumer Financial Protection Bureau Dataset
 -----------------------------------------------------------------------------------------
 
@@ -825,11 +705,7 @@ TextRank.
 
 **Note**
 
-You can find the dataset to be used for this activity at
-<https://www.dropbox.com/sh/qmq3x3ah1cf3ecz/AAAg_E6f0I5vdaB4WVmR6TCga?dl=0&preview=Consumer_Complaints.csv>.
-To complete the activity, you will need to place the `.csv`
-file into the `data` folder for this lab in your local
-directory.
+To complete the activity, you will need the `.csv` file in the `data` folder for this lab in your localdirectory.
 
 Follow these steps to implement this activity:
 
@@ -860,7 +736,7 @@ Follow these steps to implement this activity:
 ![](./images/B16062_07_18.jpg)
 
 
-Figure 7.18: DataFrame showing the summarized complaints
+
 
 **Note**
 

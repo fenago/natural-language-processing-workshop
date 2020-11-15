@@ -5,8 +5,6 @@
 Lab 5. Topic Modeling
 =================
 
-
-
 Overview
 
 This lab introduces topic modeling, which means using unsupervised
@@ -91,8 +89,6 @@ assumptions about the documents. If you think that the document set
 might inherently contain a large number of topics, you should configure
 the algorithm to look for a similar number of topics.
 
-
-
 Exploratory Data Analysis
 -------------------------
 
@@ -108,8 +104,6 @@ For example, you might want to know whether the text dataset is skewed
 to any particular set of topics, or whether the sources are uniform or
 disparate. This data further allows us to choose the appropriate
 algorithms for the actual project.
-
-
 
 Transforming Unstructured Data to Structured Data
 -------------------------------------------------
@@ -129,8 +123,6 @@ transformation is also an example of dimensionality reduction, as
 unstructured text can have many more dimensions (each dimension
 corresponds to a unique word) than the number of dimensions in
 structured data (each dimension corresponds to a topic).
-
-
 
 Bag of Words
 ------------
@@ -181,8 +173,6 @@ We can observe the documents and the words but not the topics.
 The LDA algorithm builds on the LSA algorithm. In this case, similar
 acronyms are indicative of this association.
 
-
-
 Latent Semantic Analysis (LSA)
 ------------------------------
 
@@ -191,8 +181,6 @@ Web**. It was first described in 1988. LSA is also known by an
 alternative name, **Latent Semantic Indexing** (**LSI**), particularly
 when it is used for semantic searches of document indices. The goal of
 LSA is to uncover the latent topics that underlie documents and words.
-
-
 
 LSA -- How It Works
 -------------------
@@ -204,15 +192,9 @@ we can represent as a term-to-document matrix. This term-to-document
 matrix has terms as rows and documents as columns. The following table
 gives a simplified illustration of a term-to-document matrix:
 
-<div>
-
-
 ![](./images/B16062_05_01.jpg)
 
 
-</div>
-
-Figure 5.1: A simplified view of a term-to-document matrix
 
 Now, we break this matrix down into three separate matrix factors,
 namely a term-to-topics matrix, a topic-importance matrix, and a
@@ -220,29 +202,17 @@ topic-to-documents matrix. Let\'s consider the matrix shown on the
 left-hand side and the corresponding factor matrices on the right-hand
 side:
 
-<div>
-
-
 ![](./images/B16062_05_02.jpg)
 
 
-</div>
-
-Figure 5.2: Document matrix and its broken matrices
 
 As we can see in this diagram, the rectangular matrix is separated into
 the product of other matrices. The process takes a matrix, *M*, and
 splits it, as shown in the following formula:
 
-<div>
-
-
 ![](./images/B16062_05_03.jpg)
 
 
-</div>
-
-Figure 5.3: Splitting the matrix M
 
 The following are the broad definitions of the preceding equation:
 
@@ -297,13 +267,9 @@ download the English language model using the following code, so that we
 can load this model (since there are models for many different
 languages).
 
-
-
 ```
 python -m spacy download en_core_web_sm
 ```
-
-
 
 
 Exercise 5.01: Analyzing Wikipedia World Cup Articles with Latent Semantic Analysis
@@ -365,8 +331,6 @@ Follow these steps to complete this exercise:
 4.  Insert a new cell and add the following code to find Wikipedia
     articles related to the World Cup:
 
-
-
     ```
     import wikipedia
     wikipedia.search('Cricket World Cup'),\
@@ -375,18 +339,12 @@ Follow these steps to complete this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_04.jpg)
-
-
 
 
 5.  Insert a new cell and add the following code fetch the Wikipedia
     articles about the 2018 FIFA World Cup and the 2019 Cricket World
     Cup, concatenate them, and show the result:
-
-
 
     ```
     latest_soccer_cricket=['2018 FIFA World Cup',\
@@ -399,18 +357,12 @@ Follow these steps to complete this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_05.jpg)
-
-
 
 
 6.  Insert a new cell and add the following code to clean the text,
     using the spaCy English language model to tokenize the corpus and
     exclude all tokens that are not detected as nouns:
-
-
 
     ```
     text=clean(corpus)
@@ -435,19 +387,13 @@ Follow these steps to complete this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_06.jpg)
-
-
 
 
 7.  Insert a new cell and add the following code to convert the corpus
     into a list in which each token corresponds to a number for more
     efficient representation, as gensim requires it in this form. Then,
     find the topics in the corpus:
-
-
 
     ```
     dictionary = corpora.Dictionary(preproc_text)
@@ -460,11 +406,7 @@ Follow these steps to complete this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_07.jpg)
-
-
 
 
     To create our `LsiModel`, we had to decide up front how
@@ -485,8 +427,6 @@ Follow these steps to complete this exercise:
 8.  To determine which topics have the highest weight for a document,
     insert a new cell and add the following code:
 
-
-
     ```
     model_arr = np.argmax(lsamodel.get_topics(),axis=0)
     y, x = np.histogram(model_arr, bins=np.arange(NUM_TOPICS+1))
@@ -499,12 +439,10 @@ Follow these steps to complete this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_08.jpg)
 
 
-Figure 5.8: Graph representing weight of topics for the documents
+
 
 We can see that topic `1` and topic `0` have the
 highest weight in almost all the documents.
@@ -523,15 +461,11 @@ Robinson Crusoe by Daniel Defoe*.
 
 
 
-
-
 We have now performed topic modeling with the help of LSA. In the next
 section, we will learn about another topic-modeling algorithm: LDA.
 Before we move onto its implementation, let\'s quickly try and build a
 basic intuition about a couple of concepts that will help us in the
 subsequent sections.
-
-
 
 Dirichlet Process and Dirichlet Distribution
 --------------------------------------------
@@ -547,8 +481,6 @@ The Dirichlet distribution is a special case of the Dirichlet process,
 in which the number of topics needs to be specified explicitly. It is
 used for the LDA topic-modeling algorithm.
 
-
-
 Latent Dirichlet Allocation (LDA)
 ---------------------------------
 
@@ -562,8 +494,6 @@ words---all in a probabilistic way. In this case, we have two
 concentration parameters corresponding to the document level and the
 topic level.
 
-
-
 LDA -- How It Works
 -------------------
 
@@ -572,15 +502,9 @@ four documents that contain only three unique words: **Cat**, **Dog**,
 and **Hippo**. The following figure shows the documents and the number
 of times each word is found in each document:
 
-<div>
-
-
 ![](./images/B16062_05_09.jpg)
 
 
-</div>
-
-Figure 5.9: Occurrence of words in different documents
 
 As we can see in the figure, the word **Cat** is found **10** times in
 **Document 1** and **Document 4** and **0** times in documents **2** and
@@ -590,15 +514,9 @@ tracks the probability of selecting a specific word when sampling a
 specific topic. The second table keeps track of the probability of
 selecting a specific topic when sampling a particular document:
 
-<div>
-
-
 ![](./images/B16062_05_10.jpg)
 
 
-</div>
-
-Figure 5.10: Probability tables
 
 These probability tables reflect how likely it is to get a word if you
 sampled from each topic. If you sampled a word from **topic 3**, it
@@ -625,8 +543,6 @@ The parameters that we use for tomotopy are as follows:
 -   `η`: This is associated with topic generation.
 -   `seed`: This helps with fixing the initial randomization.
 
-
-
 Measuring the Predictive Power of a Generative Topic Model
 ----------------------------------------------------------
 
@@ -636,15 +552,9 @@ measure of how close the distribution of the words in the generated
 corpus is to reality. Log perplexity is a more convenient measure for
 this closeness. The formula for log perplexity is as follows:
 
-<div>
-
-
 ![](./images/B16062_05_11.jpg)
 
 
-</div>
-
-Figure 5.11: Formula for log perplexity
 
 Here, *n* is number of words and *P(w)* is the probability associated
 with word *w*. We can see that negative log likelihood is identical to
@@ -663,8 +573,6 @@ hold-out sample as it is indicative of the model having a low capacity
 to learn or it is indicative of the dataset not being generalizable. The
 negative log likelihood is approximately estimated in topic modeling
 libraries as it is intractable to calculate.
-
-
 
 Exercise 5.02: Finding Topics in Canadian Open Data Inventory Using the LDA Model
 ---------------------------------------------------------------------------------
@@ -727,8 +635,6 @@ The following steps will help you complete this exercise:
     using the spaCy English language model to tokenize the corpus and to
     exclude all tokens that are not detected as nouns:
 
-
-
     ```
     import spacy
     nlp = spacy.load('en_core_web_sm')
@@ -751,11 +657,7 @@ The following steps will help you complete this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_12.jpg)
-
-
 
 
     The pandas DataFrame was sampled. 25% of the dataset has been
@@ -764,8 +666,6 @@ The following steps will help you complete this exercise:
 
 5.  Insert a new cell and add the following code to see how the negative
     log likelihood varies by the number of iterations:
-
-
 
     ```
     import tomotopy as tp
@@ -781,18 +681,12 @@ The following steps will help you complete this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_13.jpg)
-
-
 
     iterations
 
 6.  Insert a new cell and add the following code to train a topic model
     with ten iterations and to show the inferred topics:
-
-
 
     ```
     mdl.train(10)
@@ -804,8 +698,6 @@ The following steps will help you complete this exercise:
 
     The code generates the following output:
 
-
-
     ```
     Top 10 words of topic #0
     [('polygon', 0.36050185561180115), ('dataset', 0.0334757782722234726), ('information', 0.03004324994981289), ('soil', 0,029185116291046143), ('area', 0,026610717177391052), ('surface', 0.025752583518624306), ('map', 0.024036318063735962)]
@@ -815,8 +707,6 @@ The following steps will help you complete this exercise:
 7.  Insert a new cell and add the following code to
     see the probability distribution of topics if you consider the
     entire dataset as a single document:
-
-
 
     ```
     bag_of_words=[word for sent in preproc_text for word in sent]
@@ -828,8 +718,6 @@ The following steps will help you complete this exercise:
 
     The code generates the following output:
 
-
-
     ```
     array([11,17,14,19,12,  7,  4, 13, 10,  2,  3, 15,  1, 18, 16,  9,  0,
             6,  8,  5], dtype=int64)
@@ -839,16 +727,12 @@ The following steps will help you complete this exercise:
 8.  Insert a new cell and add the following code to see the probability
     distribution of topic 11:
 
-
-
     ```
     print(mdl.get_topic_words(11, top_n=7))
     ```
 
 
     The code generates the following output
-
-
 
     ```
     [('table', 0.24849626421928406), ('census', 0.1265643984079361), ('level', 0.06526772677898407), ('series', 0.06306280940771103), ('topic', 0.062401335686445236), ('geography', 0.062401335686445236), ('country', 0.06218084320425987)]
@@ -858,16 +742,12 @@ The following steps will help you complete this exercise:
 9.  Insert a new cell and add the following code to see the probability
     distribution of topic 17:
 
-
-
     ```
     print(mdl.get_topic_words(17, top_n=7))
     ```
 
 
     The code generates the following output:
-
-
 
     ```
     [('datum', 0.0603327676653862), ('information', 0.057247743010520935), ('year', 0.03462424501776695), ('dataset', 0.03291034325957298), ('project', 0.017828006289734993), ('website', 0.014057422056794167), ('activity', 0.012000739574432373)]
@@ -877,16 +757,12 @@ The following steps will help you complete this exercise:
 10. Insert a new cell and add the following code to see the probability
     distribution of topic 5:
 
-
-
     ```
     print(mdl.get_topic_words(5, top_n=7))
     ```
 
 
     The code generates the following output:
-
-
 
     ```
     [('survey', 0.04966237023472786), ('catch', 0.03862873837351799), ('sponge', 0.0364220105111599), ('sea', 0.0342152863740921), ('datum', 0.028698472306132317), ('fishing', 0.02759511023759842), ('matter', 0.026491746306419373)]
@@ -909,12 +785,8 @@ this in *Exercise 5.04*, *Topics in The Life and Adventures of Robinson
 Crusoe by Daniel Defoe*.
 
 
-
-
 This section does not currently have an online interactive example and
 will need to be run locally.
-
-
 
 Activity 5.01: Topic-Modeling Jeopardy Questions
 ------------------------------------------------
@@ -998,8 +870,6 @@ times than the frequency specified by us.
 To get a better understanding of this, let\'s perform some simple
 exercises.
 
-
-
 Exercise 5.03: Topics in Around the World in Eighty Days
 --------------------------------------------------------
 
@@ -1034,8 +904,6 @@ The dataset used for this exercise can be found at
     of the Gutenberg Project\'s *Around the World in Eighty Days* by
     Jules Verne, and clean the text:
 
-
-
     ```
     OPEN_DATA_URL = '../data/aroundtheworld/pg103.txt'
     f=open(OPEN_DATA_URL,'r',encoding='utf-8')
@@ -1057,19 +925,13 @@ The dataset used for this exercise can be found at
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_14.jpg)
-
-
 
 
 4.  Insert a new cell and add the following code to import the necessary
     libraries, clean the text (using the spaCy English language model to
     tokenize the corpus), and exclude all tokens that are not detected
     as nouns:
-
-
 
     ```
     import spacy
@@ -1092,19 +954,13 @@ The dataset used for this exercise can be found at
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_15.jpg)
-
-
 
 
 5.  Insert a new cell and add the following code to create HDP models in
     which tokens that occur fewer than five times are ignored, and then
     show how the negative log likelihood varies according to the number
     of iterations:
-
-
 
     ```
     import tomotopy as tp
@@ -1122,19 +978,13 @@ The dataset used for this exercise can be found at
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_16.jpg)
-
-
 
     iterations
 
 6.  Insert a new cell and add the following code to see the probability
     distribution of topics if you consider the entire dataset as a
     single document:
-
-
 
     ```
     bag_of_words=[word for sent in preproc_text for word in sent]
@@ -1144,18 +994,12 @@ The dataset used for this exercise can be found at
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_17.jpg)
-
-
 
     dataset is considered
 
 7.  Insert a new cell and add the following code to see the probability
     distribution of topic 33:
-
-
 
     ```
     print(mdl.get_topic_words(33, top_n=7))
@@ -1163,8 +1007,6 @@ The dataset used for this exercise can be found at
 
 
     The code generates the following output:
-
-
 
     ```
     [('danger', 0.1534954458475113), ('hour', 0.0015197568573057652), ('time', 0.0015197568573057652), ('train', 0.0015197568573057652), ('master', 0.0015197568573057652), ('man', 0.0015197568573057652), ('steamer', 0.0015197568573057652)]
@@ -1174,16 +1016,12 @@ The dataset used for this exercise can be found at
 8.  Insert a new cell and add the following code to see the probability
     distribution of topic 21:
 
-
-
     ```
     print(mdl.get_topic_words(21, top_n=7))
     ```
 
 
     The code generates the following output:
-
-
 
     ```
     [('hour', 0.1344495415687561), ('minute', 0.1232500821352005), ('day', 0.08405196666717529), ('quarter', 0.07285250723361969), ('moment', 0.07285250723361969), ('clock', 0.005605331063270569), ('card', 0.039254117757081985)]
@@ -1193,16 +1031,12 @@ The dataset used for this exercise can be found at
 9.  Insert a new cell and add the following code to see the probability
     distribution of topic 70:
 
-
-
     ```
     print(mdl.get_topic_words(70, top_n=7))
     ```
 
 
     The code generates the following output:
-
-
 
     ```
     [('event', 0.12901155650615692), ('midnight', 0.12901155650615692), ('detective', 0.06482669711112976), ('bed', 0.06482669711112976), ('traveller', 0.06482669711112976), ('watch', 0.06482669711112976), ('clown', 0.06482669711112976)]
@@ -1212,16 +1046,12 @@ The dataset used for this exercise can be found at
 10. Insert a new cell and add the following code to see the probability
     distribution of topic 4:
 
-
-
     ```
     print(mdl.get_topic_words(4, top_n=7))
     ```
 
 
     The code generates the following output:
-
-
 
     ```
     [('house', 0.20237493515014648), ('opium', 0.10131379961967468), ('town', 0.07604850828647614), ('brick', 0.07604850828647614), ('mansion', 0.07604850828647614), ('glimpse', 0.50783220678567886), ('ball', 0.050783220678567886)]
@@ -1244,10 +1074,6 @@ expected to be different. In order to have exactly the same topic model,
 we can save and load topic models, which we\'ll do now in *Exercise
 5.04*, *Topics in The Life and Adventures of Robinson Crusoe by Daniel
 Defoe*.
-
-
-
-
 
 
 
@@ -1286,8 +1112,6 @@ The dataset used for this exercise can be found at
     of the Gutenberg Project\'s *The Life and Adventures of Robinson
     Crusoe* by Daniel Defoe, and clean the text:
 
-
-
     ```
     OPEN_DATA_URL = '../data/robinsoncrusoe/521-0.txt'
     f=open(OPEN_DATA_URL,'r',encoding='utf-8')
@@ -1309,19 +1133,13 @@ The dataset used for this exercise can be found at
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_18.jpg)
-
-
 
 
 4.  Insert a new cell and add the following code to import the necessary
     libraries. Clean the text using the spaCy English language model to
     tokenize the corpus and to exclude all tokens that are not detected
     as nouns:
-
-
 
     ```
     import spacy
@@ -1347,19 +1165,13 @@ The dataset used for this exercise can be found at
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_19.jpg)
-
-
 
 
 5.  Insert a new cell and add the following code to import the necessary
     libraries. Create an HDP model with the `α` concentration
     parameter as `0.8` and see how the negative log likelihood
     varies with the number of iterations:
-
-
 
     ```
     import tomotopy as tp 
@@ -1377,11 +1189,7 @@ The dataset used for this exercise can be found at
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_20.jpg)
-
-
 
 6.  Insert a new cell and add the following code to save the topic
     model:
@@ -1406,8 +1214,6 @@ The dataset used for this exercise can be found at
     distribution of topics if you consider the entire dataset as a
     single document:
 
-
-
     ```
     bag_of_words=[word for sent in preproc_text for word in sent]
     doc_inst = mdl.make_doc(bag_of_words)
@@ -1417,18 +1223,12 @@ The dataset used for this exercise can be found at
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_05_21.jpg)
-
-
 
     considered
 
 9.  Insert a new cell and add the following code to see the probability
     distribution of topic 163:
-
-
 
     ```
     print(mdl.get_topic_words(163, top_n=7))
@@ -1436,8 +1236,6 @@ The dataset used for this exercise can be found at
 
 
     The code generates the following output:
-
-
 
     ```
     [('horse', 0.13098040223121643), ('way', 0.026405228301882744), ('mankind', 0.26405228301882744), ('fire', 0.026405228301882744), ('object', 0.026405228301882744), ('bridle', 0.026405228301882744), ('distress', 0.026405228301882744)]
@@ -1447,16 +1245,12 @@ The dataset used for this exercise can be found at
 10. Insert a new cell and add the following code to see the probability
     distribution of topic 103:
 
-
-
     ```
     print(mdl.get_topic_words(103, top_n=7))
     ```
 
 
     The code generates the following output:
-
-
 
     ```
     [('manor', 0.03706422075629234), ('inheritance', 0.03706422075629234), ('lord', 0.03706422075629234), ('man', 0.0003669724682377309), ('shore', 0.0003669724682377309), ('ship',0.0003669724682377309)]
@@ -1466,16 +1260,12 @@ The dataset used for this exercise can be found at
 11. Insert a new cell and add the following code to see the probability
     distribution of topic 28:
 
-
-
     ```
     print(mdl.get_topic_words(28, top_n=7))
     ```
 
 
     The code generates the following output:
-
-
 
     ```
     [('thought', 0.07716038823127747), ('mind', 0.045609116554260254), ('word', 0.038597721606492996), ('face', 0.03509202599525452), ('terror', 0.03509202599525452), ('tear', 0.3158633038401604), ('apprehension', 0.3158633038401604)]
@@ -1510,8 +1300,6 @@ We have explored three of the most popular approaches to topic modeling.
 Let\'s now discuss the practical challenges in using topic modeling and
 the state-of-the-art topic modeling technologies.
 
-
-
 Practical Challenges
 --------------------
 
@@ -1542,8 +1330,6 @@ render the topic model useless. When we have a downstream application,
 even non-interpretable topics are useful as they offer a convenient
 means to carry out dimensionality reduction on the dataset.
 
-
-
 State-of-the-Art Topic Modeling
 -------------------------------
 
@@ -1562,8 +1348,6 @@ modeling literature was published prior to 2014, this is not among the
 most active areas of research. This suggests that complete automation is
 hard and human participation is here to stay as the state-of-the-art
 technique in the near future.
-
-
 
 Activity 5.02: Comparing Different Topic Models
 -----------------------------------------------
@@ -1597,16 +1381,12 @@ Follow these steps to complete this activity:
 5.  Save and load the HDP model. To save a topic model, use the
     following line of code:
 
-
-
     ```
     mdl.save('../data/consumercomplaints/hdp_model.bin')
     ```
 
 
     To load a topic model, use the following:
-
-
 
     ```
     mdl = tp.HDPModel.load('../data/consumercomplaints/hdp_model.bin')

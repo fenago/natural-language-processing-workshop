@@ -5,8 +5,6 @@
 Lab 4. Collecting Text Data with Web Scraping and APIs
 ==================================================
 
-
-
 Overview
 
 This lab introduces you to the concept of web scraping. You will
@@ -54,29 +52,17 @@ effectively.
 The following figure depicts the contents that are included within an
 HTML tag:
 
-<div>
-
-
 ![](./images/B16062_04_01.jpg)
 
 
-</div>
-
-Figure 4.1: Tags and attributes of HTML
 
 As you can see in the preceding figure, we can easily identify different
 elements within an HTML tag. The basic HTML structure and commonly used
 tags are shown and explained as follows:
 
-<div>
-
-
 ![](./images/B16062_04_02.jpg)
 
 
-</div>
-
-Figure 4.2: Basic HTML structure
 
 -   `DOCTYPE`: This is a must-have preamble for every HTML
     page. It informs the browser that the document is written in HTML.
@@ -119,8 +105,6 @@ Figure 4.2: Basic HTML structure
 In the next section, we will walk through an exercise in which we\'ll
 extract tag-based information from HTML files.
 
-
-
 Exercise 4.01: Extraction of Tag-Based Information from HTML Files
 ------------------------------------------------------------------
 
@@ -139,8 +123,6 @@ Follow these steps to implement this exercise:
 2.  Insert a new cell and add the following code to import the
     `BeautifulSoup` library:
 
-
-
     ```
     from bs4 import BeautifulSoup
     ```
@@ -152,8 +134,6 @@ Follow these steps to implement this exercise:
 
 3.  Create an object of the `BeautifulSoup` class and pass the
     location of the HTML file to it:
-
-
 
     ```
     soup = BeautifulSoup(open('../data/sample_doc.html'), \
@@ -169,41 +149,27 @@ Follow these steps to implement this exercise:
 4.  Add the following code to check the text contents of the
     `sample_doc.html` file:
 
-
-
     ```
     soup.text
     ```
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_04_03.jpg)
-
-
 
 
 5.  Similarly, to see the contents, you can simply write the following
     code:
 
-
-
     ```
     soup.contents
     ```
 
-
-
 ![](./images/B16062_04_04.jpg)
-
-
 
 
 6.  To find the addresses from the document, insert a new cell and add
     the following code:
-
-
 
     ```
     soup.find('address')
@@ -211,8 +177,6 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     <address> Mess on No. 72, Banamali Naskar Lane, Kolkata.</address>
@@ -222,16 +186,12 @@ Follow these steps to implement this exercise:
 7.  To locate all the `address` tags within the given content,
     write the following code:
 
-
-
     ```
     soup.find_all('address')
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     [<address> Mess on No. 72, Banamali Naskar Lane, Kolkata.</address>,
@@ -241,16 +201,12 @@ Follow these steps to implement this exercise:
 
 8.  To find the quotes in the document, add the following code:
 
-
-
     ```
     soup.find_all('q')
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     [<q> There are more things in heaven and earth, Horatio, <br/> 
@@ -260,16 +216,12 @@ Follow these steps to implement this exercise:
 
 9.  To check all the bold items, write the following command:
 
-
-
     ```
     soup.find_all('b')
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     [<b>Sherlock </b>, <b>Hamlet</b>, <b>Horatio</b>]
@@ -278,8 +230,6 @@ Follow these steps to implement this exercise:
 
 10. Write the following command to extract the tables in the document:
 
-
-
     ```
     table = soup.find('table')
     table
@@ -287,18 +237,12 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_04_05.jpg)
-
-
 
 
 11. You can also view the contents of `table` by looping
     through it. Insert a new cell and add the following code to
     implement this:
-
-
 
     ```
     for row in table.find_all('tr'):
@@ -308,8 +252,6 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     [ ]
@@ -324,16 +266,12 @@ Follow these steps to implement this exercise:
     value at the intersection of the third row and the second column,
     write the following command:
 
-
-
     ```
     table.find_all('tr')[3].find_all('td')[2]
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     <td>M.Tech</td>
@@ -347,11 +285,7 @@ We have learned how to extract tag-based information from an HTML file.
 
 
 
-
-
 In the next section, we will focus on fetching content from web pages.
-
-
 
 Requesting Content from Web Pages
 ---------------------------------
@@ -367,8 +301,6 @@ the name suggests, sends a `GET` request to the web page from
 which you want to fetch data. Let\'s perform a simple exercise now to
 get a better idea of how we can implement this in Python.
 
-
-
 Exercise 4.02: Collecting Online Text Data
 ------------------------------------------
 
@@ -380,8 +312,6 @@ steps to complete this exercise:
 
 1.  Use the `requests` library to request the content of a
     book available online with the following set of commands:
-
-
 
     ```
     import requests
@@ -395,8 +325,6 @@ steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     200
@@ -413,25 +341,17 @@ steps to complete this exercise:
     `requests` object `r` and referring to the
     `text` attribute. Write the following code for this:
 
-
-
     ```
     r.text[:1000]
     ```
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_04_06.jpg)
-
-
 
 
 3.  Now, write the fetched content into a text file. To do this, add the
     following code:
-
-
 
     ```
     from pathlib import Path
@@ -442,8 +362,6 @@ steps to complete this exercise:
 
     The preceding code generates the following output:
 
-
-
     ```
     2033139
     ```
@@ -451,8 +369,6 @@ steps to complete this exercise:
 
 4.  Similarly, we can do the same using Urllib3.First add the following
     code:
-
-
 
     ```
     import urllib3
@@ -468,16 +384,12 @@ steps to complete this exercise:
 
 5.  Add the following code to locate the text content:
 
-
-
     ```
     rr.data[:1000]
     ```
 
 6.  Again, add the following code to write the fetched content into a
     text file:
-
-
 
     ```
     open(Path("../data/David_Copperfield_new.txt"), \
@@ -486,8 +398,6 @@ steps to complete this exercise:
 
 
     The preceding code will generate the following output:
-
-
 
     ```
     2033139
@@ -499,8 +409,6 @@ help of the `requests` library.
 
 
 Now, let\'s look at analyzing HTML content from Jupyter Notebooks.
-
-
 
 Exercise 4.03: Analyzing the Content of Jupyter Notebooks (in HTML Format)
 --------------------------------------------------------------------------
@@ -519,8 +427,6 @@ Follow these steps to complete this exercise:
 1.  Import `BeautifulSoup` and pass the location of the given
     HTML file using the following commands:
 
-
-
     ```
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(open('../data/text_classifier.html'), \
@@ -533,8 +439,6 @@ Follow these steps to complete this exercise:
     printing parsed content. The preceding code generates the following
     output:
 
-
-
     ```
     '\n\n\nCh3_Activity7_Developing_end_to_end_Text_Classifiers\n\n\n\n    /*!\n*\n* Twitter Bootstrap\n*\n*/\n/*!\n*'
     ```
@@ -542,16 +446,12 @@ Follow these steps to complete this exercise:
 
 2.  Use the `img` tag to count the number of images:
 
-
-
     ```
     len(soup.find_all('img'))
     ```
 
 
     The output shows that there are three `img` tags:
-
-
 
     ```
     3
@@ -565,8 +465,6 @@ Follow these steps to complete this exercise:
     finding the `span` element with an `nn` class
     attribute:
 
-
-
     ```
     [i.get_text() for i in soup.find_all\
     ('span',attrs={"class":"nn"})]
@@ -575,11 +473,7 @@ Follow these steps to complete this exercise:
 
     The preceding code generates the following
     output:
-
-
 ![](./images/B16062_04_07.jpg)
-
-
 
 
 4.  To extract the models and their performance, look at the HTML
@@ -588,8 +482,6 @@ Follow these steps to complete this exercise:
     `div` tags with the `class` attribute
     `output_subarea output_stream output_stdout output_text`.
     Add the following code to extract the models:
-
-
 
     ```
     for md,i in zip(soup.find_all('h2'), \
@@ -603,12 +495,10 @@ Follow these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_04_08.jpg)
 
 
-Figure 4.8: Models and their performance
+
 
 So, in the preceding output, we have extracted a classification report
 from the HTML file using `BeautifulSoup` by referring to the
@@ -621,8 +511,6 @@ and extract the desired information. Next time you come across an
 article and want to extract certain information from it, you will be
 able to put these skills to use, instead of manually going over all of
 the content.
-
-
 
 Activity 4.01: Extracting Information from an Online HTML Page
 --------------------------------------------------------------
@@ -665,8 +553,6 @@ these steps to implement this activity:
 We are now well-versed in extracting generic data from HTML pages.
 Let\'s perform another activity now, where we\'ll be using regular
 expressions.
-
-
 
 Activity 4.02: Extracting and Analyzing Data Using Regular Expressions
 ----------------------------------------------------------------------
@@ -713,8 +599,6 @@ as is the case with **JSON** (**JavaScript Object Notation**) and
 **XML** (**Extensible Markup Language**) files. These are the most
 popularly used instances of semi-structured data.
 
-
-
 JSON
 ----
 
@@ -738,21 +622,13 @@ NoSQL databases (such as MongoDB) store data in the form of JSON
 objects. Most APIs return JSON objects. The following figure depicts
 what a JSON file looks like:
 
-<div>
-
-
 ![](./images/B16062_04_09.jpg)
 
 
-</div>
-
-Figure 4.9: A sample JSON file
 
 Often, the response we get when requesting a URL is in the form of JSON
 objects. To deal with a JSON file effectively, we need to know how to
 parse it. The following exercise throws light on this.
-
-
 
 Exercise 4.04: Working with JSON Files
 --------------------------------------
@@ -782,16 +658,10 @@ Follow these steps to complete this exercise:
     standard I/O operation of Python. This turns JSON into the Python
     `dict` object. The preceding code generates the following
     output:
-
-
 ![](./images/B16062_04_10.jpg)
 
 
-
-
 3.  To extract the names of the students, add the following code:
-
-
 
     ```
     [dt['name'] for dt in data['students']]
@@ -799,8 +669,6 @@ Follow these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     ['Gangaram', 'Ganga', 'Ram', 'Ramlal']
@@ -810,16 +678,12 @@ Follow these steps to complete this exercise:
 4.  To extract their respective qualifications, enter the following
     code:
 
-
-
     ```
     [dt['qualification'] for dt in data['students']]
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     ['B.Tech', 'B.A.', 'B.Tech', 'B.Music']
@@ -831,8 +695,6 @@ Follow these steps to complete this exercise:
     qualifications. Thus, we need to check this separately. Add the
     following code to implement this:
 
-
-
     ```
     [dt['additional qualification'] if 'additional qualification' \
     in dt.keys() else None for dt in data['students']]
@@ -840,8 +702,6 @@ Follow these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     [None, None, 'M.Tech', None]
@@ -857,13 +717,9 @@ applications.
 
 
 
-
-
 Now that we have learned how to load JSON data, let\'s extract data
 using another format, called **Extensible Markup Language** (**XML**),
 which is also used by web apps and Word documents to store information.
-
-
 
 XML
 ---
@@ -883,15 +739,9 @@ this file; `Standalone` tells the parser whether external
 information is needed for interpreting the content of the XML file. The
 following figure depicts what an XML file looks like:
 
-<div>
-
-
 ![](./images/B16062_04_11.jpg)
 
 
-</div>
-
-Figure 4.11: A sample XML file
 
 An XML file can be represented as a tree called an XML tree. This XML
 tree begins with the root element (the parent). This root element
@@ -900,23 +750,15 @@ node in the XML tree. Those elements that don\'t have any children are
 leaf nodes. The following figure clearly differentiates between an
 original XML file and a tree representation of an XML file:
 
-<div>
-
-
 ![](./images/B16062_04_12.jpg)
 
 
-</div>
-
-Figure 4.12: Comparison of an XML structure
 
 XML files are somewhat similar in structure to HTML, with the main
 difference being that, in XML, we have custom tags rather than the fixed
 tags vocabulary like HTML. As we learned how to parse HTML using
 `BeautifulSoup` before, let\'s learn how to parse XML files in
 the following exercise.
-
-
 
 Exercise 4.05: Working with an XML File
 ---------------------------------------
@@ -937,8 +779,6 @@ Follow these steps to complete this exercise:
 2.  Insert a new cell, import `xml.etree.ElementTree`, and
     pass the location of the XML file using the following code:
 
-
-
     ```
     import xml.etree.ElementTree as ET
     tree = ET.parse('../data/sample_xml_data.xml')
@@ -949,8 +789,6 @@ Follow these steps to complete this exercise:
 
     The preceding code generates the following output:
 
-
-
     ```
     <Element 'records' at 0.112291710>
     ```
@@ -958,16 +796,12 @@ Follow these steps to complete this exercise:
 
 3.  To check the tag of the fetched element, type the following code:
 
-
-
     ```
     root.tag
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     'records'
@@ -977,8 +811,6 @@ Follow these steps to complete this exercise:
 4.  Look for the `name` and `company` tags in the
     XML and print the data enclosed within them:
 
-
-
     ```
     for record in root.findall('record')[:20]:
         print(record.find('name').text, "---",\
@@ -987,11 +819,7 @@ Follow these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_04_13.jpg)
-
-
 
 
 5.  To find the sum of the salaries, create a list consisting of the
@@ -1001,8 +829,6 @@ Follow these steps to complete this exercise:
     cast into the integer to get the sum at the end. Add the following
     code to do so:
 
-
-
     ```
     sum([int(record.find('salary').text.replace('$','').\
     replace(',','')) for record in root.findall('record')])
@@ -1010,8 +836,6 @@ Follow these steps to complete this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     745609
@@ -1027,12 +851,8 @@ many URLs return an XML file.
 
 
 
-
-
 In the next section, we will look at how APIs can be used to retrieve
 real-time data.
-
-
 
 Using APIs to Retrieve Real-Time Data
 -------------------------------------
@@ -1051,8 +871,6 @@ Just like the cellphone charger, an API acts as a mediator, enabling the
 smooth transfer of data between those websites and us. Let\'s perform a
 simple exercise to get hands-on experience of collecting data using
 APIs.
-
-
 
 Exercise 4.06: Collecting Data Using APIs
 -----------------------------------------
@@ -1076,8 +894,6 @@ exercise:
 
 3.  Load the `json` data. Add the following code to do this:
 
-
-
     ```
     r = requests.get("https://api.exchangerate-api.com/"\
                      "v4/latest/USD")
@@ -1094,17 +910,11 @@ exercise:
     of the URL.
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_04_14.jpg)
-
-
 
 
 4.  To create the DataFrame of the fetched data and print it, add the
     following code:
-
-
 
     ```
     df = pd.DataFrame(data)
@@ -1113,12 +923,10 @@ exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_04_15.jpg)
 
 
-Figure 4.15: DataFrame showing details of currency exchange rates
+
 
 **Note** that you will get a different output depending on the present
 currency exchange rates. We just learned how to collect data using APIs.
@@ -1128,11 +936,7 @@ currency exchange rates. We just learned how to collect data using APIs.
 
 
 
-
-
 In the next section, we will see how to create an API.
-
-
 
 Extracting data from Twitter Using the OAuth API
 ------------------------------------------------
@@ -1167,8 +971,6 @@ However, before you do any of this, you\'ll first need to import the
 
 Your Python code should look like this:
 
-
-
 ```
 import tweepy
 consumer_key = 'your consumer key here'
@@ -1191,8 +993,6 @@ To search for a query named `randomquery` using
 `tweepy`, you can use the `Cursor` object as
 follows:
 
-
-
 ```
 tweepy.Cursor(api.search, q='randomquery', lang="en")
 ```
@@ -1204,8 +1004,6 @@ tweets that match a specified query given with the `q`
 parameter.
 
 Let\'s do an activity now, to put our knowledge into practice.
-
-
 
 Activity 4.03: Extracting Data from Twitter
 -------------------------------------------

@@ -4,8 +4,6 @@
 Lab 3. Developing a Text Classifier
 ===============================
 
-
-
 Overview
 
 This lab starts with an introduction to the various types of machine
@@ -57,8 +55,6 @@ learning is further categorized into `unsupervised` and
 `supervised` learning. Let\'s explore these two terms in
 detail.
 
-
-
 Unsupervised Learning
 ---------------------
 
@@ -105,22 +101,14 @@ which is what we use to create clusters and identify similar data
 points. The most common distance metric is Euclidean, which is
 calculated as follows:
 
-<div>
-
-
 ![](./images/B16062_03_01.jpg)
 
 
-</div>
-
-Figure 3.1: Formula for Euclidean distance
 
 In the case of machine learning, *p* and *q* are different data points
 in the dataset and `p`[i]{.subscript},
 `q`[i]{.subscript} are the different features of those data
 points.
-
-
 
 Hierarchical Clustering
 -----------------------
@@ -144,22 +132,14 @@ between each pair of documents from the set of 10 documents are
 calculated. After that, we construct a **dendrogram** and truncate it at
 a suitable position to get a suitable number of clusters:
 
-<div>
-
-
 ![](./images/B16062_03_02.jpg)
 
 
-</div>
-
-Figure 3.2: Output dendrogram after performing hierarchical clustering
 
 In the preceding graph, we can perform a truncation at distance 3.5 to
 get two clusters or at 2.5 to get three clusters, depending on the
 requirements. To create a dendrogram using scikit-learn, we can use the
 following code:
-
-
 
 ```
 import scipy.cluster.hierarchy as sch
@@ -172,8 +152,6 @@ plt.show()
 Here, `X` is the dataset that we want to perform hierarchical
 clustering with. Let\'s perform an exercise to understand how we can
 implement this.
-
-
 
 Exercise 3.01: Performing Hierarchical Clustering
 -------------------------------------------------
@@ -254,25 +232,17 @@ actual categories. Follow these steps to implement this exercise:
 
 6.  To view the data of the fetched content, add the following code:
 
-
-
     ```
     news_data['data'][:5]
     ```
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_03.jpg)
-
-
 
 
 7.  To check the categories of news articles, insert a new cell and add
     the following code:
-
-
 
     ```
     print(news_data.target)
@@ -282,8 +252,6 @@ actual categories. Follow these steps to implement this exercise:
     The target is the variable that we predict by making use of the rest
     of the variables in a dataset. The preceding code generates the
     following output:
-
-
 
     ```
     [0 0 1 … 0 1 0]
@@ -297,8 +265,6 @@ actual categories. Follow these steps to implement this exercise:
 8.  To store `news_data` and the corresponding categories in a
     pandas `DataFrame` and view it, write the following code:
 
-
-
     ```
     news_data_df = pd.DataFrame({'text' : news_data['data'], \
                                  'category': news_data.target})
@@ -307,18 +273,12 @@ actual categories. Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_04.jpg)
-
-
 
     in a DataFrame
 
 9.  To count the number of occurrences of each category appearing in
     this dataset, write the following code:
-
-
 
     ```
     news_data_df['category'].value_counts()
@@ -326,8 +286,6 @@ actual categories. Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     1        591
@@ -362,8 +320,6 @@ actual categories. Follow these steps to implement this exercise:
 11. Create a TFIDF matrix and transform it into a DataFrame. Add the
     following code to do this:
 
-
-
     ```
     tfidf_model = TfidfVectorizer(max_features=200)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
@@ -374,11 +330,7 @@ actual categories. Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_05.jpg)
-
-
 
 
 12. Calculate the distance using the sklearn library:
@@ -393,8 +345,6 @@ actual categories. Follow these steps to implement this exercise:
 
 13. Now, create a dendrogram for the TFIDF representation of documents:
 
-
-
     ```
     import scipy.cluster.hierarchy as sch
     dendrogram = sch.dendrogram(sch.linkage(dist, method='ward'))
@@ -406,19 +356,13 @@ actual categories. Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_06.jpg)
-
-
 
 
     Here, you can see that a cluster count of four seems optimal.
 
 14. Use the `fcluster()` function to obtain the cluster labels
     of the clusters that were obtained by hierarchical clustering:
-
-
 
     ```
     k=4
@@ -430,8 +374,6 @@ actual categories. Follow these steps to implement this exercise:
 
     The preceding code generates the following output:
 
-
-
     ```
     array([3, 3, 3, …, 4, 4, 1], dtype=int32)
     ```
@@ -440,8 +382,6 @@ actual categories. Follow these steps to implement this exercise:
 15. Make use of the `crosstab` function of pandas to compare
     the clusters we have obtained with the actual categories of news
     articles. Add the following code to implement this:
-
-
 
     ```
     news_data_df['obtained_clusters'] = clusters
@@ -456,12 +396,10 @@ actual categories. Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_07.jpg)
 
 
-Figure 3.7: Crosstab between actual categories and obtained clusters
+
 
 Using the preceding image, we can analyze the high-level patterns that
 the clustering algorithm found to group the articles into one of the
@@ -478,13 +416,9 @@ were classified into those respective clusters, while the articles on
 
 
 
-
-
 One major disadvantage of hierarchical clustering is scalability. Using
 hierarchical clustering for large datasets is very difficult; for such
 cases, we can use k-means clustering. Let us explore how this works.
-
-
 
 k-means Clustering
 ------------------
@@ -518,8 +452,6 @@ k that has the lowest sum of squared errors. This method is called the
 The scikit-learn library can be used to perform k-means in Python using
 the following code:
 
-
-
 ```
 from sklearn.cluster import KMeans
 kmeans = KMeans(n_clusters=4)
@@ -534,8 +466,6 @@ function. The trained model can then be used to get clusters using the
 predict function, where `X` represents a DataFrame of
 independent variables. Let\'s perform an exercise to get a better
 understanding of k-means clustering.
-
-
 
 Exercise 3.02: Implementing k-means Clustering
 ----------------------------------------------
@@ -639,8 +569,6 @@ Follow these steps to implement this exercise:
 7.  Use the following lines of code to create a TFIDF matrix and
     transform it into a DataFrame:
 
-
-
     ```
     tfidf_model = TfidfVectorizer(max_features=200)
     tfidf_df = pd.DataFrame(tfidf_model\
@@ -652,11 +580,7 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_08.jpg)
-
-
 
 
 8.  Use the `KMeans` function of sklearn to create four
@@ -676,8 +600,6 @@ Follow these steps to implement this exercise:
     we have obtained with the actual categories of the news articles.
     Add the following code to do this:
 
-
-
     ```
     pd.crosstab(news_data_df['category']\
                 .replace({0:'misc.forsale', \
@@ -691,8 +613,6 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_09.jpg)
 
 
@@ -708,8 +628,6 @@ Follow these steps to implement this exercise:
     distances of the documents from their nearest cluster center. Look
     for the value of k where the slope of the plot changes rapidly. Add
     the following code to implement this:
-
-
 
     ```
     distortions = []
@@ -730,20 +648,16 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_10.jpg)
 
 
-Figure 3.10: Optimal clusters represented in a graph using the elbow
+
 method
 
 From the preceding graph, we can conclude that the optimal number of
 clusters is 2.
 
 **Note**
-
-
 
 
 
@@ -772,8 +686,6 @@ two types of models that are capable of the following:
 The first type is called classification, while the second type is called
 regression. Let\'s learn about classification first.
 
-
-
 Classification
 --------------
 
@@ -794,8 +706,6 @@ widely used classification algorithms are logistic regression, Naive
 Bayes, k-nearest neighbor, and tree methods. Let\'s learn about each of
 them.
 
-
-
 Logistic Regression
 -------------------
 
@@ -812,23 +722,15 @@ certain keywords and so on. We can then make use of the logistic
 regression algorithm to create a model that predicts if the email is
 spam (1) or not (0), as shown in the following graph:
 
-<div>
-
-
 ![](./images/B16062_03_11.jpg)
 
 
-</div>
-
-Figure 3.11: Example of logistic regression
 
 Here, the decision boundary is created by training a logistic regression
 model that helps us classify spam emails.
 
 The scikit-learn library can be used to perform logistic regression in
 Python using the following code:
-
-
 
 ```
 from sklearn.linear_model import LogisticRegression
@@ -846,8 +748,6 @@ predictions, and we can also get probability estimates for each class
 using the `predict_proba` function. Here, `X`
 represents a DataFrame of independent variables, whereas `y`
 represents a DataFrame of dependent variables.
-
-
 
 Exercise 3.03: Text Classification -- Logistic Regression
 ---------------------------------------------------------
@@ -887,8 +787,6 @@ Follow these steps to implement this exercise:
 3.  Read the data file in JSON format using pandas. Add the following
     code to implement this:
 
-
-
     ```
     review_data = pd.read_json\
                   ('data/reviews_Musical_Instruments_5.json', \
@@ -898,11 +796,7 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_12.jpg)
-
-
 
 
 4.  Use a `lambda` function to extract tokens from each
@@ -930,8 +824,6 @@ Follow these steps to implement this exercise:
     cleaned version of `reviewText`. Add the following code to
     implement this:
 
-
-
     ```
     review_data[['cleaned_review_text', 'reviewText', \
                  'overall']].head()
@@ -939,18 +831,12 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_13.jpg)
-
-
 
     their overall scores
 
 6.  Create a TFIDF matrix and transform it into a `DataFrame`.
     Add the following code to do this:
-
-
 
     ```
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -962,19 +848,13 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_14.jpg)
-
-
 
 
 7.  The following lines of code are used to create a new column target,
     which will have `0` if the `overall` parameter
     is less than `4`, and 1 otherwise. Add the following code
     to implement this:
-
-
 
     ```
     review_data['target'] = review_data['overall'].apply\
@@ -984,8 +864,6 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     1     6938
@@ -999,8 +877,6 @@ Follow these steps to implement this exercise:
     reviews after cleaning them. Add the following code to implement
     this:
 
-
-
     ```
     from sklearn.linear_model import LogisticRegression
     logreg = LogisticRegression()
@@ -1011,8 +887,6 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     array([0.57146961, 0.68579907, 0.56068939, …, 0.65979968, \
@@ -1025,8 +899,6 @@ Follow these steps to implement this exercise:
     (`'target'`, in this case) of the reviews. Add the
     following code to do this:
 
-
-
     ```
     review_data['predicted_labels'] = predicted_labels
     pd.crosstab(review_data['target'], \
@@ -1035,12 +907,10 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_15.jpg)
 
 
-Figure 3.15: Crosstab between actual target values and predicted labels
+
 
 Here, we can see `1543` instances with the target label 0 that
 are correctly classified and `1780` such instances that are
@@ -1053,12 +923,8 @@ instances are wrongly classified.
 
 
 
-
-
 We\'ve seen how to implement logistic regression; now, let\'s look at
 Naïve Bayes classification.
-
-
 
 Naive Bayes Classifiers
 -----------------------
@@ -1067,15 +933,9 @@ Just like logistic regression, a Naive Bayes classifier is another kind
 of probabilistic classifier. It is based on Bayes\' theorem, which is
 shown here:
 
-<div>
-
-
 ![](./images/B16062_03_16.jpg)
 
 
-</div>
-
-Figure 3.16: Bayes\' theorem
 
 In the preceding formula, A and B are events and P(B) is not equal to 0.
 P(A/B) is the probability of event A occurring, given that event B is
@@ -1098,8 +958,6 @@ Similar to logistic regression, the scikit-learn library can be used to
 perform naïve Bayes classification and can be implemented in Python
 using the following code:
 
-
-
 ```
 from sklearn.naive_bayes import GaussianNB
 nb = GaussianNB()
@@ -1116,8 +974,6 @@ also get probability estimates for each class using the
 `predict_proba` function. Here, `X` represents a
 DataFrame of independent variables, whereas `y` represents a
 DataFrame of dependent variables.
-
-
 
 Exercise 3.04: Text Classification -- Naive Bayes
 -------------------------------------------------
@@ -1159,8 +1015,6 @@ To download the dataset for this exercise, visit
 3.  Read the data file in JSON format using pandas. Add the following
     code to implement this:
 
-
-
     ```
     review_data = pd.read_json\
                   ('data/reviews_Musical_Instruments_5.json', \
@@ -1170,11 +1024,7 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_17.jpg)
-
-
 
 
 4.  Use a `lambda` function to extract tokens from each
@@ -1202,8 +1052,6 @@ To download the dataset for this exercise, visit
     cleaned version of `reviewText`. Add the following code to
     implement this:
 
-
-
     ```
     review_data[['cleaned_review_text', 'reviewText', \
                  'overall']].head()
@@ -1211,16 +1059,10 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_18.jpg)
-
-
 
 6.  Create a TFIDF matrix and transform it into a DataFrame. Add the
     following code to do this:
-
-
 
     ```
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -1232,19 +1074,13 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_19.jpg)
-
-
 
 
 7.  The following lines of code are used to create a new column target,
     which will have the value `0` if the `'overall'`
     parameter is less than `4`, and 1 otherwise. Add the
     following code to implement this:
-
-
 
     ```
     review_data['target'] = review_data['overall']\
@@ -1254,8 +1090,6 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 
     ```
     1    6938
@@ -1268,8 +1102,6 @@ To download the dataset for this exercise, visit
     Naive Bayes model on the TFIDF representation of these reviews after
     cleaning them. Add the following code to do this:
 
-
-
     ```
     from sklearn.naive_bayes import GaussianNB
     nb = GaussianNB()
@@ -1280,8 +1112,6 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 
     ```
     array([9.97730158e-01, 3.63599675e-09, 9.45692105e-07, …,
@@ -1297,8 +1127,6 @@ To download the dataset for this exercise, visit
     (`'target'`, in this case) of the reviews. Add the
     following code to do this:
 
-
-
     ```
     review_data['predicted_labels'] = predicted_labels
     pd.crosstab(review_data['target'], \
@@ -1307,12 +1135,10 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_20.jpg)
 
 
-Figure 3.20: Crosstab between actual target values and predicted labels
+
 
 Here, we can see `2333` instances with the target label 0 that
 are correctly classified and `990` such instances that have
@@ -1325,11 +1151,7 @@ the target label 1 have been correctly classified, whereas
 
 
 
-
-
 We\'ll explore k-nearest neighbors in the next section.
-
-
 
 k-nearest Neighbors
 -------------------
@@ -1354,8 +1176,6 @@ documents that are the most similar to the unknown document.
 We can make use of the scikit-learn library to implement the k-nearest
 neighbors algorithm in Python using the following code:
 
-
-
 ```
 from sklearn.neighbors import KNeighborsClassifier
 knn = KNeighborsClassifier(n_neighbors=3)
@@ -1374,8 +1194,6 @@ represents a DataFrame of dependent variables.
 
 Now that we have an understanding of different types of classification,
 let\'s see how we can implement them.
-
-
 
 Exercise 3.05: Text Classification Using the k-nearest Neighbors Method
 -----------------------------------------------------------------------
@@ -1417,8 +1235,6 @@ To download the dataset for this exercise, visit
 3.  Read the data file in JSON format using pandas. Add the following
     code to implement this:
 
-
-
     ```
     review_data = pd.read_json\
                   ('data/reviews_Musical_Instruments_5.json',\
@@ -1428,11 +1244,7 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_21.jpg)
-
-
 
 
 4.  Use a `lambda` function to extract tokens from each
@@ -1460,8 +1272,6 @@ To download the dataset for this exercise, visit
     cleaned version of `reviewText`. Add the following code to
     implement this:
 
-
-
     ```
     review_data[['cleaned_review_text', 'reviewText', \
                  'overall']].head()
@@ -1469,18 +1279,12 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_22.jpg)
-
-
 
     their overall scores
 
 6.  Create a TFIDF matrix and transform it into a DataFrame. Add the
     following code to do this:
-
-
 
     ```
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -1492,19 +1296,13 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_23.jpg)
-
-
 
 
 7.  The following lines of code are used to create a new column target,
     which will have `0` if the `overall` parameter
     is less than `4`, and 1 otherwise. Add the following code
     to implement this:
-
-
 
     ```
     review_data['target'] = review_data['overall']\
@@ -1514,8 +1312,6 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 
     ```
     1     6938
@@ -1531,8 +1327,6 @@ To download the dataset for this exercise, visit
     the actual classes (`'target'`, in this case) of the
     reviews:
 
-
-
     ```
     from sklearn.neighbors import KNeighborsClassifier
     knn = KNeighborsClassifier(n_neighbors=3)
@@ -1544,11 +1338,7 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_24.jpg)
-
-
 
     labels by k-nearest neighbors
 
@@ -1608,11 +1398,7 @@ To download the dataset for this exercise, visit
     Parameters are the coefficients of predictor variables in the linear
     regression equation. The following formula represents the linear
     regression equation:
-
-
 ![](./images/B16062_03_25.jpg)
-
-
 
 
     Here, y is termed a dependent variable (output); it is continuous. X
@@ -1626,8 +1412,6 @@ To download the dataset for this exercise, visit
 
     We can use the scikit-learn library to implement the linear
     regression algorithm in Python with the following code:
-
-
 
     ```
     from sklearn.linear_model import LinearRegression
@@ -1695,8 +1479,6 @@ To download the dataset for this exercise, visit
 11. Read the given data file in `JSON` format using
     `pandas`. Add the following code to implement this:
 
-
-
     ```
     review_data = pd.read_json\
                   ('data/reviews_Musical_Instruments_5.json', \
@@ -1706,11 +1488,7 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_26.jpg)
-
-
 
 
 12. Use a `lambda` function to extract tokens from each
@@ -1720,8 +1498,6 @@ To download the dataset for this exercise, visit
     order to replace anything other than alphabets, digits, and
     whitespaces with blank space, use the regular expression method
     (`re`). Add the following code to implement this:
-
-
 
     ```
     lemmatizer = WordNetLemmatizer()
@@ -1737,19 +1513,13 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_27.jpg)
-
-
 
     their overall scores
 
 13. Create a `DataFrame` from the TFIDF matrix representation
     of cleaned `reviewText`. Add the following code to do
     this:
-
-
 
     ```
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -1761,18 +1531,12 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_28.jpg)
-
-
 
 
 14. Use sklearn\'s `LinearRegression()` function to fit a
     linear regression model on this TFIDF DataFrame. Add the following
     code to do this:
-
-
 
     ```
     from sklearn.linear_model import LinearRegression
@@ -1783,22 +1547,15 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_29.jpg)
-
-
 
 
     The preceding output shows the coefficients of the different
     features of the trained model.
 
-    Please note that *Figure 3.29* is truncated.
 
 15. To check the intercept or the error term of the linear regression
     model, type the following code:
-
-
 
     ```
     linreg.intercept_
@@ -1806,8 +1563,6 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 
     ```
     4.218882428983381
@@ -1817,16 +1572,12 @@ To download the dataset for this exercise, visit
 16. To check the prediction in a TFIDF DataFrame, write the following
     code:
 
-
-
     ```
     linreg.predict(tfidf_df)
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     array([4.19200071, 4.25771652, 4.23084868, …, 4.40384767, 
@@ -1839,8 +1590,6 @@ To download the dataset for this exercise, visit
     `'predicted_score_from_linear_regression'`. Add the
     following code to implement this:
 
-
-
     ```
     review_data['predicted_score_from_linear_regression'] = \
     linreg.predict(tfidf_df)
@@ -1850,12 +1599,10 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_30.jpg)
 
 
-Figure 3.30: Actual scores and predictions of the linear regression
+
 model
 
 From the preceding table, we can see how the actual and predicted score
@@ -1867,12 +1614,8 @@ the performance of the model.
 
 
 
-
-
 You have just learned how to perform regression analysis on given data.
 In the next section, you will learn about tree methods.
-
-
 
 Tree Methods
 ------------
@@ -1892,15 +1635,9 @@ positive sentiments and negative sentiments. A data scientist working
 for the hotel can create a dataset of all online reviews of their hotel
 and create a decision tree, as shown in the following diagram:
 
-<div>
-
-
 ![](./images/B16062_03_31.jpg)
 
 
-</div>
-
-Figure 3.31: Decision tree
 
 In the preceding diagram, the first decision is made based on the length
 of the sentences. He finds that the short length reviews generally have
@@ -1913,8 +1650,6 @@ otherwise, it belongs to the `negative` sentiment.
 
 We can make use of the scikit-learn library to implement the decision
 tree algorithm in Python using the following code:
-
-
 
 ```
 from sklearn import tree
@@ -1931,8 +1666,6 @@ can then be used to make predictions using the `predict`
 function. Here, `X` represents a DataFrame of independent
 variables, whereas `y` represents a DataFrame of dependent
 variables.
-
-
 
 Exercise 3.07: Tree-Based Methods -- Decision Tree
 --------------------------------------------------
@@ -1975,8 +1708,6 @@ To download the dataset for this exercise, visit
 3.  Now, read the given data file in JSON format using pandas. Add the
     following code to implement this:
 
-
-
     ```
     data_patio_lawn_garden = pd.read_json\
                              ('data/'\
@@ -1987,11 +1718,7 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_32.jpg)
-
-
 
 
 4.  Use the `lambda` function to extract tokens from each
@@ -2001,8 +1728,6 @@ To download the dataset for this exercise, visit
     into a single sentence. Use the regular expression method
     (`re`) to replace anything other than letters, digits, and
     whitespaces with blank spaces. Add the following code to do this:
-
-
 
     ```
     lemmatizer = WordNetLemmatizer()
@@ -2017,18 +1742,12 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_33.jpg)
-
-
 
     overall scores
 
 5.  Create a DataFrame from the TFIDF matrix representation of the
     cleaned version of `reviewText` with the following code:
-
-
 
     ```
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -2041,18 +1760,12 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_34.jpg)
-
-
 
 
 6.  The following lines of code are used to create a new column called
     target, which will have 0 if the `'overall'` parameter is
     less than 4; otherwise, it will have 1:
-
-
 
     ```
     data_patio_lawn_garden['target'] = data_patio_lawn_garden\
@@ -2063,8 +1776,6 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 
     ```
     1     7037
@@ -2092,8 +1803,6 @@ To download the dataset for this exercise, visit
     (`'target'`, in this case) of the reviews. Add the
     following code to do this:
 
-
-
     ```
     pd.crosstab(data_patio_lawn_garden['target'], \
                 data_patio_lawn_garden['predicted_labels_dtc'])
@@ -2101,11 +1810,7 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_35.jpg)
-
-
 
     labels
 
@@ -2120,8 +1825,6 @@ To download the dataset for this exercise, visit
     cleaning. To predict the overall scores using this model, add the
     following code:
 
-
-
     ```
     from sklearn import tree
     dtr = tree.DecisionTreeRegressor()
@@ -2134,12 +1837,10 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_36.jpg)
 
 
-Figure 3.36: Overall scores with predicted values
+
 
 From the preceding table, we can see how the actual and predicted scores
 vary for different instances. We will use this table later to evaluate
@@ -2150,11 +1851,7 @@ the performance of the model.
 
 
 
-
-
 Next, we will look at another tree-based method, random forest.
-
-
 
 Random Forest
 -------------
@@ -2193,8 +1890,6 @@ huge amount of time and memory. We can make use of the scikit-learn
 library to implement the random forest algorithm in Python using the
 following code:
 
-
-
 ```
 from sklearn.ensemble import RandomForestClassifier 
 rfc = RandomForestClassifier()
@@ -2209,8 +1904,6 @@ trained the model using the `fit` function. The trained model
 can then be used to make predictions using the `predict`
 function. `X` represents a DataFrame of independent variables,
 whereas `y` represents a DataFrame of dependent variables.
-
-
 
 Gradient Boosting Machine and Extreme Gradient Boost
 ----------------------------------------------------
@@ -2252,8 +1945,6 @@ phase.
 We can make use of the `xgboost` library to implement the
 XGBoost algorithm in Python using the following code:
 
-
-
 ```
 from xgboost import XGBClassifier
 xgb_clf=XGBClassifier()
@@ -2270,8 +1961,6 @@ DataFrame of independent variables, whereas `y` represents a
 DataFrame of dependent variables. To get the important features for the
 trained model, we can use the following code:
 
-
-
 ```
 pd.DataFrame({'word':X.columns,'importance':xgb_clf.feature_importances_})
 ```
@@ -2279,8 +1968,6 @@ pd.DataFrame({'word':X.columns,'importance':xgb_clf.feature_importances_})
 
 Let\'s perform some exercises to get a better understanding of
 tree-based methods.
-
-
 
 Exercise 3.08: Tree-Based Methods -- Random Forest
 --------------------------------------------------
@@ -2321,8 +2008,6 @@ To download the dataset for this exercise, visit
 2.  Now, read the given data file in `JSON` format using
     `pandas`. Add the following code to implement this:
 
-
-
     ```
     data_patio_lawn_garden = pd.read_json\
                              ('data/'\
@@ -2333,11 +2018,7 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_37.jpg)
-
-
 
 
 3.  Use a `lambda` function to extract tokens from each
@@ -2347,8 +2028,6 @@ To download the dataset for this exercise, visit
     into a single sentence. Use a regular expression (`re`) to
     replace anything other than letters, digits, and whitespaces with
     blank spaces. Add the following code to do this:
-
-
 
     ```
     lemmatizer = WordNetLemmatizer()
@@ -2363,19 +2042,13 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_38.jpg)
-
-
 
     overall scores
 
 4.  Create a `DataFrame` from the TFIDF matrix representation
     of the cleaned version of `reviewText` with the following
     code:
-
-
 
     ```
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -2388,18 +2061,12 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_39.jpg)
-
-
 
 
 5.  Add the following lines of code to create a new column called
     target, which will have 0 if the `overall` parameter is
     less than 4; otherwise, it will have 1:
-
-
 
     ```
     data_patio_lawn_garden['target'] = data_patio_lawn_garden\
@@ -2410,8 +2077,6 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 
     ```
     1     7037
@@ -2438,8 +2103,6 @@ To download the dataset for this exercise, visit
     compare them with their actual class---that is, the target, using
     crosstabs. Add the following code to do this:
 
-
-
     ```
     from sklearn.ensemble import RandomForestClassifier 
     rfc = RandomForestClassifier(n_estimators=20,max_depth=4,\
@@ -2452,11 +2115,7 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_40.jpg)
-
-
 
     labels
 
@@ -2483,8 +2142,6 @@ To download the dataset for this exercise, visit
     overall score of the given set of review texts. Add the following
     code to do this:
 
-
-
     ```
     from sklearn.ensemble import RandomForestRegressor 
     rfg = RandomForestRegressor(n_estimators=20,max_depth=4,\
@@ -2497,12 +2154,10 @@ To download the dataset for this exercise, visit
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_41.jpg)
 
 
-Figure 3.41: Actual overall score and predicted values using a random
+
 forest regressor
 
 From the preceding table, we can see how the actual and predicted scores
@@ -2514,11 +2169,7 @@ the performance of the model.
 
 
 
-
-
 Now, let\'s perform a similar task using the XGBoost method.
-
-
 
 Exercise 3.09: Tree-Based Methods -- XGBoost
 --------------------------------------------
@@ -2562,8 +2213,6 @@ Follow these steps to implement this exercise:
 3.  Now, read the given data file in `JSON` format using
     `pandas`. Add the following code to implement this:
 
-
-
     ```
     data_patio_lawn_garden = pd.read_json\
                              ('data/'\
@@ -2574,11 +2223,7 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_42.jpg)
-
-
 
 
 4.  Use a `lambda` function to extract tokens from each
@@ -2588,8 +2233,6 @@ Follow these steps to implement this exercise:
     into a single sentence. Use the regular expression method
     (`re`) to replace anything other than letters, digits, and
     whitespaces with blank spaces. Add the following code to do this:
-
-
 
     ```
     lemmatizer = WordNetLemmatizer()
@@ -2607,18 +2250,12 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_43.jpg)
-
-
 
     overall scores
 
 5.  Create a DataFrame from the TFIDF matrix representation of the
     cleaned version of `reviewText` with the following code:
-
-
 
     ```
     tfidf_model = TfidfVectorizer(max_features=500)
@@ -2631,18 +2268,12 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_44.jpg)
-
-
 
 
 6.  The following lines of code are used to create a new column called
     target, which will have 0 if the `'overall'` parameter is
     less than 4; otherwise, it will have 1:
-
-
 
     ```
     data_patio_lawn_garden['target'] = data_patio_lawn_garden\
@@ -2653,8 +2284,6 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     1     7037
@@ -2680,8 +2309,6 @@ Follow these steps to implement this exercise:
     the `crosstab` function. Add the following code to do
     this:
 
-
-
     ```
     pip install xgboost
     from xgboost import XGBClassifier
@@ -2697,11 +2324,7 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_45.jpg)
-
-
 
     labels using XGBoost
 
@@ -2726,8 +2349,6 @@ Follow these steps to implement this exercise:
 10. Predict the overall score of the given set of
     `reviewText`. Add the following code to do this:
 
-
-
     ```
     from xgboost import XGBRegressor 
     xgbr = XGBRegressor(n_estimators=20,learning_rate=0.03,\
@@ -2741,12 +2362,10 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_46.jpg)
 
 
-Figure 3.46: Actual overall score and predicted values using an XGBoost
+
 regressor
 
 From the preceding table, we can see how the actual and predicted scores
@@ -2759,11 +2378,7 @@ tree-based methods to predict scores in data.
 
 
 
-
-
 In the next section, you will learn about sampling.
-
-
 
 Sampling
 --------
@@ -2816,8 +2431,6 @@ methods, such as the following:
 
 To better understand these, let\'s perform a simple exercise.
 
-
-
 Exercise 3.10: Sampling (Simple Random, Stratified, and Multi-Stage)
 --------------------------------------------------------------------
 
@@ -2838,8 +2451,6 @@ Follow these steps to implement this exercise:
 2.  Insert a new cell and add the following code to import pandas and
     read the dataset:
 
-
-
     ```
     !pip install xlrd
     import pandas as pd
@@ -2850,8 +2461,6 @@ Follow these steps to implement this exercise:
 
     The preceding code generates the following output:
 
-
-
     ```
     (54190, 8)
     ```
@@ -2859,8 +2468,6 @@ Follow these steps to implement this exercise:
 
 3.  We use pandas\' `sample` function to extract a sample from
     the `DataFrame`. Add the following code to do this:
-
-
 
     ```
     # selecting 10% of the data randomly
@@ -2871,8 +2478,6 @@ Follow these steps to implement this exercise:
 
     The preceding code generates the following output:
 
-
-
     ```
     (54191, 8)
     ```
@@ -2880,8 +2485,6 @@ Follow these steps to implement this exercise:
 
 4.  Use sklearn\'s `train_test_split` function to create
     stratified samples. Add the following code to do this:
-
-
 
     ```
     from sklearn.model_selection import train_test_split
@@ -2897,24 +2500,16 @@ Follow these steps to implement this exercise:
     each category in the country column after the split. To get the
     train set percentages, use the following code:
 
-
-
     ```
     y_train.value_counts()/y_train.shape[0]
     ```
 
 
     The following is part of the output of the preceding code:
-
-
 ![](./images/B16062_03_47.jpg)
 
 
-
-
 5.  Similarly, for the validation set, add the following code:
-
-
 
     ```
     y_valid.value_counts()/y_valid.shape[0]
@@ -2922,11 +2517,7 @@ Follow these steps to implement this exercise:
 
 
     The following is part of the output of the preceding code:
-
-
 ![](./images/B16062_03_48.jpg)
-
-
 
 
     As we can see, the percentages of all countries are similar in both
@@ -2937,8 +2528,6 @@ Follow these steps to implement this exercise:
     transactions by country that occurred in the United Kingdom,
     Germany, or France and where the corresponding quantity is greater
     than or equal to 2. Add the following code to implement this:
-
-
 
     ```
     data_ugf = data[data['Country'].isin(['United Kingdom', \
@@ -2952,8 +2541,6 @@ Follow these steps to implement this exercise:
 
     The preceding code generates the following output:
 
-
-
     ```
     (356940, 8)
     ```
@@ -2961,16 +2548,12 @@ Follow these steps to implement this exercise:
 
     Now, add the following line of code:
 
-
-
     ```
     data_ugf_q2_sample.shape
     ```
 
 
     This will generate the following output:
-
-
 
     ```
     (7139, 8)
@@ -2988,10 +2571,6 @@ section.
 
 
 
-
-
-
-
 Developing a Text Classifier
 ============================
 
@@ -3004,8 +2583,6 @@ classifying huge amounts of text data is impossible. In the next few
 sections, we will learn about the different parts of text classifiers
 and implement them in Python.
 
-
-
 Feature Extraction
 ------------------
 
@@ -3014,16 +2591,12 @@ Generally, they are numeric representations of the text. As we discussed
 in *Lab 2*, *Feature Extraction Methods*, TFIDF representations of
 texts are one of the most popular ways of extracting features from them.
 
-
-
 Feature Engineering
 -------------------
 
 Feature engineering is the art of extracting new features from existing
 ones. Extracting novel features, which tend to capture variation in data
 better, requires sound domain expertise.
-
-
 
 Removing Correlated Features
 ----------------------------
@@ -3038,21 +2611,13 @@ Thus, features with correlation beyond a certain threshold need to be
 removed. The most widely used correlation statistic is Pearson
 correlation, which can be calculated as follows:
 
-<div>
-
-
 ![](./images/B16062_03_49.jpg)
 
 
-</div>
-
-Figure 3.49: Pearson correlation
 
 Here, *cov* is the covariance, `σ` is the standard deviation,
 and X and Y are two variables/features of the training data that we are
 testing for correlation.
-
-
 
 Exercise 3.11: Removing Highly Correlated Features (Tokens)
 -----------------------------------------------------------
@@ -3117,8 +2682,6 @@ dataset. Follow these steps to implement this exercise:
     corresponding to the categories mentioned earlier, use the following
     lines of code:
 
-
-
     ```
     news_data = fetch_20newsgroups(subset='train', \
                                    categories=categories, \
@@ -3131,11 +2694,7 @@ dataset. Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_50.jpg)
-
-
 
 
 6.  Now, use the `lambda` function to extract tokens from each
@@ -3163,8 +2722,6 @@ dataset. Follow these steps to implement this exercise:
 7.  Add the following lines of code used to create a TFIDF matrix and
     transform it into a DataFrame:
 
-
-
     ```
     tfidf_model = TfidfVectorizer(max_features=20)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
@@ -3175,17 +2732,11 @@ dataset. Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_51.jpg)
-
-
 
 
 8.  Calculate the correlation matrix for this TFIDF representation. Add
     the following code to implement this:
-
-
 
     ```
     correlation_matrix = tfidf_df.corr()
@@ -3194,17 +2745,11 @@ dataset. Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_52.jpg)
-
-
 
 
 9.  Now, plot the correlation matrix using seaborn\'s heatmap function.
     Add the following code to implement this:
-
-
 
     ```
     import seaborn as sns
@@ -3215,18 +2760,12 @@ dataset. Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_53.jpg)
-
-
 
 
 10. To identify a pair of terms with high correlation, create an upper
     triangular matrix from the correlation matrix. Create a stacked
     array out of it and traverse it. Add the following code to do this:
-
-
 
     ```
     import numpy as np
@@ -3245,11 +2784,7 @@ dataset. Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_54.jpg)
-
-
 
 
     You can see that the most highly correlated features are
@@ -3263,8 +2798,6 @@ dataset. Follow these steps to implement this exercise:
     than 0.7 and create a separate DataFrame with the remaining terms.
     Add the following code to do this:
 
-
-
     ```
     tfidf_df_without_correlated_word = tfidf_df.drop(['nntp', \
                                                       'posting', \
@@ -3275,12 +2808,10 @@ dataset. Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_55.jpg)
 
 
-Figure 3.55: The DataFrame after removing correlated tokens
+
 
 After removing the highly correlated words from the TFIDF DataFrame, it
 appears like this. We have cleaned the dataset to remove highly
@@ -3292,12 +2823,8 @@ classifier.
 
 
 
-
-
 In the next section, we will learn how to reduce the size of the dataset
 and understand why this is necessary.
-
-
 
 Dimensionality Reduction
 ------------------------
@@ -3320,8 +2847,6 @@ people misspell words such as good and instead write \"gud\". PCA will
 combine these two highly correlated features into a single feature and
 reduce the dimensionality. In the next section, we\'ll look at an
 exercise to get a better understanding of this.
-
-
 
 Exercise 3.12: Performing Dimensionality Reduction Using Principal Component Analysis
 -------------------------------------------------------------------------------------
@@ -3387,8 +2912,6 @@ this exercise:
 5.  To fetch sklearn\'s dataset corresponding to the categories we
     mentioned earlier, use the following lines of code:
 
-
-
     ```
     news_data = fetch_20newsgroups(subset='train', \
                                    categories=categories, \
@@ -3401,11 +2924,7 @@ this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_56.jpg)
-
-
 
 
 6.  Use the `lambda` function to extract tokens from each
@@ -3433,8 +2952,6 @@ this exercise:
 7.  The following lines of code are used to create a TFIDF matrix and
     transform it into a DataFrame:
 
-
-
     ```
     tfidf_model = TfidfVectorizer(max_features=20)
     tfidf_df = pd.DataFrame(tfidf_model.fit_transform\
@@ -3445,18 +2962,12 @@ this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_57.jpg)
-
-
 
 
 8.  In this step, we are using sklearn\'s `PCA` function to
     extract two principal components from the initial data. Add the
     following code to do this:
-
-
 
     ```
     from sklearn.decomposition import PCA
@@ -3468,11 +2979,7 @@ this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_58.jpg)
-
-
 
 
     In the preceding screenshot, you can see the two principal
@@ -3481,8 +2988,6 @@ this exercise:
 9.  Now, we\'ll create a `scatter` plot using these principal
     components and represent each category with a separate color. Add
     the following code to implement this:
-
-
 
     ```
     scatter = plt.scatter(reduced_tfidf[:, 0], \
@@ -3498,12 +3003,10 @@ this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_59.jpg)
 
 
-Figure 3.59: Two-dimensional representation of news documents
+
 
 From the preceding plot, we can see that a scatter plot has been created
 in which each category of article is represented by a different color.
@@ -3519,12 +3022,8 @@ visualize datasets.
 
 
 
-
-
 Next, we will learn how to evaluate the machine learning models that we
 train.
-
-
 
 Deciding on a Model Type
 ------------------------
@@ -3547,8 +3046,6 @@ explainability and the time that\'s required to develop it. When the
 outcome of a model has to be the probability of the occurrence of a
 certain class, we use logistic regression.
 
-
-
 Evaluating the Performance of a Model
 -------------------------------------
 
@@ -3567,20 +3064,16 @@ evaluate a model\'s performance. Let\'s work through them one by one:
     and predicted values. The cell entries denote how many of the
     predicted values match with the actual values, and how many don\'t.
     Consider the following image:
-
-
 ![](./images/B16062_03_60.jpg)
 
 
-Figure 3.60: Confusion matrix
+
 
 In the preceding confusion matrix, the top-left cell will have the count
 of all correctly classified **0** values by the classifier, whereas the
 top-right cell will have the count of incorrectly classified **0**
 values, and so on. To create a confusion matrix using Python, you can
 use the following code:
-
-
 
 ```
 from sklearn.metrics import confusion_matrix
@@ -3601,8 +3094,6 @@ confusion_matrix(actual_values,predicted_values)
 
     To get the accuracy of the predicted values using Python, you can
     use the following code:
-
-
 
     ```
     from sklearn.metrics import accuracy_score
@@ -3636,8 +3127,6 @@ confusion_matrix(actual_values,predicted_values)
     To get the F1 score, precision, and recall values using Python, you
     can use the following code:
 
-
-
     ```
     from sklearn.metrics import classification_report
     classification_report(actual_values,predicted_values)
@@ -3661,8 +3150,6 @@ confusion_matrix(actual_values,predicted_values)
     AUROC, the better the model is. The maximum value of AUROC is 1. To
     create the ROC curve using Python, use the following code:
 
-
-
     ```
     fpr,tpr,threshold=roc_curve(actual_values, \
                                 predicted_probabilities)
@@ -3684,19 +3171,15 @@ confusion_matrix(actual_values,predicted_values)
 
     This is mainly used for evaluating the accuracy of regression
     models. We define it as follows:
-
-
 ![](./images/B16062_03_61.jpg)
 
 
-Figure 3.61: Formula for root mean square error
+
 
 Here, *n* is the number of samples, *Pi* is the predicted value of the
 *i*[th]{.superscript} observation, and *Oi* is the observed value of the
 *i*[th]{.superscript} observation. To find the RMSE using Python, use
 the following code:
-
-
 
 ```
 from sklearn.metrics import mean_squared_error
@@ -3708,26 +3191,20 @@ rmse = sqrt(mean_squared_error(y_actual, y_predicted))
 
     Just like RMSE, this is another way to evaluate a regression
     model\'s performance. It is described as follows:
-
-
 ![](./images/B16062_03_62.jpg)
 
 
-Figure 3.62: Formula for maximum absolute percentage error
+
 
 Here, *n* is the number of samples, *Pi* is the predicted value (that
 is, the forecast value) of the *ith* observation, and *O*i is the
 observed value (that is, the actual value) of the *ith* observation. To
 find MAPE in Python, use the following code:
 
-
-
 ```
 from sklearn.metrics import mean_absolute_error
 mape = mean_absolute_error(y_actual, y_predicted) * 100
 ```
-
-
 
 
 Exercise 3.13: Calculating the RMSE and MAPE of a Dataset
@@ -3743,8 +3220,6 @@ exercise:
     and then use the `sqrt` function to calculate the RMSE.
     Add the following code to implement this:
 
-
-
     ```
     from sklearn.metrics import mean_squared_error
     from math import sqrt
@@ -3756,8 +3231,6 @@ exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     Root Mean Squared Error (RMSE) is: 0.21019038988498018
@@ -3771,8 +3244,6 @@ exercise:
     the MAPE of a hypothetical model prediction. Add the following code
     to implement this:
 
-
-
     ```
     from sklearn.metrics import mean_absolute_error
     y_actual = [0,1,2,1,0]
@@ -3784,8 +3255,6 @@ exercise:
 
 
     The preceding code generates the following output:
-
-
 
     ```
     Mean Absolute Percentage Error (MAPE) is 16.6 %
@@ -3803,12 +3272,8 @@ train and are equipped to create your very own text classifier.
 
 
 
-
-
 In the next section, we will solve an activity based on classifying
 text.
-
-
 
 Activity 3.01: Developing End-to-End Text Classifiers
 -----------------------------------------------------
@@ -3870,8 +3335,6 @@ in a sequence. We will solve a text classification problem using a
 pipeline in the next section to understand the working of a pipeline
 better.
 
-
-
 Exercise 3.14: Building the Pipeline for an NLP Project
 -------------------------------------------------------
 
@@ -3924,8 +3387,6 @@ implement this exercise:
     on the `news_data` we mentioned earlier and use it to
     transform that data. Add the following code to implement this:
 
-
-
     ```
     text_classifier_pipeline = Pipeline([('vect', \
                                           CountVectorizer()), \
@@ -3938,12 +3399,10 @@ implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_63.jpg)
 
 
-Figure 3.63: TFIDF representation of the DataFrame created using a
+
 pipeline
 
 Here, we created a pipeline consisting of the count vectorizer and TFIDF
@@ -3951,10 +3410,6 @@ transformer. The outcome of this pipeline is the TFIDF representation of
 the text data that has been passed to it as an argument.
 
 **Note**
-
-
-
-
 
 
 
@@ -3982,8 +3437,6 @@ models:
 To deploy saved models, we need to load them from the hard disk to the
 memory. In the next section, we will perform an exercise based on this
 to get a better understanding of this process.
-
-
 
 Exercise 3.15: Saving and Loading Models
 ----------------------------------------
@@ -4021,8 +3474,6 @@ Follow these steps to implement this exercise:
 
 4.  Fit a TFIDF model to it. Add the following code to do this:
 
-
-
     ```
     tfidf_model = TfidfVectorizer()
     tfidf_vectors = tfidf_model.fit_transform(corpus).todense()
@@ -4031,11 +3482,7 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_64.jpg)
-
-
 
 
 5.  Save this TFIDF model on disk using `joblib`. Add the
@@ -4050,8 +3497,6 @@ Follow these steps to implement this exercise:
 6.  Finally, load this model from disk to memory and use it. Add the
     following code to do this:
 
-
-
     ```
     tfidf_model_loaded = load('tfidf_model.joblib')
     loaded_tfidf_vectors = tfidf_model_loaded.transform(corpus).todense()
@@ -4060,11 +3505,7 @@ Follow these steps to implement this exercise:
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_03_65.jpg)
-
-
 
 
 7.  Save this TFIDF model on disk using `pickle`. Add the
@@ -4079,8 +3520,6 @@ Follow these steps to implement this exercise:
 8.  Load this model from disk to memory and use it. Add the following
     code to do this:
 
-
-
     ```
     loaded_model = pickle.load(open("tfidf_model.pickle.dat", "rb"))
     loaded_tfidf_vectors = loaded_model.transform(corpus).todense()
@@ -4090,14 +3529,10 @@ Follow these steps to implement this exercise:
 
     The preceding code generates the following output:
 
-
-
-
-
 ![](./images/B16062_03_66.jpg)
 
 
-Figure 3.66: TFIDF representation as a matrix
+
 
 From the preceding screenshot, we can see that the saved model and the
 model that was loaded from the disk are identical. You have now learned
@@ -4105,10 +3540,6 @@ how to save and load models. This section marks the end of this lab,
 where you learned how to build a text classifier from scratch.
 
 **Note**
-
-
-
-
 
 
 

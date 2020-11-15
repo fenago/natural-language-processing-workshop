@@ -5,8 +5,6 @@
 Lab 6. Vector Representation
 ========================
 
-
-
 Overview
 
 This lab introduces you to the various ways in which text can be
@@ -70,15 +68,9 @@ Celsius, percentage, centimeters, kilometers per hour (km/h), and
 millibar (mbar), respectively. The following are the values for two
 places:
 
-<div>
-
-
 ![](./images/B16062_06_01.jpg)
 
 
-</div>
-
-Figure 6.1: Weather indicators at two different places
 
 So, we can represent the weather of these places in vector form as
 follows:
@@ -102,8 +94,6 @@ categories:
 
 -   Frequency-based embeddings
 -   Learned word embeddings
-
-
 
 Frequency-Based Embeddings
 --------------------------
@@ -266,8 +256,6 @@ classes from the `preprocessing` package provided by the
 scikit-learn library. The following exercise will help us get a better
 understanding of this.
 
-
-
 Exercise 6.01: Word-Level One-Hot Encoding
 ------------------------------------------
 
@@ -314,19 +302,13 @@ Follow these steps to implement this exercise:
 4.  After reading the contents of the file, load it by inserting a new
     cell and adding the following code:
 
-
-
     ```
     novel_lines_raw
     ```
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_06_02.jpg)
-
-
 
 
     In the output, you will see a lot of newline characters. This is
@@ -361,25 +343,17 @@ Follow these steps to implement this exercise:
     should look like a list. Insert a new cell and add the following
     code to view it:
 
-
-
     ```
     novel_lines
     ```
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_06_03.jpg)
-
-
 
 
 7.  Insert a new cell and add the following code to convert the list to
     a NumPy array and print the shape of the array:
-
-
 
     ```
     import numpy as np
@@ -390,8 +364,6 @@ Follow these steps to implement this exercise:
 
 
     The code generates the following output:
-
-
 
     ```
     (459, 1)
@@ -414,8 +386,6 @@ Follow these steps to implement this exercise:
     `novel_lines_array` to one-hot encoded format. Insert a
     new cell and add the following lines of code to implement this:
 
-
-
     ```
     from sklearn import preprocessing
     labelEncoder = preprocessing.LabelEncoder()
@@ -436,19 +406,13 @@ Follow these steps to implement this exercise:
 9.  To check the list of encoded labels, insert a new cell and add the
     following code:
 
-
-
     ```
     novel_lines_labels
     ```
 
 
     The preceding code generates output that looks as follows:
-
-
 ![](./images/B16062_06_04.jpg)
-
-
 
 
     The `OneHotEncoder()` class encodes the categorical
@@ -462,16 +426,12 @@ Follow these steps to implement this exercise:
     returned as output. To view the matrix, insert a new cell and type
     the following code:
 
-
-
     ```
     line_onehot
     ```
 
 
     The code generates the following output:
-
-
 
     ```
     <459x199 sparse matrix of type '<class 'numpy.float64'>'
@@ -483,24 +443,18 @@ Follow these steps to implement this exercise:
     `toarray()` function. Insert a new cell and add the
     following code to implement this:
 
-
-
     ```
     line_onehot.toarray()
     ```
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_06_05.jpg)
 
 
-Figure 6.5: Dense array
+
 
 **Note**
-
-
 
 
 
@@ -521,8 +475,6 @@ character-level language models, which can be trained to predict the
 next character in a sequence of characters. For character-level language
 models, we need character-level one-hot encoding. Let\'s explore this in
 the next section.
-
-
 
 Character-Level One-Hot Encoding
 --------------------------------
@@ -565,8 +517,6 @@ Now, \'h\' will be represented as \[0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\]. Let\'s see how we can
 implement this in the next exercise.
 
-
-
 Exercise 6.02: Character One-Hot Encoding -- Manual
 ---------------------------------------------------
 
@@ -602,8 +552,6 @@ complete this exercise:
 
     Add the following code:
 
-
-
     ```
         for c in word:
             one_hot_vector = [0] * len(lookup)
@@ -621,8 +569,6 @@ complete this exercise:
     input to the function. To implement this, add a new cell and write
     the following code:
 
-
-
     ```
     onehot_vector = onehot_word('data')
     print(onehot_vector)
@@ -630,8 +576,6 @@ complete this exercise:
 
 
     The code generates the following output:
-
-
 
     ```
     [0, 0, 1], [1, 0, 0], [0, 1, 0], [1, 0, 0]
@@ -692,8 +636,6 @@ the character level; otherwise, it will work on the word level. The
     takes the text as input, processes it, and returns a NumPy array of
     one-hot encoded vectors.
 
-
-
 Exercise 6.03: Character-Level One-Hot Encoding with Keras
 ----------------------------------------------------------
 
@@ -715,8 +657,6 @@ the Keras library. Follow these steps to implement this exercise:
 3.  Once you have imported the `Tokenizer` class, create an
     instance of it by inserting a new cell and adding the following
     code:
-
-
 
     ```
     char_tokenizer = Tokenizer(char_level=True)
@@ -745,8 +685,6 @@ the Keras library. Follow these steps to implement this exercise:
     provided by the `Tokenizer` class. Insert a new cell and
     add the following code to implement this:
 
-
-
     ```
     char_tokenizer.fit_on_texts(text)
     ```
@@ -763,8 +701,6 @@ the Keras library. Follow these steps to implement this exercise:
     character in the text. Insert a new cell and add the following code
     to implement this:
 
-
-
     ```
     seq =char_tokenizer.texts_to_sequences(text)
     seq
@@ -772,11 +708,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_06_06.jpg)
-
-
 
 
     As you can see, there were **44** characters in the `text`
@@ -786,26 +718,18 @@ the Keras library. Follow these steps to implement this exercise:
 7.  Use `sequences_to_texts()` to get text from the sequence
     with the following code:
 
-
-
     ```
     char_tokenizer.sequences_to_texts(seq)
     ```
 
 
     The snippet of the preceding output follows:
-
-
 ![](./images/B16062_06_07.jpg)
-
-
 
 
 8.  Now look at the actual one-hot encoded values. For this, use the
     `texts_to_matrix()` function. Insert a new cell and add
     the following code to implement this:
-
-
 
     ```
     char_vectors = char_tokenizer.texts_to_matrix(text)
@@ -818,8 +742,6 @@ the Keras library. Follow these steps to implement this exercise:
 9.  In order to view the vector values, just insert a new cell and add
     the following line:
 
-
-
     ```
     char_vectors
     ```
@@ -827,18 +749,12 @@ the Keras library. Follow these steps to implement this exercise:
 
     On execution, the code displays the array of one-hot encoded
     vectors:
-
-
 ![](./images/B16062_06_08.jpg)
-
-
 
 
 10. In order to investigate the dimensions of the NumPy array, make use
     of the `shape` attribute. Insert a new cell and add the
     following code to execute it:
-
-
 
     ```
     char_vectors.shape
@@ -846,8 +762,6 @@ the Keras library. Follow these steps to implement this exercise:
 
 
     The following output is generated:
-
-
 
     ```
     (44, 27)
@@ -861,8 +775,6 @@ the Keras library. Follow these steps to implement this exercise:
 11. To access the first row of `char_vectors` NumPy array,
     insert a new cell and add the following code:
 
-
-
     ```
     char_vectors[0]
     ```
@@ -870,8 +782,6 @@ the Keras library. Follow these steps to implement this exercise:
 
     This returns a one-hot vector, which can be seen in the following
     figure:
-
-
 
     ```
     array([0 ., 0., 0., 0., 1., 0., 0., 0., 0 .,
@@ -884,16 +794,12 @@ the Keras library. Follow these steps to implement this exercise:
     `argmax()` function provided by NumPy. Insert a new cell
     and write the following code to implement this:
 
-
-
     ```
     np.argmax(char_vectors[0])
     ```
 
 
     The code generates the following output:
-
-
 
     ```
     4
@@ -906,26 +812,18 @@ the Keras library. Follow these steps to implement this exercise:
     Insert a new cell and add the following code to view the
     `index_word` dictionary:
 
-
-
     ```
     char_tokenizer.index_word
     ```
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_06_09.jpg)
-
-
 
 
     As you can see in this figure, the indices act as keys, and the
     characters act as values. Now insert a new cell and the following
     code to view the `word_index` dictionary:
-
-
 
     ```
     char_tokenizer.word_index
@@ -933,11 +831,7 @@ the Keras library. Follow these steps to implement this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_06_10.jpg)
-
-
 
 
     In this figure, the characters act as keys, and the indices act as
@@ -949,16 +843,12 @@ the Keras library. Follow these steps to implement this exercise:
     `index_word` dictionary. To implement this, we insert a
     new cell and write the following code:
 
-
-
     ```
     char_tokenizer.index_word[np.argmax(char_vectors[0])]
     ```
 
 
     The preceding code generates the following output:
-
-
 
     ```
     't'
@@ -983,8 +873,6 @@ sometimes not feasible; speed and simplicity here lead to the \"curse of
 dimensionality\" by creating a new dimension for each category/word. To
 tackle this problem, learned embeddings can be used, as explained in the
 following sections.
-
-
 
 Learned Word Embeddings
 -----------------------
@@ -1013,8 +901,6 @@ in such a way that words with similar meanings have somewhat similar
 representations. There are different techniques for creating learned
 word embeddings, such as `Word2Vec` and GloVe. Let\'s discuss
 them one by one.
-
-
 
 Word2Vec
 --------
@@ -1079,8 +965,6 @@ be using are as follows:
 
 Let\'s see how we can use these functions to create word vectors.
 
-
-
 Exercise 6.04: Training Word Vectors
 ------------------------------------
 
@@ -1127,19 +1011,13 @@ Follow these steps to implement this exercise:
 4.  To print the details of all the books, insert a new cell and add the
     following code:
 
-
-
     ```
     catalog
     ```
 
 
     The preceding code generates the following output:
-
-
 ![](./images/B16062_06_11.jpg)
-
-
 
 
 5.  Create a function named `load_book()`, which will take
@@ -1168,8 +1046,6 @@ Follow these steps to implement this exercise:
     `books` variable. Insert a new cell and add the following
     code to implement this:
 
-
-
     ```
     book_ids = [ book['id'] for book in catalog ]
     books = [ load_book(id) for id in book_ids]
@@ -1179,8 +1055,6 @@ Follow these steps to implement this exercise:
     To view the information of the `books` variable, add the
     following code in a new cell:
 
-
-
     ```
     books[:5]
     ```
@@ -1188,11 +1062,7 @@ Follow these steps to implement this exercise:
 
     A snippet of the output generated by the preceding code is as
     follows:
-
-
 ![](./images/B16062_06_12.jpg)
-
-
 
 
 7.  Before you can train the word vectors, you need to split the books
@@ -1202,8 +1072,6 @@ Follow these steps to implement this exercise:
     sentence. Thus, you need to create a list of sentences from all 10
     books. Insert a new cell and add the following code to implement
     this:
-
-
 
     ```
     from gensim.summarization import textcleaner
@@ -1237,16 +1105,12 @@ Follow these steps to implement this exercise:
 9.  To check the length of the documents, use the `len()`
     function as follows:
 
-
-
     ```
     len(documents)
     ```
 
 
     The code generates the following output:
-
-
 
     ```
     32922
@@ -1256,8 +1120,6 @@ Follow these steps to implement this exercise:
 10. Now that you have your documents, train the model by making use of
     the `Word2Vec` class provided by the gensim package.
     Insert a new cell and add the following code to implement this:
-
-
 
     ```
     from gensim.models import Word2Vec
@@ -1275,8 +1137,6 @@ Follow these steps to implement this exercise:
 
     The code generates the following output:
 
-
-
     ```
     (27809439, 37551450)
     ```
@@ -1288,19 +1148,13 @@ Follow these steps to implement this exercise:
     parameter and returns a list of strings that contribute positively.
     Insert a new cell and add the following code to implement this:
 
-
-
     ```
     model.wv.most_similar(positive="worse")
     ```
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_06_13.jpg)
-
-
 
 
     **Note**
@@ -1312,8 +1166,6 @@ Follow these steps to implement this exercise:
 11. Create a `show_vector()` function that will display the
     vector using `pyplot`, a plotting framework in Matplotlib.
     Insert a new cell and add the following code to implement this:
-
-
 
     ```
     %matplotlib inline
@@ -1336,16 +1188,12 @@ Follow these steps to implement this exercise:
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_06_14.jpg)
 
 
-Figure 6.14: Graph of the vector when the input is \"sad\"
+
 
 **Note**
-
-
 
 
 
@@ -1355,8 +1203,6 @@ word provided to the `show_vector()` function is \"sad\". We
 have learned about training word vectors and representing them using
 `pyplot`. In the next section, we will focus more on using
 **pre-trained word vectors**, which are required for NLP projects.
-
-
 
 Using Pre-Trained Word Vectors
 ------------------------------
@@ -1393,8 +1239,6 @@ compressed size is 1.5 GB.
 
 To better understand how we can use pre-trained word vectors in Python,
 let\'s walk through a simple exercise.
-
-
 
 Exercise 6.05: Using Pre-Trained Word Vectors
 ---------------------------------------------
@@ -1444,8 +1288,6 @@ Follow these steps to complete this exercise:
     model Python dictionary. Insert a new cell and add the following
     code to implement this:
 
-
-
     ```
     def load_glove_vectors(fn):
         print("Loading Glove Model")
@@ -1469,8 +1311,6 @@ Follow these steps to complete this exercise:
     to a Python dictionary. The preceding code generates the following
     output:
 
-
-
     ```
     Loading Glove Model
     Loaded 400000 words
@@ -1480,19 +1320,13 @@ Follow these steps to complete this exercise:
     If we want to view the values of `glove_vectors`, then we
     insert a new cell and add the following code:
 
-
-
     ```
     glove_vectors
     ```
 
 
     You will get the following output:
-
-
 ![](./images/B16062_06_15.jpg)
-
-
 
 
     The order of the result dictionary can vary as it is a Python dict.
@@ -1503,40 +1337,26 @@ Follow these steps to complete this exercise:
     vector. Insert a new cell and add the code to check the vector for
     the word `dog`:
 
-
-
     ```
     glove_vectors["dog"]
     ```
 
-
-
 ![](./images/B16062_06_16.jpg)
-
-
 
 
     In order to see the vector for the word `cat`, add the
     following code:
 
-
-
     ```
     glove_vectors["cat"]
     ```
 
-
-
 ![](./images/B16062_06_17.jpg)
-
-
 
 
 6.  Now that you have the vectors, represent them as an image using the
     pyplot framework of the Matplotlib library. Insert a new cell and
     add the following code to implement this:
-
-
 
     ```
     %matplotlib inline
@@ -1573,25 +1393,17 @@ Follow these steps to complete this exercise:
     `vector`. To find the image representation of the word
     `man`, type the following code:
 
-
-
     ```
     man = to_image(to_vector(glove_vectors, "man"))
     ```
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_06_18.jpg)
-
-
 
 
 8.  To find the image representation of the word `woman`, type
     the following code:
-
-
 
     ```
     woman = to_image(to_vector(glove_vectors, "woman"))
@@ -1599,17 +1411,11 @@ Follow these steps to complete this exercise:
 
 
     This will generate the following output:
-
-
 ![](./images/B16062_06_19.jpg)
-
-
 
 
 9.  To find the image representation of the word `king`, type
     the following code:
-
-
 
     ```
     king = to_image(to_vector(glove_vectors, "king"))
@@ -1617,17 +1423,11 @@ Follow these steps to complete this exercise:
 
 
     This will generate the following output:
-
-
 ![](./images/B16062_06_20.jpg)
-
-
 
 
 10. To find the image representation of the word `queen`, type
     the following code:
-
-
 
     ```
     queen = to_image(to_vector(glove_vectors, "queen"))
@@ -1635,17 +1435,11 @@ Follow these steps to complete this exercise:
 
 
     This will generate the following output:
-
-
 ![](./images/B16062_06_21.jpg)
-
-
 
 
 11. To find the image representation of the vector for
     `king – man + woman – queen`, type the following code:
-
-
 
     ```
     diff = to_image(king – man + woman - queen)
@@ -1653,17 +1447,11 @@ Follow these steps to complete this exercise:
 
 
     This will generate the following output:
-
-
 ![](./images/B16062_06_22.jpg)
-
-
 
 
 12. To find the image representation of the vector for
     `king – man + woman`, type the following code:
-
-
 
     ```
     nd = to_image(king – man + woman)
@@ -1671,16 +1459,12 @@ Follow these steps to complete this exercise:
 
 
     This will generate the following output:
-
-
 ![](./images/B16062_06_23.jpg)
 
 
-Figure 6.23: Graph generated with (king-man+woman) as input
+
 
 **Note**
-
-
 
 
 This section does not currently have an online interactive example, and
@@ -1690,8 +1474,6 @@ The preceding results are the visual proof of the example we already
 discussed. We\'ve learned how to load and use pre-trained word vectors
 and view their image representations. In the next section, we will focus
 on document vectors and their uses.
-
-
 
 Document Vectors
 ----------------
@@ -1734,8 +1516,6 @@ sequence of sentences, `Doc2Vec` provides the
 `build_vocab` method. We\'ll be using all of these in the
 upcoming exercise.
 
-
-
 Uses of Document Vectors
 ------------------------
 
@@ -1752,8 +1532,6 @@ Some of the uses of document vectors are as follows:
 In the next section, we will perform an exercise based on document
 vectors.
 
-
-
 Exercise 6.06: Converting News Headlines to Document Vectors
 ------------------------------------------------------------
 
@@ -1768,8 +1546,6 @@ of the Matplotlib library. Follow these steps to complete this exercise:
 2.  Import all the necessary libraries for this exercise. You will be
     using the gensim library. Insert a new cell and add the following
     code:
-
-
 
     ```
     import pandas as pd
@@ -1823,26 +1599,18 @@ of the Matplotlib library. Follow these steps to complete this exercise:
 
 6.  View the head of the DataFrame using the following code:
 
-
-
     ```
     lines_df.head()
     ```
 
 
     This will create the following output:
-
-
 ![](./images/B16062_06_24.jpg)
-
-
 
 
 7.  Create a class, the object of which will create the training
     instances for the `Doc2Vec` model. Insert a new cell and
     add the following code to implement this:
-
-
 
     ```
     class DocumentDataset(object):
@@ -1928,19 +1696,13 @@ of the Matplotlib library. Follow these steps to complete this exercise:
     following code to find the `doc` vector of index
     `657`:
 
-
-
     ```
     docVecModel[657]
     ```
 
 
     You should get an output similar to the one below:
-
-
 ![](./images/B16062_06_25.jpg)
-
-
 
 
 13. To check the image representation of any given vector, make use of
@@ -1980,23 +1742,13 @@ of the Matplotlib library. Follow these steps to complete this exercise:
     representation of the vector. Insert a new cell and add the
     following code to implement this:
 
-
-
     ```
     show_news_lines(872)
     ```
 
 
     The code generates the following output:
-
-
 ![](./images/B16062_06_26.jpg)
-
-
-Figure 6.26: Image representation of a given vector
-
-**Note**
-
 
 
 
@@ -2006,8 +1758,6 @@ We have learned how to represent a document as a vector. We have also
 seen a visual representation of this. In the next section, we will
 complete an activity to find similar news headlines using the document
 vector.
-
-
 
 Activity 6.01: Finding Similar News Article Using Document Vectors
 ------------------------------------------------------------------

@@ -136,8 +136,6 @@ which are part of NLP, are not part of text analytics. Let\'s walk
 through the basics of text analytics and see how we can execute it in
 Python.
 
-
-
 Exercise 1.01: Basic Text Analytics
 -----------------------------------
 
@@ -164,8 +162,6 @@ steps to implement this exercise using the following sentence:
 3.  Check whether the word `'quick'` belongs to that text
     using the following code:
 
-
-
     ```
     def find_word(word, sentence):
         return word in sentence
@@ -177,8 +173,6 @@ steps to implement this exercise using the following sentence:
 
 4.  Find out the `index` value of the word `'fox'`
     using the following code:
-
-
 
     ```
     def get_index(word, text):
@@ -192,8 +186,6 @@ steps to implement this exercise using the following sentence:
 5.  To find out the rank of the word `'lazy'`, use the
     following code:
 
-
-
     ```
     get_index('lazy', sentence.split())
     ```
@@ -202,8 +194,6 @@ steps to implement this exercise using the following sentence:
     This code generates the output `7`.
 
 6.  To print the third word of the given text, use the following code:
-
-
 
     ```
     def get_word(text,rank):
@@ -217,8 +207,6 @@ steps to implement this exercise using the following sentence:
 7.  To print the third word of the given sentence in reverse order, use
     the following code:
 
-
-
     ```
     get_word(sentence,2)[::-1]
     ```
@@ -228,8 +216,6 @@ steps to implement this exercise using the following sentence:
 
 8.  To concatenate the first and last words of the given sentence, use
     the following code:
-
-
 
     ```
     def concat_words(text):
@@ -256,8 +242,6 @@ steps to implement this exercise using the following sentence:
 
 9.  To print words at even positions, use the following code:
 
-
-
     ```
     def get_even_position_words(text):
         words = text.split()
@@ -268,16 +252,12 @@ steps to implement this exercise using the following sentence:
 
     This code generates the following output:
 
-
-
     ```
     ['The', 'brown', 'jumps', 'the', 'dog']
     ```
 
 
 10. To print the last three letters of the text, use the following code:
-
-
 
     ```
     def get_last_n_letters(text, n):
@@ -290,8 +270,6 @@ steps to implement this exercise using the following sentence:
 
 11. To print the text in reverse order, use the following code:
 
-
-
     ```
     def get_reverse(text):
         return text[::-1]
@@ -301,8 +279,6 @@ steps to implement this exercise using the following sentence:
 
     This code generates the following output:
 
-
-
     ```
     'god yzal eht revo spmuj xof nworb kciuq ehT'
     ```
@@ -310,8 +286,6 @@ steps to implement this exercise using the following sentence:
 
 12. To print each word of the given text in reverse order, maintaining
     their sequence, use the following code:
-
-
 
     ```
     def get_word_reverse(text):
@@ -322,8 +296,6 @@ steps to implement this exercise using the following sentence:
 
 
     This code generates the following output:
-
-
 
     ```
     ehT kciuq nworb xof spmuj revo eht yzal god
@@ -352,8 +324,6 @@ tool that provides a set of methods and algorithms to perform a wide
 range of NLP tasks, including tokenizing, parts-of-speech tagging,
 stemming, lemmatization, and more.
 
-
-
 Tokenization
 ------------
 
@@ -376,8 +346,6 @@ different words based on punctuation and spaces between words.
 To get a better understanding of tokenization, let\'s solve an exercise
 based on it in the next section.
 
-
-
 Exercise 1.02: Tokenization of a Simple Sentence
 ------------------------------------------------
 
@@ -390,8 +358,6 @@ exercise using the sentence, \"I am reading NLP Fundamentals.\"
 2.  Insert a new cell and add the following code to import the necessary
     libraries and download the different types of NLTK data that we are
     going to use for different tasks in the following exercises:
-
-
 
     ```
     from nltk import word_tokenize, download
@@ -428,16 +394,12 @@ exercise using the sentence, \"I am reading NLP Fundamentals.\"
     using the `print()` function. Insert a new cell and add
     the following code to implement this:
 
-
-
     ```
     print(get_tokens("I am reading NLP Fundamentals."))
     ```
 
 
     This code generates the following output:
-
-
 
     ```
     ['I', 'am', 'reading', 'NLP', 'Fundamentals', '.']
@@ -450,8 +412,6 @@ We can see the list of tokens generated with the help of the
 **Note** In the next section, we will see another pre-processing step:
 **Parts-of-Speech (PoS) tagging**.
 
-
-
 PoS Tagging
 -----------
 
@@ -463,8 +423,6 @@ if we look at the sentence, \"The sky is blue,\" we get four tokens,
 namely \"The,\" \"sky,\" \"is,\" and \"blue\", with the help of
 tokenization. Now, using a **PoS tagger**, we tag the PoS for each
 word/token. This will look as follows:
-
-
 
 ```
 [('The', 'DT'), ('sky', 'NN'), ('is', 'VBZ'), ('blue', 'JJ')]
@@ -501,8 +459,6 @@ between the different meanings of the sentences.
 Let\'s perform a simple exercise to understand how PoS tagging is done
 in Python.
 
-
-
 Exercise 1.03: PoS Tagging
 --------------------------
 
@@ -538,8 +494,6 @@ word/token. Follow these steps to implement this exercise:
 4.  Print the tokens with the help of the `print()` function.
     To implement this, add a new cell and write the following code:
 
-
-
     ```
     words  = get_tokens("I am reading NLP Fundamentals")
     print(words)
@@ -547,8 +501,6 @@ word/token. Follow these steps to implement this exercise:
 
 
     This code generates the following output:
-
-
 
     ```
     ['I', 'am', 'reading', 'NLP', 'Fundamentals']
@@ -558,8 +510,6 @@ word/token. Follow these steps to implement this exercise:
 5.  We\'ll now use the `pos_tag()` method. Insert a new cell
     and add the following code:
 
-
-
     ```
     def get_pos(words):
         return pos_tag(words)
@@ -568,8 +518,6 @@ word/token. Follow these steps to implement this exercise:
 
 
     This code generates the following output:
-
-
 
     ```
     [('I', 'PRP'),
@@ -591,8 +539,6 @@ We have learned about assigning appropriate PoS labels to tokens in a
 sentence. In the next section, we will learn about **stop words** in
 sentences and ways to deal with them.
 
-
-
 Stop Word Removal
 -----------------
 
@@ -607,8 +553,6 @@ analysis much more efficient. Examples of stop words include \"a,\"
 
 In the next exercise, we will look at the practical implementation of
 removing stop words from a given sentence.
-
-
 
 Exercise 1.04: Stop Word Removal
 --------------------------------
@@ -647,27 +591,19 @@ stop words included in our text:
     the list, we make use of the `print()` function. Insert a
     new cell and add the following code to view the list:
 
-
-
     ```
     print(stop_words)
     ```
 
 
     This code generates the following output:
-
-
 ![](./images/B16062_01_01.jpg)
-
-
 
 
 5.  To remove the stop words from a sentence, we first assign a string
     to the `sentence` variable and tokenize it into words
     using the `word_tokenize()` method. Insert a new cell and
     add the following code to implement this:
-
-
 
     ```
     sentence = "I am learning Python. It is one of the "\
@@ -686,16 +622,12 @@ stop words included in our text:
 6.  To print the list of tokens, insert a new cell and add the following
     code:
 
-
-
     ```
     print(sentence_words)
     ```
 
 
     This code generates the following output:
-
-
 
     ```
     ['I', 'am', 'learning', 'Python', '.', 'It', 'is', 'one', 'of', 'the', 'most', 'popular', 'programming', 'languages']
@@ -719,16 +651,12 @@ stop words included in our text:
     print the `sentence_no_stops` variable. Insert a new cell
     and add the following code to print:
 
-
-
     ```
     print(remove_stop_words(sentence_words,stop_words))
     ```
 
 
     This code generates the following output:
-
-
 
     ```
     I learning Python. It one popular programming languages
@@ -741,8 +669,6 @@ stop words included in our text:
 
 9.  Add your own stop words to the stop word list:
 
-
-
     ```
     stop_words.extend(['I','It', 'one'])
     print(remove_stop_words(sentence_words,stop_words))
@@ -750,8 +676,6 @@ stop words included in our text:
 
 
     This code generates the following output:
-
-
 
     ```
     learning Python . popular programming languages
@@ -761,8 +685,6 @@ stop words included in our text:
 As we can see from the output, now words such as \"I,\" \"It,\" and\*
 \"One\" are removed as we have added them to our custom stop word list.
 We have learned how to remove stop words from given text.
-
-
 
 Text Normalization
 ------------------
@@ -781,8 +703,6 @@ stemming, and lemmatization, which will be covered later.
 
 For a better understanding of this topic, we will look into a practical
 implementation of text normalization in the next section.
-
-
 
 Exercise 1.05: Text Normalization
 ---------------------------------
@@ -828,8 +748,6 @@ Follow these steps to complete this exercise:
 4.  To check whether the text has been normalized, insert a new cell and
     add the following code to print it:
 
-
-
     ```
     normalized_sentence = normalize(sentence)
     print(normalized_sentence)
@@ -838,16 +756,12 @@ Follow these steps to complete this exercise:
 
     The code generates the following output:
 
-
-
     ```
     I visited the United States from the United Kingdom on 22-10-2018
     ```
 
 
 5.  Add the following code:
-
-
 
     ```
     normalized_sentence = normalize('US and UK are two superpowers')
@@ -856,8 +770,6 @@ Follow these steps to complete this exercise:
 
 
     The code generates following output:
-
-
 
     ```
     United States and United Kingdom are two superpowers
@@ -868,8 +780,6 @@ In the preceding code, we can see that our text has been normalized.
 
 **Note** Over the next sections, we will explore various other ways in which text
 can be normalized.
-
-
 
 Spelling Correction
 -------------------
@@ -905,8 +815,6 @@ spelling of the word.
 Let\'s look at the following exercise to get a better understanding of
 this.
 
-
-
 Exercise 1.06: Spelling Correction of a Word and a Sentence
 -----------------------------------------------------------
 
@@ -933,8 +841,6 @@ Follow these steps in order to complete this exercise:
     English language. Insert a new cell and add the following code to
     implement this:
 
-
-
     ```
     spell = Speller(lang='en')
     spell('Natureal')
@@ -942,8 +848,6 @@ Follow these steps in order to complete this exercise:
 
 
     This code generates the following output:
-
-
 
     ```
     'Natural'
@@ -966,16 +870,12 @@ Follow these steps in order to complete this exercise:
 5.  Use the `print()` function to print all tokens. Insert a
     new cell and add the following code to print the tokens:
 
-
-
     ```
     print(sentence)
     ```
 
 
     This code generates the following output:
-
-
 
     ```
     ['Ntural', 'Luanguage', 'Processin', 'deals', 'with', 'the', 'art', 'of', 'extracting', 'insightes', 'from', 'Natural', 'Languaes']
@@ -999,16 +899,12 @@ Follow these steps in order to complete this exercise:
 7.  To print the correct sentence, insert a new cell and add the
     following code:
 
-
-
     ```
     print(correct_spelling(sentence))
     ```
 
 
     This code generates the following output:
-
-
 
     ```
     ['Natural', 'Language', 'Procession', 'deals', 'with', 'the', 'art', 
@@ -1029,8 +925,6 @@ aware of context.
 **Note** In the next section, we will look at stemming, which is another form of
 text normalization.
 
-
-
 Stemming
 --------
 
@@ -1043,15 +937,9 @@ the same meaning in any case. Stemming is the process that helps us to
 do so. If we look at the following figure, we get a perfect idea of how
 words get transformed into their base forms:
 
-<div>
-
-
 ![](./images/B16062_01_02.jpg)
 
 
-</div>
-
-Figure 1.2: Stemming of the word \"product\"
 
 To get a better understanding of stemming, let\'s perform a simple
 exercise.
@@ -1063,8 +951,6 @@ base form by removing suffixes from words. The snowball stemmer is an
 improvement over the porter stemmer and is a little bit faster and uses
 less memory. In NLTK, this is done by the `stem()` method
 provided by the `PorterStemmer` class.
-
-
 
 Exercise 1.07: Using Stemming
 -----------------------------
@@ -1109,16 +995,12 @@ implement this exercise:
 5.  Similarly, the following code would be used for the input
     `"coming"`.
 
-
-
     ```
     get_stems("coming",porterStem)
     ```
 
 
     We get the following output:
-
-
 
     ```
     'come'
@@ -1128,8 +1010,6 @@ implement this exercise:
 6.  Similarly, the following code would be used for the input
     `"firing"`.
 
-
-
     ```
       get_stems("firing",porterStem)
     ```
@@ -1137,8 +1017,6 @@ implement this exercise:
 
     When the input is `"firing"`, the following output is
     generated:
-
-
 
     ```
     'fire'
@@ -1148,8 +1026,6 @@ implement this exercise:
 7.  The following code would be used for the input
     `"battling"`.
 
-
-
     ```
       get_stems("battling",porterStem)
     ```
@@ -1157,8 +1033,6 @@ implement this exercise:
 
     If we give the input `"battling"`, the following output is
     generated:
-
-
 
     ```
     'battl'
@@ -1168,8 +1042,6 @@ implement this exercise:
 8.  The following code will also generate the same output as above, for
     the input `"battling".`
 
-
-
     ```
     stemmer = stem.SnowballStemmer("english")
     get_stems("battling",stemmer)
@@ -1177,8 +1049,6 @@ implement this exercise:
 
 
     The output will be as follows:
-
-
 
     ```
     'battl'
@@ -1193,8 +1063,6 @@ into their base forms.
 
 **Note** In the next section, we will focus on **lemmatization**, which is
 another form of text normalization.
-
-
 
 Lemmatization
 -------------
@@ -1220,8 +1088,6 @@ of a given word using WordNet.
 
 To put lemmatization into practice, let\'s perform an exercise where
 we\'ll use the `lemmatize()` function.
-
-
 
 Exercise 1.08: Extracting the Base Word Using Lemmatization
 -----------------------------------------------------------
@@ -1257,8 +1123,6 @@ exercise:
     class. Insert a new cell and add the following code to implement
     this:
 
-
-
     ```
     def get_lemma(word):
         return lemmatizer.lemmatize(word)
@@ -1269,16 +1133,12 @@ exercise:
     With the input `products`, the following output is
     generated:
 
-
-
     ```
     'product'
     ```
 
 
 5.  Similarly, use the input as `production` now:
-
-
 
     ```
     get_lemma('production')
@@ -1288,16 +1148,12 @@ exercise:
     With the input `production`, the following output is
     generated:
 
-
-
     ```
     'production'
     ```
 
 
 6.  Similarly, use the input as `coming` now:
-
-
 
     ```
     get_lemma('coming')
@@ -1306,8 +1162,6 @@ exercise:
 
     With the input `coming`, the following output is
     generated:
-
-
 
     ```
     'coming'
@@ -1319,8 +1173,6 @@ exercise:
 
     **Note** In the next section, we will look at another preprocessing step in NLP:
 **named entity recognition** (**NER**).
-
-
 
 Named Entity Recognition (NER)
 ------------------------------
@@ -1351,8 +1203,6 @@ chunking, which we are going to use in the following exercise. Chunking
 is the process of grouping words together into chunks, which can be
 further used to find noun groups and verb groups, or can also be used
 for sentence partitioning.
-
-
 
 Exercise 1.09: Treating Named Entities
 --------------------------------------
@@ -1393,8 +1243,6 @@ Birmingham.\"
 4.  To find the named entities from the preceding text, insert a new
     cell and add the following code:
 
-
-
     ```
     def get_ner(text):
         i = ne_chunk(pos_tag(word_tokenize(text)), binary=True)
@@ -1404,8 +1252,6 @@ Birmingham.\"
 
 
     This code generates the following output:
-
-
 
     ```
     [Tree('NE', [('Packt', 'NNP')]), Tree('NE', [('Birmingham', 'NNP')])]
@@ -1435,15 +1281,9 @@ when being analyzed. The following figure displays a perfect example of
 how ambiguity is caused due to the usage of the same word in different
 sentences:
 
-<div>
-
-
 ![](./images/B16062_01_03.jpg)
 
 
-</div>
-
-Figure 1.3: Word sense disambiguation
 
 One of the algorithms to solve word sense disambiguation is the Lesk
 algorithm. It has a huge corpus in the background (generally
@@ -1481,8 +1321,6 @@ These IDs can be matched with their definitions using the
 To get a better understanding of this process, let\'s look at an
 exercise.
 
-
-
 Exercise 1.10: Word Sense Disambiguation
 ----------------------------------------
 
@@ -1519,8 +1357,6 @@ different sentences. Follow these steps to implement this exercise:
     `nltk.wsd` library. Insert a new cell and add the
     following code to implement this:
 
-
-
     ```
     def get_synset(sentence, word):
         return lesk(word_tokenize(sentence), word)
@@ -1529,8 +1365,6 @@ different sentences. Follow these steps to implement this exercise:
 
 
     This code generates the following output:
-
-
 
     ```
     Synset('savings_bank.n.02')
@@ -1541,16 +1375,12 @@ different sentences. Follow these steps to implement this exercise:
     keeping money safely at home. To check the other sense of the word
     \"bank,\" write the following code:
 
-
-
     ```
     get_synset(sentence2,'bank')
     ```
 
 
     This code generates the following output:
-
-
 
     ```
     Synset('bank.v.07')
@@ -1580,8 +1410,6 @@ sentence level; detecting the boundaries of sentences is essential.
 
 An exercise will provide us with a better understanding of this process.
 
-
-
 Exercise 1.11: Sentence Boundary Detection
 ------------------------------------------
 
@@ -1605,8 +1433,6 @@ detect sentence boundaries. The following steps need to be performed:
     some given text. Insert a new cell and add the following code to
     implement this:
 
-
-
     ```
     def get_sentences(text):
         return sent_tokenize(text)
@@ -1617,8 +1443,6 @@ detect sentence boundaries. The following steps need to be performed:
 
 
     This code generates the following output:
-
-
 
     ```
     ['We are reading a book.'
@@ -1631,8 +1455,6 @@ detect sentence boundaries. The following steps need to be performed:
 4.  Use the `sent_tokenize()` method for text that contains
     periods (.) other than those found at the ends of sentences:
 
-
-
     ```
     get_sentences("Mr. Donald John Trump is the current "\
                   "president of the USA. Before joining "\
@@ -1641,8 +1463,6 @@ detect sentence boundaries. The following steps need to be performed:
 
 
     The code will generate the following output:
-
-
 
     ```
     ['Mr. Donald John Trump is the current president of the USA.',
@@ -1713,21 +1533,13 @@ the overall efficiency of the process, as memory usage changes from one
 phase to the next. An NLP project has to go through six major phases,
 which are outlined in the following figure:
 
-<div>
-
-
 ![](./images/B16062_01_04.jpg)
 
 
-</div>
-
-Figure 1.4: Phases of an NLP project
 
 Suppose you are working on a project in which you need to classify
 emails as important and unimportant. We will explain how this is carried
 out by discussing each phase in detail.
-
-
 
 Data Collection
 ---------------
@@ -1738,8 +1550,6 @@ existing data, collect data from various online repositories, or create
 our own dataset by crawling the web. In our case, we will collect
 different email data. We can even get this data from our personal emails
 as well, to start with.
-
-
 
 Data Preprocessing
 ------------------
@@ -1755,8 +1565,6 @@ will follow these preprocessing steps:
 3.  Text normalization, which will include replacing all numbers with
     some common term and replacing punctuation with empty strings
 4.  Stemming and lemmatization
-
-
 
 Feature Extraction
 ------------------
@@ -1775,8 +1583,6 @@ The list will have 1 at the indices of words that are present in the
 email and 0 at the other indices. This is called one-hot encoding. We
 will learn more about this in coming chapters.
 
-
-
 Model Development
 -----------------
 
@@ -1785,8 +1591,6 @@ can be trained to gain knowledge from the data. These models are
 generally statistical, machine learning-based, deep learning-based, or
 reinforcement learning-based. In our case, we will build a model that is
 capable of differentiating between important and unimportant emails.
-
-
 
 Model Assessment
 ----------------
@@ -1798,8 +1602,6 @@ can be done by using different parameters or metrics. These parameters
 include precision, recall, and accuracy. In our case, we will evaluate
 the newly created model by seeing how well it performs at classifying
 emails as important and unimportant.
-
-
 
 Model Deployment
 ----------------
