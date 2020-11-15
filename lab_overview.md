@@ -1,6 +1,6 @@
 <img align="right" src="./logo.png">
 
-<h2><span style="color:red;">The Natural Language Processing Workshop</span></h2>
+<h2><span style="color:red;">The Natural Language Processing </span></h2>
 
 ### Description
 
@@ -43,8 +43,6 @@ Labs for this course are available at endpoints shared below. Update `<host-ip>`
 
 ### About
 Do you want to learn how to communicate with computer systems using Natural Language Processing (NLP) techniques, or make a machine understand human sentiments? Do you want to build applications like Siri, Alexa, or chatbots, even if you’ve never done it before?
-
-With The Natural Language Processing Workshop, you can expect to make consistent progress as a beginner, and get up to speed in an interactive way, with the help of hands-on activities and fun exercises.
 
 The course starts with an introduction to NLP. You’ll study different approaches to NLP tasks, and perform exercises in Python to understand the process of preparing datasets for NLP models. Next, you’ll use advanced NLP algorithms and visualization techniques to collect datasets from open websites, and to summarize and generate random text from a document. In the final labs, you’ll use NLP to create a chatbot that detects positive or negative sentiment in text documents such as movie reviews.
 

@@ -1,4 +1,4 @@
-# The Natural Language Processing Workshop
+# The Natural Language Processing 
 
 ### Requirements and Setup
 
@@ -6,7 +6,7 @@ To get started with the project files, you'll need to:
 1. Install Jupyter on [Windows](https://www.python.org/downloads/windows/), [Mac](https://www.python.org/downloads/mac-osx/), [Linux](https://www.python.org/downloads/source/)
 2. Install Anaconda on [Windows](https://www.anaconda.com/distribution/#windows), [Mac](https://www.anaconda.com/distribution/#macos), [Linux](https://www.anaconda.com/distribution/#linux)
 
-### Prerequisites for The-Natural-Language-Processing-Workshop
+### Prerequisites
 
 1. Download and Install Python using [Anaconda Distribution](https://www.anaconda.com/distribution/)
 
@@ -33,11 +33,6 @@ To get started with the project files, you'll need to:
    
 5. Download the SpaCy model using the following command:
    python -m spacy download en_core_web_sm
-
-## About The Natural Language Processing Workshop
-Do you want to learn how to communicate with computer systems using Natural Language Processing (NLP) techniques, or make a machine understand human sentiments? Do you want to build applications like Siri, Alexa, or chatbots, even if you’ve never done it before?  
-
-With The Natural Language Processing Workshop, you can expect to make consistent progress as a beginner, and get up to speed in an interactive way, with the help of hands-on activities and fun exercises. 
 
 ## What you will learn
 * Obtain, verify, clean and transform text data into a correct format for use 
