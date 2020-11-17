@@ -44,14 +44,11 @@ Text Analytics and NLP
 **Text analytics** is the method of extracting meaningful insights and
 answering questions from text data, such as those to do with the length
 of sentences, length of words, word count, and finding words from the
-text. Let\'s understand this with an example.
+text.
 
 
-The art of extracting useful insights from any given text data can
-be referred to as text analytics. NLP, on the other hand, helps us in
-understanding the semantics and the underlying meaning of text, such as
-the sentiment of a sentence, top keywords in text, and parts of speech
-for different words. It
+NLP helps us in
+understanding the semantics and the underlying meaning of text. It
 can be broadly categorized into two types: **Natural Language Understanding** (**NLU**) and **Natural Language Generation** (**NLG**).
 A proper explanation of these terms is provided here:
 
@@ -1288,9 +1285,7 @@ Follow these steps to implement this activity:
 8.  Detect the sentence boundaries in the given text corpus and print
     the total number of sentences.
 
-    Note:
-
-    The solution to this activity in the current directory.
+    Note: The solution to this activity in the current directory.
 
 We have learned about and achieved the preprocessing of given data. By
 now, you should be familiar with what NLP is and what basic

@@ -16,7 +16,6 @@ Document Frequency), as well as various methods for finding similarity
 between different texts. By the end of this lab, you will have
 gained an in-depth understanding of how text data can be visualized.
 
-
 Types of Data
 =============
 
@@ -1437,18 +1436,6 @@ Follow these steps to implement this exercise:
     The preceding code generates the following output:
 ![](./images/B16062_02_20.jpg)
 
-
-**Note**
-
-In this section, we learned what BoW is and how to can use it to convert
-a sentence or document into a vector. BoW is the easiest way to convert
-text into a vector; however, it has a severe disadvantage. This method
-only considers the presence and absence of words in a sentence or
-document not the frequency of the words/tokens in a document. If we
-are going to use the semantics of any sentence, the frequency of the
-words plays an important role. To overcome this issue, there is another
-feature extraction model called TFIDF, which we will discuss later in
-this lab.
 
 Zipf\'s Law
 -----------
