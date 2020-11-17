@@ -16,36 +16,14 @@ APIs for data extraction from Twitter, using the `tweepy`
 package.
 
 
-Introduction
-============
-
-
-In the last lab, we developed a simple classifier using feature
-extraction methods. We also covered different algorithms that fall under
-supervised and unsupervised learning. In this lab, you will learn
-how to collect text data by scraping web pages, and then you will learn
-how to process that data. Web scraping helps you extract useful data
-from online content, such as product prices and customer reviews, which
-can then be used for market research, price comparison for products, or
-data analysis. You will also learn how to handle various kinds of
-semi-structured data, such as JSON and XML. We will cover different
-methods for extracting data using **Application Programming Interfaces**
-(**APIs**). Finally, we will explore different ways to extract data from
-different types of files.
-
-
 Collecting Data by Scraping Web Pages
 =====================================
 
 
-The basic building block of any web page is HTML (Hypertext Markup
-Language*)*---a markup language that specifies the structure of your
+The basic building block of any web page is HTML (Hypertext Markup Language) a markup language that specifies the structure of your
 content. HTML is written using a series of tags, combined with optional
 content. The content encompassed within HTML tags defines the appearance
-of the web page. It can be used to make words bold or italicize them, to
-add hyperlinks to the text, and even to add images. Additional
-information can be added to the element using attributes within tags.
-So, a web page can be considered to be a document written using HTML.
+of the web page. A web page can be considered to be a document written using HTML.
 Thus, we need to know the basics of HTML to scrape web pages
 effectively.
 
@@ -53,7 +31,6 @@ The following figure depicts the contents that are included within an
 HTML tag:
 
 ![](./images/B16062_04_01.jpg)
-
 
 
 As you can see in the preceding figure, we can easily identify different
@@ -64,57 +41,11 @@ tags are shown and explained as follows:
 
 
 
--   `DOCTYPE`: This is a must-have preamble for every HTML
-    page. It informs the browser that the document is written in HTML.
--   `<html>` tag: This is considered the root of the page,
-    encompassing all of the page content. It is mainly divided into two
-    tags---`<head>` and `<body>`.
--   `<head>` tag: This tag provides meta-information about the
-    web page.
--   `<body>` tag: This tag comprises content such as text,
-    image, tables, and lists.
--   `<title>` tag: This sets the title of your page, which is
-    what you\'ll see in the browser\'s tab.
--   `<headline>` tag: As the name suggests, this represents
-    six levels of section headings, from `<h1>` to
-    `<h6>`.
--   `<p>` tag: This is used to define the paragraph text
-    content.
--   `<i>` tag: We can use this tag to italicize the text.
--   `<strong>` tag: This makes the text bold.
--   `<li>` tag: We can use this tag to list the content in
-    ordered (the `<ol>` tag) or unordered (the
-    `<ul>` tag) list format.
--   `<img>` tag: This tag is used to add an image in the HTML
-    document.
--   `<h1>` to `<h6>` tags: These represent the
-    various levels of headings, with `<h1>` having the biggest
-    size and `<h6>` having the smallest size.
--   `<span>` tag: Although this tag provides no visual change
-    by itself, it is useful for grouping inline-elements in a document
-    and adding a hook to a part of a text or a part of a document.
--   `<q>` tag: Quotes are written within the `<q>`
-    tag in HTML.
--   `table` tag: Tabular content is represented as a
-    `table` tag, which contains `<th>` (table
-    header), `<tr>` (table row), and `<td>` (table
-    data).
--   `<address>` tag: In HTML documents, addresses are enclosed
-    within `<address>` tags.
-
-In the next section, we will walk through an exercise in which we\'ll
-extract tag-based information from HTML files.
-
 Exercise 4.01: Extraction of Tag-Based Information from HTML Files
 ------------------------------------------------------------------
 
 In this exercise, we will extract addresses, quotes, text written in
 bold, and a table present in an HTML file.
-
-**Note**
-
-The data for this sample HTML file can be accessed from
-
 
 Follow these steps to implement this exercise:
 
@@ -126,7 +57,6 @@ Follow these steps to implement this exercise:
     ```
     from bs4 import BeautifulSoup
     ```
-
 
     `BeautifulSoup` is a Python library for pulling data out
     of HTML and XML files. It provides a parser for HTML/XML formats,
@@ -140,7 +70,6 @@ Follow these steps to implement this exercise:
                          'html.parser')
     ```
 
-
     In the preceding line, `html.parser` is Python\'s built-in
     standard library parser. `BeautifulSoup` also supports
     third-party parsers such as `html5lib`, `lxml`,
@@ -152,7 +81,6 @@ Follow these steps to implement this exercise:
     ```
     soup.text
     ```
-
 
     The preceding code generates the following output:
 ![](./images/B16062_04_03.jpg)
@@ -175,13 +103,11 @@ Follow these steps to implement this exercise:
     soup.find('address')
     ```
 
-
     The preceding code generates the following output:
 
     ```
     <address> Mess on No. 72, Banamali Naskar Lane, Kolkata.</address>
     ```
-
 
 7.  To locate all the `address` tags within the given content,
     write the following code:
@@ -190,7 +116,6 @@ Follow these steps to implement this exercise:
     soup.find_all('address')
     ```
 
-
     The preceding code generates the following output:
 
     ```
@@ -198,13 +123,11 @@ Follow these steps to implement this exercise:
      <address>221B, Baker Street, London, UK.</address>]
     ```
 
-
 8.  To find the quotes in the document, add the following code:
 
     ```
     soup.find_all('q')
     ```
-
 
     The preceding code generates the following output:
 
@@ -213,13 +136,11 @@ Follow these steps to implement this exercise:
      Than are dreamt of in your philosophy. </q>]
     ```
 
-
 9.  To check all the bold items, write the following command:
 
     ```
     soup.find_all('b')
     ```
-
 
     The preceding code generates the following output:
 
@@ -227,14 +148,12 @@ Follow these steps to implement this exercise:
     [<b>Sherlock </b>, <b>Hamlet</b>, <b>Horatio</b>]
     ```
 
-
 10. Write the following command to extract the tables in the document:
 
     ```
     table = soup.find('table')
     table
     ```
-
 
     The preceding code generates the following output:
 ![](./images/B16062_04_05.jpg)
@@ -250,7 +169,6 @@ Follow these steps to implement this exercise:
         print(columns)
     ```
 
-
     The preceding code generates the following output:
 
     ```
@@ -261,7 +179,6 @@ Follow these steps to implement this exercise:
     [<td>Ramlal</td>, <td>B.Music</td>, <td>NA </td>, <td>Diploma in Music</td>]
     ```
 
-
 12. You can also locate specific content in the table. To locate the
     value at the intersection of the third row and the second column,
     write the following command:
@@ -270,31 +187,18 @@ Follow these steps to implement this exercise:
     table.find_all('tr')[3].find_all('td')[2]
     ```
 
-
     The preceding code generates the following output:
 
     ```
     <td>M.Tech</td>
     ```
 
-
 We have learned how to extract tag-based information from an HTML file.
 
-**Note**
 
-
-
-
-In the next section, we will focus on fetching content from web pages.
 
 Requesting Content from Web Pages
 ---------------------------------
-
-Whenever you visit a web page from your web browser, you are actually
-sending a request to fetch its content. This can be done using Python
-scripts. The Python `requests` package is widely used to
-handle all forms of HTTP requests. Let\'s walk through an exercise to
-get a better understanding of this concept.
 
 To fetch content, you can use the `get()` method, which, as
 the name suggests, sends a `GET` request to the web page from
@@ -323,13 +227,11 @@ steps to complete this exercise:
     r.status_code
     ```
 
-
     The preceding code generates the following output:
 
     ```
     200
     ```
-
 
     When the browser visits the website, it fetches the content of the
     specified URL. Similarly, using `requests`, we get the
@@ -345,7 +247,6 @@ steps to complete this exercise:
     r.text[:1000]
     ```
 
-
     The preceding code generates the following output:
 ![](./images/B16062_04_06.jpg)
 
@@ -359,45 +260,7 @@ steps to complete this exercise:
          encoding='utf-8').write(r.text)
     ```
 
-
     The preceding code generates the following output:
-
-    ```
-    2033139
-    ```
-
-
-4.  Similarly, we can do the same using Urllib3.First add the following
-    code:
-
-    ```
-    import urllib3
-    http = urllib3.PoolManager()
-    rr = http.request('GET', \
-                      'http://www.gutenberg.org/files/766/766-0.txt')
-    rr.status
-    ```
-
-
-    Again, we will get the output as `200`, similar to the
-    previous method.
-
-5.  Add the following code to locate the text content:
-
-    ```
-    rr.data[:1000]
-    ```
-
-6.  Again, add the following code to write the fetched content into a
-    text file:
-
-    ```
-    open(Path("../data/David_Copperfield_new.txt"), \
-         'wb').write(rr.data)
-    ```
-
-
-    The preceding code will generate the following output:
 
     ```
     2033139
@@ -417,10 +280,6 @@ In this exercise, we will analyze the content of a Jupyter Notebook. We
 will count the number of images, list the packages that have been
 imported, and check the models and their performance.
 
-**Note**
-
-The HTML file used for this exercise, can be accessed at
-
 
 Follow these steps to complete this exercise:
 
@@ -434,7 +293,6 @@ Follow these steps to complete this exercise:
     soup.text[:100]
     ```
 
-
     Here, we are loading HTML using `BeautifulSoup` and
     printing parsed content. The preceding code generates the following
     output:
@@ -443,20 +301,17 @@ Follow these steps to complete this exercise:
     '\n\n\nCh3_Activity7_Developing_end_to_end_Text_Classifiers\n\n\n\n    /*!\n*\n* Twitter Bootstrap\n*\n*/\n/*!\n*'
     ```
 
-
 2.  Use the `img` tag to count the number of images:
 
     ```
     len(soup.find_all('img'))
     ```
 
-
     The output shows that there are three `img` tags:
 
     ```
     3
     ```
-
 
 3.  If you open the HTML file in the text editor or your web browser\'s
     console, you will see all `import` statements have the
@@ -469,7 +324,6 @@ Follow these steps to complete this exercise:
     [i.get_text() for i in soup.find_all\
     ('span',attrs={"class":"nn"})]
     ```
-
 
     The preceding code generates the following
     output:
@@ -493,11 +347,8 @@ Follow these steps to complete this exercise:
         print("---------------------------------------------------------\n\n\n")
     ```
 
-
     The preceding code generates the following output:
 ![](./images/B16062_04_08.jpg)
-
-
 
 
 So, in the preceding output, we have extracted a classification report
@@ -505,25 +356,11 @@ from the HTML file using `BeautifulSoup` by referring to the
 `<h2>` and `<div>` tags.
 
 
-So far, we have seen how to get content from the web using the
-`requests` package, and in this exercise, we saw how to parse
-and extract the desired information. Next time you come across an
-article and want to extract certain information from it, you will be
-able to put these skills to use, instead of manually going over all of
-the content.
-
 Activity 4.01: Extracting Information from an Online HTML Page
 --------------------------------------------------------------
 
 In this activity, we will extract data about Rabindranath Tagore from
 the Wikipedia page about him.
-
-**Note**
-
-Rabindranath Tagore was a poet and musician from South Asia whose art
-has had a profound influence on shaping the cultural landscape of the
-region. He was also the first Indian to win the Nobel Prize for
-Literature, in 1913.
 
 After extracting the data, we will analyze information from the page.
 This should include the list of headings in the *Works* section, the
@@ -531,84 +368,35 @@ list of his works, and the list of universities named after him. Follow
 these steps to implement this activity:
 
 1.  Open a Jupyter Notebook.
-
 2.  Import the requests and `BeautifulSoup` libraries.
-
 3.  Fetch the Wikipedia page from
     <https://en.wikipedia.org/wiki/Rabindranath_Tagore> using the
     `get` method of the `requests` library.
-
 4.  Convert the fetched content into HTML format using an HTML parser.
-
 5.  Print the list of headings in the *Works* section.
-
 6.  Print the list of original works written by Tagore in Bengali.
-
 7.  Print the list of universities named after Tagore.
 
-    Note:
-
-    The solution to this activity in the current directory.
+    Note: The solution to this activity in the current directory.
 
 We are now well-versed in extracting generic data from HTML pages.
 Let\'s perform another activity now, where we\'ll be using regular
 expressions.
 
-Activity 4.02: Extracting and Analyzing Data Using Regular Expressions
-----------------------------------------------------------------------
 
-To perform this activity, you will extract data from Packt\'s website.
-The data to be extracted includes frequently asked questions (FAQs) and
-their answers, phone numbers for customer care services, and the email
-addresses for customer care services. Follow these steps to complete
-this activity:
+### Dealing with Semi-Structured Data
 
-1.  Import the necessary libraries and extract data from
-    <https://www.packtpub.com/support/faq> using the
-    `requests` library.
-
-2.  Fetch questions and answers from the data.
-
-3.  Create a DataFrame consisting of questions and answers.
-
-4.  Fetch email addresses with the help of regular expressions.
-
-5.  Fetch the phone numbers, with the help of regular expressions.
-
-    Note:
-
-    The solution to this activity in the current directory.
-
-In this activity, we were able to fetch data from online sources and
-analyze it in various ways. Now that we are well-versed in scraping web
-pages with the help of HTML, in the next section, we will discuss how to
-scrape web pages with semi-structured data.
-
-
-Dealing with Semi-Structured Data
-=================================
-
-
-We learned about various types of data in *Lab 2*, *Feature
-Extraction Methods*. Let\'s quickly recapitulate what semi-structured
-data refers to. A dataset is said to be semi-structured if it is not in
+A dataset is said to be semi-structured if it is not in
 a row-column format but, if required, can be converted into a structured
-format that has a definite number of rows and columns. Often, we come
-across data that is stored as key-value pairs or embedded between tags,
-as is the case with **JSON** (**JavaScript Object Notation**) and
-**XML** (**Extensible Markup Language**) files. These are the most
+format that has a definite number of rows and columns. JSON and XML are the most
 popularly used instances of semi-structured data.
+
 
 JSON
 ----
 
 JSON files are used for storing and exchanging data. JSON is
-human-readable and easy to interpret. Just like text files and CSV
-files, JSON files are language-independent. This means that different
-programming languages, such as Python, Java, and so on, can work with
-JSON files effectively. In Python, a built-in data structure called a
-**dictionary** is capable of storing JSON objects as is. Generally, data
-in JSON objects is present in the form of key-value pairs. The datatype
+human-readable and easy to interpret. The datatype
 of values of JSON objects must be any of the following:
 
 -   A string
@@ -625,17 +413,11 @@ what a JSON file looks like:
 ![](./images/B16062_04_09.jpg)
 
 
-
-Often, the response we get when requesting a URL is in the form of JSON
-objects. To deal with a JSON file effectively, we need to know how to
-parse it. The following exercise throws light on this.
-
 Exercise 4.04: Working with JSON Files
 --------------------------------------
 
 In this exercise, we will extract details such as the names of students,
 their qualifications, and additional qualifications from a JSON file.
-
 
 Follow these steps to complete this exercise:
 
@@ -644,14 +426,12 @@ Follow these steps to complete this exercise:
 2.  Insert a new cell and import `json`. Pass the location of
     the file mentioned using the following commands:
 
-
     ```
     import json
     from pprint import pprint
     data = json.load(open('../data/sample_json.json'))
     pprint(data)
     ```
-
 
     In the preceding code, we are importing Python\'s built-in
     `json` module and loading the local JSON file using the
@@ -667,13 +447,11 @@ Follow these steps to complete this exercise:
     [dt['name'] for dt in data['students']]
     ```
 
-
     The preceding code generates the following output:
 
     ```
     ['Gangaram', 'Ganga', 'Ram', 'Ramlal']
     ```
-
 
 4.  To extract their respective qualifications, enter the following
     code:
@@ -682,13 +460,11 @@ Follow these steps to complete this exercise:
     [dt['qualification'] for dt in data['students']]
     ```
 
-
     The preceding code generates the following output:
 
     ```
     ['B.Tech', 'B.A.', 'B.Tech', 'B.Music']
     ```
-
 
 5.  To extract their additional qualifications, enter the following
     code. Remember, not every student will have additional
@@ -700,65 +476,30 @@ Follow these steps to complete this exercise:
     in dt.keys() else None for dt in data['students']]
     ```
 
-
     The preceding code generates the following output:
 
     ```
     [None, None, 'M.Tech', None]
     ```
 
-
 As JSON objects are similar to the dictionary data structure of Python,
 they are widely used on the web to send and receive data across web
 applications.
 
-**Note**
 
 
-
-
-Now that we have learned how to load JSON data, let\'s extract data
-using another format, called **Extensible Markup Language** (**XML**),
-which is also used by web apps and Word documents to store information.
-
-XML
----
+#### XML
 
 Just like HTML, XML is another kind of markup language that stores data
 in between tags. It is human-readable and extensible; that is, we have
-the liberty to define our own tags. Attributes, elements, and tags in
-the case of XML are similar to those of HTML. An XML file may or may not
-have a declaration. But, if it has a declaration, then that must be the
-first line of the XML file.
-
-This declaration statement has three parts: `Version`,
-`Encoding`, and `Standalone`. `Version`
-states which version of the XML standard is being used;
-`Encoding` states the type of character encoding being used in
-this file; `Standalone` tells the parser whether external
-information is needed for interpreting the content of the XML file. The
-following figure depicts what an XML file looks like:
+the liberty to define our own tags. The following figure depicts what an XML file looks like:
 
 ![](./images/B16062_04_11.jpg)
 
-
-
-An XML file can be represented as a tree called an XML tree. This XML
-tree begins with the root element (the parent). This root element
-further branches into child elements. Each element of the XML file is a
-node in the XML tree. Those elements that don\'t have any children are
-leaf nodes. The following figure clearly differentiates between an
-original XML file and a tree representation of an XML file:
+The following figure clearly differentiates between an original XML file and a tree representation of an XML file:
 
 ![](./images/B16062_04_12.jpg)
 
-
-
-XML files are somewhat similar in structure to HTML, with the main
-difference being that, in XML, we have custom tags rather than the fixed
-tags vocabulary like HTML. As we learned how to parse HTML using
-`BeautifulSoup` before, let\'s learn how to parse XML files in
-the following exercise.
 
 Exercise 4.05: Working with an XML File
 ---------------------------------------
@@ -766,10 +507,6 @@ Exercise 4.05: Working with an XML File
 In this exercise, we will parse an XML file and print the details from
 it, such as the names of employees, the organizations they work for, and
 the total salaries of all employees.
-
-**Note**
-
-The sample XML data file can be accessed here:
 
 
 Follow these steps to complete this exercise:
@@ -786,13 +523,11 @@ Follow these steps to complete this exercise:
     root
     ```
 
-
     The preceding code generates the following output:
 
     ```
     <Element 'records' at 0.112291710>
     ```
-
 
 3.  To check the tag of the fetched element, type the following code:
 
@@ -800,13 +535,11 @@ Follow these steps to complete this exercise:
     root.tag
     ```
 
-
     The preceding code generates the following output:
 
     ```
     'records'
     ```
-
 
 4.  Look for the `name` and `company` tags in the
     XML and print the data enclosed within them:
@@ -816,7 +549,6 @@ Follow these steps to complete this exercise:
         print(record.find('name').text, "---",\
               record.find('company').text)
     ```
-
 
     The preceding code generates the following output:
 ![](./images/B16062_04_13.jpg)
@@ -834,22 +566,17 @@ Follow these steps to complete this exercise:
     replace(',','')) for record in root.findall('record')])
     ```
 
-
     The preceding code generates the following output:
 
     ```
     745609
     ```
 
-
 Thus, we can see that the sum of all the salaries is \$745,609. We just
 learned how to extract data from a local XML file. When we request data,
 many URLs return an XML file.
 
 **Note**
-
-
-
 
 In the next section, we will look at how APIs can be used to retrieve
 real-time data.
@@ -865,12 +592,6 @@ enable you to connect the cellphone to the socket. Here, this adapter is
 acting as a mediator that connects the cellphone and the socket, thus
 enabling the smooth transfer of electricity between them.
 
-Similarly, some websites do not provide their data directly. Instead,
-they provide APIs, which we can use to extract data from the websites.
-Just like the cellphone charger, an API acts as a mediator, enabling the
-smooth transfer of data between those websites and us. Let\'s perform a
-simple exercise to get hands-on experience of collecting data using
-APIs.
 
 Exercise 4.06: Collecting Data Using APIs
 -----------------------------------------
@@ -883,14 +604,12 @@ exercise:
 
 2.  Import the necessary packages. Add the following code to do so:
 
-
     ```
     import json 
     import pprint 
     import requests 
     import pandas as pd
     ```
-
 
 3.  Load the `json` data. Add the following code to do this:
 
@@ -900,14 +619,6 @@ exercise:
     data = r.json()
     pprint.pprint(data)
     ```
-
-
-    Note:
-
-    Watch out for the slashes in the string below. Remember that the
-    backslashes ( `\` ) are used to split the code across
-    multiple lines, while the forward slashes ( `/` ) are part
-    of the URL.
 
     The preceding code generates the following output:
 ![](./images/B16062_04_14.jpg)
@@ -921,35 +632,20 @@ exercise:
     df.head()
     ```
 
-
     The preceding code generates the following output:
 ![](./images/B16062_04_15.jpg)
-
 
 
 
 **Note** that you will get a different output depending on the present
 currency exchange rates. We just learned how to collect data using APIs.
 
-**Note**
-
-
-
-
-In the next section, we will see how to create an API.
 
 Extracting data from Twitter Using the OAuth API
 ------------------------------------------------
 
-Many popular websites, such as Twitter, provide an API that allows
-access to parts of their services so that people can build software that
-integrates with the website. We\'ll be focusing mainly on Twitter in
-this section. Twitter\'s data and services (such as tweets,
-advertisements, direct messages, and much more) can be accessed via the
-Twitter API. The Twitter API requires authentication and authorization
-to interact with its services using the `OAuth` method.
-Authentication is required to prove identity, while authorization proves
-the right to access its services and data. To access Twitter data and
+The Twitter API requires authentication and authorization
+to interact with its services using the `OAuth` method. To access Twitter data and
 services using an API, you would need to register using a Twitter
 developer account.
 
@@ -1005,7 +701,7 @@ parameter.
 
 Let\'s do an activity now, to put our knowledge into practice.
 
-Activity 4.03: Extracting Data from Twitter
+Activity 4.02: Extracting Data from Twitter
 -------------------------------------------
 
 In this activity, you will extract 100 tweets containing the hashtag
@@ -1014,48 +710,26 @@ library, and load them into a pandas DataFrame. The following steps will
 help you implement this activity:
 
 1.  Log in to your Twitter account with your credentials.
-
 2.  Visit <https://dev.twitter.com/apps/new> and fill in the form by
     completing the necessary fields, such as `App Name`,
     providing `Website URL`, `Callback URL`, and
     `App Usage`.
-
 3.  Submit the form and receive the keys and tokens.
-
 4.  Use these keys and tokens in your application when making an API
     call for *\#climatechange*.
-
 5.  Import the necessary libraries.
-
 6.  Fetch the data using the keys and tokens.
-
 7.  Create a DataFrame consisting of tweets.
 
-    Note:
-
-    The full solution to this activity can be found below.
-
-In this activity, we extracted data from Twitter and loaded it into a
-pandas DataFrame. This data can also be used to analyze tweets and
-create a word cloud out of them, something that we will explore in
-detail in *Lab 8*, *Sentiment Analysis*.
-
-Publisher\'s **Note**
-
-The preceding messages were extracted without bias from a given dataset
-and written by private individuals not affiliated with this company. The
-views expressed in these tweets do not necessarily reflect our
-company\'s official policies.
+    Note: The full solution to this activity can be found in the current directory.
 
 
-Summary
-=======
-
+#### Summary
 
 In this lab, we have learned various ways to collect data by
 scraping web pages. We also successfully scraped data from
 semi-structured formats such as JSON and XML and explored different
 methods of retrieving data in real time from a website without
 authentication. In the next lab, you will learn about topic
-modeling---an unsupervised natural language processing technique that
+modeling an unsupervised natural language processing technique that
 helps group documents according to the topics that it detects in them.

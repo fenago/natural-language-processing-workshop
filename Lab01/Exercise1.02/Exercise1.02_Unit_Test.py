@@ -10,7 +10,7 @@ def get_tokens(sentence):
     return words
 
 
-print(get_tokens("I am reading NLP Fundamentals."))
+print(get_tokens("I am reading NLP Concepts."))
 
 
 class TestMethods(unittest.TestCase):

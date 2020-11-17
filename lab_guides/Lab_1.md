@@ -17,19 +17,6 @@ NLP project, from data collection to model deployment.
 Introduction
 ============
 
-Before we can get into NLP in any depth, we first need to understand
-what natural language is. To put it in simple terms, it is a means for
-us to express our thoughts and ideas. To define it more specifically,
-language is a mutually agreed upon set of protocols involving
-words/sounds that we use to communicate with each other.
-
-Let\'s look at an example. You have probably interacted with Siri or
-Alexa at some point. Ask Alexa for a cricket score, and it will reply
-with the current score. The technology behind this is NLP. Siri and
-Alexa use techniques such as Speech to Text with the help of a search
-engine to do this magic. As the name suggests, Speech to Text is an
-application of NLP in which computers are trained to understand verbally
-spoken words.
 
 NLP works at different levels, which means that machines process and
 understand natural language at different levels. These levels are as
@@ -50,28 +37,6 @@ follows:
     knowledge to understand the sentence.
 
 
-History of NLP
-==============
-
-
-- NLP is a field that has emerged from various other fields such as
-artificial intelligence, linguistics, and data science.
-- Consider an example. Let\'s say we have to extract the names of some
-politicians from a set of political news articles. So, if we want to
-apply rule-based grammar, we must manually craft certain rules based on
-human understanding of language. Some of the rules for extracting a
-person\'s name can be that the word should be a proper noun, every word
-should start with a capital letter, and so on. As we can see, using a
-rule-based system like this would not yield very accurate results.
-- Rule-based systems do work well in some cases, but the disadvantages far
-outweigh the advantages. One major disadvantage is that the same rule
-cannot be applicable in all cases, given the complex and nuanced nature
-of most language. These disadvantages can be overcome by using machine
-learning, where we write an algorithm that tries to learn a language
-using the text corpus (training data) rather than us explicitly
-programming it to do so.
-
-
 Text Analytics and NLP
 ======================
 
@@ -81,60 +46,21 @@ answering questions from text data, such as those to do with the length
 of sentences, length of words, word count, and finding words from the
 text. Let\'s understand this with an example.
 
-Suppose we are doing a survey using news articles. Let\'s say we have to
-find the top five countries that contributed the most in the field of
-space technology in the past 5 years. So, we will collect all the space
-technology-related news from the past 5 years using the Google News API.
-Now, we must extract the names of countries in these news articles. We
-can perform this task using a file containing a list of all the
-countries in the world.
 
-Next, we will create a dictionary in which keys will be the country
-names and their values will be the number of times the country name is
-found in the news articles. To search for a country in the news
-articles, we can use a simple word regex. After we have completed
-searching all the news articles, we can sort the country names by the
-values associated with them. In this way, we will come up with the top
-five countries that contributed the most to space technology in the last
-5 years.
-
-This is a typical example of text analytics, in which we are generating
-insights from text without getting into the semantics of the language.
-
-It is important here to note the difference between text analytics and
-NLP. The art of extracting useful insights from any given text data can
+The art of extracting useful insights from any given text data can
 be referred to as text analytics. NLP, on the other hand, helps us in
 understanding the semantics and the underlying meaning of text, such as
 the sentiment of a sentence, top keywords in text, and parts of speech
-for different words. It is not just restricted to text data; voice
-(speech) recognition and analysis also come under the domain of NLP. It
-can be broadly categorized into two types: **Natural Language
-Understanding** (**NLU**) and **Natural Language Generation** (**NLG**).
+for different words. It
+can be broadly categorized into two types: **Natural Language Understanding** (**NLU**) and **Natural Language Generation** (**NLG**).
 A proper explanation of these terms is provided here:
 
 -   **NLU**: NLU refers to a process by which an inanimate object with
-    computing power is able to comprehend spoken language. As mentioned
-    earlier, Siri and Alexa use techniques such as Speech to Text to
-    answer different questions, including inquiries about the weather,
-    the latest news updates, live match scores, and more.
+    computing power is able to comprehend spoken language.
 -   **NLG**: NLG refers to a process by which an inanimate object with
     computing power is able to communicate with humans in a language
-    that they can understand or is able to generate human-understandable
-    text from a dataset. Continuing with the example of Siri or Alexa,
-    ask one of them about the chances of rainfall in your city. It will
-    reply with something along the lines of, \"Currently, there is no
-    chance of rainfall in your city.\" It gets the answer to your query
-    from different sources using a search engine and then summarizes the
-    results. Then, it uses Text to Speech to relay the results in
-    verbally spoken words.
+    that they can understand.
 
-So, when a human speaks to a machine, the machine interprets the
-language with the help of the NLU process. By using the NLG process, the
-machine generates an appropriate response and shares it with the human,
-thus making it easier for humans to understand the machine. These tasks,
-which are part of NLP, are not part of text analytics. Let\'s walk
-through the basics of text analytics and see how we can execute it in
-Python.
 
 Exercise 1.01: Basic Text Analytics
 -----------------------------------
@@ -158,7 +84,6 @@ steps to implement this exercise using the following sentence:
     sentence
     ```
 
-
 3.  Check whether the word `'quick'` belongs to that text
     using the following code:
 
@@ -167,7 +92,6 @@ steps to implement this exercise using the following sentence:
         return word in sentence
     find_word('quick', sentence)
     ```
-
 
     The preceding code will return the output `'True'`.
 
@@ -180,7 +104,6 @@ steps to implement this exercise using the following sentence:
     get_index('fox', sentence)
     ```
 
-
     The code will return the output `16`.
 
 5.  To find out the rank of the word `'lazy'`, use the
@@ -189,7 +112,6 @@ steps to implement this exercise using the following sentence:
     ```
     get_index('lazy', sentence.split())
     ```
-
 
     This code generates the output `7`.
 
@@ -201,7 +123,6 @@ steps to implement this exercise using the following sentence:
     get_word(sentence,2)
     ```
 
-
     This will return the output `brown`.
 
 7.  To print the third word of the given sentence in reverse order, use
@@ -210,7 +131,6 @@ steps to implement this exercise using the following sentence:
     ```
     get_word(sentence,2)[::-1]
     ```
-
 
     This will return the output `nworb`.
 
@@ -230,7 +150,6 @@ steps to implement this exercise using the following sentence:
     concat_words(sentence)
     ```
 
-
     Note:
 
     The triple-quotes ( `"""` ) shown in the code snippet
@@ -249,13 +168,11 @@ steps to implement this exercise using the following sentence:
     get_even_position_words(sentence)
     ```
 
-
     This code generates the following output:
 
     ```
     ['The', 'brown', 'jumps', 'the', 'dog']
     ```
-
 
 10. To print the last three letters of the text, use the following code:
 
@@ -264,7 +181,6 @@ steps to implement this exercise using the following sentence:
         return text[-n:]
     get_last_n_letters(sentence,3)
     ```
-
 
     This will generate the output `dog`.
 
@@ -276,13 +192,11 @@ steps to implement this exercise using the following sentence:
     get_reverse(sentence)
     ```
 
-
     This code generates the following output:
 
     ```
     'god yzal eht revo spmuj xof nworb kciuq ehT'
     ```
-
 
 12. To print each word of the given text in reverse order, maintaining
     their sequence, use the following code:
@@ -294,13 +208,11 @@ steps to implement this exercise using the following sentence:
     get_word_reverse(sentence)
     ```
 
-
     This code generates the following output:
 
     ```
     ehT kciuq nworb xof spmuj revo eht yzal god
     ```
-
 
 We are now well acquainted with basic text analytics techniques.
 
@@ -312,32 +224,9 @@ Various Steps in NLP
 ====================
 
 
-We\'ve talked about the types of computations that are done with natural
-language. Apart from these basic tasks, you can also design your own
-tasks as per your requirements. In the coming sections, we will discuss
-the various preprocessing tasks in detail and demonstrate each of them
-with an exercise.
-
-To perform these tasks, we will be using a Python library called
-**NLTK** (**Natural Language Toolkit**). NLTK is a powerful open source
-tool that provides a set of methods and algorithms to perform a wide
-range of NLP tasks, including tokenizing, parts-of-speech tagging,
-stemming, lemmatization, and more.
 
 Tokenization
 ------------
-
-**Tokenization** refers to the procedure of splitting a sentence into
-its constituent parts---the words and punctuation that it is made up of.
-It is different from simply splitting the sentence on whitespaces, and
-instead actually divides the sentence into constituent words, numbers
-(if any), and punctuation, which may not always be separated by
-whitespaces. For example, consider this sentence: \"I am reading a
-book.\" Here, our task is to extract words/tokens from this sentence.
-After passing this sentence to a tokenization program, the extracted
-words/tokens would be \"I,\" \"am,\" \"reading,\" \"a,\" \"book,\" and
-\".\" -- this example extracts one token at a time. Such tokens are
-called **unigrams**.
 
 NLTK provides a method called `word_tokenize()`, which
 tokenizes given text into words. It actually separates the text into
@@ -351,7 +240,7 @@ Exercise 1.02: Tokenization of a Simple Sentence
 
 In this exercise, we will tokenize the words in a given sentence with
 the help of the **NLTK** library. Follow these steps to implement this
-exercise using the sentence, \"I am reading NLP Fundamentals.\"
+exercise using the sentence, \"I am reading NLP Concepts.\"
 
 1.  Open a Jupyter Notebook.
 
@@ -363,7 +252,6 @@ exercise using the sentence, \"I am reading NLP Fundamentals.\"
     from nltk import word_tokenize, download
     download(['punkt','averaged_perceptron_tagger','stopwords'])
     ```
-
 
     In the preceding code, we are using NLTK\'s `download()`
     method, which downloads the given data from NLTK. NLTK data contains
@@ -389,22 +277,19 @@ exercise using the sentence, \"I am reading NLP Fundamentals.\"
         return words
     ```
 
-
 4.  In order to view the list of tokens generated, we need to view it
     using the `print()` function. Insert a new cell and add
     the following code to implement this:
 
     ```
-    print(get_tokens("I am reading NLP Fundamentals."))
+    print(get_tokens("I am reading NLP Concepts."))
     ```
-
 
     This code generates the following output:
 
     ```
     ['I', 'am', 'reading', 'NLP', 'Fundamentals', '.']
     ```
-
 
 We can see the list of tokens generated with the help of the
 `word_tokenize()` method.
@@ -428,7 +313,6 @@ word/token. This will look as follows:
 [('The', 'DT'), ('sky', 'NN'), ('is', 'VBZ'), ('blue', 'JJ')]
 ```
 
-
 The preceding format is an output of the NLTK
 `pos_tag()`method. It is a list of tuples in which every tuple
 consists of the word followed by the PoS tag:
@@ -441,20 +325,7 @@ consists of the word followed by the PoS tag:
 
 `JJ` = Adjective
 
-For the complete list of PoS tags in NLTK, you can refer to
-<https://pythonprogramming.net/natural-language-toolkit-nltk-part-speech-tagging/>.
 
-PoS tagging is performed using different techniques, one of which is a
-rule-based approach that builds a list to assign a possible tag for each
-word.
-
-PoS tagging finds application in many NLP tasks, including word sense
-disambiguation, classification, **Named Entity Recognition** (**NER**),
-and coreference resolution. For example, consider the usage of the word
-\"planted\" in these two sentences: \"He planted the evidence for the
-case \" and \" He planted five trees in the garden. \" We can see that
-the PoS tag of \"planted\" would clearly help us in differentiating
-between the different meanings of the sentences.
 
 Let\'s perform a simple exercise to understand how PoS tagging is done
 in Python.
@@ -463,7 +334,7 @@ Exercise 1.03: PoS Tagging
 --------------------------
 
 In this exercise, we will find out the PoS for each word in the
-sentence, `I am reading NLP Fundamentals`. We first make use
+sentence, `I am reading NLP Concepts`. We first make use
 of tokenization in order to get the tokens. Later, we will use the
 `pos_tag()` method, which will help us find the PoS for each
 word/token. Follow these steps to implement this exercise:
@@ -478,7 +349,6 @@ word/token. Follow these steps to implement this exercise:
     from nltk import word_tokenize, pos_tag
     ```
 
-
 3.  To find the tokens in the sentence, we make use of the
     `word_tokenize()` method. Insert a new cell and add the
     following code to implement this:
@@ -490,22 +360,19 @@ word/token. Follow these steps to implement this exercise:
         return words
     ```
 
-
 4.  Print the tokens with the help of the `print()` function.
     To implement this, add a new cell and write the following code:
 
     ```
-    words  = get_tokens("I am reading NLP Fundamentals")
+    words  = get_tokens("I am reading NLP Concepts")
     print(words)
     ```
-
 
     This code generates the following output:
 
     ```
     ['I', 'am', 'reading', 'NLP', 'Fundamentals']
     ```
-
 
 5.  We\'ll now use the `pos_tag()` method. Insert a new cell
     and add the following code:
@@ -516,7 +383,6 @@ word/token. Follow these steps to implement this exercise:
     get_pos(words)
     ```
 
-
     This code generates the following output:
 
     ```
@@ -526,7 +392,6 @@ word/token. Follow these steps to implement this exercise:
      ('NLP', 'NNP'),
      ('Fundamentals', 'NNS')]
     ```
-
 
 In the preceding output, we can see that for each token, a PoS has been
 allotted. Here, **PRP** stands for **personal pronoun**, **VBP** stands
@@ -544,11 +409,7 @@ Stop Word Removal
 
 Stop words are the most frequently occurring words in any language and
 they are just used to support the construction of sentences and do not
-contribute anything to the semantics of a sentence. So, we can remove
-stop words from any text before an NLP process, as they occur very
-frequently and their presence doesn\'t have much impact on the sense of
-a sentence. Removing them will help us clean our data, making its
-analysis much more efficient. Examples of stop words include \"a,\"
+contribute anything to the semantics of a sentence. Examples of stop words include \"a,\"
 \"am,\" \"and,\" \"the,\" \"in,\" \"of,\" and more.
 
 In the next exercise, we will look at the practical implementation of
@@ -574,7 +435,6 @@ stop words included in our text:
     from nltk.corpus import stopwords
     ```
 
-
 3.  In order to check the list of stop words provided for
     `English`, we pass it as a parameter to the
     `words()` function. Insert a new cell and add the
@@ -585,7 +445,6 @@ stop words included in our text:
     stop_words = stopwords.words('english')
     ```
 
-
 4.  In the code, the list of stop words provided by `English`
     is stored in the `stop_words` variable. In order to view
     the list, we make use of the `print()` function. Insert a
@@ -594,7 +453,6 @@ stop words included in our text:
     ```
     print(stop_words)
     ```
-
 
     This code generates the following output:
 ![](./images/B16062_01_01.jpg)
@@ -611,7 +469,6 @@ stop words included in our text:
     sentence_words = word_tokenize(sentence)
     ```
 
-
     Note:
 
     The code snippet shown here uses a backslash ( `\` ) to
@@ -626,13 +483,11 @@ stop words included in our text:
     print(sentence_words)
     ```
 
-
     This code generates the following output:
 
     ```
     ['I', 'am', 'learning', 'Python', '.', 'It', 'is', 'one', 'of', 'the', 'most', 'popular', 'programming', 'languages']
     ```
-
 
 7.  To remove the stop words, we need to loop through each word in the
     sentence, check whether there are any stop words, and then finally
@@ -646,7 +501,6 @@ stop words included in our text:
                          word not in stop_words])
     ```
 
-
 8.  To check whether the stop words are filtered out from our sentence,
     print the `sentence_no_stops` variable. Insert a new cell
     and add the following code to print:
@@ -655,13 +509,11 @@ stop words included in our text:
     print(remove_stop_words(sentence_words,stop_words))
     ```
 
-
     This code generates the following output:
 
     ```
     I learning Python. It one popular programming languages
     ```
-
 
     As you can see in the preceding code snippet, stop words such as
     \"am,\" \"is,\" \"of,\" \"the,\" and \"most\" are being filtered out
@@ -674,13 +526,11 @@ stop words included in our text:
     print(remove_stop_words(sentence_words,stop_words))
     ```
 
-
     This code generates the following output:
 
     ```
     learning Python . popular programming languages
     ```
-
 
 As we can see from the output, now words such as \"I,\" \"It,\" and\*
 \"One\" are removed as we have added them to our custom stop word list.
@@ -689,20 +539,12 @@ We have learned how to remove stop words from given text.
 Text Normalization
 ------------------
 
-There are some words that are spelled, pronounced, and represented
-differently---for example, words such as Mumbai and Bombay, and US and
-United States. Although they are different, they refer to the same
-thing. There are also different forms of words that need to be converted
-into base forms. For example, words such as \"does\" and \"doing,\" when
-converted to their base form, become \"do.\" Along these lines, **text
-normalization** is a process wherein different variations of text get
-converted into a standard form. We need to perform text normalization as
+We need to perform text normalization as
 there are some words that can mean the same thing as each other. There
 are various ways of normalizing text, such as spelling correction,
 stemming, and lemmatization, which will be covered later.
 
-For a better understanding of this topic, we will look into a practical
-implementation of text normalization in the next section.
+
 
 Exercise 1.05: Text Normalization
 ---------------------------------
@@ -727,7 +569,6 @@ Follow these steps to complete this exercise:
     sentence = "I visited the US from the UK on 22-10-18"
     ```
 
-
 3.  We want to replace `"US"` with
     `"United States"`, `"UK"` with
     `"United Kingdom"`, and `"18"` with
@@ -744,7 +585,6 @@ Follow these steps to complete this exercise:
                    .replace("-18", "-2018")
     ```
 
-
 4.  To check whether the text has been normalized, insert a new cell and
     add the following code to print it:
 
@@ -753,13 +593,11 @@ Follow these steps to complete this exercise:
     print(normalized_sentence)
     ```
 
-
     The code generates the following output:
 
     ```
     I visited the United States from the United Kingdom on 22-10-2018
     ```
-
 
 5.  Add the following code:
 
@@ -768,13 +606,11 @@ Follow these steps to complete this exercise:
     print(normalized_sentence)
     ```
 
-
     The code generates following output:
 
     ```
     United States and United Kingdom are two superpowers
     ```
-
 
 In the preceding code, we can see that our text has been normalized.
 
@@ -791,18 +627,8 @@ chances of losing out on important information.
 Spelling correction is executed in two steps:
 
 1.  Identify the misspelled word, which can be done by a simple
-    dictionary lookup. If there is no match found in the language
-    dictionary, it is considered to be misspelled.
-2.  Replace it or suggest the correctly spelled word. There are a lot of
-    algorithms for this task. One of them is the minimum edit distance
-    algorithm, which chooses the nearest correctly spelled word for a
-    misspelled word. The nearness is defined by the number of edits that
-    need to be made to the misspelled word to reach the correctly
-    spelled word. For example, let\'s say there is a misspelled word,
-    \"autocorect.\" Now, to make it \"autocorrect,\" we need to add one
-    \"r,\" and to make it \"auto,\" we need to delete 6 characters,
-    which means that \"autocorrect\" is the correct spelling because it
-    requires the fewest edits.
+    dictionary lookup.
+2.  Replace it or suggest the correctly spelled word.
 
 We make use of the `autocorrect` Python library to correct
 spellings.
@@ -833,7 +659,6 @@ Follow these steps in order to complete this exercise:
     from autocorrect import Speller
     ```
 
-
 3.  In order to correct the spelling of a word, pass a wrongly spelled
     word as a parameter to the `spell()` function. Before
     that, you have to create a `spell` object of the
@@ -846,13 +671,11 @@ Follow these steps in order to complete this exercise:
     spell('Natureal')
     ```
 
-
     This code generates the following output:
 
     ```
     'Natural'
     ```
-
 
 4.  To correct the spelling of a sentence, first tokenize it into
     tokens. After that, loop through each token in `sentence`,
@@ -866,7 +689,6 @@ Follow these steps in order to complete this exercise:
                              "Natural Languaes")
     ```
 
-
 5.  Use the `print()` function to print all tokens. Insert a
     new cell and add the following code to print the tokens:
 
@@ -874,13 +696,11 @@ Follow these steps in order to complete this exercise:
     print(sentence)
     ```
 
-
     This code generates the following output:
 
     ```
     ['Ntural', 'Luanguage', 'Processin', 'deals', 'with', 'the', 'art', 'of', 'extracting', 'insightes', 'from', 'Natural', 'Languaes']
     ```
-
 
 6.  Now that we have got the tokens, loop through each token in
     `sentence`, correct the tokens, and assign them to a new
@@ -895,7 +715,6 @@ Follow these steps in order to complete this exercise:
         return sentence_corrected
     ```
 
-
 7.  To print the correct sentence, insert a new cell and add the
     following code:
 
@@ -903,14 +722,12 @@ Follow these steps in order to complete this exercise:
     print(correct_spelling(sentence))
     ```
 
-
     This code generates the following output:
 
     ```
     ['Natural', 'Language', 'Procession', 'deals', 'with', 'the', 'art', 
      'of', 'extracting', 'insights', 'from', 'Natural', 'Languages']
     ```
-
 
 In the preceding code snippet, we can see that most of the wrongly
 spelled words have been corrected. But the word
@@ -969,7 +786,6 @@ implement this exercise:
     from nltk import stem
     ```
 
-
 3.  Now pass the following words as parameters to the `stem()`
     method. To implement this, insert a new cell and add the following
     code:
@@ -982,7 +798,6 @@ implement this exercise:
     get_stems("production",porterStem)
     ```
 
-
 4.  When the input is `"production"`, the following output is
     generated:
 
@@ -991,7 +806,6 @@ implement this exercise:
     'product'
     ```
 
-
 5.  Similarly, the following code would be used for the input
     `"coming"`.
 
@@ -999,13 +813,11 @@ implement this exercise:
     get_stems("coming",porterStem)
     ```
 
-
     We get the following output:
 
     ```
     'come'
     ```
-
 
 6.  Similarly, the following code would be used for the input
     `"firing"`.
@@ -1014,14 +826,12 @@ implement this exercise:
       get_stems("firing",porterStem)
     ```
 
-
     When the input is `"firing"`, the following output is
     generated:
 
     ```
     'fire'
     ```
-
 
 7.  The following code would be used for the input
     `"battling"`.
@@ -1030,14 +840,12 @@ implement this exercise:
       get_stems("battling",porterStem)
     ```
 
-
     If we give the input `"battling"`, the following output is
     generated:
 
     ```
     'battl'
     ```
-
 
 8.  The following code will also generate the same output as above, for
     the input `"battling".`
@@ -1047,13 +855,11 @@ implement this exercise:
     get_stems("battling",stemmer)
     ```
 
-
     The output will be as follows:
 
     ```
     'battl'
     ```
-
 
 As you have seen while using the snowball stemmer, we have to provide
 the language as `"english"`. We can also use the stemmer for
@@ -1108,7 +914,6 @@ exercise:
     from nltk.stem.wordnet import WordNetLemmatizer
     ```
 
-
 3.  Create an object of the `WordNetLemmatizer` class. Insert
     a new cell and add the following code to implement this:
 
@@ -1116,7 +921,6 @@ exercise:
     ```
     lemmatizer = WordNetLemmatizer()
     ```
-
 
 4.  Bring the word to its proper form by using the
     `lemmatize()` method of the `WordNetLemmatizer`
@@ -1129,7 +933,6 @@ exercise:
     get_lemma('products')
     ```
 
-
     With the input `products`, the following output is
     generated:
 
@@ -1137,13 +940,11 @@ exercise:
     'product'
     ```
 
-
 5.  Similarly, use the input as `production` now:
 
     ```
     get_lemma('production')
     ```
-
 
     With the input `production`, the following output is
     generated:
@@ -1152,13 +953,11 @@ exercise:
     'production'
     ```
 
-
 6.  Similarly, use the input as `coming` now:
 
     ```
     get_lemma('coming')
     ```
-
 
     With the input `coming`, the following output is
     generated:
@@ -1166,7 +965,6 @@ exercise:
     ```
     'coming'
     ```
-
 
     Hence, we have learned how to use the lemmatization process to
     transform a given word into its base form.
@@ -1211,7 +1009,7 @@ In this exercise, we will find the named entities in a given sentence.
 Follow these steps to implement this exercise using the following
 sentence:
 
-\"We are reading a book published by Packt which is based out of
+\"We are reading a book published by Fenago which is based out of
 Birmingham.\"
 
 1.  Open a Jupyter Notebook.
@@ -1229,16 +1027,14 @@ Birmingham.\"
     download('words')
     ```
 
-
 3.  Declare the `sentence` variable and assign it a string.
     Insert a new cell and add the following code to implement this:
 
 
     ```
-    sentence = "We are reading a book published by Packt "\
+    sentence = "We are reading a book published by Fenago "\
                "which is based out of Birmingham."
     ```
-
 
 4.  To find the named entities from the preceding text, insert a new
     cell and add the following code:
@@ -1250,16 +1046,14 @@ Birmingham.\"
     get_ner(sentence)
     ```
 
-
     This code generates the following output:
 
     ```
-    [Tree('NE', [('Packt', 'NNP')]), Tree('NE', [('Birmingham', 'NNP')])]
+    [Tree('NE', [('Fenago', 'NNP')]), Tree('NE', [('Birmingham', 'NNP')])]
     ```
 
-
     In the preceding code, we can see that the code identifies the named
-    entities \"`Packt`\" and \"`Birmingham`\" and
+    entities \"`Fenago`\" and \"`Birmingham`\" and
     maps them to an already-defined category, \"`NNP`.\"
 
     Note: In the next section, we will focus on word sense disambiguation, which
@@ -1340,7 +1134,6 @@ different sentences. Follow these steps to implement this exercise:
     from nltk import word_tokenize
     ```
 
-
 3.  Declare two variables, `sentence1` and
     `sentence2`, and assign them with appropriate strings.
     Insert a new cell and the following code to implement this:
@@ -1350,7 +1143,6 @@ different sentences. Follow these steps to implement this exercise:
     sentence1 = "Keep your savings in the bank"
     sentence2 = "It's so risky to drive over the banks of the road"
     ```
-
 
 4.  To find the sense of the word \"bank\" in the preceding two
     sentences, use the Lesk algorithm provided by the
@@ -1363,13 +1155,11 @@ different sentences. Follow these steps to implement this exercise:
     get_synset(sentence1,'bank')
     ```
 
-
     This code generates the following output:
 
     ```
     Synset('savings_bank.n.02')
     ```
-
 
 5.  Here, `savings_bank.n.02` refers to a container for
     keeping money safely at home. To check the other sense of the word
@@ -1379,13 +1169,11 @@ different sentences. Follow these steps to implement this exercise:
     get_synset(sentence2,'bank')
     ```
 
-
     This code generates the following output:
 
     ```
     Synset('bank.v.07')
     ```
-
 
     Here, `bank.v.07` refers to a slope in the turn of a road.
 
@@ -1428,7 +1216,6 @@ detect sentence boundaries. The following steps need to be performed:
     from nltk.tokenize import sent_tokenize
     ```
 
-
 3.  Use the `sent_tokenize()` method to detect sentences in
     some given text. Insert a new cell and add the following code to
     implement this:
@@ -1437,20 +1224,18 @@ detect sentence boundaries. The following steps need to be performed:
     def get_sentences(text):
         return sent_tokenize(text)
     get_sentences("We are reading a book. Do you know who is "\
-                  "the publisher? It is Packt. Packt is based "\
+                  "the publisher? It is Fenago. Fenago is based "\
                   "out of Birmingham.")
     ```
-
 
     This code generates the following output:
 
     ```
     ['We are reading a book.'
      'Do you know who is the publisher?'
-     'It is Packt.',
-     'Packt is based out of Birmingham.']
+     'It is Fenago.',
+     'Fenago is based out of Birmingham.']
     ```
-
 
 4.  Use the `sent_tokenize()` method for text that contains
     periods (.) other than those found at the ends of sentences:
@@ -1460,7 +1245,6 @@ detect sentence boundaries. The following steps need to be performed:
                   "president of the USA. Before joining "\
                   "politics, he was a businessman.")
     ```
-
 
     The code will generate the following output:
 
@@ -1485,31 +1269,22 @@ to get some meaning out of the text.
 **Note**
 
 The text corpus, `file.txt`, can be found at this location:
-<https://github.com/fenago/natural-language-processing-workshop/blob/master/Lab01/data/file.txt>[](https://github.com/fenago/natural-language-processing-workshop/blob/master/Lab01/data/file.txt)
+<https://github.com/fenago/natural-language-processing-workshop/blob/master/Lab01/data/file.txt>
 
-After downloading the file, place it in the same directory as the
-notebook.
 
 Follow these steps to implement this activity:
 
 1.  Import the necessary libraries.
-
 2.  Load the text corpus to a variable.
-
 3.  Apply the tokenization process to the text corpus and print the
     first 20 tokens.
-
 4.  Apply spelling correction on each token and print the initial 20
     corrected tokens as well as the corrected text corpus.
-
 5.  Apply PoS tags to each of the corrected tokens and print them.
-
 6.  Remove stop words from the corrected token list and print the
     initial 20 tokens.
-
 7.  Apply stemming and lemmatization to the corrected token list and
     then print the initial 20 tokens.
-
 8.  Detect the sentence boundaries in the given text corpus and print
     the total number of sentences.
 
@@ -1535,82 +1310,6 @@ which are outlined in the following figure:
 
 ![](./images/B16062_01_04.jpg)
 
-
-
-Suppose you are working on a project in which you need to classify
-emails as important and unimportant. We will explain how this is carried
-out by discussing each phase in detail.
-
-Data Collection
----------------
-
-This is the initial phase of any NLP project. Our sole purpose is to
-collect data as per our requirements. For this, we may either use
-existing data, collect data from various online repositories, or create
-our own dataset by crawling the web. In our case, we will collect
-different email data. We can even get this data from our personal emails
-as well, to start with.
-
-Data Preprocessing
-------------------
-
-Once the data is collected, we need to clean it. For the process of
-cleaning, we will make use of the different preprocessing steps that we
-have learned about in this lab. It is necessary to clean the
-collected data to ensure effectiveness and accuracy. In our case, we
-will follow these preprocessing steps:
-
-1.  Converting all the text data to lowercase
-2.  Stop word removal
-3.  Text normalization, which will include replacing all numbers with
-    some common term and replacing punctuation with empty strings
-4.  Stemming and lemmatization
-
-Feature Extraction
-------------------
-
-Computers understand only binary digits: 0 and 1. As such, every
-instruction we feed into a computer gets transformed into binary digits.
-Similarly, machine learning models tend to understand only numeric data.
-Therefore, it becomes necessary to convert text data into its equivalent
-numerical form.
-
-To convert every email into its equivalent numerical form, we will
-create a dictionary of all the unique words in our data and assign a
-unique index to each word. Then, we will represent every email with a
-list having a length equal to the number of unique words in the data.
-The list will have 1 at the indices of words that are present in the
-email and 0 at the other indices. This is called one-hot encoding. We
-will learn more about this in coming chapters.
-
-Model Development
------------------
-
-Once the feature set is ready, we need to develop a suitable model that
-can be trained to gain knowledge from the data. These models are
-generally statistical, machine learning-based, deep learning-based, or
-reinforcement learning-based. In our case, we will build a model that is
-capable of differentiating between important and unimportant emails.
-
-Model Assessment
-----------------
-
-After developing a model, it is essential to benchmark it. This process
-of benchmarking is known as model assessment. In this step, we will
-evaluate the performance of our model by comparing it to others. This
-can be done by using different parameters or metrics. These parameters
-include precision, recall, and accuracy. In our case, we will evaluate
-the newly created model by seeing how well it performs at classifying
-emails as important and unimportant.
-
-Model Deployment
-----------------
-
-This is the final stage for most industrial NLP projects. In this stage,
-the models are put into production. They are either integrated into an
-existing system or new products are created by keeping this model as a
-base. In our case, we will deploy our model to production, so that it
-can classify emails as important and unimportant in real time.
 
 
 Summary

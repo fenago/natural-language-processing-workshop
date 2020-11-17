@@ -19,47 +19,8 @@ for vector representation for **Natural Language Processing** (**NLP**)
 tasks, such as finding the level of similarity between multiple texts.
 
 
-Introduction
-============
-
-
-The previous chapters laid a firm foundation for NLP. But now we will go
-deeper into a key topic---one that gives us surprising insights into how
-language processing works and how some of the key advances in
-human-computer interaction are facilitated. At the heart of NLP is the
-simple trick of representing text as numbers. This helps software
-algorithms perform the sophisticated computations that are required to
-understand the meaning of the text.
-
-As we have already discussed in previous chapters, most machine learning
-algorithms take numeric data as input and do not understand the text as
-such. We need to represent our text in numeric form so that we can apply
-different machine learning algorithms and other NLP techniques to it.
-These numeric representations are called vectors and are also sometimes
-called word embeddings or simply embeddings.
-
-This lab begins with a discussion of vectors, how text can be
-represented as vectors, and how vectors can be composed to represent
-complex speech. We will walk through the various representations in both
-directions---learning how to encode text as vectors as well as how to
-retrieve text from vectors. We will also look at some cutting-edge
-techniques used in NLP that are based on the idea of representing text
-as vectors.
-
-
 What Is a Vector?
 =================
-
-
-The basic mathematical definition of a vector is an object that has both
-magnitude and direction. In our definition, it is mostly compared with a
-scalar, which can be defined as an object that has only magnitude.
-Vectors are also defined as an element in vector space---for example, a
-point in space with the coordinates (x=4, y=5, z=6) is a vector. Here,
-we can see the vector dimensions are the geometric coordinates of a
-point or element in space. However, the vector dimensions can also
-represent any quantity or property of some element or object in addition
-to mere geometric coordinates.
 
 As an example, let\'s say that we\'re defining the weather at a given
 place using five features: temperature, humidity, precipitation, wind
@@ -71,182 +32,18 @@ places:
 ![](./images/B16062_06_01.jpg)
 
 
-
 So, we can represent the weather of these places in vector form as
 follows:
 
 -   Vector for place 1: \[25, 50, 1, 18, 1200.0\]
 -   Vector for place 2: \[32, 60, 0, 7, 1019.0\]
 
-In the preceding representation, the first
-dimension represents temperature, the second dimension represents
-humidity, and so on. **Note** that the order of these dimensions should be
-consistent among all the vectors.
 
-Similarly, we can also represent text as a vector in which each
-dimension can represent either the presence or absence of certain
-metrics. Examples of these are bag of words and TFIDF vectors that we
-looked at in the previous chapters. There are other techniques as well
-for vector representation of text---learned word embeddings, for
-instance. We will discuss all these different techniques in the upcoming
-sections. These techniques can be broadly classified into two
-categories:
+Vector representation techniques can be broadly classified into two categories:
 
 -   Frequency-based embeddings
 -   Learned word embeddings
 
-Frequency-Based Embeddings
---------------------------
-
-Frequency-based embedding is a technique in which the text is
-represented in vector form by considering the frequency of the word in a
-corpus. The techniques that come under this category are the following:
-
--   Bag of words: As we\'ve already seen in *Lab 2*, *Feature
-    Extraction Methods*, bag of words is the technique of converting
-    text into vector or numeric form by representing each sentence or
-    document in a list the length of which is equal to the total number
-    of unique words in the corpus.
--   TFIDF: As seen previously in *Lab 2*, *Feature Extraction
-    Methods*, this technique considers the frequency of a term as well
-    as the inverse of its occurrence in the corpus.
--   Term frequency-based technique: This is a somewhat simpler version
-    of TFIDF. We represent each word in the vector by its number of
-    occurrences in the document. For example, let\'s say that a document
-    contains the following sentences:
-
-1.  The girl is pretty, and the boy is handsome.
-
-2.  Do whatever your heart says.
-
-3.  The boy has a bike.
-
-4.  His bike was red in color.
-
-    Now let\'s build term frequency vectors of all these sentences. We
-    will first create a **dictionary** of unique words as follows. **Note**
-    that we are considering every word in lowercase only:
-
-    *{1: the*
-
-    *2: girl*
-
-    *3: pretty*
-
-    *4: and*
-
-    *5: boy*
-
-    *5: is*
-
-    *7: handsome*
-
-    *8: do*
-
-    *9: whatever*
-
-    *10: your*
-
-    *11: heart*
-
-    *12: says*
-
-    *13: was*
-
-    *14: has*
-
-    *15: bike*
-
-    *16: his*
-
-    *17: red*
-
-    *18: in*
-
-    *19: color*
-
-    *}*
-
-    Now every document will be represented by a vector with 19
-    dimensions, where every dimension represents the frequency of a word
-    in that document. So, for sentence 1, the vector will be \[2, 1, 1,
-    1, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\]. Similarly, for
-    sentence 2, the vector representation will be \[0, 0, 0, 0, 0, 0, 0,
-    1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0\], and so on. **Note** that the
-    order needs to be consistent here, too.
-
-    Note:
-
-    It is recommended that you use preprocessing techniques such as
-    stemming, stop word removal, and conversion to lowercase before
-    converting a text into the aforementioned vector format. Term
-    frequency is a simple and quick technique for converting text into
-    vector form. However, the TFIDF technique is a more effective
-    technique than term frequency as it not only considers the frequency
-    of a word in the current document but also in the background corpus.
-
-    -   One-hot encoding: In all techniques described previously, we
-        have represented a word with a single number. Using one-hot
-        encoding, we can represent a word with an array. To understand
-        this concept better, let\'s take the following sentences:
-
-5.  I love cats and dogs.
-
-6.  Cats are light in weight.
-
-    We will use a **dictionary** to assign a numeric label or index to
-    each unique word (after converting to lowercase) as follows:
-
-    *{1: i*
-
-    *2: love*
-
-    *3: cats*
-
-    *4: and*
-
-    *5: dogs*
-
-    *6: are*
-
-    *7: light*
-
-    *8: in*
-
-    *9: weight*
-
-    *}*
-
-    Now we will represent each word in these sentences as follows:
-
-    i \[1 0 0 0 0 0 0 0 0\]
-
-    love \[0 1 0 0 0 0 0 0 0\]
-
-    cats \[0 0 1 0 0 0 0 0 0\]
-
-    and \[0 0 0 1 0 0 0 0 0\]
-
-    dogs \[0 0 0 0 1 0 0 0 0\]
-
-    are \[0 0 0 0 0 1 0 0 0\]
-
-    light \[0 0 0 0 0 0 1 0 0\]
-
-    in \[0 0 0 0 0 0 0 1 0\]
-
-    weight \[0 0 0 0 0 0 0 0 1\]
-
-We can see that each vector consists of 9 elements; that is, the number
-of elements equals the total number of words in the **dictionary**. For
-each word, the value of an element will be 1, only if the word is
-present at the corresponding position in the **dictionary**. When
-one-hot encoding words, you also need to consider the **vocabulary**.
-The meaning of vocabulary here is the total number of unique words in
-the text sources for your project. So, if you have a large source, then
-you will end up with a huge vocabulary and large one-hot vector sizes,
-which will eventually consume a lot of memory. The next exercise on
-word-level one-hot encoding will help us understand this better.
 
 Label encoding is a technique used to convert categorical data in
 numerical data, where each category is represented by a unique number.
@@ -261,13 +58,6 @@ Exercise 6.01: Word-Level One-Hot Encoding
 
 In this exercise, we will one-hot encode words with the help of the
 `preprocessing` package provided by the scikit-learn library.
-For this, we shall make use of a file containing lines from Jane
-Austen\'s *Pride and Prejudice*.
-
-**Note**
-
-The text file used for this exercise can be found at
-
 
 Follow these steps to implement this exercise:
 
@@ -285,7 +75,6 @@ Follow these steps to implement this exercise:
     novel_lines_file = data / 'novel_lines.txt'
     ```
 
-
 3.  Now that you have the file, open it and read its contents. Use the
     `open()` and `read()` functions to perform these
     actions. Store the results in the `novel_lines` file
@@ -298,14 +87,12 @@ Follow these steps to implement this exercise:
         novel_lines_raw = f.read()
     ```
 
-
 4.  After reading the contents of the file, load it by inserting a new
     cell and adding the following code:
 
     ```
     novel_lines_raw
     ```
-
 
     The code generates the following output:
 ![](./images/B16062_06_02.jpg)
@@ -338,7 +125,6 @@ Follow these steps to implement this exercise:
     novel_lines = clean_tokenize(novel_lines_raw)
     ```
 
-
 6.  Take a look at the content inside `novel_lines` now. It
     should look like a list. Insert a new cell and add the following
     code to view it:
@@ -346,7 +132,6 @@ Follow these steps to implement this exercise:
     ```
     novel_lines
     ```
-
 
     The code generates the following output:
 ![](./images/B16062_06_03.jpg)
@@ -362,13 +147,11 @@ Follow these steps to implement this exercise:
     novel_lines_array.shape
     ```
 
-
     The code generates the following output:
 
     ```
     (459, 1)
     ```
-
 
     As you can see, the `novel_lines_array` array consists of
     `459` rows and `1` column. Each row is a word in
@@ -398,7 +181,6 @@ Follow these steps to implement this exercise:
                   novel_lines_labels.reshape(-1,1))
     ```
 
-
     In the code, the `LabelEncoder()` class encodes the
     labels, and the `fit_transform()` method fits the label
     encoder and returns the encoded labels.
@@ -409,7 +191,6 @@ Follow these steps to implement this exercise:
     ```
     novel_lines_labels
     ```
-
 
     The preceding code generates output that looks as follows:
 ![](./images/B16062_06_04.jpg)
@@ -430,14 +211,12 @@ Follow these steps to implement this exercise:
     line_onehot
     ```
 
-
     The code generates the following output:
 
     ```
     <459x199 sparse matrix of type '<class 'numpy.float64'>'
                     With 459 stored elements in Compressed Sparse Row format>
     ```
-
 
 11. To convert the sparse matrix into a **dense array**, use the
     `toarray()` function. Insert a new cell and add the
@@ -447,44 +226,19 @@ Follow these steps to implement this exercise:
     line_onehot.toarray()
     ```
 
-
     The code generates the following output:
 ![](./images/B16062_06_05.jpg)
 
 
-
-
-**Note**
-
-
-
-
-The preceding output shows that we have achieved our objective of
+**Note** The preceding output shows that we have achieved our objective of
 one-hot encoding words.
 
-One-hot encoding is mostly used in techniques such as language
-generation models, where a model is trained to predict the next word in
-the sequence given the words that precede it (think about your phone
-recommending words while you\'re chatting with your friends). Language
-models are used in many important natural language tasks nowadays,
-including machine translation, spell correction, text summarization, and
-in tools like Amazon Echo, Alexa, and more.
-
-In addition to word-level language models, we can also build
-character-level language models, which can be trained to predict the
-next character in a sequence of characters. For character-level language
-models, we need character-level one-hot encoding. Let\'s explore this in
-the next section.
 
 Character-Level One-Hot Encoding
 --------------------------------
 
 In character-level one-hot encoding, we assign a numeric value to all
-the possible characters. We can use alpha-numeric characters and
-punctuation as well. Then, we represent each character by an array of
-size equal to all the characters in the document. This array contains
-zero at all the indices, other than the index assigned with the
-character. Let\'s explain this with an example. Consider the word
+the possible characters. Consider the word
 \"hello\". Let\'s say our vocabulary contains only twenty-six
 characters, so our **dictionary** will look like this:
 
@@ -495,20 +249,6 @@ characters, so our **dictionary** will look like this:
 \'c\': 2
 
 \'d\': 3
-
-\'e\': 4
-
-\'f\': 5
-
-\'g\': 6
-
-\'h\': 7
-
-\'i\': 8
-
-\'j\': 9
-
-\'k\': 10
 
 .......\'z\': 25}
 
@@ -539,16 +279,13 @@ complete this exercise:
         word_vector = []
     ```
 
-
 3.  Next, loop through the characters in the word and create a vector
     named `one_hot_vector` of the same size as the number of
     characters in the lookup. This vector is filled with zeros. Then,
     use the `lookup` table to find the position of the
     character and set that character\'s value to `1`.
 
-    Note:
-
-    Execute the code for *step 1* and *step 2* together.
+    Note: Execute the code for *step 1* and *step 2* together.
 
     Add the following code:
 
@@ -560,7 +297,6 @@ complete this exercise:
             word_vector.append(one_hot_vector)
         return word_vector
     ```
-
 
     The function created earlier will return a word vector.
 
@@ -574,67 +310,11 @@ complete this exercise:
     print(onehot_vector)
     ```
 
-
     The code generates the following output:
 
     ```
     [0, 0, 1], [1, 0, 0], [0, 1, 0], [1, 0, 0]
     ```
-
-
-    Since there are four characters in the input (`data`),
-    there will be four one-hot vectors. To determine the size of each
-    one-hot vector for `data`, we enumerate the total number
-    of characters in it. It is important to note that only one index
-    gets assigned for repeated characters. After enumerating through the
-    characters, the character `d` will be assigned index
-    `0`, the character `a` will be assigned index
-    `1`, and the character `t` will be assigned
-    index `2`.
-
-    Based on each character\'s index position, the elements in each
-    one-hot vector will be marked as `1`, leaving other
-    elements marked `0`. In this way, we can manually one-hot
-    encode any given text. **Note** that, in most practical applications,
-    the size of one-hot encoded vector is equal to the size of all the
-    characters, and sometimes, non-alphabetical characters are also
-    considered.
-
-    Note:
-
-    
-
-We have learned how character-level one-hot encoding can be performed
-manually by developing our own function. We will focus on performing
-character-level one-hot encoding using Keras in the next exercise. Keras
-is a machine learning library that works along with TensorFlow to create
-deep learning models.
-
-We will be using the `Tokenizer` class from Keras to create
-vectors from the text. `Tokenizer` can work on both characters
-and words, depending on the `char_level` argument. If
-`char_level` is set to `true`, then it will work on
-the character level; otherwise, it will work on the word level. The
-`Tokenizer` class comes with the following functions:
-
--   `fit_on_text()`: This method reads all the text and
-    creates an internal **dictionary**, either word-wise or
-    character-wise. We should always call it for the entire text, so
-    that no word or character is left out of the dictionary. All the
-    methods/variables listed after this should be called or used only
-    after calling this method.
--   `word_index`: This is a **dictionary** that contains all
-    the possible words or characters in the vocabulary. Each word or
-    character is assigned a unique number/index.
--   `index_word`: This is the reverse dictionary of
-    `word_index`; it contains key-value pairs with the index
-    as the key and the word or character as its value.
--   `texts_to_sequences()`: This function converts each word
-    or character sequence into its corresponding index value.
--   `texts_to_matrix()`: This converts each word or character
-    in a given text into one-hot vector using a built-in dictionary. It
-    takes the text as input, processes it, and returns a NumPy array of
-    one-hot encoded vectors.
 
 Exercise 6.03: Character-Level One-Hot Encoding with Keras
 ----------------------------------------------------------
@@ -653,7 +333,6 @@ the Keras library. Follow these steps to implement this exercise:
     import numpy as np
     ```
 
-
 3.  Once you have imported the `Tokenizer` class, create an
     instance of it by inserting a new cell and adding the following
     code:
@@ -661,7 +340,6 @@ the Keras library. Follow these steps to implement this exercise:
     ```
     char_tokenizer = Tokenizer(char_level=True)
     ```
-
 
     Since you are encoding at the character level, in the constructor,
     `char_level` is set to `True`.
@@ -680,7 +358,6 @@ the Keras library. Follow these steps to implement this exercise:
     text = 'The quick brown fox jumped over the lazy dog'
     ```
 
-
 5.  After getting the text, use the `fit_on_texts()` method
     provided by the `Tokenizer` class. Insert a new cell and
     add the following code to implement this:
@@ -689,13 +366,12 @@ the Keras library. Follow these steps to implement this exercise:
     char_tokenizer.fit_on_texts(text)
     ```
 
-
     In this code, `char_tokenizer` will break `text`
     into characters and internally keep track of the tokens, the
     indices, and everything else needed to perform one-hot encoding.
 
 6.  Now, look at the possible output. One type of output is the sequence
-    of the characters---that is, the integers assigned with each
+    of the characters that is, the integers assigned with each
     character in the text. The `texts_to_sequences()` method
     of the `Tokenizer` class helps assign integers to each
     character in the text. Insert a new cell and add the following code
@@ -705,7 +381,6 @@ the Keras library. Follow these steps to implement this exercise:
     seq =char_tokenizer.texts_to_sequences(text)
     seq
     ```
-
 
     The code generates the following output:
 ![](./images/B16062_06_06.jpg)
@@ -722,7 +397,6 @@ the Keras library. Follow these steps to implement this exercise:
     char_tokenizer.sequences_to_texts(seq)
     ```
 
-
     The snippet of the preceding output follows:
 ![](./images/B16062_06_07.jpg)
 
@@ -735,7 +409,6 @@ the Keras library. Follow these steps to implement this exercise:
     char_vectors = char_tokenizer.texts_to_matrix(text)
     ```
 
-
     Here, the results of the array are stored in the
     `char_vectors` variable.
 
@@ -745,7 +418,6 @@ the Keras library. Follow these steps to implement this exercise:
     ```
     char_vectors
     ```
-
 
     On execution, the code displays the array of one-hot encoded
     vectors:
@@ -760,13 +432,11 @@ the Keras library. Follow these steps to implement this exercise:
     char_vectors.shape
     ```
 
-
     The following output is generated:
 
     ```
     (44, 27)
     ```
-
 
     So, `char_vectors` is a NumPy array with `44`
     rows and `27` columns. This is because we are considering
@@ -779,7 +449,6 @@ the Keras library. Follow these steps to implement this exercise:
     char_vectors[0]
     ```
 
-
     This returns a one-hot vector, which can be seen in the following
     figure:
 
@@ -789,7 +458,6 @@ the Keras library. Follow these steps to implement this exercise:
            0., 0., 0., 0., 0., 0., 0 ., 0., 0])
     ```
 
-
 12. To access the index of this one-hot vector, use the
     `argmax()` function provided by NumPy. Insert a new cell
     and write the following code to implement this:
@@ -798,13 +466,11 @@ the Keras library. Follow these steps to implement this exercise:
     np.argmax(char_vectors[0])
     ```
 
-
     The code generates the following output:
 
     ```
     4
     ```
-
 
 13. The `Tokenizer` class provides two dictionaries,
     `index_word` and `word_index`, which you can use
@@ -815,7 +481,6 @@ the Keras library. Follow these steps to implement this exercise:
     ```
     char_tokenizer.index_word
     ```
-
 
     The code generates the following output:
 ![](./images/B16062_06_09.jpg)
@@ -828,7 +493,6 @@ the Keras library. Follow these steps to implement this exercise:
     ```
     char_tokenizer.word_index
     ```
-
 
     The code generates the following output:
 ![](./images/B16062_06_10.jpg)
@@ -847,13 +511,11 @@ the Keras library. Follow these steps to implement this exercise:
     char_tokenizer.index_word[np.argmax(char_vectors[0])]
     ```
 
-
     The preceding code generates the following output:
 
     ```
     't'
     ```
-
 
     In this code, `np.argmax(char_vectors[0])` produces an
     output of `4`. This will act as a key in finding the value
@@ -862,17 +524,6 @@ the Keras library. Follow these steps to implement this exercise:
     through the dictionary and find that, for key `4`, the
     value is `t`, and finally, it will print `t`.
 
-
-In the preceding section, we learned how to convert text into one-hot
-vectors at either the character level or the word level. One-hot
-encoding is a simple representation of a word, but it has a
-disadvantage. Whenever the corpus is large (that is, when the number of
-unique characters or words increases), the size of the one-hot encoded
-vector also increases. Thus, it becomes very memory intensive and is
-sometimes not feasible; speed and simplicity here lead to the \"curse of
-dimensionality\" by creating a new dimension for each category/word. To
-tackle this problem, learned embeddings can be used, as explained in the
-following sections.
 
 Learned Word Embeddings
 -----------------------
@@ -891,16 +542,6 @@ serious disadvantages, as discussed here:
     context it is used in. Not taking the context into account can often
     lead to inaccurate results.
 
-Prediction-based word embeddings or learned word embeddings try to
-address both problems. For starters, these methods represent words with
-a fixed number of dimensions. Moreover, these representations are
-actually learned from the different contexts in which the word has been
-used at different places. **Learned word embeddings** is actually a
-collective name given to a set of language models that represent words
-in such a way that words with similar meanings have somewhat similar
-representations. There are different techniques for creating learned
-word embeddings, such as `Word2Vec` and GloVe. Let\'s discuss
-them one by one.
 
 Word2Vec
 --------
@@ -921,49 +562,6 @@ This algorithm has two variations, as follows:
 -   **Skip-Gram model**: This model is the reverse of the CBoW model, as
     it tends to predict the context of a word.
 
-These vectors find application in a lot of NLP tasks including text
-generation, machine translation, speech to text, text to speech, text
-classification, and text similarity.
-
-Let\'s explore how they can be used for text similarity. Suppose we
-generated 300 dimensional vectors from words such as \"love\",
-\"adorable\", and \"hate\". If we find the cosine similarity between the
-vectors for \"love\" and \"adorable\", and \"love\" and \"hate\", we
-will find a higher similarity between the former pair of words than the
-latter.
-
-In the next exercise, we will train word vectors using the gensim
-library. Specifically, we\'ll be using the `Word2Vec` class.
-The `Word2Vec` class has parameters such as
-`documents`, `size`, `window`,
-`min_count`, and `workers`. Here,
-`documents` refers to the sentences that we have to provide to
-the class, `size` represents the length of the dense vector to
-represent each token, `min_count` represents the minimum count
-of words that can be taken into consideration when training a particular
-model, and `workers` represents the number of threads that are
-required when training a model.
-
-For training a model, we use the `model.train()` method. This
-method takes arguments such as `documents`,
-`total_examples`, and `epochs`. Here,
-`documents` represents the sentences, and
-`total_examples` represents the count of sentences, while
-`epochs` represents the total number of iterations over the
-given data. Finally, the trained word vectors get stored in
-`model.wv`, which is an instance of `KeyedVectors`.
-
-In order to perform basic text cleaning, before it\'s processed, we will
-make use of the `textcleaner` class from gensim. Some of the
-most useful functions available in `textcleaner` that we will
-be using are as follows:
-
--   `split_sentences()`: As the name suggests, this function
-    splits the text and gets a list of sentences from the text.
--   `simple_preprocess()`: This function converts a document
-    into a list consisting of lowercase tokens.
-
-Let\'s see how we can use these functions to create word vectors.
 
 Exercise 6.04: Training Word Vectors
 ------------------------------------
@@ -971,10 +569,6 @@ Exercise 6.04: Training Word Vectors
 In this exercise, we will train word vectors. We will be using books
 freely available on Project Gutenberg for this. We will also see the
 vector representation using Matplotlib\'s pyplot framework.
-
-**Note**
-
-The file we are using for this exercise can be found at
 
 
 Follow these steps to implement this exercise:
@@ -994,7 +588,6 @@ Follow these steps to implement this exercise:
     import re
     ```
 
-
 3.  After importing all the necessary libraries, load the
     `json` file, which contains details of 10 books, including
     the title, the author, and the ID. Insert a new cell and add the
@@ -1007,14 +600,12 @@ Follow these steps to implement this exercise:
         catalog = json.load(catalog_file)
     ```
 
-
 4.  To print the details of all the books, insert a new cell and add the
     following code:
 
     ```
     catalog
     ```
-
 
     The preceding code generates the following output:
 ![](./images/B16062_06_11.jpg)
@@ -1036,7 +627,6 @@ Follow these steps to implement this exercise:
         return cleaned_contents
     ```
 
-
 6.  Once you have defined our `load_book()` function, you will
     loop through the catalog, fetch all the `id` instances of
     the books, and store them in the `book_ids` list. The
@@ -1051,14 +641,12 @@ Follow these steps to implement this exercise:
     books = [ load_book(id) for id in book_ids]
     ```
 
-
     To view the information of the `books` variable, add the
     following code in a new cell:
 
     ```
     books[:5]
     ```
-
 
     A snippet of the output generated by the preceding code is as
     follows:
@@ -1083,7 +671,6 @@ Follow these steps to implement this exercise:
         return sentence_tokens
     ```
 
-
     In the preceding code, all the text preprocessing takes place inside
     the `to_sentences()` function that you have defined.
 
@@ -1101,7 +688,6 @@ Follow these steps to implement this exercise:
                  for sentence in book_sent]
     ```
 
-
 9.  To check the length of the documents, use the `len()`
     function as follows:
 
@@ -1109,13 +695,11 @@ Follow these steps to implement this exercise:
     len(documents)
     ```
 
-
     The code generates the following output:
 
     ```
     32922
     ```
-
 
 10. Now that you have your documents, train the model by making use of
     the `Word2Vec` class provided by the gensim package.
@@ -1134,13 +718,11 @@ Follow these steps to implement this exercise:
                 epochs=50)
     ```
 
-
     The code generates the following output:
 
     ```
     (27809439, 37551450)
     ```
-
 
     Now make use of the `most_similar()` function of the
     `model.wv` instance to find the similar words. The
@@ -1151,7 +733,6 @@ Follow these steps to implement this exercise:
     ```
     model.wv.most_similar(positive="worse")
     ```
-
 
     The code generates the following output:
 ![](./images/B16062_06_13.jpg)
@@ -1186,7 +767,6 @@ Follow these steps to implement this exercise:
     show_vector('sad')
     ```
 
-
     The code generates the following output:
 ![](./images/B16062_06_14.jpg)
 
@@ -1194,9 +774,6 @@ Follow these steps to implement this exercise:
 
 
 **Note**
-
-
-
 
 In the preceding figure, we can see the vector representation when the
 word provided to the `show_vector()` function is \"sad\". We
@@ -1207,35 +784,13 @@ have learned about training word vectors and representing them using
 Using Pre-Trained Word Vectors
 ------------------------------
 
-For a machine learning model, the more data you have, the better the
-model you get. But training the model on large amounts of data is
-intensively resource-consuming in terms of both time and memory. So, we
-usually train a `Word2Vec` model on a large amount of data and
-retain the model for future use. There are also a lot of pre-trained
-models publicly available have been trained on huge datasets such as
-Wikipedia articles. These models include gensim by fastText (research
-group by Facebook), and `Word2Vec` has recently proved to be
-state-of-the-art for tasks including checking for word analogies and
+`Word2Vec` has recently proved to be state-of-the-art for tasks including checking for word analogies and
 word similarities, as follows:
 
 -   *vector(\'Paris\') - vector(\'France\') + vector(\'Italy\')* results
     in a vector that is very close to *vector(\'Rome\')*.
 -   *vector(\'king\') - vector(\'man\') + vector(\'woman\')* is close to
     *vector(\'queen\')*.
-
-Google\'s publicly available glove model is similar to the
-`Word2Vec` model and has produced incredible results. In some
-applications, we may need to train a `Word2Vec` model on our
-own specific dataset rather than train a new model from scratch; that
-is, we can train a pre-trained model on more data. This process is
-called transfer learning. Transfer learning is based on the concept of
-transferring knowledge from one domain into another.
-
-**Note**
-
-Pre-trained word vectors can get pretty large. For example, vectors
-trained on Google News contain 3 million words, and on disk, its
-compressed size is 1.5 GB.
 
 To better understand how we can use pre-trained word vectors in Python,
 let\'s walk through a simple exercise.
@@ -1267,7 +822,6 @@ Follow these steps to complete this exercise:
     import zipfile
     ```
 
-
 3.  Move the downloaded model from the preceding link to the location
     given in the following code snippet. In order to extract data from a
     ZIP file, use the `zipfile` Python package. Add the
@@ -1282,7 +836,6 @@ Follow these steps to complete this exercise:
     zip_ref.extractall(GLOVE_DIR)
     zip_ref.close()
     ```
-
 
 4.  Define a function named `load_glove_vectors()` to return a
     model Python dictionary. Insert a new cell and add the following
@@ -1304,7 +857,6 @@ Follow these steps to complete this exercise:
     glove_vectors = load_glove_vectors(GLOVE_DIR +'glove6B50d.txt')
     ```
 
-
     Here, `glove_vector_file` is a text file containing a
     dictionary. In this, words act as keys and vectors act as values.
     So, we need to read the file line by line, split it, and then map it
@@ -1316,14 +868,12 @@ Follow these steps to complete this exercise:
     Loaded 400000 words
     ```
 
-
     If we want to view the values of `glove_vectors`, then we
     insert a new cell and add the following code:
 
     ```
     glove_vectors
     ```
-
 
     You will get the following output:
 ![](./images/B16062_06_15.jpg)
@@ -1380,7 +930,6 @@ Follow these steps to complete this exercise:
         return vector
     ```
 
-
     In the preceding code, you defined two functions. The
     `to_vector()` function accepts `glove_vectors`
     and `word` as parameters. Here, the `get()`
@@ -1397,7 +946,6 @@ Follow these steps to complete this exercise:
     man = to_image(to_vector(glove_vectors, "man"))
     ```
 
-
     The code generates the following output:
 ![](./images/B16062_06_18.jpg)
 
@@ -1408,7 +956,6 @@ Follow these steps to complete this exercise:
     ```
     woman = to_image(to_vector(glove_vectors, "woman"))
     ```
-
 
     This will generate the following output:
 ![](./images/B16062_06_19.jpg)
@@ -1421,7 +968,6 @@ Follow these steps to complete this exercise:
     king = to_image(to_vector(glove_vectors, "king"))
     ```
 
-
     This will generate the following output:
 ![](./images/B16062_06_20.jpg)
 
@@ -1432,7 +978,6 @@ Follow these steps to complete this exercise:
     ```
     queen = to_image(to_vector(glove_vectors, "queen"))
     ```
-
 
     This will generate the following output:
 ![](./images/B16062_06_21.jpg)
@@ -1445,7 +990,6 @@ Follow these steps to complete this exercise:
     diff = to_image(king – man + woman - queen)
     ```
 
-
     This will generate the following output:
 ![](./images/B16062_06_22.jpg)
 
@@ -1456,7 +1000,6 @@ Follow these steps to complete this exercise:
     ```
     nd = to_image(king – man + woman)
     ```
-
 
     This will generate the following output:
 ![](./images/B16062_06_23.jpg)
@@ -1559,7 +1102,6 @@ of the Matplotlib library. Follow these steps to complete this exercise:
     warnings.filterwarnings("ignore")
     ```
 
-
     In the preceding code snippet, other than other imports, you
     imported `TaggedDocument` from gensim, which prepares the
     document formats used in `Doc2Vec`. It represents the
@@ -1575,7 +1117,6 @@ of the Matplotlib library. Follow these steps to complete this exercise:
     sample_news_data = '../data/sample_news_data.txt'
     ```
 
-
 4.  Now load the file:
 
 
@@ -1584,7 +1125,6 @@ of the Matplotlib library. Follow these steps to complete this exercise:
               errors='ignore') as f:
         news_lines = [line for line in f.readlines()]
     ```
-
 
 5.  Now create a DataFrame out of the headlines as follows:
 
@@ -1596,13 +1136,11 @@ of the Matplotlib library. Follow these steps to complete this exercise:
     lines_df['index'] = indices
     ```
 
-
 6.  View the head of the DataFrame using the following code:
 
     ```
     lines_df.head()
     ```
-
 
     This will create the following output:
 ![](./images/B16062_06_24.jpg)
@@ -1635,8 +1173,7 @@ of the Matplotlib library. Follow these steps to complete this exercise:
             return self.documents
     ```
 
-
-    In the code, the `preprocess_string()` function applies
+In the code, the `preprocess_string()` function applies
     the given filters to the input. As its name suggests, the
     `remove_stopwords()` function is used to remove
     `stopwords` from the given document. Since
@@ -1654,7 +1191,6 @@ of the Matplotlib library. Follow these steps to complete this exercise:
     documents_dataset = DocumentDataset(lines_df, 'news')
     ```
 
-
 9.  Create a `Doc2Vec` model using the `Doc2Vec`
     class. Insert a new cell and add the following code to implement
     this:
@@ -1665,7 +1201,6 @@ of the Matplotlib library. Follow these steps to complete this exercise:
                           sample=1e-4, negative=5, workers=8)
     docVecModel.build_vocab(documents_dataset.tagged_documents())
     ```
-
 
 10. Now you need to train the model using the `train()`
     function of the `Doc2Vec` class. This could take a while,
@@ -1682,14 +1217,12 @@ of the Matplotlib library. Follow these steps to complete this exercise:
                       epochs=10)
     ```
 
-
 11. Save this model for future use as follows:
 
 
     ```
     docVecModel.save('../data/docVecModel.d2v')
     ```
-
 
 12. The model has been trained. To verify this, access one of the
     vectors with its index. To do this, insert a new cell and add the
@@ -1699,7 +1232,6 @@ of the Matplotlib library. Follow these steps to complete this exercise:
     ```
     docVecModel[657]
     ```
-
 
     You should get an output similar to the one below:
 ![](./images/B16062_06_25.jpg)
@@ -1736,7 +1268,6 @@ of the Matplotlib library. Follow these steps to complete this exercise:
         show_image(doc_vector, line)
     ```
 
-
 14. Now that you have defined the functions, implement the
     `show_news_lines()` function to view the image
     representation of the vector. Insert a new cell and add the
@@ -1746,18 +1277,9 @@ of the Matplotlib library. Follow these steps to complete this exercise:
     show_news_lines(872)
     ```
 
-
     The code generates the following output:
 ![](./images/B16062_06_26.jpg)
 
-
-
-
-
-We have learned how to represent a document as a vector. We have also
-seen a visual representation of this. In the next section, we will
-complete an activity to find similar news headlines using the document
-vector.
 
 Activity 6.01: Finding Similar News Article Using Document Vectors
 ------------------------------------------------------------------
@@ -1770,33 +1292,23 @@ cracking down on indecency.\" Follow these steps to complete this
 activity:
 
 1.  Open a Jupyter notebook and import the necessary libraries.
-
 2.  Load the new article lines file.
-
 3.  Iterate over each headline and split the columns and create a
     DataFrame.
-
 4.  Load the `Doc2Vec` model that you created in the previous
     exercise.
-
 5.  Create a function that converts the sentences into vectors and
     another that does the similarity checks.
-
 6.  Test both the functions.
 
-    Note:
-
-    The full solution to this activity can be found below.
+    Note: The full solution to this activity in the current directory.
 
 So, in this activity, we were able to find similar news headlines with
 the help of document vectors. A common use case of inferring text
 similarity from document vectors is in text paraphrasing, which we\'ll
 explore in detail in the next lab.
 
-
-Summary
-=======
-
+#### Summary
 
 In this lab, we learned about the motivations behind converting
 human language in the form of text into vectors. This helps machine

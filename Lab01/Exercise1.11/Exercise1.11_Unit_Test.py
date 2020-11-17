@@ -8,7 +8,7 @@ def get_sentences(text):
 
 
 print(get_sentences(
-    "We are reading a book. Do you know who is the publisher? It is Packt. Packt is based out of Birmingham."))
+    "We are reading a book. Do you know who is the publisher? It is Fenago. Fenago is based out of Birmingham."))
 print(
     get_sentences("Mr. Donald John Trump is current president of USA. Before joining politics, he was a businessman."))
 
