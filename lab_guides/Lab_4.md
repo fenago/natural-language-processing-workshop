@@ -5,7 +5,7 @@
 Lab 4. Collecting Text Data with Web Scraping and APIs
 ==================================================
 
-Overview
+#### Overview
 
 This lab introduces you to the concept of web scraping. You will
 first learn how to extract data (such as text, images, lists, and
@@ -16,29 +16,13 @@ APIs for data extraction from Twitter, using the `tweepy`
 package.
 
 
-Collecting Data by Scraping Web Pages
-=====================================
-
+#### Collecting Data by Scraping Web Pages
 
 The basic building block of any web page is HTML (Hypertext Markup Language) a markup language that specifies the structure of your
 content. HTML is written using a series of tags, combined with optional
-content. The content encompassed within HTML tags defines the appearance
-of the web page. A web page can be considered to be a document written using HTML.
-Thus, we need to know the basics of HTML to scrape web pages
-effectively.
-
-The following figure depicts the contents that are included within an
-HTML tag:
-
-![](./images/B16062_04_01.jpg)
-
-
-As you can see in the preceding figure, we can easily identify different
-elements within an HTML tag. The basic HTML structure and commonly used
-tags are shown and explained as follows:
+content. The basic HTML structure and commonly used tags are shown and explained as follows:
 
 ![](./images/B16062_04_02.jpg)
-
 
 
 Exercise 4.01: Extraction of Tag-Based Information from HTML Files
@@ -82,7 +66,8 @@ Follow these steps to implement this exercise:
     soup.text
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_04_03.jpg)
 
 
@@ -103,7 +88,8 @@ Follow these steps to implement this exercise:
     soup.find('address')
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     <address> Mess on No. 72, Banamali Naskar Lane, Kolkata.</address>
@@ -116,7 +102,8 @@ Follow these steps to implement this exercise:
     soup.find_all('address')
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     [<address> Mess on No. 72, Banamali Naskar Lane, Kolkata.</address>,
@@ -129,7 +116,8 @@ Follow these steps to implement this exercise:
     soup.find_all('q')
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     [<q> There are more things in heaven and earth, Horatio, <br/> 
@@ -142,7 +130,8 @@ Follow these steps to implement this exercise:
     soup.find_all('b')
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     [<b>Sherlock </b>, <b>Hamlet</b>, <b>Horatio</b>]
@@ -155,7 +144,8 @@ Follow these steps to implement this exercise:
     table
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_04_05.jpg)
 
 
@@ -169,7 +159,8 @@ Follow these steps to implement this exercise:
         print(columns)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     [ ]
@@ -187,7 +178,8 @@ Follow these steps to implement this exercise:
     table.find_all('tr')[3].find_all('td')[2]
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     <td>M.Tech</td>
@@ -197,8 +189,7 @@ We have learned how to extract tag-based information from an HTML file.
 
 
 
-Requesting Content from Web Pages
----------------------------------
+#### Requesting Content from Web Pages
 
 To fetch content, you can use the `get()` method, which, as
 the name suggests, sends a `GET` request to the web page from
@@ -227,7 +218,8 @@ steps to complete this exercise:
     r.status_code
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     200
@@ -247,7 +239,8 @@ steps to complete this exercise:
     r.text[:1000]
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_04_06.jpg)
 
 
@@ -260,7 +253,8 @@ steps to complete this exercise:
          encoding='utf-8').write(r.text)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     2033139
@@ -347,7 +341,8 @@ Follow these steps to complete this exercise:
         print("---------------------------------------------------------\n\n\n")
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_04_08.jpg)
 
 
@@ -447,7 +442,8 @@ Follow these steps to complete this exercise:
     [dt['name'] for dt in data['students']]
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     ['Gangaram', 'Ganga', 'Ram', 'Ramlal']
@@ -460,7 +456,8 @@ Follow these steps to complete this exercise:
     [dt['qualification'] for dt in data['students']]
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     ['B.Tech', 'B.A.', 'B.Tech', 'B.Music']
@@ -476,7 +473,8 @@ Follow these steps to complete this exercise:
     in dt.keys() else None for dt in data['students']]
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     [None, None, 'M.Tech', None]
@@ -523,7 +521,8 @@ Follow these steps to complete this exercise:
     root
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     <Element 'records' at 0.112291710>
@@ -535,7 +534,8 @@ Follow these steps to complete this exercise:
     root.tag
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     'records'
@@ -550,7 +550,8 @@ Follow these steps to complete this exercise:
               record.find('company').text)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_04_13.jpg)
 
 
@@ -566,7 +567,8 @@ Follow these steps to complete this exercise:
     replace(',','')) for record in root.findall('record')])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     745609
@@ -620,7 +622,8 @@ exercise:
     pprint.pprint(data)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_04_14.jpg)
 
 
@@ -632,7 +635,8 @@ exercise:
     df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_04_15.jpg)
 
 

@@ -5,7 +5,7 @@
 Lab 6. Vector Representation
 ========================
 
-Overview
+#### Overview
 
 This lab introduces you to the various ways in which text can be
 represented in the form of vectors. You will start by learning why this
@@ -19,8 +19,7 @@ for vector representation for **Natural Language Processing** (**NLP**)
 tasks, such as finding the level of similarity between multiple texts.
 
 
-What Is a Vector?
-=================
+#### What Is a Vector?
 
 As an example, let\'s say that we\'re defining the weather at a given
 place using five features: temperature, humidity, precipitation, wind
@@ -43,15 +42,6 @@ Vector representation techniques can be broadly classified into two categories:
 
 -   Frequency-based embeddings
 -   Learned word embeddings
-
-
-Label encoding is a technique used to convert categorical data in
-numerical data, where each category is represented by a unique number.
-In order to perform label encoding and one-hot encoding, we will be
-using the `LabelEncoder()` and `OneHotEncoder()`
-classes from the `preprocessing` package provided by the
-scikit-learn library. The following exercise will help us get a better
-understanding of this.
 
 Exercise 6.01: Word-Level One-Hot Encoding
 ------------------------------------------
@@ -511,7 +501,8 @@ the Keras library. Follow these steps to implement this exercise:
     char_tokenizer.index_word[np.argmax(char_vectors[0])]
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     't'
@@ -607,7 +598,8 @@ Follow these steps to implement this exercise:
     catalog
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_06_11.jpg)
 
 

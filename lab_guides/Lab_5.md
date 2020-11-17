@@ -490,9 +490,7 @@ Follow these steps to complete this activity:
 10. Sample a few topics and check for interpretability.
 
 
-Hierarchical Dirichlet Process (HDP)
-====================================
-
+#### Hierarchical Dirichlet Process (HDP)
 
 HDP is a non-parametric variant of LDA. It is called \"non-parametric\"
 since the number of topics is inferred from the data, and this parameter
@@ -875,14 +873,6 @@ parts of speech, before training the model.
     [('thought', 0.07716038823127747), ('mind', 0.045609116554260254), ('word', 0.038597721606492996), ('face', 0.03509202599525452), ('terror', 0.03509202599525452), ('tear', 0.3158633038401604), ('apprehension', 0.3158633038401604)]
     ```
 
-    We see that we have 195 topics in all, many of which are likely not
-    interpretable. In general, finding interpretable topics is difficult
-    and connecting the words to interpret topics often requires
-    familiarity with the domain. We have seen that log perplexity has
-    very limited utility. In the case of prior knowledge of the corpus,
-    the topic model has a much smaller role to play in the discovery of
-    the thematic structure.
-
 
 Activity 5.02: Comparing Different Topic Models
 -----------------------------------------------
@@ -933,10 +923,6 @@ Follow these steps to complete this activity:
     quantitatively.
 
     Note: The full solution to this activity in the current directory
-
-In this activity, we successfully compared two different models both
-qualitatively and quantitatively.
-
 
 #### Summary
 

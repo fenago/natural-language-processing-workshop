@@ -18,8 +18,7 @@ program. By the end of the lab, you will be able to train a
 sentiment analysis model.
 
 
-Types of Sentiments
--------------------
+#### Types of Sentiments
 
 There are various sentiments that we can try to detect in language
 sources. Let\'s discuss a few of them in detail.

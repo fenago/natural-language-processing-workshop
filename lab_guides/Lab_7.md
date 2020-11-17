@@ -5,8 +5,7 @@ Lab 7. Text Generation and Summarization
 ====================================
 
 
-Introduction
-============
+#### Introduction
 
 The ability to express thoughts in words (sentence generation), the
 ability to replace a piece of text with different but equivalent text
@@ -18,9 +17,7 @@ have made them considerably more accessible. In this lab, we explore
 them in detail and see how we can implement them in Python.
 
 
-Generating Text with Markov Chains
-==================================
-
+#### Generating Text with Markov Chains
 
 A state space defines all possible states that can exist. A Markov chain
 consists of a state space and a specific type of successor function. For
@@ -49,10 +46,7 @@ Then, we will generate 10 phrases with three words in addition to an
 initial word, and then generate another 10 phrases with four words in
 addition to an initial word. The initial state or initial word will be
 randomly selected from among these words: \"the,\" \"a,\" \"I,\" \"he,\"
-\"she,\" \"if,\" \"this,\" \"why,\" and \"where.\" **Note** that since we
-are generating text using a random walk over a Markov chain, in general,
-the output you get will be different from the output shown in this
-exercise. Each different output corresponds to new text generation.
+\"she,\" \"if,\" \"this,\" \"why,\" and \"where.\" 
 
 
 Follow these steps to complete this exercise:
@@ -99,7 +93,8 @@ Follow these steps to complete this exercise:
     corpus_length
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     19985
@@ -164,7 +159,8 @@ Follow these steps to complete this exercise:
             generate_words(k)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_03.jpg)
 
 
@@ -286,7 +282,8 @@ Complete the following steps to implement this exercise:
     text_after_twenty
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_06.jpg)
 
 
@@ -300,7 +297,8 @@ Complete the following steps to implement this exercise:
     print(summary_text_after_twenty)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_07.jpg)
 
 
@@ -314,7 +312,8 @@ Complete the following steps to implement this exercise:
     print(summary_text_after_twenty)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_08.jpg)
 
 
@@ -333,7 +332,8 @@ Complete the following steps to implement this exercise:
     text_wiki_oscarwilde
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_09.jpg)
 
 
@@ -346,7 +346,8 @@ Complete the following steps to implement this exercise:
     print(summary_wiki_oscarwilde)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_10.jpg)
 
 
@@ -359,7 +360,8 @@ Complete the following steps to implement this exercise:
     print(summary_wiki_oscarwilde)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_11.jpg)
 
 
@@ -416,7 +418,8 @@ Complete the following steps to implement this exercise:
     text_grimms
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_12.jpg)
 
     Riding Hood
@@ -439,7 +442,8 @@ Complete the following steps to implement this exercise:
     text_perrault
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_13.jpg)
 
     Hood
@@ -461,7 +465,8 @@ Complete the following steps to implement this exercise:
     print(llrh_grimms_textrank)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_14.jpg)
 
     variation
@@ -474,7 +479,8 @@ Complete the following steps to implement this exercise:
     print(llrh_perrault_textrank)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_15.jpg)
 
     version
@@ -496,7 +502,8 @@ Complete the following steps to implement this exercise:
     print(llrh_grimms_textrank)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_16.jpg)
 
 10. Add the following code to print a TextRank summary
@@ -507,20 +514,10 @@ Complete the following steps to implement this exercise:
     print(llrh_perrault_textrank)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_07_17.jpg)
 
-
-
-**Note**
-
-With this, we\'ve found that the four summaries lack coherency and are
-also incomplete. This is also true of the two summaries with a
-`ratio` of `0.5` that is, even when half of the
-sentences are extracted for the summary. This might be because the
-conversations in the fairytale are contextual in nature, as a sentence
-often refers to the preceding sentence(s). This contextual aspect of
-language makes NLP complex for machines.
 
 
 Activity 7.01: Summarizing Complaints in the Consumer Financial Protection Bureau Dataset

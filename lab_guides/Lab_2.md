@@ -159,7 +159,8 @@ to complete this exercise:
                      2)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     ['The', 'cute']
@@ -180,7 +181,8 @@ to complete this exercise:
                      3)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     ['The', 'cute', 'little']
@@ -201,7 +203,8 @@ to complete this exercise:
                 .split(), 2))
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     [('The', 'cute'),
@@ -221,7 +224,8 @@ to complete this exercise:
     list(ngrams('The cute little boy is playing with the kitten.'.split(), 3))
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     [('The', 'cute', 'little'),
@@ -242,7 +246,8 @@ to complete this exercise:
     blob.ngrams(n=2)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     [WordList(['The', 'cute']),
@@ -262,7 +267,8 @@ to complete this exercise:
     blob.ngrams(n=3)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     [WordList(['The', 'cute', 'little']),
@@ -310,7 +316,8 @@ to tokenize texts. Follow these steps to complete this exercise:
     get_keras_tokens(sentence)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_07.jpg)
 
 
@@ -324,7 +331,8 @@ to tokenize texts. Follow these steps to complete this exercise:
     get_textblob_tokens(sentence)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_08.jpg)
 
 
@@ -395,7 +403,8 @@ Perform the following steps to implement this exercise:
     tokenize_with_tweet_tokenizer(sentence)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_09.jpg)
 
 
@@ -411,7 +420,8 @@ Perform the following steps to implement this exercise:
     tokenize_with_mwe(sentence)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_10.jpg)
 
 
@@ -426,7 +436,8 @@ Perform the following steps to implement this exercise:
     tokenize_with_mwe(sentence.replace('!',''))
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_11.jpg)
 
 
@@ -443,7 +454,8 @@ Perform the following steps to implement this exercise:
     tokenize_with_regex_tokenizer(sentence)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_12.jpg)
 
 
@@ -457,7 +469,8 @@ Perform the following steps to implement this exercise:
     tokenize_with_wst(sentence)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_13.jpg)
 
 
@@ -471,7 +484,8 @@ Perform the following steps to implement this exercise:
     tokenize_with_wordpunct_tokenizer(sentence)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_14.jpg)
 
 
@@ -538,7 +552,8 @@ the stemmed string. Follow these steps to complete this exercise:
     get_stems(sentence)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     'I love play football'
@@ -586,7 +601,8 @@ these steps to complete this exercise:
     get_stems(sentence)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     'befor eating, it would be nice to sanit your hand wash with a sanit'
@@ -641,7 +657,8 @@ these steps to complete this exercise:
     get_lemmas(sentence)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     'The product produced by the process today are far better than what it produce generally.'
@@ -680,7 +697,8 @@ to complete this exercise:
     sentence.words
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     WordList(['She', 'sells', 'seashells', 'on', 'the', 'seashore'])
@@ -695,7 +713,8 @@ to complete this exercise:
     singularize(sentence.words[2])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     'seashell'
@@ -710,7 +729,8 @@ to complete this exercise:
     pluralize(sentence.words[5])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     'seashores'
@@ -758,7 +778,8 @@ implement this exercise:
     translate(text='muy bien',from_l='es',to_l='en')
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     TextBlob("very well")
@@ -813,7 +834,8 @@ Follow these steps to complete this exercise:
     remove_stop_words(sentence,custom_stop_word_list)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     'sells seashells seashore'
@@ -911,7 +933,8 @@ steps to implement this exercise:
     df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_15.jpg)
 
 
@@ -927,7 +950,8 @@ steps to implement this exercise:
     add_num_words(df)['number_of_words']
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     0     11
@@ -966,7 +990,8 @@ steps to implement this exercise:
     is_present(wh_words, df)['is_wh_words_present']
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     0     False
@@ -993,7 +1018,8 @@ steps to implement this exercise:
     get_language(df)['language']
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     0     en
@@ -1046,7 +1072,8 @@ digits, words, and whitespaces.
     print(tag_list)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_16.jpg)
 
 
@@ -1085,7 +1112,8 @@ digits, words, and whitespaces.
     feature_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_17.jpg)
 
 
@@ -1179,7 +1207,8 @@ digits, words, and whitespaces.
     The preceding code will tokenize the text in every row and create a
     set of only small words, then find the length of this set and add it
     to the `number_of_small_words` column of the DataFrame.
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     0      4
@@ -1245,7 +1274,8 @@ digits, words, and whitespaces.
 
     The preceding code will get the digit count from each row and add
     the count of that list to the `number_of_digits` columns.
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     0      0
@@ -1402,7 +1432,8 @@ Follow these steps to implement this exercise:
     an argument and return a DataFrame in which every row will be a
     vector representation of a document in the corpus.
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_19.jpg)
 
 
@@ -1433,7 +1464,8 @@ Follow these steps to implement this exercise:
     most frequent words in each sentence and creating a DataFrame out of
     it.
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_20.jpg)
 
 
@@ -1527,7 +1559,8 @@ steps to implement this exercise:
     get_frequency(corpus, 50)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_22.jpg)
 
 
@@ -1562,7 +1595,8 @@ steps to implement this exercise:
     plot(actual_frequencies, expected_frequencies)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_23.jpg)
 
 
@@ -1691,7 +1725,8 @@ for a given pair of texts. Follow these steps to complete this exercise:
     extract_text_similarity_jaccard(pair1[0],pair1[1])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     0.14285714285714285
@@ -1704,7 +1739,8 @@ for a given pair of texts. Follow these steps to complete this exercise:
     extract_text_similarity_jaccard(pair2[0],pair2[1])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     0.0
@@ -1717,7 +1753,8 @@ for a given pair of texts. Follow these steps to complete this exercise:
     extract_text_similarity_jaccard(pair3[0],pair3[1])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     0.6
@@ -1753,7 +1790,8 @@ for a given pair of texts. Follow these steps to complete this exercise:
     cosine_similarity(tf_idf_vectors[0],tf_idf_vectors[1])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     array([[0.3082764]])
@@ -1766,7 +1804,8 @@ for a given pair of texts. Follow these steps to complete this exercise:
     cosine_similarity(tf_idf_vectors[2],tf_idf_vectors[3])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     array([[0.]])
@@ -1779,7 +1818,8 @@ for a given pair of texts. Follow these steps to complete this exercise:
     cosine_similarity(tf_idf_vectors[4],tf_idf_vectors[5])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     array([[0.80368547]])
@@ -2018,7 +2058,8 @@ these steps to complete this exercise:
     plt.show()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_28.jpg)
 
 
@@ -2079,7 +2120,8 @@ named entities. Follow these steps to complete this exercise:
     displacy.render(doc, style='dep', jupyter=True)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_29.jpg)
 
 
@@ -2096,7 +2138,8 @@ named entities. Follow these steps to complete this exercise:
     displacy.render(doc2, style='ent', jupyter=True)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_02_30.jpg)
 
 

@@ -151,7 +151,9 @@ actual categories. Follow these steps to implement this exercise:
     news_data['data'][:5]
     ```
 
-    The preceding code generates the following output:
+
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_03.jpg)
 
 
@@ -183,10 +185,10 @@ actual categories. Follow these steps to implement this exercise:
     news_data_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_04.jpg)
 
-    in a DataFrame
 
 9.  To count the number of occurrences of each category appearing in
     this dataset, write the following code:
@@ -195,7 +197,8 @@ actual categories. Follow these steps to implement this exercise:
     news_data_df['category'].value_counts()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     1        591
@@ -236,7 +239,8 @@ actual categories. Follow these steps to implement this exercise:
     tfidf_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_05.jpg)
 
 
@@ -260,7 +264,8 @@ actual categories. Follow these steps to implement this exercise:
     plt.show()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_06.jpg)
 
 
@@ -276,11 +281,14 @@ actual categories. Follow these steps to implement this exercise:
     clusters
     ```
 
-    The preceding code generates the following output:
+
+    
+The preceding code generates the following output:
 
     ```
     array([3, 3, 3, …, 4, 4, 1], dtype=int32)
     ```
+
 
 15. Make use of the `crosstab` function of pandas to compare
     the clusters we have obtained with the actual categories of news
@@ -297,16 +305,12 @@ actual categories. Follow these steps to implement this exercise:
                           3 : 'cluster_3', 4: 'cluster_4'}))
     ```
 
-    The preceding code generates the following output:
+
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_07.jpg)
 
 
-
-**Note**
-
-One major disadvantage of hierarchical clustering is scalability. Using
-hierarchical clustering for large datasets is very difficult; for such
-cases, we can use k-means clustering. Let us explore how this works.
 
 k-means Clustering
 ------------------
@@ -326,13 +330,6 @@ kmeans = KMeans(n_clusters=4)
 kmeans.fit(X)
 clusters = kmeans.predict(X)
 ```
-
-Here, we create the base model using the `kmeans` class of
-scikit-learn. Then, we train the model using the `fit`
-function. The trained model can then be used to get clusters using the
-predict function, where `X` represents a DataFrame of
-independent variables. Let\'s perform an exercise to get a better
-understanding of k-means clustering.
 
 Exercise 3.02: Implementing k-means Clustering
 ----------------------------------------------
@@ -440,7 +437,8 @@ Follow these steps to implement this exercise:
     tfidf_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_08.jpg)
 
 
@@ -471,7 +469,8 @@ Follow these steps to implement this exercise:
                           3: 'cluster_4'}))
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_09.jpg)
 
 
@@ -505,20 +504,14 @@ Follow these steps to implement this exercise:
     plt.show()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_10.jpg)
 
-
-
-method
 
 From the preceding graph, we can conclude that the optimal number of
 clusters is 2.
 
-**Note**
-
-We have seen how unsupervised learning can be implemented in Python.
-Now, let us talk about supervised learning.
 
 
 Supervised Learning
@@ -554,15 +547,7 @@ Logistic Regression
 Despite having the term \"regression\" in it, logistic regression is
 used for probabilistic classification. In this case, the dependent
 variable (the outcome) is binary, which means that the values can be
-represented by 0 or 1. For example, consider that you need to decide
-whether an email is spam or not. Here, the value of the decision (the
-dependent variable, or the outcome) can be considered to be 1 if the
-email is spam; otherwise, it will be 0. No other outcome is possible.
-The independent variables (that is, the features) will consist of
-various attributes of the email, such as the number of occurrences of
-certain keywords and so on. We can then make use of the logistic
-regression algorithm to create a model that predicts if the email is
-spam (1) or not (0), as shown in the following graph:
+represented by 0 or 1.
 
 ![](./images/B16062_03_11.jpg)
 
@@ -631,7 +616,8 @@ Follow these steps to implement this exercise:
     review_data[['reviewText', 'overall']].head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_12.jpg)
 
 
@@ -664,7 +650,8 @@ Follow these steps to implement this exercise:
                  'overall']].head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_13.jpg)
 
     their overall scores
@@ -680,7 +667,8 @@ Follow these steps to implement this exercise:
     tfidf_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_14.jpg)
 
 
@@ -695,7 +683,8 @@ Follow these steps to implement this exercise:
     review_data['target'].value_counts()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     1     6938
@@ -716,7 +705,8 @@ Follow these steps to implement this exercise:
     logreg.predict_proba(tfidf_df)[:,1]
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     array([0.57146961, 0.68579907, 0.56068939, …, 0.65979968, \
@@ -734,7 +724,8 @@ Follow these steps to implement this exercise:
                 review_data['predicted_labels'])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_15.jpg)
 
 
@@ -846,7 +837,8 @@ To download the dataset for this exercise, visit
     review_data[['reviewText', 'overall']].head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_17.jpg)
 
 
@@ -879,7 +871,8 @@ To download the dataset for this exercise, visit
                  'overall']].head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_18.jpg)
 
 6.  Create a TFIDF matrix and transform it into a DataFrame. Add the
@@ -893,7 +886,8 @@ To download the dataset for this exercise, visit
     tfidf_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_19.jpg)
 
 
@@ -908,7 +902,8 @@ To download the dataset for this exercise, visit
     review_data['target'].value_counts()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     1    6938
@@ -928,7 +923,8 @@ To download the dataset for this exercise, visit
     nb.predict_proba(tfidf_df)[:,1]
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     array([9.97730158e-01, 3.63599675e-09, 9.45692105e-07, …,
@@ -949,7 +945,8 @@ To download the dataset for this exercise, visit
                 review_data['predicted_labels'])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_20.jpg)
 
 
@@ -1053,7 +1050,8 @@ To download the dataset for this exercise, visit
     review_data[['reviewText', 'overall']].head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_21.jpg)
 
 
@@ -1086,7 +1084,8 @@ To download the dataset for this exercise, visit
                  'overall']].head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_22.jpg)
 
     their overall scores
@@ -1102,7 +1101,8 @@ To download the dataset for this exercise, visit
     tfidf_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_23.jpg)
 
 
@@ -1117,7 +1117,8 @@ To download the dataset for this exercise, visit
     review_data['target'].value_counts()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     1     6938
@@ -1141,7 +1142,8 @@ To download the dataset for this exercise, visit
                 review_data['predicted_labels_knn'])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_24.jpg)
 
     labels by k-nearest neighbors
@@ -1271,7 +1273,8 @@ To download the dataset for this exercise, visit
     review_data[['reviewText', 'overall']].head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_26.jpg)
 
 
@@ -1295,7 +1298,8 @@ To download the dataset for this exercise, visit
     review_data[['cleaned_review_text', 'reviewText', 'overall']].head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_27.jpg)
 
     their overall scores
@@ -1312,7 +1316,8 @@ To download the dataset for this exercise, visit
     tfidf_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_28.jpg)
 
 
@@ -1327,7 +1332,8 @@ To download the dataset for this exercise, visit
     linreg.coef_
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_29.jpg)
 
 
@@ -1342,7 +1348,8 @@ To download the dataset for this exercise, visit
     linreg.intercept_
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     4.218882428983381
@@ -1355,7 +1362,8 @@ To download the dataset for this exercise, visit
     linreg.predict(tfidf_df)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     array([4.19200071, 4.25771652, 4.23084868, …, 4.40384767, 
@@ -1374,7 +1382,8 @@ To download the dataset for this exercise, visit
                  'predicted_score_from_linear_regression']].head(10)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_30.jpg)
 
 From the preceding table, we can see how the actual and predicted score
@@ -1466,7 +1475,8 @@ To download the dataset for this exercise, visit
     data_patio_lawn_garden[['reviewText', 'overall']].head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_32.jpg)
 
 
@@ -1489,7 +1499,8 @@ To download the dataset for this exercise, visit
                             'overall']].head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_33.jpg)
 
     overall scores
@@ -1506,7 +1517,8 @@ To download the dataset for this exercise, visit
     tfidf_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_34.jpg)
 
 
@@ -1521,7 +1533,8 @@ To download the dataset for this exercise, visit
     data_patio_lawn_garden['target'].value_counts()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     1     7037
@@ -1552,7 +1565,8 @@ To download the dataset for this exercise, visit
                 data_patio_lawn_garden['predicted_labels_dtc'])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_35.jpg)
 
     labels
@@ -1578,7 +1592,8 @@ To download the dataset for this exercise, visit
                             'overall']].head(10)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_36.jpg)
 
 
@@ -1754,7 +1769,8 @@ To download the dataset for this exercise, visit
     data_patio_lawn_garden[['reviewText', 'overall']].head() 
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_37.jpg)
 
 
@@ -1777,7 +1793,8 @@ To download the dataset for this exercise, visit
                             'overall']].head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_38.jpg)
 
     overall scores
@@ -1795,7 +1812,8 @@ To download the dataset for this exercise, visit
     tfidf_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_39.jpg)
 
 
@@ -1810,7 +1828,8 @@ To download the dataset for this exercise, visit
     data_patio_lawn_garden['target'].value_counts()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     1     7037
@@ -1845,7 +1864,8 @@ To download the dataset for this exercise, visit
                 data_patio_lawn_garden['predicted_labels_rfc'])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_40.jpg)
 
     labels
@@ -1882,7 +1902,8 @@ To download the dataset for this exercise, visit
                             'predicted_values_rfg']].head(10)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_41.jpg)
 
 
@@ -1942,7 +1963,8 @@ Follow these steps to implement this exercise:
     data_patio_lawn_garden[['reviewText', 'overall']].head() 
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
 ![](./images/B16062_03_42.jpg)
 
@@ -1969,7 +1991,8 @@ Follow these steps to implement this exercise:
                             'overall']].head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_43.jpg)
 
     overall scores
@@ -1986,7 +2009,8 @@ Follow these steps to implement this exercise:
     tfidf_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_44.jpg)
 
 
@@ -2001,7 +2025,8 @@ Follow these steps to implement this exercise:
     data_patio_lawn_garden['target'].value_counts()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     1     7037
@@ -2038,7 +2063,8 @@ Follow these steps to implement this exercise:
                 data_patio_lawn_garden['predicted_labels_xgbc'])
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_45.jpg)
 
     labels using XGBoost
@@ -2074,7 +2100,8 @@ Follow these steps to implement this exercise:
                             'predicted_values_xgbr']].head(2)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_46.jpg)
 
 
@@ -2168,7 +2195,8 @@ Follow these steps to implement this exercise:
     data.shape
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     (54190, 8)
@@ -2183,7 +2211,8 @@ Follow these steps to implement this exercise:
     data_sample_random.shape
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     (54191, 8)
@@ -2241,7 +2270,8 @@ Follow these steps to implement this exercise:
     data_ugf_q2.shape
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     (356940, 8)
@@ -2388,7 +2418,8 @@ dataset. Follow these steps to implement this exercise:
     news_data_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_50.jpg)
 
 
@@ -2424,7 +2455,8 @@ dataset. Follow these steps to implement this exercise:
     tfidf_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_51.jpg)
 
 
@@ -2436,7 +2468,8 @@ dataset. Follow these steps to implement this exercise:
     correlation_matrix.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_52.jpg)
 
 
@@ -2450,7 +2483,8 @@ dataset. Follow these steps to implement this exercise:
                 vmin=-1, vmax=1, center= 0, cmap= 'coolwarm')
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_53.jpg)
 
 
@@ -2473,7 +2507,8 @@ dataset. Follow these steps to implement this exercise:
                                   ['correlation']>.7)]
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_54.jpg)
 
 
@@ -2496,7 +2531,8 @@ dataset. Follow these steps to implement this exercise:
     tfidf_df_without_correlated_word.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_55.jpg)
 
 
@@ -2605,7 +2641,8 @@ this exercise:
     news_data_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_56.jpg)
 
 
@@ -2641,7 +2678,8 @@ this exercise:
     tfidf_df.head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_57.jpg)
 
 
@@ -2657,7 +2695,8 @@ this exercise:
     reduced_tfidf
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_58.jpg)
 
 
@@ -2680,7 +2719,8 @@ this exercise:
     plt.show()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_59.jpg)
 
 
@@ -2843,7 +2883,8 @@ exercise:
     print('Root Mean Squared Error (RMSE) is:', rms)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     Root Mean Squared Error (RMSE) is: 0.21019038988498018
@@ -2865,7 +2906,8 @@ exercise:
           round(mape,2), '%')
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
     ```
     Mean Absolute Percentage Error (MAPE) is 16.6 %
@@ -2972,7 +3014,8 @@ implement this exercise:
                  (news_data.data, news_data.target).todense()).head()
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_63.jpg)
 
 
@@ -3032,7 +3075,8 @@ Follow these steps to implement this exercise:
     print(tfidf_vectors)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_64.jpg)
 
 
@@ -3053,7 +3097,8 @@ Follow these steps to implement this exercise:
     print(loaded_tfidf_vectors)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 ![](./images/B16062_03_65.jpg)
 
 
@@ -3074,7 +3119,8 @@ Follow these steps to implement this exercise:
     print(loaded_tfidf_vectors)
     ```
 
-    The preceding code generates the following output:
+    
+The preceding code generates the following output:
 
 ![](./images/B16062_03_66.jpg)
 
