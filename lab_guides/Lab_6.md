@@ -1,5 +1,5 @@
 
-<img align="right" src="../logo.png">
+<img align="right" src="./logo.png">
 
 
 Lab 6. Vector Representation

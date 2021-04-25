@@ -1,5 +1,5 @@
 
-<img align="right" src="../logo.png">
+<img align="right" src="./logo.png">
 
 
 Lab 4. Collecting Text Data with Web Scraping and APIs

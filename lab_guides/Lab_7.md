@@ -1,4 +1,4 @@
-<img align="right" src="../logo.png">
+<img align="right" src="./logo.png">
 
 
 Lab 7. Text Generation and Summarization
