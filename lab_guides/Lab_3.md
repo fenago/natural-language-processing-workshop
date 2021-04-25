@@ -2291,62 +2291,25 @@ The preceding code generates the following output:
 
 We can see the reduction in size of the data when the filtering criteria
 is applied and then the reduction in size when a sample of the filtered
-data is taken. In this exercise, you learned about the three major
-sampling techniques that will help you create a good training dataset
-for the text classifier that you will learn how to build in the next
-section.
-
-**Note**
-
+data is taken. 
 
 
 Developing a Text Classifier
 ============================
 
-
-A text classifier is a machine learning model that is capable of
-labeling texts based on their content. For instance, a text classifier
-will help you understand whether a random text statement is sarcastic or
-not. Presently, text classifiers are gaining importance as manually
-classifying huge amounts of text data is impossible. In the next few
-sections, we will learn about the different parts of text classifiers
+In the next few sections, we will learn about the different parts of text classifiers
 and implement them in Python.
 
-Feature Extraction
-------------------
-
-When dealing with text data, features denote its different attributes.
-Generally, they are numeric representations of the text. As we discussed
-in *Lab 2*, *Feature Extraction Methods*, TFIDF representations of
-texts are one of the most popular ways of extracting features from them.
-
-Feature Engineering
--------------------
-
-Feature engineering is the art of extracting new features from existing
-ones. Extracting novel features, which tend to capture variation in data
-better, requires sound domain expertise.
-
-Removing Correlated Features
-----------------------------
-
-Correlation refers to the statistical relationship between two
-variables. Two highly correlated variables provide the same kind of
-information. For example, the remaining battery life of a laptop and its
-screen time are highly correlated. The battery life will decrease as the
-screen time increases. Regression models, including logistic regression,
-are unable to perform well when correlation between features exists.
-Thus, features with correlation beyond a certain threshold need to be
-removed. The most widely used correlation statistic is Pearson
+- **Feature Extraction:** When dealing with text data, features denote its different attributes.
+- **Feature Engineering:** Feature engineering is the art of extracting new features from existing
+ones.
+- **Removing Correlated Features:** Correlation refers to the statistical relationship between two
+variables.The most widely used correlation statistic is Pearson
 correlation, which can be calculated as follows:
 
 ![](./images/B16062_03_49.jpg)
 
 
-
-Here, *cov* is the covariance, `σ` is the standard deviation,
-and X and Y are two variables/features of the training data that we are
-testing for correlation.
 
 Exercise 3.11: Removing Highly Correlated Features (Tokens)
 -----------------------------------------------------------
@@ -2533,9 +2496,8 @@ The preceding code generates the following output:
 
     
 The preceding code generates the following output:
+
 ![](./images/B16062_03_55.jpg)
-
-
 
 
 After removing the highly correlated words from the TFIDF DataFrame, it
@@ -2543,10 +2505,6 @@ appears like this. We have cleaned the dataset to remove highly
 correlated features and are now one step closer to building our text
 classifier.
 
-**Note**
-
-In the next section, we will learn how to reduce the size of the dataset
-and understand why this is necessary.
 
 Dimensionality Reduction
 ------------------------
@@ -2556,19 +2514,8 @@ basis. For example, sometimes, the TFIDF matrix or Bag-of-Words
 representation of a text corpus is so big that it doesn\'t fit in
 memory. In this case, it would be necessary to reduce its
 dimension---that is, the number of columns in the feature matrix. The
-most popular method for dimension reduction is **Principal Component
-Analysis** (**PCA**).
+most popular method for dimension reduction is **Principal Component Analysis** (PCA*).
 
-PCA is used to perform dimensionality reduction. It converts a list of
-features (which may be correlated) into a list of variables that are
-linearly uncorrelated. These linearly uncorrelated variables are known
-as principal components. These principal components are arranged in
-descending order of the amount of variability they capture in the
-dataset. For example, let\'s consider a Twitter tweet dataset where
-people misspell words such as good and instead write \"gud\". PCA will
-combine these two highly correlated features into a single feature and
-reduce the dimensionality. In the next section, we\'ll look at an
-exercise to get a better understanding of this.
 
 Exercise 3.12: Performing Dimensionality Reduction Using Principal Component Analysis
 -------------------------------------------------------------------------------------
@@ -2725,21 +2672,12 @@ The preceding code generates the following output:
 
 
 
-
 From the preceding plot, we can see that a scatter plot has been created
 in which each category of article is represented by a different color.
 This plot shows another important use case of dimensionality reduction:
 visualization. We were able to plot this two-dimensional image because
 we had two principal components. With the earlier TFIDF matrix, we had
-20 features, which is impossible to visualize. In this section, you
-learned how to perform dimensionality reduction to save memory space and
-visualize datasets.
-
-**Note**
-
-Next, we will learn how to evaluate the machine learning models that we
-train.
-
+20 features, which is impossible to visualize.
 
 #### Evaluating the Performance of a Model
 

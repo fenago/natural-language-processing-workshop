@@ -5,8 +5,7 @@ Lab 2. Feature Extraction Methods
 =============================
 
 
-Introduction
-============
+#### Introduction
 
 In this lab, we will learn a about
 preprocessing steps and how to extract features from the preprocessed
@@ -15,9 +14,6 @@ methods for feature extraction (Bag of Words and Term Frequency-Inverse
 Document Frequency), as well as various methods for finding similarity
 between different texts. By the end of this lab, you will have
 gained an in-depth understanding of how text data can be visualized.
-
-Types of Data
-=============
 
 
 #### Categorizing Data Based on Structure
@@ -118,11 +114,9 @@ it. Follow these steps to complete this exercise:
 
     The preceding command fragments the string wherever any blank space
     is present. The output should be as follows:
+
 ![](./images/B16062_02_06.jpg)
 
-
-**Note** Next, we will look at an exercise where n-grams can be extracted from a
-given text.
 
 Exercise 2.02: Extracting n-grams
 ---------------------------------
@@ -336,30 +330,8 @@ The preceding code generates the following output:
 ![](./images/B16062_02_08.jpg)
 
 
-
-
 With that, we have learned how to tokenize texts using the
 `keras` and `textblob` libraries.
-
-**Note**
-
-In the next section, we will discuss the different types of tokenizers.
-
-Types of Tokenizers
--------------------
-
-There are different types of tokenizers that come in handy for specific
-tasks. Let\'s look at the ones provided by `nltk` one by one:
-
--   **Whitespace tokenizer**: It splits a string wherever a space, tab, or newline character is
-    present.
--   **Tweet tokenizer**: This is specifically designed for tokenizing
-    tweets.
--   **MWE tokenizer**: MWE stands for Multi-Word Expression.
--   **Regular expression tokenizer**: Sentences are split based on the
-    occurrence of a specific pattern (a regular expression).
--   **WordPunctTokenizer**: This splits a piece of text into a list of
-    alphabetical and non-alphabetical characters.
 
 
 Exercise 2.04: Tokenizing Text Using Various Tokenizers
