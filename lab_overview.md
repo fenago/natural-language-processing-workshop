@@ -19,6 +19,9 @@
 - Train a model to detect topics in a set of documents using topic modeling
 - Discover techniques to represent text as word and document vectors
 
+
+Lab Environment: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fenago/natural-language-processing-workshop/HEAD)
+
 ### Labs
 
 Labs for this course are available at endpoints shared below. Update `<host-ip>` with the lab environment DNS.
